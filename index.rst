@@ -51,6 +51,23 @@ Topics
    a. Computational notebooks
    b. Reproducible environments
 
+Instructors
+-----------
+
+Vaclav Petras, vpetras@ncsu.edu
+
+Helena Mitasova
+
+Prerequisites
+-------------
+
+No special prerequisites.
+
+Educational approach
+--------------------
+
+Lecture combined with hands-on exercise which overlaps with a short homework.
+
 Schedule
 --------
 
