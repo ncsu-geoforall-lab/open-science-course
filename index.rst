@@ -18,6 +18,8 @@ work and how to apply this for research in a lab group. Students will
 have an option to participate in writing a collaborative publication
 covering the course topics.
 
+See also a `flyer <img/flyer.pdf>`_.
+
 Topics
 ------
 
