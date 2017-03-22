@@ -21,26 +21,33 @@ covering the course topics.
 Topics
 ------
 
-Outline:
-
 1. Open science
-    a. Motivation: replicability, repeatability, recomputability, reusability, reproducibility
-    b. Components: Open Data, Open Formats, Open Standards, Open Source, Open Methodology, Open Peer Review, Open Access, Open Educational Resources
+
+   a. Motivation: replicability, repeatability, recomputability, reusability, reproducibility
+   b. Components: Open Data, Open Formats, Open Standards, Open Source, Open Methodology, Open Peer Review, Open Access, Open Educational Resources
+
 2. Collaborative and automated authoring tools
-    a. Online environments
-    b. Report generation
-    c. Revision control
+
+   a. Online environments
+   b. Report generation
+   c. Revision control
+
 3. Geospatial tools
-    a. Common open source GIS tools
-    b. Geospatial research tools
-    c. Command line tools
+
+   a. Common open source GIS tools
+   b. Geospatial research tools
+   c. Command line tools
+
 4. Publishing methods as code
-    a. Writing code
-    b. Creating new tools
-    c. Open source projects and community
+
+   a. Writing code
+   b. Creating new tools
+   c. Open source projects and community
+
 5. Reproducibility
-    a. Computational notebooks
-    b. Reproducible environments
+
+   a. Computational notebooks
+   b. Reproducible environments
 
 Schedule
 --------
@@ -83,7 +90,14 @@ tools such as Jupyter Notebooks and Git. Here is a detailed list
 13. Docker (and Vagrant)
 14. Writing and reproducing an open science paper
 
-Add also some of:
+All the software used in the course is open source, so no students can
+install it on their computers without obtaining licenses from the vendors
+or through the university. Some free of charge services based on open
+source software or focused on open science or open source development
+will be used too.
+
+The following additional tools can be discussed as well:
+
 * Presentation tools: Reveal.js, LaTeX Beamer, R Markdown
 * Poster tools: Tikz Poster, Beamer poster
 * Image tools: ImageMagic, PIL, Graphviz
