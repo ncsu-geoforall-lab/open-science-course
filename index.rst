@@ -121,3 +121,11 @@ The following additional tools can be discussed as well:
 * Poster tools: Tikz Poster, Beamer poster
 * Image tools: ImageMagic, PIL, Graphviz
 * Text tools: Pandoc
+
+Get to know
+-----------
+
+.. image:: img/open_science.png
+   :width: 50%
+   :alt: open science (graphics)
+   :align: right
