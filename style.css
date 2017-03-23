@@ -268,8 +268,9 @@ figure {
     margin: 10px auto; /* for centered */
 }
 
-.align-right {
+.small-image-right {
     float: right;
+    max-width: 10em;
 }
 
 

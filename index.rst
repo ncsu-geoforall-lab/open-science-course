@@ -7,7 +7,7 @@ Description
 .. figure:: img/gear_wheel.png
    :width: 20%
    :alt: open science (graphics)
-   :figclass: align-right
+   :figclass: small-image-right
 
 The course will cover emerging field of open science and will deal with
 reproducibility and replicability challenges of computational research.
