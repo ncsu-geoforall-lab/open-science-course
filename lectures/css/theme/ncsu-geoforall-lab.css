@@ -168,6 +168,14 @@ body {
     font-size: 85%;
     line-height: 110%;
   }
+
+/* bigger spacing between items */
+ul.pl li {
+    padding-top: 30px;
+}
+ul.ps li {
+    padding-top: 10px;
+}
 .reveal li > ol {
       font-size: 85%;
       line-height: 110%;
@@ -287,6 +295,9 @@ body {
     visibility: hidden;
 }
 
+.reveal .speaker-notes {
+  max-height: 45% !important;
+}
 
 /*********************************************
  classes for sections with predefined elements
