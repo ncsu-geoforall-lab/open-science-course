@@ -36,14 +36,7 @@ https://www.software.ac.uk/blog/2016-09-12-its-impossible-conduct-research-witho
 
 
 <section>
-scientific community we have been largely unsuccessful in sharing our research methods and results in a reproducible way.
-</section>
-
-
-<section>
-current scientific publishing requires more than writing a paper
-new ways of sharing our research
-
+<h2>Software needs to be shared</h2>
     <blockquote style="width: 100%; margin: 0.1em;">
         <p>
             Software [...] developed as part of novel methods is as important
@@ -54,17 +47,24 @@ new ways of sharing our research
             &mdash;Nature Methods - 4, 189 (2007)
         </p>
     </blockquote>
+<!--
+scientific community we have been largely unsuccessful in sharing
+our research methods and results in a reproducible way.
+
+current scientific publishing requires more than writing a paper
+new ways of sharing our research
+-->
 </section>
 
 
-<section>
-Software solutions for software problem
-</section>
+<!--Software solutions for software problem-->
 
 
 <section>
 <h2>Screenshots</h2>
-<img src="img/screenshot.png" class="stretch">
+<img src="img/r_in_lidar_1.png" width=300>
+<img src="img/r_in_lidar_2.png" width=300>
+<img src="img/r_in_lidar_3.png" width=300>
 <!--Czech localization of MS Excel has function names in Czech-->
 </section>
 
@@ -87,6 +87,23 @@ We can use Python and other languages to access powerful software features in an
 of hoping we entered the same values as last time when rerunning the analysis with a new climate dataset.
 -->
 </section>
+
+
+
+<section>
+<h2>Paper: PDF</h2>
+
+<img src="img/petras2015mapping_paper.png" class="stretch">
+</section>
+
+
+<section>
+<h2>Paper: Code</h2>
+
+<img src="img/spatio-temporal-countour-evolution_code.png" class="stretch">
+</section>
+<!--A terrain modeling paper will serve as an example of sharing a full description
+of a published method.-->
 
 
 <section>
@@ -122,30 +139,72 @@ There are a GUIs as well.
 </section>
 
 
+<section data-years="2014">
+<h3>FUTURES</h3>
+<p>
+    “urban growth model for landscape ecologists”
+</p>
+<img src="img/futures.jpg" class="stretch">
+<p class="small">
+    projected development around Asheville, NC
+<p class="credit glow">
+    (research at NC State University, Center for Geospatial Analytics)
+</p>
+<!-- A landscape change model will be used to demonstrate reusable research. -->
+</section>
+
+
 <section>
+<h2>Docker and Vagrant</h2>
 Finally Docker and Vagrant let us wrap entire workflow into one runtime environment
 so that our species distribution model can be used without our personal laptop.
 </section>
 
-
 <section>
+<h2>Published research</h2>
+<table class="row-based">
+    <tr>
+        <td>Paper</td>
+        <td>background, method description, results, discussion, use cases</td>
+    </tr>
+    <tr>
+        <td>Environment</td>
+        <td>
+            description of dependencies
+            <small>(Docker, Vagrant)</small>
+        </td>
+    </tr>
+    <tr>
+        <td>Specific code</td>
+        <td>
+            paper-specific code, data-specific code
+            <small>(Jupyter Notebook, R Markdown, Bash script)</small>
+        </td>
+    </tr>
+    <tr>
+        <td>Reusable code</td>
+        <td>
+            general code, better scripts, documentation
+            <small>(R package, QGIS plugin, GRASS GIS module)</small>
+        </td>
+    </tr>
+</table>
+<small>*Current state</small>
+<!--
 This talk will discuss several tools for reproducible research
 and show practical examples which will make your life and lives of your colleagues easier.
-</section>
 
-
-<section>
-A terrain modeling paper will serve as an example of sharing a full description
-of a published method.
-A landscape change model will be used to demonstrate reusable research.
 Finally, a paper about vegetation structure will show how all pieces
 of the puzzle fit together.
+-->
 </section>
 
 <section>
 <h2>Tools for open geospatial science</h2>
 <ul>
-    <li>open science course, fall 2017
+    <li>open science course
+    <li> fall 2017
+    <li><a href="https://goo.gl/g8pFiE">goo.gl/g8pFiE</a>
 </ul>
 <br>
 <img src="../img/gear_wheel.png" class="stretch">
