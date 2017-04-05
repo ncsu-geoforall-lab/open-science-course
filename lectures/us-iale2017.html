@@ -8,6 +8,7 @@
         at
         <a href="http://geospatial.ncsu.edu/" title="Center for Geospatial Analytics">Center for Geospatial Analytics</a>
         <br>
+        North Carolina State University
     </p>
     <p>
         US-IALE, Baltimore<br>
@@ -15,6 +16,43 @@
     </p>
 </section>
 
+
+<section>
+<h2>Open Science</h2>
+
+<img src="img/spectrum_of_reproducible_research.png" class="stretch">
+<p class="credit">
+    CC BY-SA Comtebenoit,
+    <a href="https://en.wikipedia.org/wiki/File:Spectrum_of_reproducible_research.png">Wikipedia</a>
+    [Peng 2011, Rodríguez-Sánchez et al. 2016, Marwick 2016, Buckheit and Donoho 1995]
+<!--
+Peng, R. D. (2011). Reproducible research in computational science.
+Science, 334(6060), 1226-1227.
+DOI: 10.1126/science.1213847
+
+Rodríguez-Sánchez, F., Bartomeus, I., Varela, S., Pérez-Luque, A.J.,
+Ciencia reproducible: qué, por qué, cómoEcosistemas [en linea] 2016, 25
+(Mayo-Agosto) : [Fecha de consulta: 4 de abril de 2017]
+Disponible en:<http://www.redalyc.org/articulo.oa?id=54046745011>
+ISSN 1132-6344
+
+Marwick, B. (2016). Computational reproducibility in archaeological research:
+basic principles and a case study of their implementation.
+Journal of Archaeological Method and Theory, 1-27.
+DOI: 10.1007/s10816-015-9272-9
+-->
+</p>
+</section>
+
+<!--
+J. Buckheit and D. L. Donoho. Wavelets and Statistics, chapter Wavelab and reproducible research.
+Springer-Verlag, Berlin, New York, 1995.
+(paraphrased/pseudo-quote Jon Claerbout of Stanford)
+An article about computational science in a scientific publication
+is not the scholarship itself, it is merely advertising of the scholarship.
+The actual scholarship is the complete software development environment
+and the complete set of instructions which generated the figures.
+-->
 
 <section>
 <h2>Scientists rely on software</h2>
@@ -110,6 +148,8 @@ of a published method.-->
 <h2>Jupyter Notebook</h2>
 <ul>
     <li>interactive document with text, code, and figures
+    <li>languages: Python, R, Bash, C, C++, Octave, ...
+    <li>alternatives: R Markdown (Notebook), Emacs Org-mode, ...
 </ul>
 <img src="img/jupyter.png" class="stretch">
 <!-- Jupyter and R Markdown let us track the reasoning behind our experiments and analyses. -->
@@ -139,7 +179,7 @@ There are a GUIs as well.
 </section>
 
 
-<section data-years="2014">
+<section>
 <h3>FUTURES</h3>
 <p>
     “urban growth model for landscape ecologists”
@@ -155,9 +195,46 @@ There are a GUIs as well.
 
 
 <section>
-<h2>Docker and Vagrant</h2>
-Finally Docker and Vagrant let us wrap entire workflow into one runtime environment
+<h2>Complete environment</h2>
+<table>
+    <tr>
+        <th></th>
+        <th>Docker</th>
+        <th>Vagrant</th>
+        <th>Virtual machine</th>
+        <th>Any computer</th>
+        <th>My laptop</th>
+    </tr>
+    <tr>
+        <td>What is required to recreate it and run the software?</td>
+        <td>text file</td>
+        <td>text file</td>
+        <td>large binary file</td>
+        <td>text</td>
+        <td>nothing*</td>
+    </tr>
+    <tr>
+        <td>How are the dependencies handled?</td>
+        <td>specified</td>
+        <td>specified</td>
+        <td>present</td>
+        <td>?</td>
+        <td>?</td>
+    </tr>
+    <tr>
+        <td>What is the overhead running it?</td>
+        <td>low</td>
+        <td>high</td>
+        <td>high</td>
+        <td>none</td>
+        <td>none*</td>
+    </tr>
+</table>
+<small>*Except that I'm not borrowing you my laptop.</small>
+<!--
+Docker and Vagrant let us wrap entire workflow into one runtime environment
 so that our species distribution model can be used without our personal laptop.
+-->
 </section>
 
 <section>
@@ -165,12 +242,15 @@ so that our species distribution model can be used without our personal laptop.
 <table class="row-based">
     <tr>
         <td>Paper</td>
-        <td>background, method description, results, discussion, use cases</td>
+        <td>
+            background, method description, results, discussion, use cases
+            (PDF, HTML, ...)
+        </td>
     </tr>
     <tr>
         <td>Environment</td>
         <td>
-            description of dependencies
+            description of dependencies, the dependencies
             <small>(Docker, Vagrant)</small>
         </td>
     </tr>
@@ -189,7 +269,7 @@ so that our species distribution model can be used without our personal laptop.
         </td>
     </tr>
 </table>
-<small>*Current state</small>
+<small>*Current state; paper and "notebooks" may become one in the future.</small>
 <!--
 This talk will discuss several tools for reproducible research
 and show practical examples which will make your life and lives of your colleagues easier.
@@ -197,6 +277,63 @@ and show practical examples which will make your life and lives of your colleagu
 Finally, a paper about vegetation structure will show how all pieces
 of the puzzle fit together.
 -->
+</section>
+
+
+<section>
+<h2>Published research</h2>
+<table class="row-based">
+    <tr>
+        <td>Paper</td>
+        <td>
+            background, method description, results, discussion, use cases
+            (PDF, HTML, ...)
+        </td>
+    </tr>
+    <tr>
+        <td>Environment</td>
+        <td>
+            details about all dependencies (Dockerfile)
+            Git, GitHub, Linux, Docker
+            Travis-CI
+            description of dependencies, the dependencies
+            <small>(Docker, Vagrant)</small>
+        </td>
+    </tr>
+    <tr>
+        <td>Specific code</td>
+        <td>
+            scripts to perform the analyses
+            <small>((Bash and Python))</small>
+        </td>
+    </tr>
+    <tr>
+        <td>Reusable code</td>
+        <td>
+            methods as GRASS GIS modules
+            <small>(C and Python module)</small>
+        </td>
+    </tr>
+    data for the study area  (open formats)
+</table>
+<small>
+    Petras, V., D. J. Newcomb, and H. Mitasova.
+    <em>Generalized 3D fragmentation index derived from lidar point clouds.</em>
+    In: Open Geospatial Data, Software and Standards [in print]
+</small>
+<!--
+This talk will discuss several tools for reproducible research
+and show practical examples which will make your life and lives of your colleagues easier.
+
+Finally, a paper about vegetation structure will show how all pieces
+of the puzzle fit together.
+-->
+</section>
+
+
+<section>
+<h2>Like the current way more?</h2>
+<img src="img/top_tips_to_make_your_research_irreproducible.png" class="stretch">
 </section>
 
 <section>
