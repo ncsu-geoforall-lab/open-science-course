@@ -151,7 +151,7 @@ of a published method.-->
     <li>languages: Python, R, Bash, C, C++, Octave, ...
     <li>alternatives: R Markdown (Notebook), Emacs Org-mode, ...
 </ul>
-<img src="img/jupyter.png" class="stretch">
+<img src="img/jupyter.png" class="stretch box-glow">
 <!-- Jupyter and R Markdown let us track the reasoning behind our experiments and analyses. -->
 </section>
 
@@ -159,7 +159,7 @@ of a published method.-->
 <section>
 <h2>File versions</h2>
 
-<img src="img/file_versions.png" class="stretch">
+<img src="img/file_versions.png" class="stretch box-glow">
 </section>
 
 
@@ -180,17 +180,58 @@ There are a GUIs as well.
 
 
 <section>
-<h3>FUTURES</h3>
-<p>
+<h3>Publishing a model</h3>
+<img src="img/futures_paper.png" class="stretch">
+<small class="glow">
+    Meentemeyer, R. K., Tang, W., Dorning, M. A., Vogler, J. B.,
+    Cunniffe, N. J., and Shoemaker, D. A. (2013).
+    <em>FUTURES: Multilevel Simulations of Emerging Urban-Rural Landscape Structure
+    Using a Stochastic Patch-Growing Algorithm.</em>
+    Annals of the Association of American Geographers, 103(4), 785-807.
+    <br>
     “urban growth model for landscape ecologists”
-</p>
-<img src="img/futures.jpg" class="stretch">
-<p class="small">
-    projected development around Asheville, NC
-<p class="credit glow">
-    (research at NC State University, Center for Geospatial Analytics)
-</p>
+</small>
 <!-- A landscape change model will be used to demonstrate reusable research. -->
+</section>
+
+<section>
+<h3>Source code</h3>
+<img src="img/futures_src.png" class="stretch">
+</section>
+
+<section>
+<h3>Source code history</h3>
+<img src="img/futures_log.png" class="stretch">
+</section>
+
+<section>
+<h3>Documentation</h3>
+<img src="img/futures_doc.png" class="stretch">
+</section>
+
+
+<section>
+<h3>Graphical user interface</h3>
+<img src="img/futures_gui.png" class="stretch box-glow">
+</section>
+
+
+<section>
+<h3>Integration into a larger project</h3>
+<em>Do I want to create new open source project?</em>
+<ul>
+    <li>Preprocessing, visualization, and user interface (GUI, CLI, API)
+    <li>Integration with existing analytical tools
+    <li>Inputs, outputs, memory management
+</ul>
+<p>
+<img src="img/logos/grass_gis_nobg.png" width=100>
+<br>
+FUTURES model implemented as GRASS GIS modules
+<br>
+<em>r.futures.pga, r.futures.demand, r.futures.parallelpga, ...</em>
+<p>
+Alternatives: R package, Python package, QGIS plugin, ...
 </section>
 
 
@@ -269,7 +310,7 @@ so that our species distribution model can be used without our personal laptop.
         </td>
     </tr>
 </table>
-<small>*Current state; paper and "notebooks" may become one in the future.</small>
+<small>In the future, paper and "notebooks" may become one.</small>
 <!--
 This talk will discuss several tools for reproducible research
 and show practical examples which will make your life and lives of your colleagues easier.
@@ -286,35 +327,31 @@ of the puzzle fit together.
     <tr>
         <td>Paper</td>
         <td>
-            background, method description, results, discussion, use cases
-            (PDF, HTML, ...)
+            background, method, results, discussion
+            <small>(PDF, HTML)</small>
         </td>
     </tr>
     <tr>
         <td>Environment</td>
         <td>
-            details about all dependencies (Dockerfile)
-            Git, GitHub, Linux, Docker
-            Travis-CI
-            description of dependencies, the dependencies
-            <small>(Docker, Vagrant)</small>
+            details about all dependencies
+            <small>(Git, GitHub, Dockerfile, Docker, Linux, Travis-CI)</small>
         </td>
     </tr>
     <tr>
         <td>Specific code</td>
         <td>
             scripts to perform the analyses
-            <small>((Bash and Python))</small>
+            <small>(Bash and Python)</small>
         </td>
     </tr>
     <tr>
-        <td>Reusable code</td>
+        <td>Reusable&nbsp;code</td>
         <td>
             methods as GRASS GIS modules
-            <small>(C and Python module)</small>
+            <small>(Python and C)</small>
         </td>
     </tr>
-    data for the study area  (open formats)
 </table>
 <small>
     Petras, V., D. J. Newcomb, and H. Mitasova.
@@ -333,7 +370,7 @@ of the puzzle fit together.
 
 <section>
 <h2>Like the current way more?</h2>
-<img src="img/top_tips_to_make_your_research_irreproducible.png" class="stretch">
+<img src="img/top_tips_to_make_your_research_irreproducible.png" class="stretch box-glow">
 </section>
 
 <section>
