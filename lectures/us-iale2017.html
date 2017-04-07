@@ -216,7 +216,7 @@ There are a GUIs as well.
 
 
 <section>
-<h3>Publishing a model</h3>
+<h2 style="margin-top: 3ex; margin-bottom: 3ex">Publishing a model</h2>
 <img src="img/futures_paper.png" class="stretch">
 <!-- A landscape change model will be used to demonstrate reusable research. -->
 </section>
@@ -245,7 +245,7 @@ There are a GUIs as well.
 
 <section>
 <h3>Integration into a larger project</h3>
-<em>Do I want to create new software project?</em>
+<em style="font-size: larger;">Do I want to create new software project?</em>
 <ul>
     <li>Preprocessing, visualization, and user interface (GUI, CLI, API)
     <li>Integration with existing analytical tools
@@ -258,7 +258,18 @@ FUTURES model implemented as GRASS GIS modules
 <br>
 <em>r.futures.pga, r.futures.demand, r.futures.parallelpga, ...</em>
 <p>
+<small>
 Alternatives: R package, Python package, QGIS plugin, ...
+</small>
+</section>
+
+
+<section>
+<h2>How to run the code?</h2>
+<ul>
+    <li>dependencies
+    <li>environment
+</ul>
 </section>
 
 
@@ -307,87 +318,47 @@ RUN apt-get install -y \
 
 
 <section>
-<h2>Published research</h2>
+<h2>Research publication</h2>
 <table class="row-based">
     <tr>
         <td>Paper</td>
         <td>
-            background, method description, results, discussion, use cases
-            (PDF, HTML, ...)
+            background, methods, results, discussion<td>
+            <small>PDF, HTML</small>
         </td>
     </tr>
     <tr>
         <td>Environment</td>
         <td>
-            description of dependencies, the dependencies
-            <small>(Docker, Vagrant)</small>
+            details about all dependencies and the code<td>
+            <small>Git, Docker</small>
         </td>
     </tr>
     <tr>
         <td>Specific code</td>
         <td>
-            paper-specific code, data-specific code
-            <small>(Jupyter Notebook, R Markdown, Bash script)</small>
-        </td>
-    </tr>
-    <tr>
-        <td>Reusable code</td>
-        <td>
-            general code, better scripts, documentation
-            <small>(R package, QGIS plugin, GRASS GIS module)</small>
-        </td>
-    </tr>
-</table>
-<small>In the future, paper and "notebooks" may become one.</small>
-<!--
-This talk will discuss several tools for reproducible research
-and show practical examples which will make your life and lives of your colleagues easier.
-
-Finally, a paper about vegetation structure will show how all pieces
-of the puzzle fit together.
--->
-</section>
-
-
-<section>
-<h2>Published research</h2>
-<table class="row-based">
-    <tr>
-        <td>Paper</td>
-        <td>
-            background, method, results, discussion
-            <small>(PDF, HTML)</small>
-        </td>
-    </tr>
-    <tr>
-        <td>Environment</td>
-        <td>
-            details about all dependencies
-            <small>(Git, GitHub, Dockerfile, Docker, Linux, Travis-CI)</small>
-        </td>
-    </tr>
-    <tr>
-        <td>Specific code</td>
-        <td>
-            scripts to perform the analyses
-            <small>(Bash and Python)</small>
+            scripts to perform the analyses<td>
+            <small>Bash, Python</small>
         </td>
     </tr>
     <tr>
         <td>Reusable&nbsp;code</td>
         <td>
-            methods as GRASS GIS modules
-            <small>(Python and C)</small>
+            methods as GRASS GIS modules<td>
+            <small>Python, C</small>
         </td>
     </tr>
 </table>
-<p>
-<small>
+<img src="img/fragmentation_paper.png" class="stretch box-glow">
+<small class="glow">
     Petras, V., D. J. Newcomb, and H. Mitasova.
     <em>Generalized 3D fragmentation index derived from lidar point clouds.</em>
     In: Open Geospatial Data, Software and Standards [in print]
 </small>
 </p>
+</section>
+
+
 <!--
 This talk will discuss several tools for reproducible research
 and show practical examples which will make your life and lives of your colleagues easier.
@@ -395,7 +366,6 @@ and show practical examples which will make your life and lives of your colleagu
 Finally, a paper about vegetation structure will show how all pieces
 of the puzzle fit together.
 -->
-</section>
 
 
 <section>
@@ -426,17 +396,25 @@ of the puzzle fit together.
 
 
 <section>
-<h2>Tools for open geospatial science</h2>
+<h2>Resources</h2>
+<div class="left">
+<h3>Tools for open geospatial science</h3>
 <ul>
     <li>North Carolina State University course, fall 2017
     <li><a href="https://goo.gl/g8pFiE">goo.gl/g8pFiE</a>
 </ul>
 <br>
-<img src="../img/gear_wheel.png" style="width: 10%;">
-<h2>Data Carpentry</h2>
+<img src="../img/gear_wheel.png" style="height: 12ex;">
+<img src="../img/url_qrcode.png" style="height: 12ex; padding-left: 4em;">
+</div>
+<div class="right">
+<h3>Software and Data Carpentry</h3>
 <ul>
+    <li>workshop and lessons
+    <li><a href="http://software-carpentry.org">software-carpentry.org</a>
     <li><a href="http://datacarpentry.org">datacarpentry.org</a>
 </ul>
 <br>
-<img src="../img/gear_wheel.png" style="width: 10%;">
+<img src="img/logos/data_carpentry.png" style="height: 8ex;">
+</div>
 </section>
