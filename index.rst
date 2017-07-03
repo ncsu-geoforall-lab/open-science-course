@@ -32,7 +32,7 @@ Topics
 1. Open science
 
    a. Motivation: replicability, repeatability, recomputability, reusability, reproducibility
-   b. Components: Open Data, Open Formats, Open Standards, Open Source, Open Methodology, Open Peer Review, Open Access, Open Educational Resources
+   b. Components: Open Data, Open Formats, Open Standards, Open Source, Open Hardware, Open Methodology, Open Peer Review, Open Access, Open Educational Resources
 
 2. Collaborative and automated authoring tools
 

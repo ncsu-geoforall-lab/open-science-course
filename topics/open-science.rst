@@ -8,7 +8,8 @@ We can say that open science consists of the following components:
 open data (sharing of data with minimal restrictions),
 open formats (storing data and text in a known well-defined way),
 open standards (availability of definitions and their practical usability),
-open source (vendor-independent software available for modification, reuse, and distribution)
+open source (vendor-independent software available for modification, reuse, and distribution),
+open hardware (blueprints for devices and other physical object),
 open methodology (openness about all used methods and workflows),
 open peer review (reviewable process of judging scientific work),
 open access (availability of scientific work, especially journal articles),
