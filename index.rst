@@ -77,20 +77,20 @@ Lecture combined with hands-on exercise which overlaps with a short homework.
 Schedule
 --------
 
-1. Introduction to and motivation for open science
-2. Collaborative writing of scientific papers
-3. Advanced tools for papers and reports
-4. Revision control systems and wiki technologies
-5. How open source communities and development work
-6. QGIS, a free and open source geographic system
-7. Introduction to command line and remote access to computational resources
-8. GRASS GIS as software for geospatial research
-9. Combining text, code and results into one document
-10. Publishing code as part of an open source project
-11. Publishing data on web
-12. Command line and Python tools for geospatial work
-13. Reproducible computational environments
-14. Writing and reproducing an open science paper
+1. `Introduction to and motivation for open science <topics/open-science.html>`_
+2. `Collaborative writing of scientific papers <topics/collaborative-writing.html>`_
+3. `Advanced tools for papers and reports <topics/advanced-writing.html>`_
+4. `Revision control systems and wiki technologies <topics/revision-control.html>`_
+5. `How open source communities and development work <topics/open-source.html>`_
+6. `QGIS, a free and open source geographic system <topics/qgis.html>`_
+7. `Introduction to command line and remote access to computational resources <topics/linux.html>`_
+8. `GRASS GIS as software for geospatial research <topics/.html>`_
+9. `Combining text, code and results into one document <topics/notebooks.html>`_
+10. `Publishing code as part of an open source project <topics/.html>`_
+11. `Publishing data on web <topics/.html>`_
+12. `Command line and Python tools for geospatial work <topics/.html>`_
+13. `Reproducible computational environments <topics/.html>`_
+14. `Writing and reproducing an open science paper <topics/.html>`_
 
 Software
 --------
