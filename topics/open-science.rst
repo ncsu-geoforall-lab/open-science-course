@@ -48,6 +48,7 @@ Texts
 * `What, exactly, is Open Science? <http://www.openscience.org/blog/?p=269>`_ by Dan Gezelter from The OpenScience Project (2009)
 * `What is open science? <http://blog.f1000research.com/2014/11/11/what-is-open-science/>`_ by Eva Amsen at F1000Research Blog (2014)
 * `Why open research? <http://whyopenresearch.org/index.html>`_ from Why Open Research.
+* `Plain Text Science <http://kieranhealy.org/files/papers/plain-person-text.pdf>`_
 * `Replication frustration <https://www.theguardian.com/science/head-quarters/2015/oct/16/roadblocks-to-successful-scientific-replications-materials-sharing-copyright>`_ by Pete Etchells in The Guardian
 * `Badges awarded at Open Science Framework <https://osf.io/tvyxz/wiki/1.%20View%20the%20Badges/>`_
 * `Open Research Glossary <bit.ly/OpenResearchGlossary>`_

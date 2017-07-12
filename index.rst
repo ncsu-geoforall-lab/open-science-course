@@ -77,20 +77,29 @@ Lecture combined with hands-on exercise which overlaps with a short homework.
 Schedule
 --------
 
-1. `Introduction to and motivation for open science <topics/open-science.html>`_
-2. `Collaborative writing of scientific papers <topics/collaborative-writing.html>`_
-3. `Advanced tools for papers and reports <topics/advanced-writing.html>`_
-4. `Revision control systems and wiki technologies <topics/revision-control.html>`_
-5. `How open source communities and development work <topics/open-source.html>`_
-6. `QGIS, a free and open source geographic system <topics/qgis.html>`_
-7. `Introduction to command line and remote access to computational resources <topics/linux.html>`_
-8. `GRASS GIS as software for geospatial research <topics/.html>`_
-9. `Combining text, code and results into one document <topics/notebooks.html>`_
-10. `Publishing code as part of an open source project <topics/.html>`_
-11. `Publishing data on web <topics/.html>`_
-12. `Command line and Python tools for geospatial work <topics/.html>`_
-13. `Reproducible computational environments <topics/.html>`_
-14. `Writing and reproducing an open science paper <topics/.html>`_
+=== ============ ===
+ 1. August 16    `Introduction to and motivation for open science <topics/open-science.html>`_
+ 2. August 23    `Collaborative writing of scientific papers <topics/collaborative-writing.html>`_
+ 3. August 30    `Advanced tools for papers and reports <topics/advanced-writing.html>`_
+ 4. September 6  `Revision control systems and wiki technologies <topics/revision-control.html>`_
+ 5. September 13 `How open source communities and development work <topics/open-source.html>`_
+ 6. September 20 `QGIS, a free and open source geographic system <topics/qgis.html>`_
+ 7. September 27 `Introduction to command line and remote access to computational resources <topics/linux.html>`_
+ 8. October 4    `GRASS GIS as software for geospatial research <topics/.html>`_
+ 9. October 11   `Combining text, code and results into one document <topics/notebooks.html>`_
+10. October 18   `Publishing code as part of an open source project <topics/.html>`_
+11. October 25   `Publishing data on web <topics/.html>`_
+12. November 1   `Command line and Python tools for geospatial work <topics/.html>`_
+13. November 8   `Reproducible computational environments <topics/.html>`_
+14. November 15  `Writing and reproducing an open science paper <topics/.html>`_
+=== ========= ===
+
+November 29 is time to wrap up the class, to work on reproducible paper,
+or to complete what we missed in the previous weeks.
+
+August 14-19, 2017
+October 23 - 24, 2017
+
 
 Software
 --------
