@@ -97,8 +97,11 @@ Schedule
 November 29 is time to wrap up the class, to work on reproducible paper,
 or to complete what we missed in the previous weeks.
 
-August 14-19, 2017
-October 23 - 24, 2017
+Relevant conferences during the semester:
+FOSS4G Boston (August 14-19, open source geospatial software),
+AllThingsOpen Raleigh (October 23-24),
+State of the Map US Boulder (October 19-22, OpenStreetMap), and
+AGU New Orleans (December 11-15, several sessions related to open).
 
 
 Software
