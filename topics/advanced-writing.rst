@@ -38,6 +38,7 @@ Texts
 * `reStructuredText Primer for Sphinx <http://www.sphinx-doc.org/en/stable/rest.html>`_
 * `Differencees between reStructuredText, Docutils, and Sphinx <https://coderwall.com/p/vemncg/what-is-the-difference-rest-docutils-sphinx-readthedocs>`_
 * `reStructuredText vs Markdown for documentation <http://zverovich.net/2016/06/16/rst-vs-markdown.html>`_
+* `How to use Overleaf to Write your papers <https://medium.com/thoughts-philosophy-writing/how-to-use-overleaf-to-write-your-papers-part-i-basic-minimalist-setup-6599268c095f>`_ (Part I: Basic Minimalist setup)
 
 Videos
 ``````

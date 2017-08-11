@@ -85,10 +85,10 @@ Schedule
  5. September 13 `How open source communities and development work <topics/open-source.html>`_
  6. September 20 `QGIS, a free and open source geographic system <topics/qgis.html>`_
  7. September 27 `Introduction to command line and remote access to computational resources <topics/linux.html>`_
- 8. October 4    `GRASS GIS as software for geospatial research <topics/.html>`_
+ 8. October 4    `GRASS GIS as software for geospatial research <topics/grass.html>`_
  9. October 11   `Combining text, code and results into one document <topics/notebooks.html>`_
 10. October 18   `Publishing code as part of an open source project <topics/.html>`_
-11. October 25   `Publishing data on web <topics/.html>`_
+11. October 25   `Publishing data on web <topics/data.html>`_
 12. November 1   `Command line and Python tools for geospatial work <topics/.html>`_
 13. November 8   `Reproducible computational environments <topics/.html>`_
 14. November 15  `Writing and reproducing an open science paper <topics/.html>`_
@@ -99,8 +99,8 @@ or to complete what we missed in the previous weeks.
 
 Relevant conferences during the semester:
 FOSS4G Boston (August 14-19, open source geospatial software),
-AllThingsOpen Raleigh (October 23-24),
-State of the Map US Boulder (October 19-22, OpenStreetMap), and
+State of the Map US Boulder (October 19-22, OpenStreetMap),
+AllThingsOpen Raleigh (October 23-24), and
 AGU New Orleans (December 11-15, several sessions related to open).
 
 
@@ -113,7 +113,7 @@ tools such as Jupyter Notebooks and Git. Here is a detailed list
 (subject to change):
 
 1. Open science
-2. Authorea (with Markdown)
+2. Authorea and Markdown
 3. LaTeX (in Overleaf)
 4. Git, GitHub (Markdown, Overleaf, wiki, Zim)
 5. QGIS
@@ -127,7 +127,7 @@ tools such as Jupyter Notebooks and Git. Here is a detailed list
 13. Docker (and Vagrant)
 14. Writing and reproducing an open science paper
 
-All the software used in the course is open source, so no students can
+All the software used in the course is open source, so students can
 install it on their computers without obtaining licenses from the vendors
 or through the university. Some free of charge services based on open
 source software or focused on open science or open source development
