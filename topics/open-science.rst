@@ -47,11 +47,9 @@ Texts
 * `The evolution of open science <https://www.elsevier.com/connect/the-evolution-of-open-science-how-digitization-is-transforming-research>`_ Elsevier interview with Dr. Stephane Berghmans (2015)
 * `What, exactly, is Open Science? <http://www.openscience.org/blog/?p=269>`_ by Dan Gezelter from The OpenScience Project (2009)
 * `What is open science? <http://blog.f1000research.com/2014/11/11/what-is-open-science/>`_ by Eva Amsen at F1000Research Blog (2014)
-* `Why open research? <http://whyopenresearch.org/index.html>`_ from Why Open Research.
 * `Plain Text Science <http://kieranhealy.org/files/papers/plain-person-text.pdf>`_
 * `Replication frustration <https://www.theguardian.com/science/head-quarters/2015/oct/16/roadblocks-to-successful-scientific-replications-materials-sharing-copyright>`_ by Pete Etchells in The Guardian
 * `Badges awarded at Open Science Framework <https://osf.io/tvyxz/wiki/1.%20View%20the%20Badges/>`_
-* `Open Research Glossary <bit.ly/OpenResearchGlossary>`_
 
 Long videos
 ```````````
@@ -60,6 +58,12 @@ Long videos
 * `How to get tenure while practicing open science <https://www.youtube.com/watch?v=DOaw0L9KjNw>`_ by Titus Brown at OpenCon Community Webcasts (2016)
 * `Rethinking research data <https://www.youtube.com/watch?v=dXKbkpilQME>`_ by Kristin Briney at TEDxUWMilwaukee (2015)
 * `Sharing research data <https://www.youtube.com/watch?v=KiQndk8xUiY>`_ by Kevin Ashley from Digital Curation Center (2015)
+
+Short and other texts
+`````````````````````
+
+* `Why open research? <http://whyopenresearch.org/index.html>`_ from Why Open Research.
+* `Open Research Glossary <https://figshare.com/articles/Open_Research_Glossary/1482094>`_
 
 Short videos
 ````````````
@@ -75,11 +79,13 @@ Introduction paragraph: Write a sentence or two introducing yourself
 to the class. Include your experience with any part of open science.
 You can incorporate this with the text described below.
 
-Summary paragraph: Review some of the resources above and post a
-summary of it on the course message board.
+Summary paragraph:
+Review some of the resources above and post a
+summary of two (or more) *Texts* or *Long videos*
+on the course message board.
 This summary should be only one or two
 paragraphs and should give overview of what you learned from the
-resources.
-This about this text as help to other students who
+resources and how can this change how you do research.
+Additionally, think about this text as a help to other students who
 did not see this particular resource or
 are deciding if it is worth to read it.
