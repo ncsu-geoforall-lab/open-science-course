@@ -25,10 +25,11 @@ Resources
 Texts
 `````
 
-* `Markdown <https://daringfireball.net/projects/markdown/>`_ (Original Daring Fireball document)
-* `Creative Commons Licenses <https://creativecommons.org/licenses/>`_ (About The Licenses)
 * `Freemium <https://en.wikipedia.org/wiki/Freemium>`_ (Wikipedia)
 * `Gratis versus libre <https://en.wikipedia.org/wiki/Gratis_versus_libre>`_ (Wikipedia)
+* `Markdown <https://daringfireball.net/projects/markdown/>`_ (Original Daring Fireball document)
+* `In the beginning, there is Markdown <https://heracl.es/markdown>`_
+* `Creative Commons Licenses <https://creativecommons.org/licenses/>`_ (About The Licenses)
 
 Videos
 ``````
