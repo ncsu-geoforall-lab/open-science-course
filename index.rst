@@ -4,10 +4,10 @@ NCSU GIS 610-003/603: Tools for open geospatial science
 Description
 -----------
 
-.. figure:: img/gear_wheel.png
+.. image:: img/gear_wheel.png
    :width: 20%
    :alt: open science (graphics)
-   :figclass: small-image-right
+   :class: small-image-right
 
 The course will cover emerging field of open science and will deal with
 reproducibility and replicability challenges of computational research.
