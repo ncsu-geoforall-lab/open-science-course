@@ -103,6 +103,14 @@ State of the Map US Boulder (October 19-22, OpenStreetMap),
 AllThingsOpen Raleigh (October 23-24), and
 AGU New Orleans (December 11-15, several sessions related to open).
 
+Instructor
+----------
+
+Vaclav Petras and Helena Mitasova
+
+Office hours (Vaclav Petras):
+Tuesday 3:00 - 4:00pm and Thursday 3:00 - 4:00pm
+Before coming confirm by email the time and date (vpetras).
 
 Software
 --------

@@ -1,19 +1,30 @@
 Collaborative writing of scientific papers
 ==========================================
 
+We will look at Authorea, one of the platforms for creating scientific
+papers online in a collaborative way. Then we will look at what is
+Markdown and how do we use it on Authorea.
+Finally, we will look at one aspect of open access, particularly
+licensing, i.e. what can happen with the paper after it is published.
+
 Tools
 -----
 
 Authorea
 ````````
 
+Authorea is freemium cloud platform for writing scientific articles.
+Try writing a document at:
+
 https://www.authorea.com/
-
-freemium cloud platform
-
 
 Markdown
 ````````
+
+Markdown is a way how include things such a headings and lists into
+a documents while still keeping it as a simple text file.
+Generally speaking, Markdown is a markup language like HTML but simpler
+(and also less powerful).
 
 In Authorea, go to *Insert* -> *Markdown* and type or copy paste there
 the following text:
@@ -42,9 +53,9 @@ Open access and licenses
 Publishing an article as open access is usually achieved by licensing
 it using one of the Creative Commons licenses.
 
-For example, MPDI uses CC BY (Creative Commons Attribution License).
+For example, MDPI uses CC BY (Creative Commons Attribution License).
 In `a description of an article <http://www.mdpi.com/2220-9964/4/2/942>`_
-MPDI says:
+MDPI says:
 
     This is an open access article distributed under the Creative Commons
     Attribution License which permits unrestricted use, distribution,
@@ -100,3 +111,29 @@ References
 * Herb, Ulrich (2014). Total numbers and shares of Open Access Journals using Creative Commons licenses as listed by the Directory of Open Access Journals; ZENODO; DOI: `10.5281/zenodo.8327 <http://dx.doi.org/10.5281/zenodo.8327>`_
 * `The Open Definition <http://opendefinition.org/>`_ (accessed: 2017-08-22)
 * Claire Redhead. 2012. Why CC-BY? URL: https://oaspa.org/why-cc-by/ (accessed: 2017-08-22)
+
+Assignment
+----------
+
+Write a paragraph or two using about Authorea or Creative Commons into
+the following documents. Use Markdown to write it. Include a heading
+of the topic you are writing about and some other formating. Pick
+a topic which is not yet described by other student.
+
+If writting about Authorea the topics may include:
+using Markdown, using the default editor, using LaTeX, including
+figures, tables, exports, imports, account policies and payments,
+etc. Try out the feature as you are writing about it.
+If writing about Creative Commons, the topics may include:
+description of a specific license, advantages and disadvantages,
+use cases, etc. Feel free to search for existing texts
+and draw from them (and cite and quote them).
+
+You will need to request access by emailing the class instructor (vpetras).
+The links to the documents follow.
+
+Authorea:
+https://www.authorea.com/users/23014/articles/195127-title
+
+Creative Commons:
+https://www.authorea.com/users/23014/articles/195129-title
