@@ -18,6 +18,11 @@ Try writing a document at:
 
 https://www.authorea.com/
 
+Note: When creating account or article on Authorea, use your
+institutional (NCSU) email, but don't send announcement about it
+to all people in the institution (which is something Authorea may
+do by default if you won't say no).
+
 Markdown
 ````````
 
