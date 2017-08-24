@@ -86,6 +86,7 @@ The CC BY-SA license requires that the derived works are distributed
 only under the same or similar license.
 
 Creative Common licenses have both "human-readable summaries"
+("plain English")
 and a full legal language license documents.
 
 Resources
@@ -103,6 +104,7 @@ Texts
 Videos
 ``````
 
+* `Working with references in Authorea <http://fatra.cnr.ncsu.edu/open-science-course/writing-authorea-references.mp4>`_ (recording from the class, 10 mins)
 * `Creative Commons & Copyright Info <https://www.youtube.com/watch?v=8YkbeycRa2A>`_
 
 References
