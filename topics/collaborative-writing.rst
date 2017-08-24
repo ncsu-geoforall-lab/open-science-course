@@ -127,7 +127,7 @@ the following documents. Use Markdown to write it. Include a heading
 of the topic you are writing about and some other formating. Pick
 a topic which is not yet described by other student.
 
-If writting about Authorea the topics may include:
+If writing about Authorea the topics may include:
 using Markdown, using the default editor, using LaTeX, including
 figures, tables, exports, imports, account policies and payments,
 etc. Try out the feature as you are writing about it.
