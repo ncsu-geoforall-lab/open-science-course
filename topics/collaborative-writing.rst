@@ -109,7 +109,11 @@ Texts
 Videos
 ``````
 
+* `Markdown in Authorea <http://fatra.cnr.ncsu.edu/open-science-course/writing-markdown.mp4>`_ (recording from the class, 4 mins)
 * `Working with references in Authorea <http://fatra.cnr.ncsu.edu/open-science-course/writing-authorea-references.mp4>`_ (recording from the class, 10 mins)
+* `Open Access and Creative Commons Licenses <http://fatra.cnr.ncsu.edu/open-science-course/writing-cc-licenses.mp4>`_ (recording from the class, 13 mins)
+* `Open definition is about freedoms <http://fatra.cnr.ncsu.edu/open-science-course/writing-open-and-free.mp4>`_ (recording from the class, 3 mins)
+* `Is open a reaction to proprietary? <http://fatra.cnr.ncsu.edu/open-science-course/writing-reaction-or-standard.mp4>`_ (recording from the class, 3 mins)
 * `Creative Commons & Copyright Info <https://www.youtube.com/watch?v=8YkbeycRa2A>`_
 
 References

@@ -92,7 +92,7 @@ Schedule
 12. November 1   `Command line and Python tools for geospatial work <topics/.html>`_
 13. November 8   `Reproducible computational environments <topics/.html>`_
 14. November 15  `Writing and reproducing an open science paper <topics/.html>`_
-=== ========= ===
+=== ============ ===
 
 Assignments are always due the next week at the end of the day
 of the on-campus class which is Wednesday.
