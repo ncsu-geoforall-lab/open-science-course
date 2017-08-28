@@ -1,8 +1,6 @@
 Advanced tools for papers and reports
 =====================================
 
-what-you-see-is-what-you-get
-
 Tools
 -----
 
@@ -83,13 +81,15 @@ Resources
 Texts
 `````
 
+* `A very basic guide to start writing in LaTeX right now <https://medium.com/the-start-codon/a-very-basic-guide-to-start-writing-in-latex-right-now-1c9062e2415a>`_
+* `How to use Overleaf to Write your papers: Part I: Basic Minimalist setup <https://medium.com/thoughts-philosophy-writing/how-to-use-overleaf-to-write-your-papers-part-i-basic-minimalist-setup-6599268c095f>`_
+* `How to use Overleaf to Write your papers: Part II: Tables, Figures, Bibliography <https://medium.com/thoughts-philosophy-writing/how-to-use-overleaf-to-write-your-papers-part-ii-tables-figures-bibliography-7a4e921227fd>`_
+* `How to use Overleaf to Write your papers: Part III: How to use Markdown with Overleaf with help from Git and Pandoc <https://medium.com/thoughts-philosophy-writing/how-to-use-overleaf-to-write-your-papers-part-iii-how-to-use-markdown-with-overleaf-with-help-80f1e27a65a>`_
 * `Writing Technical Papers with Markdown <http://blog.kdheepak.com/writing-papers-with-markdown.html>`_
 * `reStructuredText Primer for Sphinx <http://www.sphinx-doc.org/en/stable/rest.html>`_
 * `Differencees between reStructuredText, Docutils, and Sphinx <https://coderwall.com/p/vemncg/what-is-the-difference-rest-docutils-sphinx-readthedocs>`_
 * `reStructuredText vs Markdown for documentation <http://zverovich.net/2016/06/16/rst-vs-markdown.html>`_
-* `How to use Overleaf to Write your papers: Part I: Basic Minimalist setup <https://medium.com/thoughts-philosophy-writing/how-to-use-overleaf-to-write-your-papers-part-i-basic-minimalist-setup-6599268c095f>`_
-* `How to use Overleaf to Write your papers: Part II: Tables, Figures, Bibliography <https://medium.com/thoughts-philosophy-writing/how-to-use-overleaf-to-write-your-papers-part-ii-tables-figures-bibliography-7a4e921227fd>`_
-* `How to use Overleaf to Write your papers: Part III: How to use Markdown with Overleaf with help from Git and Pandoc <https://medium.com/thoughts-philosophy-writing/how-to-use-overleaf-to-write-your-papers-part-iii-how-to-use-markdown-with-overleaf-with-help-80f1e27a65a>`_
+* `How to Organise writing and research using Overleaf, Evernote, and Zotero <https://medium.com/@arinbasu/how-to-organise-writing-and-research-using-overleaf-evernote-and-zotero-4c51870a91dc>`_ (example of full workflow involving several tools, some parts can be left out or replaced as needed)
 * `WYSIWYG <https://en.wikipedia.org/wiki/WYSIWYG>`_
 * `WYSIWYM <https://en.wikipedia.org/wiki/WYSIWYM>`_
 
@@ -98,3 +98,9 @@ Videos
 
 * `An Introduction to Overleaf <https://www.youtube.com/watch?v=g8Ejj0T0yG4>`_ (2:53 mins)
 * `Beginners LaTeX Tutorial with ShareLaTeX <https://www.youtube.com/watch?v=Qg2WtaSy-zQ&list=PLCRFsOKSM7ePUBOfh3O-K5XZldM5uCPwk>`_ (playlist)
+
+Related services
+````````````````
+
+* `Detexify <http://detexify.kirelabs.org/classify.html>`_ (converts handwritten symbols to LaTeX)
+* `MyScript Webdemo: Math <http://webdemo.myscript.com/views/math.html>`_ (converts handwritten equations to LaTeX)
