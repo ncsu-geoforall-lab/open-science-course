@@ -272,8 +272,11 @@ figure {
 div .figure {
     text-align: center;
     display: table;
-    max-width: 50%;
     margin: 10px auto; /* for centered */
+}
+
+div .figure > img {
+    max-width: 70%;
 }
 
 .small-image-right {
