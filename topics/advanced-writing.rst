@@ -52,17 +52,17 @@ Here is an example LaTeX code::
 
     Part of the PDF generated from the LaTeX code
 
-What is LaTeX? LaTeX is a typesetting system or simply a program
+**What is LaTeX?** LaTeX is a typesetting system or simply a program
 for creating text documents such as scientific papers or posters.
 Generally speaking LaTeX is a desktop publishing (DTP) program.
 
-How to pronounce LaTeX?
+**How to pronounce LaTeX?**
 The *La* at the beginning is coming from
 original author Leslie Lamport who extended *TeX*.
 The *X* at the end is an uppercase Greek letter chi.
 In English, LaTeX is usually pronounced lah-tekh, lah-tek, or lay-tek.
 
-What is LaTeX good for?
+**What is LaTeX good for?**
 The usage is very broad. It is most commonly used for technical and
 scientific texts such as scientific papers, dissertations, books
 and textbooks.
@@ -70,7 +70,7 @@ It is also used for presentation slides or scientific posters.
 The code can be easily generated e.g. in Python, so it is used
 for automated generation of PDFs.
 
-What LaTeX does?
+**What LaTeX does?**
 Besides common formatting of text such as cursive and bold,
 LaTeX can automatically create table of contents, numbered headings,
 cross references, footnotes, and literature citations.
@@ -79,7 +79,7 @@ bullet points as everything is very organized and controlled.
 When using LaTeX you don't have to think much about typographic rules
 or know them because LaTeX will take of it.
 
-What is LaTeX best know for?
+**What is LaTeX best know for?**
 LaTeX is often highlighted as a tool to typeset math equations
 and the LaTeX syntax or LaTeX itself is used in other tools
 to create math equations.
@@ -87,7 +87,7 @@ LaTeX is also generally better than other tools in typographically
 perfect justification of text into block where LaTeX automatically and
 reliably hyphenates words in different languages.
 
-What are the limitations of LaTeX?
+**What are the limitations of LaTeX?**
 The workflow usually requires
 The functionality of LaTeX is practically unlimited since it is
 a full programming language.
@@ -96,13 +96,13 @@ Generally, this is of course not practiced because there is a large
 amount of packages which usually already cover the functionality
 you wish for.
 
-Do I have to remember all the commands?
+**Do I have to remember all the commands?**
 That's not necessary, because the common commands can be included using
 a button in a editor.
 For complicated and less common commands, people usually use existing
 examples online.
 
-What is the bare minimum I need to learn?
+**What is the bare minimum I need to learn?**
 The important part are the concepts, not the exact commands.
 First part is to become comfortable with textual representation of the
 formatting, for example that the bold text is not in bold in source text
@@ -110,7 +110,7 @@ but it is marked with the specific command.
 Another part is that everything is a command. Creating a table of
 contents is as simple as writing bold text, it is one command.
 
-What is the difference between LaTeX and a text editor?
+**What is the difference between LaTeX and a text editor?**
 First, LaTeX is not a text editor. It is a program which creates PDF or
 other documents from plain text files which contain LaTeX commands.
 It is focused on text, not graphics, but it is actually quite powerful
@@ -120,13 +120,13 @@ and supports user in writing LaTeX documents.
 Things related to the text file such as spell checking are handled
 by the text editor (rather than LaTeX).
 
-How is LaTeX used without Overleaf?
+**How is LaTeX used without Overleaf?**
 As users, we write text in a text editor which supports LaTeX.
 Whenever we run LaTeX (e.g. using a button or shortcut the in editor),
 LaTeX creates a PDF document (typically) which can be viewed in a PDF
 viewer (or embedded viewer in the editor).
 
-How LaTeX works? As users, we add tags (or commands) to the text which
+**How LaTeX works?** As users, we add tags (or commands) to the text which
 tell LaTeX how to process and typeset the text. It is similar to how
 HTML and web browser work when formatting web pages.
 
@@ -238,7 +238,7 @@ Docutils: http://docutils.sourceforge.net
 
 Sphinx: http://sphinx-doc.org
 
-reStructuredText is an plain text markup syntax similar to
+**reStructuredText** is an plain text markup syntax similar to
 aforementioned Markdown. It is often used for software
 documentation, for example in Python docstrings.
 reStructuredText is, unlike Markdown, designed for extensibility for
@@ -246,14 +246,14 @@ specific application domains.
 reStructuredText is applicable to non-trivial cases like LaTeX,
 but still striving to keep simple syntax like Markdown.
 
-Docutils is an open-source text processing system for processing
+**Docutils** is an open-source text processing system for processing
 plain text into formats, such as HTML, LaTeX, man-pages, open-document
 or XML.
 Docutils processes reStructuredText and can be used from command line
 or as a Python package. Another software which can process
 reStructuredText in a similar manner is Pandoc.
 
-Sphinx is a tool that creates documentation from reStructuredText sources.
+**Sphinx** is a tool that creates documentation from reStructuredText sources.
 It is used for Python documentation and it is universal enough to be
 used for software projects in general.
 The output formats include HTML, LaTeX (for printable PDF versions),
