@@ -96,7 +96,7 @@ Texts
 Videos
 ``````
 
-* `An Introduction to Overleaf <https://www.youtube.com/watch?v=g8Ejj0T0yG4>`_ (2:53 mins)
+* `An Introduction to Overleaf <https://www.youtube.com/watch?v=g8Ejj0T0yG4>`_ (3 mins)
 * `Beginners LaTeX Tutorial with ShareLaTeX <https://www.youtube.com/watch?v=Qg2WtaSy-zQ&list=PLCRFsOKSM7ePUBOfh3O-K5XZldM5uCPwk>`_ (playlist)
 
 Related services
@@ -104,3 +104,40 @@ Related services
 
 * `Detexify <http://detexify.kirelabs.org/classify.html>`_ (converts handwritten symbols to LaTeX)
 * `MyScript Webdemo: Math <http://webdemo.myscript.com/views/math.html>`_ (converts handwritten equations to LaTeX)
+* `Try Pandoc! <https://pandoc.org/try/>`_ (format conversions using Pandoc)
+
+Assignment
+----------
+
+Take some of your documents which contains headings, figures, tables,
+equations, and bibliography and recreate it in LaTeX. If you don't have
+a suitable document, you can use this paper_ or any other suitable
+document which contains all or most of the aforementioned elements.
+Scientific papers will usually work. If you are writing
+a report for assignment from another class, you can use that as well.
+In any case, you don't have to recreate the whole document,
+include just enough to try each of the elements.
+
+.. _document: https://opengeospatialdata.springeropen.com/articles/10.1186/s40965-017-0021-8
+
+Alternatively, if you already familiar with LaTeX,
+extend the following LaTeX document in Overleaf
+by providing a comprehensive description of some basic feature such as
+tables, equations or bibliography,
+or introduction to some advanced feature or package.
+Here is a read-only link for document
+(read-write link will be shared on the message board):
+
+https://www.overleaf.com/read/gwmnkbcdrzmz
+
+Three more alternative or bonus tasks:
+Create some other type of document in LaTeX other
+than a paper, for example poster or presentation slides
+(link a read-only version in the document linked above).
+Install LaTeX on your computer and try the workflow on your desktop
+instead of using Overleaf. Upload your resulting document to Overleaf
+and link it and describe in the above document what your installed and
+did and what were the other options you had.
+Use Pandoc, Docutils or Sphinx to create a LaTeX document from some
+other format such as reStructuredText.
+Again, upload and link the result and describe the process.
