@@ -12,19 +12,102 @@ https://www.overleaf.com
 Overleaf is a freemium cloud platform with core processing
 backend - LaTeX - which is open source software.
 
-Overleaf project can be downloaded as a ZIP file of text files and
-images which can be processed on any computer with LaTeX installed.
-Typical LaTeX installation consist of several backend (command line)
-tools such as *tex* or *pdflatex* and a dedicated text editor,
-for example *Texmaker* or *Kile*,
-which understands the LaTeX syntax and can compile the files into
-an output document, typically PDF.
-Thanks to this, Overleaf is a cloud platform which provides users
-with a way out, thus preserving their freedom (in the area of software,
-tools, and service providers).
+::
 
-Overleaf also has a rich text mode which is good for people who don't
-know LaTeX.
+    \section{This is a heading}
+
+    This is \emph{emphasis}.
+
+    \begin{itemize}
+    \item This is a list.
+    \item Of different items.
+    \end{itemize}
+
+.. figure:: img/latex.png
+
+    LaTeX when edited in a text editor or in Overleaf
+
+.. figure:: img/latex_rendered.png
+
+    Part of the PDF generated from the LaTeX code
+
+What is LaTeX? LaTeX is a typesetting system or simply a program
+for creating text documents such as scientific papers or posters.
+Generally speaking LaTeX is a desktop publishing (DTP) program.
+
+How to pronounce LaTeX?
+The *La* at the beginning is coming from
+original author Leslie Lamport who extended *TeX*.
+The *X* at the end is an uppercase Greek letter chi.
+In English, LaTeX is usually pronounced lah-tekh, lah-tek, or lay-tek.
+
+What is LaTeX good for?
+The usage is very broad. It is most commonly used for technical and
+scientific texts such as scientific papers, dissertations, books
+and textbooks.
+It is also used for presentation slides or scientific posters.
+The code can be easily generated e.g. in Python, so it is used
+for automated generation of PDFs.
+
+What LaTeX does?
+Besides common formatting of text such as cursive and bold,
+LaTeX can automatically create table of contents, numbered headings,
+cross references, footnotes, and literature citations.
+Advantages of LaTeX are best visible when creating numbered list and
+bullet points as everything is very organized and controlled.
+When using LaTeX you don't have to think much about typographic rules
+or know them because LaTeX will take of it.
+
+What is LaTeX best know for?
+LaTeX is often highlighted as a tool to typeset math equations
+and the LaTeX syntax or LaTeX itself is used in other tools
+to create math equations.
+LaTeX is also generally better than other tools in typographically
+perfect justification of text into block where LaTeX automatically and
+reliably hyphenates words in different languages.
+
+What are the limitations of LaTeX?
+The workflow usually requires
+The functionality of LaTeX is practically unlimited since it is
+a full programming language.
+If LaTeX can't do something, user can always program it to do it.
+Generally, this is of course not practiced because there is a large
+amount of packages which usually already cover the functionality
+you wish for.
+
+Do I have to remember all the commands?
+That's not necessary, because the common commands can be included using
+a button in a editor.
+For complicated and less common commands, people usually use existing
+examples online.
+
+What is the bare minimum I need to learn?
+The important part are the concepts, not the exact commands.
+First part is to become comfortable with textual representation of the
+formatting, for example that the bold text is not in bold in source text
+but it is marked with the specific command.
+Another part is that everything is a command. Creating a table of
+contents is as simple as writing bold text, it is one command.
+
+What is the difference between LaTeX and a text editor?
+First, LaTeX is not a text editor. It is a program which creates PDF or
+other documents from plain text files which contain LaTeX commands.
+It is focused on text, not graphics, but it is actually quite powerful
+in creating graphics as well.
+LaTeX is commonly used with a text editor which understands LaTeX
+and supports user in writing LaTeX documents.
+Things related to the text file such as spell checking are handled
+by the text editor (rather than LaTeX).
+
+How is LaTeX used without Overleaf?
+As users, we write text in a text editor which supports LaTeX.
+Whenever we run LaTeX (e.g. using a button or shortcut the in editor),
+LaTeX creates a PDF document (typically) which can be viewed in a PDF
+viewer (or embedded viewer in the editor).
+
+How LaTeX works? As users, we add tags (or commands) to the text which
+tell LaTeX how to process and typeset the text. It is similar to how
+HTML and web browser work when formatting web pages.
 
 .. figure:: img/word_latex_markdown_learning_curve.png
 
@@ -40,6 +123,19 @@ know LaTeX.
 
 .. _Writing Technical Papers with Markdown: http://blog.kdheepak.com/writing-papers-with-markdown.html
 
+Overleaf project can be downloaded as a ZIP file of text files and
+images which can be processed on any computer with LaTeX installed.
+Typical LaTeX installation consist of several backend (command line)
+tools such as *tex* or *pdflatex* and a dedicated text editor,
+for example *Texmaker* or *Kile*,
+which understands the LaTeX syntax and can compile the files into
+an output document, typically PDF.
+Thanks to this, Overleaf is a cloud platform which provides users
+with a way out, thus preserving their freedom (in the area of software,
+tools, and service providers).
+
+Overleaf also has a rich text mode which is good for people who don't
+know LaTeX.
 
 
 ShareLaTeX
@@ -50,11 +146,18 @@ https://www.sharelatex.com
 ShareLaTeX is a freemium cloud platform and an open source software
 (i.e. you can either use the freemium cloud platform or setup ShareLaTeX
 on any server).
-ShareLaTeX is using GNU AGPL license.
+ShareLaTeX is under GNU AGPL license.
+
+You can use LaTeX in ShareLaTeX in the same way as you can use it in
+Overleaf.
 
 Markdown with Pandoc
 ````````````````````
 http://pandoc.org
+
+Markdown is a simple markup language for include formatting into a
+plain text document. Pandoc is a conversion tool which can convert
+Markdown files and many other files into other formats.
 
 Pandoc is licensed under GNU GPL.
 
