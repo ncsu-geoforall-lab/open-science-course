@@ -26,6 +26,22 @@ tools, and service providers).
 Overleaf also has a rich text mode which is good for people who don't
 know LaTeX.
 
+.. figure:: img/word_latex_markdown_learning_curve.png
+
+    A very "scientific" comparison of Word, LaTeX, and Markdown.
+    This figure is from `Writing Technical Papers with Markdown`_ © 2015 Dheepak Krishnamurthy.
+
+.. _Writing Technical Papers with Markdown: http://blog.kdheepak.com/writing-papers-with-markdown.html
+
+.. figure:: img/programming_languages_as_an_essay.jpg
+
+    If programming languages were essays.
+    (Original author unknown.)
+
+.. _Writing Technical Papers with Markdown: http://blog.kdheepak.com/writing-papers-with-markdown.html
+
+
+
 ShareLaTeX
 ``````````
 
