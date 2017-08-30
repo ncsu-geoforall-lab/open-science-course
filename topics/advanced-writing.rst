@@ -1,18 +1,39 @@
 Advanced tools for papers and reports
 =====================================
 
+In this part we focus on LaTeX, how to use with Overleaf,
+and we compare it with Markdown and reStructuredText
+which can be used e.g. with Pandoc.
+
 Tools
 -----
 
-LaTeX with Overleaf
-```````````````````
+Overleaf
+````````
 
 https://www.overleaf.com
 
 Overleaf is a freemium cloud platform with core processing
 backend - LaTeX - which is open source software.
 
-::
+Overleaf project can be downloaded as a ZIP file of text files and
+images which can be processed on any computer with LaTeX installed.
+Typical LaTeX installation consist of several backend (command line)
+tools such as *tex* or *pdflatex* and a dedicated text editor,
+for example *Texmaker* or *Kile*,
+which understands the LaTeX syntax and can compile the files into
+an output document, typically PDF.
+Thanks to this, Overleaf is a cloud platform which provides users
+with a way out, thus preserving their freedom (in the area of software,
+tools, and service providers).
+
+Overleaf also has a rich text mode which is good for people who don't
+know LaTeX.
+
+LaTeX
+`````
+
+Here is an example LaTeX code::
 
     \section{This is a heading}
 
@@ -119,23 +140,70 @@ HTML and web browser work when formatting web pages.
 .. figure:: img/programming_languages_as_an_essay.jpg
 
     If programming languages were essays.
+    Note the LaTeX part: *Your paper makes no sense, but it's the
+    most beautiful thing I ever laid my eyes on.*
     (Original author unknown.)
 
 .. _Writing Technical Papers with Markdown: http://blog.kdheepak.com/writing-papers-with-markdown.html
 
-Overleaf project can be downloaded as a ZIP file of text files and
-images which can be processed on any computer with LaTeX installed.
-Typical LaTeX installation consist of several backend (command line)
-tools such as *tex* or *pdflatex* and a dedicated text editor,
-for example *Texmaker* or *Kile*,
-which understands the LaTeX syntax and can compile the files into
-an output document, typically PDF.
-Thanks to this, Overleaf is a cloud platform which provides users
-with a way out, thus preserving their freedom (in the area of software,
-tools, and service providers).
+Here is an example of one of the advanced things you can do in LaTeX
+and that's definition of your own command. We will define command
+``\gmod`` which we will use in text to refer to GRASS GIS modules
+(for the purpose of this example)::
 
-Overleaf also has a rich text mode which is good for people who don't
-know LaTeX.
+    \newcommand{\gmod}[1]{\emph{#1}}
+
+The parameter is refereed to using ``#1``. Otherwise the syntax is::
+
+    \newcommand{\nameOfTheNewCommand}[number of parameters]{definition}
+
+Here is how we use it::
+
+    Let's talk about some GRASS GIS modules, for example we can talk
+    about \gmod{g.region} or perhaps \gmod{r.shade}. The \gmod{v.buffer}
+    module is good too.
+
+So far we were defining just the style (emphasis in particular),
+let's add a link to GRASS GIS documentation where name of the module
+is part of the URL which looks for example like::
+
+    https://grass.osgeo.org/grass72/manuals/g.region.html
+
+The modified version of the command now uses ``\href`` command which
+has two parameters, the URL and the text to show::
+
+    \newcommand{\gmod}[1]{\href{https://grass.osgeo.org/grass72/manuals/#1.html}{\emph{#1}}}
+
+During compilation, newlines are converted to spaces and whitespace at
+the beginning of the line is ignored, so we can also write the same
+on multiple lines. However, in that case, it is often necessary to
+(and a best practice) to include percent signs at the end of the line
+as follows::
+
+    \newcommand{\gmod}[1]{%
+        \href%
+            {https://grass.osgeo.org/grass72/manuals/#1.html}%
+            {\emph{#1}}%
+    }
+
+.. figure:: img/latex_poster.png
+
+    An example of a poster created in LaTeX using *tikzposter* package.
+
+.. figure:: img/latex_slide.png
+
+    An example of one slide from a set of presentation slides created
+    in LaTeX using *beamer* package.
+
+.. figure:: img/latex_calendar.jpg
+
+    Calendar as dodecahedron created in LaTeX using *tikz* package
+    as an example what can be done.
+    See it at TeXample.net_ or in Overleaf_.
+
+.. _TeXample.net: http://www.texample.net/tikz/examples/foldable-dodecahedron-with-calendar/
+.. _Overleaf: https://www.overleaf.com/docs?snip_uri=http://www.texample.net/media/tikz/examples/TEX/foldable-dodecahedron-with-calendar.tex&splash=none
+
 
 
 ShareLaTeX
