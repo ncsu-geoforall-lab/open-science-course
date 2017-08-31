@@ -296,7 +296,7 @@ Related services
 Assignment
 ----------
 
-Take some of your documents which contains headings, figures, tables,
+Take some of your documents which contain headings, figures, tables,
 equations, and bibliography and recreate it in LaTeX. If you don't have
 a suitable document, you can use this paper_ or any other suitable
 document which contains all or most of the aforementioned elements.
