@@ -30,32 +30,23 @@ Topics
 ------
 
 1. Open science
-
-   a. Motivation: replicability, repeatability, recomputability, reusability, reproducibility
-   b. Components: Open Data, Open Formats, Open Standards, Open Source, Open Hardware, Open Methodology, Open Peer Review, Open Access, Open Educational Resources
-
+    a. Motivation: replicability, repeatability, recomputability, reusability, reproducibility
+    b. Components: Open Data, Open Formats, Open Standards, Open Source, Open Hardware, Open Methodology, Open Peer Review, Open Access, Open Educational Resources
 2. Collaborative and automated authoring tools
-
-   a. Online environments
-   b. Report generation
-   c. Revision control
-
+    a. Online environments
+    b. Report generation
+    c. Revision control
 3. Geospatial tools
-
-   a. Common open source GIS tools
-   b. Geospatial research tools
-   c. Command line tools
-
+    a. Common open source GIS tools
+    b. Geospatial research tools
+    c. Command line tools
 4. Publishing methods as code
-
-   a. Writing code
-   b. Creating new tools
-   c. Open source projects and community
-
+    a. Writing code
+    b. Creating new tools
+    c. Open source projects and community
 5. Reproducibility
-
-   a. Computational notebooks
-   b. Reproducible environments
+    a. Computational notebooks
+    b. Reproducible environments
 
 Instructors
 -----------
