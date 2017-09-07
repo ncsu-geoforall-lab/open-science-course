@@ -204,3 +204,7 @@ We will use the following repository as the repository we are trying to
 submit changes to. (Tip: Check `CONTRIBUTING.md`.)
 
 https://github.com/wenzeslaus/test-repository-for-open-science-class
+
+Alternatively, you can use the same steps as for the above repository
+and submit some corrections or extensions to the repository for this
+course.
