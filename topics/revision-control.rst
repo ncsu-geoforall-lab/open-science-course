@@ -140,7 +140,18 @@ You can choose from two options how to do that.
 Software licenses
 -----------------
 
+Proprietary software use is usually governed by end user license
+agreements (EULA). Users usually buy permission to use the software.
+The permission is often called license.
+
+Open source software use governed by open source licenses.
+There are different licenses with different purposes.
+The following website is meant for choosing a license for your own
+project and gives a good practical overview of some of the basic
+concepts and differences:
+
 https://choosealicense.com/
+
 
 Resources
 ---------
