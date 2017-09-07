@@ -113,6 +113,29 @@ using ``git checkout``. Usually this is done together in one command::
 Now we have a branch called ``experiment`` and we are currently in it.
 In other words, the ``experiment`` branch is active now.
 
+Submitting changes to a project
+-------------------------------
+
+You can submit a patch (aka diff) as a file.
+
+You can submit a pull request.
+
+You have two options how to submit a change to the code in the repository.
+You can submit a patch (aka diff) as a file or you can submit a pull request.
+
+Before you submit a change, check the existing issues and pull requirests if they don't already make the change you are submitting.
+
+## Open an issue (bug report) with patch
+
+Clone this repository, make changes and then do
+(assuming unix-like command line, i.e. Git Bash on Windows):
+
+  git diff > your_additons.diff
+
+Then open a new issue and add this
+
+You can choose from two options how to do that.
+
 
 Software licenses
 -----------------
@@ -159,23 +182,25 @@ the operation looks something like:
     git clone https://git.overleaf.com/somehash
 
 Make some changes, commit, push, and see what happened in Overleaf.
-Then make some changes in Overleaf and then pull in your desktop
+Then make some changes in Overleaf and then pull into your desktop
 installation. You can repeat that so you feel comfortable.
 
 Third, create a repository on GitHub, GitLab, Bitbucket, or some other
-Git service. The will be a guide, wizard, or form which will lead you
-through it. Then clone the repository on your computer and do some
-commits.
+Git service. You will need to create an account. There will be a guide,
+wizard, or form which will lead you
+through everything. Once you have a repository there, clone the
+repository on your computer and do some commits.
+Push the changes to the remote repository and inspect them online.
+You can also make some changes online if that's possible (like in case
+of GitHub) and pull the changes to your local repository.
 Again, you can repeat that so you feel comfortable.
 
 Fourth, submit changes to some repository which is not yours.
 For this we will use GitHub, but the workflow would be similar in other
-cases as well. You can choose from two options how to do that. Different
-projects prefer one or the other. We will use the following repository
-as the repository we are trying to submit changes to.
+cases as well. However, different projects prefer different practices
+and it is best to check guidelines for contributing. These are often
+in a file called something like ``CONTRIBUTING``.
+We will use the following repository as the repository we are trying to
+submit changes to. (Tip: Check `CONTRIBUTING.md`.)
 
-URL to be added
-
-You can submit a patch (aka diff) as a file.
-
-You can submit a pull request.
+https://github.com/wenzeslaus/test-repository-for-open-science-class
