@@ -116,26 +116,24 @@ In other words, the ``experiment`` branch is active now.
 Submitting changes to a project
 -------------------------------
 
-You can submit a patch (aka diff) as a file.
+Usually there are two options how to submit a change to the code in the
+repository of a project we want to contribute code to.
+You can submit a patch (aka diff) as a file or you can submit a pull
+request.
 
-You can submit a pull request.
+The basic way is to submit a patch (aka diff) as a file.
+First you clone the repository, make changes and then create the patch.
+The patch (diff) is obtained using command similar to the following
+example::
 
-You have two options how to submit a change to the code in the repository.
-You can submit a patch (aka diff) as a file or you can submit a pull request.
+    git diff > your_additions.diff
 
-Before you submit a change, check the existing issues and pull requirests if they don't already make the change you are submitting.
-
-## Open an issue (bug report) with patch
-
-Clone this repository, make changes and then do
 (assuming unix-like command line, i.e. Git Bash on Windows):
 
-  git diff > your_additons.diff
+Now open an issue (bug report) and add the patch.
 
-Then open a new issue and add this
-
-You can choose from two options how to do that.
-
+However, now many projects use pull requests instead of sending
+a file. See the assignment for this workflow.
 
 Software licenses
 -----------------
