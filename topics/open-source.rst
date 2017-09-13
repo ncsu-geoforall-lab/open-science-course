@@ -4,8 +4,10 @@ How open source communities and development work
 Resources
 ---------
 
-Texts
-`````
+Slides
+``````
+
+* `Lecture slides <../lectures/open-source.html>`_
 
 Videos
 ``````
