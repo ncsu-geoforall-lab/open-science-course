@@ -1,0 +1,350 @@
+<section>
+<h2>How open source communities and development work</h2>
+    <h3 style="margin-top: 0.5em">
+        Vaclav (Vashek) Petras</h3>
+    <p class="title-foot">
+        <a href="http://www.ncsu.edu/" title="North Carolina State University">NCSU</a>
+        <a href="http://geospatial.ncsu.edu/osgeorel/" title="NCSU GeoForAll Lab">GeoForAll Lab</a>
+        at the
+        <a href="http://geospatial.ncsu.edu/" title="Center for Geospatial Analytics">Center for Geospatial Analytics</a>
+        <br>
+        North Carolina State University
+    </p>
+    <p>
+        NCSU GIS 610-003/603: Tools for open geospatial science<br>
+        September 13, 2017
+    </p>
+</section>
+
+
+<section>
+<h1>Why open source</h1>
+</section>
+
+
+<section>
+<h2>Motivation for open source</h2>
+<ul>
+<li><em>80% of developers used open source in past 12 months</em> <a href="#/fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></p>
+<ul>
+<li>99% in India and China
+<li>numbers greater for students in general
+</ul></li>
+<li>quality, customizability, no vendor lock-in, flexibility, interoperability <a href="#/fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>
+<li>no license fees
+</ul>
+</section>
+
+
+<section>
+<h2>Karen Sandler</h2>
+<ul>
+<li>executive director of the Software Freedom Conservancy
+<li>a cyborg lawyer <a href="#/fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a> <span class="math inline"><em></em><sup>,</sup></span> <a href="#/fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a>
+<li>pacemaker/defibrillator implanted
+<li>no review of the software or hardware available
+</ul>
+</section>
+
+
+<section>
+<h2>Free, Libre and Open Source Software</h2>
+<p>Very similar to each other:</p>
+<ul>
+<li>free software
+<li>open source software
+<li>free/libre software
+<li>FS, OSS, FOSS, FLOSS
+</ul>
+<p>Very different from FLOSS:</p>
+<ul>
+<li>proprietary software
+<li>freeware
+<li>shareware
+</ul>
+</section>
+
+
+<section>
+<h2>GRASS GIS</h2>
+<br>
+<img src="img/open/grass-gui.png" class="stretch">
+<p><a href="http://grass.osgeo.org/">http://grass.osgeo.org/</a></p>
+</section>
+
+
+<section>
+<h2>GRASS GIS</h2>
+<ul>
+<li>MS Windows, Mac OS X, GNU/Linux, clusters, …
+<li>Uses SQLite, GDAL/OGR, …
+<li>Used by QGIS, gvSIG, …
+<li>Works with R, PostGIS, …
+<li>graphical user interface, C, Python, command line
+<li>celebrated 30 years in 2013
+</ul>
+</section>
+
+
+<section>
+<h1>How open source geospatial development works inside</h1>
+</section>
+
+
+<section>
+<h2>Source code</h2>
+<br>
+<img src="img/open/source-aspect.png" class="stretch">
+<p><a href="http://trac.osgeo.org/grass/">http://trac.osgeo.org/grass/</a><br />
+<a href="http://trac.osgeo.org/grass/browser/grass/trunk/raster/r.slope.aspect/main.c#L790"></a></p>
+</section>
+
+
+<section>
+<h2>Changes</h2>
+<br>
+<img src="img/open/timeline.png" class="stretch">
+<p><a href="http://trac.osgeo.org/grass/timeline">http://trac.osgeo.org/grass/timeline</a></p>
+</section>
+
+
+<section>
+<h2>Ticket: Feature request</h2>
+<br>
+<img src="img/open/ticket-enhancement" alt="image" style="width:80.0%" /></p>
+<p><a href="http://trac.osgeo.org/grass/ticket/2368">http://trac.osgeo.org/grass/ticket/2368</a></p>
+</section>
+
+
+<section>
+<h2>Ticket: Bug report</h2>
+<br>
+<img src="img/open/ticket-defect-fixed" alt="image" style="width:90.0%" /></p>
+<p><a href="http://trac.osgeo.org/grass/ticket/2427">http://trac.osgeo.org/grass/ticket/2427</a></p>
+</section>
+
+
+<section>
+<h2>Ticket: Bug report</h2>
+<br>
+<img src="img/open/ticket-defect-fixed-comments.png" class="stretch">
+<p><a href="http://trac.osgeo.org/grass/ticket/2427">http://trac.osgeo.org/grass/ticket/2427</a></p>
+</section>
+
+
+<section>
+<h2>Ticket: Commit</h2>
+<br>
+<img src="img/open/changeset-kriging.png" class="stretch">
+<p><a href="http://trac.osgeo.org/grass/changeset/62446">http://trac.osgeo.org/grass/changeset/62446</a></p>
+</section>
+
+
+<section>
+<h2>Who can make changes?</h2>
+<p>Wikipedia:</p>
+<ul>
+<li>everybody can make changes
+</ul>
+<p>Open source projects:</p>
+<ul>
+<li>only people with granted access can make changes</p>
+<ul>
+<li>everybody can make changes and submit them for approval
+<li>everybody can discuss changes
+<li>everybody can view changes
+</ul></li>
+</ul>
+</section>
+
+
+<section>
+<h2>Peer review: Revert</h2>
+<br>
+<img src="img/open/revert-of-scripts.png" class="stretch">
+<p><a href="http://lists.osgeo.org/pipermail/grass-dev/2013-October/065900.html">[GRASS-dev] Handling of Python scripts on MS Windows (October, 2013)</a></p>
+</section>
+
+
+<section>
+<h2>Mailing lists</h2>
+<br>
+<img src="img/open/mailing-list.png" class="stretch">
+<p><a href="http://lists.osgeo.org/mailman/listinfo/grass-user">http://lists.osgeo.org/mailman/listinfo/grass-user</a> <a href="http://lists.osgeo.org/mailman/listinfo/grass-dev">http://lists.osgeo.org/mailman/listinfo/grass-dev</a></p>
+</section>
+
+
+<section>
+<h2>Other means of communication</h2>
+<ul>
+<li><a href="https://gis.stackexchange.com/">Geographical Information Systems Stack Exchange</a></p>
+<ul>
+<li>question and answers are ranked to increase quality
+</ul></li>
+<li>discussions for bug reports and feature requests
+<li>code/community sprints
+</ul>
+</section>
+
+
+<section>
+<h2>Development statistics</h2>
+<br>
+<img src="img/open/openhub-stats" alt="image" style="width:120.0%" /></p>
+<p><a href="https://www.openhub.net/p/grass_gis">Black Duck Open Hub: GRASS GIS</a></p>
+</section>
+
+
+<section>
+<h2>Testing and quality assurance</h2>
+<br>
+<img src="img/open/testing.png" class="stretch">
+<p><a href="http://fatra.cnr.ncsu.edu/grassgistests/summary_report/nc/"></a></p>
+</section>
+
+
+<section>
+<h2>Git and GitHub: latest phenomena</h2>
+<ul>
+<li><a href="https://github.com/">GitHub</a> is a web-based hosting service
+<li><a href="https://github.com/">GitHub</a> hosts <a href="http://git-scm.com/">Git</a> repositories
+<li><a href="http://git-scm.com/">Git</a> is a revision control system
+<li>manages source code and its changes
+</ul>
+<ul>
+<li><a href="https://github.com/ncsu-osgeorel/grass-temporal-workshop">https://github.com/ncsu-osgeorel/grass-temporal-workshop</a>
+<li><a href="https://github.com/qgis/QGIS">https://github.com/qgis/QGIS</a>
+</ul>
+</section>
+<section id="how-open-source-works-in-academia" class="slide level1">
+<h1>How open source works in academia</h1>
+</section>
+
+
+<section>
+<h2>GRASS GIS temporal framework: sharing and reuse</h2>
+<ul>
+<li>analysis and management of spatio-temporal data
+<li>published paper with description and use cases
+<li>created for environmental modeling
+<li>integrated into GRASS GIS
+<li>we all can use it to work with our temporal data
+</ul>
+<p>Gebbert, S., Pebesma, E. (2014). TGRASS: A temporal GIS for field based environmental modeling. Environmental Modelling &amp; Software, 53, 1-12.</p>
+</section>
+
+
+<section>
+<h2>GRASS GIS r.li: sustainable reproducibility and reuse</h2>
+<p>multiscale analysis of landscape structure</p>
+<br>
+<img src="img/open/rli-latest.png" style="width: 50%; margin: 0px;">
+<br>
+<img src="img/open/rli-oldest.png" style="width: 50%; margin: 0px;">
+
+<p><a href="http://trac.osgeo.org/grass/log/grass/trunk/raster/r.li?action=follow_copy&amp;mode=follow_copy&amp;stop_rev=&amp;limit=1000"></a></p>
+</section>
+
+
+<section>
+<h2>Reproducibility — challenge of current science</h2>
+<ul>
+<li>research depends on software</p>
+<ul>
+<li>open source is available to anyone
+</ul></li>
+<li>format in which we share is not helpful</p>
+<ul>
+<li>source code is suitable for reproducing
+</ul></li>
+<li>hard to report that something does not work</p>
+<ul>
+<li>pointing out things which are wrong works in open source
+</ul></li>
+</ul>
+</section>
+
+
+<section>
+<h2>Other benefits</h2>
+<ul>
+<li>each student has all the tools available,<br />
+even those which are not used by school
+<li>possibility to work closely with developers
+<li>history of changes and discussions available after years for everybody to learn
+<li>tools to collaborate and share research results
+</ul>
+</section>
+
+
+<section>
+<h2>How to use open source</h2>
+<ul>
+<li>if your search for a solution was not successful, ask
+<li>report bugs if you encounter them</p>
+<ul>
+<li>open source software is something you can change and influence
+</ul></li>
+<li>if you change something, contribute back</p>
+<ul>
+<li>you cannot maintain your own version
+</ul></li>
+<li>share your own work to enable reuse</p>
+<ul>
+<li>your research is worth sharing
+</ul></li>
+<li>incorporate your work into existing projects</p>
+<ul>
+<li>this is the way to preserve it
+</ul></li>
+</ul>
+<br>
+<img src="img/open/os_smile.png" class="stretch">
+<p>Users of open source are more happy when using the software.</p>
+</section>
+
+
+<section>
+<h2>Conclusion</h2>
+</section>
+
+
+<section>
+<h2>What can science gain by using open source?</h2>
+<ul>
+<li>there is no inside or outside <span>(everybody can access and contribute)</span>
+<li>shared and reproducible by default <span>(results and processes)</span>
+</ul>
+<h2>How to make science better using open source?</h2>
+<ul>
+<li>start with yourself, add open source tools to your daily workflow
+</ul>
+</section>
+
+
+<section>
+<h2>Acknowledgement</h2>
+
+<p>Pictures:</p>
+<ul>
+<li>smile and open here images from <a href="http://opensource.com/">opensource.com/</a>
+<li>KS photo from <a href="http://allthingsopen.org/">allthingsopen.org/</a>
+<li>Linux (penguin), GNU, and GPL logos from <a href="http://gnu.org/">gnu.org/</a>
+<li>CC logo from <a href="https://creativecommons.org/">creativecommons.org/</a>
+<li>Open Source Initiative logo from <a href="http://opensource.org/">opensource.org/</a>
+<li>GRASS GIS logo from <a href="http://grass.osgeo.org/">opensource.org/</a>
+<li>Git logo from <a href="http://git-scm.org/">git-scm.org/</a>
+<li>GitHub (Octocat) logo from <a href="https://octodex.github.com/">octodex.github.com/</a>
+</ul>
+</section>
+
+
+<section class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Recent (2014) survey by Forester Research (presented at <a href="http://allthingsopen.org">All Things Open</a>)<a href="#/fnref1">↩</a>
+<li id="fn2"><p><a href="http://www.pcworld.com/article/209891/10_reasons_open_source_is_good_for_business.html"> PCWorld: 10 Reasons Open Source Is Good for Business</a><a href="#/fnref2">↩</a>
+<li id="fn3"><p><a href="https://sfconservancy.org/news/2014/oct/27/ConservancyExecutive-Director-keynotes-SeaGL/">Software Freedom Conservancy: …Karen in Raleigh and Seattle…</a><a href="#/fnref3">↩</a>
+<li id="fn4"><p><a href="http://allthingsopen.org/">All Things Open, Raleigh</a><a href="#/fnref4">↩</a>
+</ol>
+</section>
