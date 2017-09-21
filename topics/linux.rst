@@ -325,14 +325,20 @@ Videos
 Assignment
 ----------
 
-Go through the above instructions. You can use NCSU VCL, one of the
-Ubuntu machines. When you login in into the machine, use terminal
-to input commands. Alternatively, you can use terminal on Mac OS or
-Git Bash from last class if you are using MS Windows. If you were in the
-class, you can skip this part and do the next one right away.
+Go through the above instructions. You can use NCSU VCL, specifically
+one of the Ubuntu machines. When you login in into the machine, use
+terminal to input commands. Alternatively, you can use terminal on Mac
+OS or Git Bash from the last class if you are using MS Windows but you
+may not be able to do all the steps. If you were in the class, you can
+skip this part and do the next one right away.
 
-In some Linux command line, find out how many CPUs has the machine
-you are working on. To find out that information, use file called
-``/proc/cpuinfo`` which contains information about CPUs. Construct
-command line which will in one command print the number of CPUs,
-but nothing more.
+In some Linux command line (e.g. in NCSU VCL Ubuntu machine), find out
+how many CPUs has the machine you are working on. To find out that
+information, use file called ``/proc/cpuinfo`` which contains
+information about CPUs. Construct command line which will in one
+command print the number of CPUs, but nothing more. Post the command as
+a (online) text as assignment in Moodle.
+
+Please do post questions to the forum as you are going through the
+provided material, just don't post possible solutions for that CPU
+command, so that others can come up with their own solutions.
