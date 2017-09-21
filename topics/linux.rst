@@ -308,6 +308,7 @@ Resources
 
 * `Introduction to the Linux Operating System <https://www.guru99.com/introduction-linux.html>`_ from Guru99
 * `The Linux Information Project <http://www.linfo.org/>`_
+* `Unix—the Bare Minimum <http://heather.cs.ucdavis.edu/~matloff/UnixAndC/Unix/UnixBareMn.pdf>`_ by Norman Matloff
 * `Introduction to Linux <http://tille.garrels.be/training/tldp/>`_ by Machtelt Garrels
 * `An Introduction to Linux Basics <https://www.digitalocean.com/community/tutorials/an-introduction-to-linux-basics>`_ at DigitalOcean
 * `UNIX Tutorial for Beginners <http://www.ee.surrey.ac.uk/Teaching/Unix/>`_ by M. Stonebank
