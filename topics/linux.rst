@@ -4,50 +4,81 @@ Introduction to command line
 This topic is an introduction to command line and remote access to
 computational resources using GNU/Linux operating system.
 
-Basic commands
---------------
+Basics commands
+---------------
 
-::
+Find which directory you are in::
 
     pwd
+
+Go the the root directory::
+
     cd /
+
+See what is there::
+
     ls
+
+Go back to your home directory::
+
     cd ~
+
+Edit a file with nano::
+
     nano test1.txt
+
+Write some text. To exit nano, press Ctrl+X, then press Y to confirm
+that you want to save the file, and then Enter to confirm the file name.
+
+Now list the files in the current directory (you should see the file
+you just created)::
+
     ls
+
+To display its content in the command line, you can use cat::
+
     cat test1.txt
+
+For browsing content of a larger file, use less::
+
     less test1.txt
 
 Search content of a file
 ````````````````````````
-::
 
-    grep line test1.txt
+Usin grep, search for a line which contains ``apple`` in the file
+called ``test1.txt``::
+
+    grep apple test1.txt
 
 Spaces in the command line
 ``````````````````````````
 
-::
+Spaces separate individual parameters. The command ``echo`` prints
+its parameters separated by spaces. If you want to pass spaces as part
+of the parameter, use quotes::
 
     echo Hello
-    echo Hello World!
-    echo Hello       World!
+    echo Hello World
+    echo Hello       World
     echo "Hello       World!"
-    echo "
-    "
+    echo "Hello
+    World!"
 
 Confusion with cat
 ``````````````````
 
-::
+When you run ``cat`` without any parameters, you get into a strange
+situation::
 
     cat
+
+To get out of it, use Ctrl+D to end the input (which ends ``cat``)
+or Ctrl+C to terminate ``cat``.
 
 Parallel processing
 -------------------
 
-Editing with nano
-`````````````````
 
 ::
 
@@ -125,15 +156,6 @@ Redirecting inputs and outputs
     find /bin/ -name "z*" | grep -v grep | wc
     find /bin/ -name "z*" | grep -v grep | wc -l
 
-
-Running program in the background
----------------------------------
-
-::
-
-    gedit
-    gedit &
-
 Pausing execution
 `````````````````
 
@@ -141,12 +163,26 @@ Pausing execution
 
     sleep 5
 
+Running program in the background
+---------------------------------
+
+::
+
+    sleep 5
+    sleep 5 &
+
+::
+
+    gedit
+    gedit &
+
+
 Remote access using SSH
 -----------------------
 
 ::
 
-    ssh vpetras@152.1.13.217 -X
+    ssh anndoe@154.2.15.319 -X
 
 
 Bonus: Changing the path variable
