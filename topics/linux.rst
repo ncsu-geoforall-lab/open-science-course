@@ -318,7 +318,9 @@ Resources
 Videos
 ``````
 
-* `World Without Linux Final Episode #6 Free Burger <https://www.youtube.com/watch?v=fvPSNK8iB0Y>`_
+* `Basic commands <http://fatra.cnr.ncsu.edu/open-science-course/linux-pwd-cd-cat-less.mp4>`_ (recording from the class, 14min)
+* `Using Tab key <http://fatra.cnr.ncsu.edu/open-science-course/linux-tab-key.mp4>`_ (recording from the class, 1.5min)
+* `World Without Linux Final Episode #6 Free Burger <https://www.youtube.com/watch?v=fvPSNK8iB0Y>`_ (many Linux-related terms in under 3 minutes)
 
 Assignment
 ----------
