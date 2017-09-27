@@ -126,6 +126,36 @@ tif2png.sh::
 
     convert srtm_*.png -resize 500x -delay 100 srtm.gif
 
+::
+
+    ipython
+
+::
+
+    from osgeo import ogr
+
+
+::
+
+    point = ogr.Geometry(ogr.wkbPoint25D)
+    point.AddPoint(610920, 196552, 320)
+
+::
+
+    print point
+
+::
+
+    point.ExportToJson()
+
+::
+
+    buffer = point.Buffer(200)
+
+::
+
+    buffer.ExportToJson()
+
 Resources
 ---------
 
