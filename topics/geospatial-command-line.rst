@@ -19,9 +19,12 @@ GDAL is an OSGeo project.
 Preparation
 ```````````
 
-Install (command for Ubuntu)::
+Install GDAL (command for Ubuntu)::
 
     sudo apt install gdal-bin
+
+Install additional programs (all at once)::
+
     sudo apt install python-gdal ipython imagemagick
 
 Download data::
