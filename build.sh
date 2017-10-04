@@ -87,6 +87,23 @@ do
     done
 done
 
+for DIR in resources
+do
+    mkdir -p $OUTDIR/$DIR
+
+    for FILE in `ls $DIR/*.html $DIR/*.geojson $DIR/*.png`
+    do
+        cp $FILE $OUTDIR/$DIR
+    done
+
+    for SUBDIR in `ls $DIR/*`
+    do
+        if [ -d "$DIR/$SUBDIR" ]; then
+            cp -r $DIR/$SUBDIR $OUTDIR/$DIR
+        fi
+    done
+done
+
 # Topics index
 
 FILES="build/topics/*.html"
