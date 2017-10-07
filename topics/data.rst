@@ -1,6 +1,13 @@
 Publishing data on web
 ======================
 
+To publish scientific data online, we have several choices based on
+the discipline and type of data. The resources section lists several
+repositories which are either general or with some geospatial focus.
+For the practical part, we will try an absolutely general method which
+does not use a centralized scientific repository, but which is
+applicable also for non-scientific geospatial data.
+
 Custom web page with geospatial data
 ------------------------------------
 
@@ -137,8 +144,14 @@ to get is the extent and we can do that using *gdalinfo*::
 All we need is ``Lower Left`` and ``Upper Right`` and we could just
 copy the numbers to the JavaScript code in the next section. However,
 for this exercise, we will extract the extent in an automated way.
+If you can't get GDAL version 2 or *jq* (see below), you can skip
+executing commands in this part and just read through it
+(but you should be good to go if you are using, e.g. an Ubuntu machine
+from NCSU VCL).
 
-[-84.4223856,  33.4882788, -75.0518788,  36.6207207]
+What we want to get is the following line::
+
+    [-84.4223856,  33.4882788, -75.0518788,  36.6207207]
 
 The previous *gdalinfo* command gives output which can be processed by
 *grep* and other command line tools, but the output format may not be
@@ -151,9 +164,9 @@ Archive) repository which provides a more recent version of GDAL
 with the cost of potential less stability within thesoftware or in
 relation to other installed software. The commands to do it follow::
 
-sudo add-apt-repository ppa:ubuntugis/ubuntugis-unstable
-sudo apt update
-sudo apt upgrade
+    sudo add-apt-repository ppa:ubuntugis/ubuntugis-unstable
+    sudo apt update
+    sudo apt upgrade
 
 Now, with GDAL version 2 or higher, we can use the ``-json`` option
 to obtain JSON output::
@@ -221,7 +234,7 @@ Adding raster
 Now, we can add the JavaScript code to the web page::
 
       var imageExtent = [-84.4223856, 33.4882788, -75.0518788, 36.6207207];
-      rasterLayer = new ol.layer.Image({
+      var rasterLayer = new ol.layer.Image({
             source: new ol.source.ImageStatic({
               url: 'elev_state_500m.png',
               crossOrigin: '',
@@ -229,6 +242,18 @@ Now, we can add the JavaScript code to the web page::
               imageExtent: imageExtent,
               attributions: "NC Elevation: Neteler &amp; Mitasova 2008"
             })});
+
+We need to edit the list of layers again to add the raster::
+
+    var map = new ol.Map({
+        layers: [
+          new ol.layer.Tile({
+            source: new ol.source.OSM()
+          }),
+          rasterLayer,
+          vectorLayer
+        ],
+        ...
 
 See the complete web page `here <../resources/openlayers_raster_and_vector.html>`_
 and compare it with yours (you can see the code of the page in your web
@@ -349,6 +374,7 @@ Other
 * `Rendering and diffing images on GitHub <https://help.github.com/articles/rendering-and-diffing-images/>`_
 * `Mapping GeoJSON files on GitHub <https://help.github.com/articles/mapping-geojson-files-on-github/>`_
 * `EPSG.io <http://epsg.io/>`_ (Coordinate Systems Worldwide)
+* `OpenLayers <http://openlayers.org/>`_
 
 Assignment
 ----------
