@@ -3,23 +3,70 @@ GRASS GIS
 
 GRASS GIS is a free and open source desktop geographic system
 and geospatial analytics library which serves as a platform for
-open science.
+open science. It is licensed under GNU GPL.
 
 Official website and download: https://grass.osgeo.org
+
+GRASS GIS and repeating what you did
+------------------------------------
+
+Reviewing history
+`````````````````
+
+See the file where the history is saved::
+
+    echo $HISTFILE
+
+Review the history::
+
+    less $HISTFILE
+
+Make a backup of the currently used history file::
+
+    cp $HISTFILE workflow.txt
+
+Store the unsaved history to the file::
+
+    history -a
+
+Data provenance
+```````````````
+
+Basic raster map matedata with command used to create the map::
+
+    r.info elevation
+
+The provenance information by itself::
+
+    r.info -h elevation
+
+The provenance of a vector map (series of commands and
+additional information)::
+
+    v.info -h lakes
+
 
 Examples of how GRASS GIS is used to publish research
 -----------------------------------------------------
 
+Here is couple of examples of how GRASS GIS was used to publish
+and disseminate research.
+
 FUTURES
 ```````
 
-https://grasswiki.osgeo.org/wiki/FUTURES_tutorial
-https://grass.osgeo.org/grass7/manuals/addons/r.futures.html
+FUTURES urban model currently being developed at NCSU as GRASS GIS module.
+
+* https://grasswiki.osgeo.org/wiki/FUTURES_tutorial
+* https://grass.osgeo.org/grass7/manuals/addons/r.futures.html
 
 Temporal framework
 ``````````````````
 
-https://grasswiki.osgeo.org/wiki/Temporal_data_processing
+Temporal framework for managing and analyzing time series developed
+by Soeren Gebbert an a part of GRASS GIS.
+
+* https://grasswiki.osgeo.org/wiki/Temporal_data_processing
 
 Resources
 ---------
