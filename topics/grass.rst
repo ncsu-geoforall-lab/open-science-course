@@ -104,3 +104,7 @@ Books
 
 Assignment
 ----------
+
+Try to reproduce the following paper and let us know how far did you get:
+
+* https://opengeospatialdata.springeropen.com/articles/10.1186/s40965-017-0019-2
