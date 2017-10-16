@@ -19,6 +19,7 @@ Texts
 Videos
 ``````
 
+* `Mapping and Geospatial Visualization with QGIS <http://go.ncsu.edu/geospatial-studio-qgis>`_ (talk at NCSU CGA Geospatial Studio by Jeff Essic, 53 mins) [main resource]
 * `QGIS Uncovered <https://www.youtube.com/watch?v=lg9ceXoCUFE&list=PL7HotvlLKHCs9nD1fFUjSOsZrsnctyV2R>`_ (YouTube playlist of videos by Steven Bernard)
 * `QGIS Tutorials: QGIS in under 10 minutes <https://www.youtube.com/watch?v=KjvFil3o4y8&list=PLNCPalajQvg7wQvzf3fM8fOZ5lMKl86Q4>`_ (YouTube playlist of videos VisionZ)
 * `GRASS 7.2 and QGIS 2.15 Tutorials <https://www.youtube.com/watch?v=t44_h4cA7GQ&list=PLSCH2IXZ2pHqkSs9H19xhbW2MyxWC2F2h&index=1>`_ (YouTube playlist of videos by Isaac Ullah)
@@ -26,3 +27,12 @@ Videos
 Assignment
 ----------
 
+Install QGIS and go through one of the linked (text or video) tutorials.
+It is up to you how much do you want to do, but at the end,
+you should be comfortable with using QGIS for basic geospatial tasks.
+
+If you already know QGIS, you may want skip the tutorials and dedicate
+the time to exploring some feature or features you don't know.
+
+You can share some of the things you learned on the message board
+if you want.
