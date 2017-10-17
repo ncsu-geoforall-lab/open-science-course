@@ -80,9 +80,9 @@ Schedule
  9. October 11   `QGIS, a free and open source geographic system <topics/qgis.html>`_
 10. October 18   `GRASS GIS as software for geospatial research <topics/grass.html>`_
 11. October 25   `Combining text, code and results into one document <topics/notebooks.html>`_
-12. November 1   `Publishing code as part of an open source project <topics/.html>`_
-13. November 8   `Reproducible computational environments <topics/.html>`_
-14. November 15  `Writing and reproducing an open science paper <topics/.html>`_
+12. November 1   `Publishing code as part of an open source project <topics/publishing-code.html>`_
+13. November 8   `Reproducible computational environments <topics/environments.html>`_
+14. November 15  `Writing and reproducing an open science paper <topics/paper.html>`_
 === ============ ===
 
 Assignments are always due the next week at the end of the day
