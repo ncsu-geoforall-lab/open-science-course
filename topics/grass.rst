@@ -5,10 +5,21 @@ GRASS GIS is a free and open source desktop geographic system
 and geospatial analytics library which serves as a platform for
 open science. It is licensed under GNU GPL.
 
+Learn about GRASS GIS: 
+
+* `Slides <https://ncsu-geoforall-lab.github.io/grass-as-a-platform/ncgis2017.html>`_
+* `Recorded Video: 33 Years Of GRASS GIS As An Innovation Platform <https://www.youtube.com/watch?v=Vv5NnPg6MOY>`_
+
+Learn how to use GRASS GIS:
+
+* `From GRASS GIS novice to power user <https://grasswiki.osgeo.org/wiki/From_GRASS_GIS_novice_to_power_user_(workshop_at_FOSS4G_Boston_2017)>`_ (workshop material for FOSS4G Boston 2017)
+
 Official website and download: https://grass.osgeo.org
 
-GRASS GIS and repeating what you did
+Recording your work in GRASS GIS
 ------------------------------------
+
+In GUI save command output 
 
 Reviewing history
 `````````````````
@@ -84,7 +95,7 @@ Videos
 * `Introduction to GRASS GIS with network analysis <https://www.youtube.com/watch?v=VKaASntBq8U>`_ (Geospatial Studio at NCSU, September 2016) [primary resource]
 * `Scripting GRASS GIS 7 with Python <https://www.youtube.com/watch?v=PX2UpMhp2hc>`_
 * `GRASS GIS A Point Cloud (LiDAR) Evaluation Resource <https://www.youtube.com/watch?v=Fj0TO4ZKEc0>`_
-* `33 Years Of GRASS GIS As An Innovation Platform <https://www.youtube.com/watch?v=Vv5NnPg6MOY>`_ at NCGIS 2017 [primary resource]
+* `33 Years Of GRASS GIS As An Innovation Platform <https://www.youtube.com/watch?v=Vv5NnPg6MOY>`_ [primary resource]
 * `GRASS 7.2 and QGIS 2.15 Tutorials <https://www.youtube.com/watch?v=t44_h4cA7GQ&list=PLSCH2IXZ2pHqkSs9H19xhbW2MyxWC2F2h&index=1>`_ (YouTube playlist of videos by Isaac Ullah)
 
 Papers
