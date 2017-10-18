@@ -9,6 +9,7 @@ Learn about GRASS GIS:
 
 * `Slides <https://ncsu-geoforall-lab.github.io/grass-as-a-platform/ncgis2017.html>`_
 * `Recorded Video: 33 Years Of GRASS GIS As An Innovation Platform <https://www.youtube.com/watch?v=Vv5NnPg6MOY>`_
+* `Slides From Dynamic visualizations to Tangible modeling <https://ncsu-geoforall-lab.github.io/grass-as-a-platform/autocarto.html#/>`_
 
 Learn how to use GRASS GIS:
 
