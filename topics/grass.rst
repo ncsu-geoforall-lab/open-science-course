@@ -19,7 +19,9 @@ Official website and download: https://grass.osgeo.org
 Recording your work in GRASS GIS
 ------------------------------------
 
-In GUI save command output 
+In GUI Layer Manager save output window or save command prompt into log file.
+
+When working in shell (terminal) commands are saved in history file.
 
 Reviewing history
 `````````````````
