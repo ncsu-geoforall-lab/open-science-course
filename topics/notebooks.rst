@@ -5,8 +5,9 @@ One innovation related to open science are computational notebooks
 also known as notebook interfaces or data science notebooks.
 These notebooks are electronic, interactive notebooks used for
 data analysis, visualization, computations and programming.
-It pairs the functionality of word processing software with both the shell and kernel of that notebook's programming language.
-Examples of the notebook interface include the Mathematica notebook, Maple worksheet, MATLAB notebook, IPython/Jupyter, R Markdown, Apache Zeppelin, Apache Spark Notebook, and the Databricks cloud.[2]
+Computational notebooks serve as word processing software, software
+development tool, and as a record of the result.
+We will focus on one specific notebook software called Jupyter.
 
 Jupyter Notebooks (formerly IPython Notebooks) are a tool aspiring to be
 a standard way of modern and future data analysis. The notebook format
@@ -22,7 +23,7 @@ Python code, can be executed as expected::
 
     a = 6
     b = 7
-    c = a * b
+    c = a + b
 
 Each piece of code is called cell. To execute a cell, use Shift+Enter
 
@@ -31,16 +32,18 @@ variable::
 
     c
 
+This should show number 13 right under the letter ``c``.
+
 Alternatively, use print (statement in Python 2 and function in
 Python 3)::
 
-    print "Answer is", c
+    print "Result is", c
 
 What is unique to Jupyter is that Python code can be mixed with command
 line code (like Bash). To do that, it is enough just to prefix the
 command line with an exclamation mark::
 
-    !echo "Answer is $c"
+    !echo "Result is $c"
 
 The variables from Python code are referenced in the same way as
 variables in Bash.
@@ -63,19 +66,43 @@ Use system packages or pip packages, e.g. on Ubuntu::
 Windows
 ```````
 
+Install OSGeo4W, then run OSGeo4W Shell as administrator. There, update
+pip first::
+
+    pip install -U pip
+
+Then update setuptools::
+
+    pip install -U setuptools
+
+Then install Jupyter::
+
+    pip install Jupyter
+
 Mac OS
 ``````
 
-If you are already using Homebrew, use it to install Jupyter::
+Since we will be using Jupyter with GRASS GIS, run GRASS GIS first
+to be sure you will use Python which GRASS GIS uses.
+
+Then in the GRASS GIS terminal run::
+
+    pip install -U pip
+    sudo pip install jupyter
+
+Alternatively, if the above does not work, you can try Homebrew.
+Use it to install Jupyter::
 
     brew install jupyter
 
 Alternatives to Jupyter
 -----------------------
 
-There are both open source and proprietary notebooks. The open source
-include, besides Jupyter, R Notebooks and Apache Zeppelin.
-
+There are both open source and proprietary notebooks. Besides Jupyter,
+the open source include R Notebooks (R Markdown) and Apache Zeppelin.
+Same concepts as we can find in notebooks are also in tools which are
+usually not considered computational notebooks but can be used in the
+same way; examples include Emacs Org mode and LaTeX.
 
 Resources
 ---------
@@ -85,6 +112,8 @@ Texts
 
 * `Jupyter Notebook Tutorial: The Definitive Guide <https://www.datacamp.com/community/tutorials/tutorial-jupyter-notebook>`_
 * `Basics of Jupyter Notebook and Python <https://datahub.packtpub.com/tutorials/basics-jupyter-notebook-python/>`_
+* `Notebook interface <https://en.wikipedia.org/wiki/Notebook_interface>`_
+* `Literate programming <https://en.wikipedia.org/wiki/Literate_programming>`_
 
 Videos
 ``````
@@ -97,16 +126,24 @@ Assignment
 ----------
 
 Practice and get familiar with using Jupyter Notebooks using the
-Try Jupyter! service.
+Try Jupyter! service. If needed, use one of the linked resources above
+to learn about Jupyter.
 
 * https://try.jupyter.org/
 
-Install Jupyter on your computer and try to run it with GRASS GIS. If
-that fails for some reason, use the NCSU VCL Ubuntu machine for the
-rest of the assignment.
+Try using the Jupyter for geospatial tasks with GRASS GIS using the
+URL given in Moodle. Go through the execution of one of the notebooks.
+
+Then, install Jupyter on your computer (see above) and try to run it
+with GRASS GIS. If that fails for some reason, use the NCSU VCL Ubuntu
+machine for the rest of the assignment.
 
 Then transfer the following code (all or just a part) to a Jupyter
 notebook on your computer, execute the code, do modifications if needed,
 and create a PDF document with the results.
 
 * https://github.com/wenzeslaus/geospatial-modeling-course-jupyter/blob/master/notebooks/buffers_cost_python.ipynb
+
+Submit the created PDF to Moodle.
+If you did something different for the installation or you were not able
+to install it at all, submit comments on that as part of the document.
