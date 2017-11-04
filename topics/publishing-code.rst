@@ -104,6 +104,10 @@ Third party tutorial for about creating addons for GRASS GIS:
 
 https://github.com/wenzeslaus/python-grass-addon
 
+A detailed guide for this class is here_.
+
+.. _here: code-for-grass.html
+
 Resources
 ---------
 
