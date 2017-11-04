@@ -2,7 +2,14 @@ Publishing code as part of GRASS GIS
 ====================================
 
 This guide counts on using Ubuntu, so please use NCSU VCL if you want
-to or need to follow the guide closely.
+to or need to follow the guide closely. The guide requires GRASS GIS
+version 7.2, so on Ubuntu 16.04, you need to install GRASS GIS from
+UbuntuGIS PPA::
+
+    sudo add-apt-repository ppa:ubuntugis/ubuntugis-unstable
+    sudo apt-get update
+    sudo apt-get upgrade
+    sudo apt-get install grass grass-gui
 
 Basic structure
 ---------------
@@ -160,7 +167,10 @@ HTML documentation
 A documentation of a module in GRASS GIS uses HTML as the markup
 language, but the HTML code for the full web page is generated
 automatically. We need to provide just basic sections::
-description, see also, and author or authors.
+description, see also, and author or authors. These sections are marked
+as heading level 2, i.e. ``<h2>``.
+The name of the file is the name of the module with the extension
+``.html``, so ``r.plus.html`` in our case.
 
 The description section should explain what the module does, how it does
 it, and how to use it. Here we provide just an short oversimplified
@@ -201,14 +211,79 @@ https://trac.osgeo.org/grass/wiki/Submitting/Docs
 Makefile
 --------
 
+A Makefile is a file which typically gives instructions how to compile
+code (e.g. C or C++ code) into a executable (binary). Although Python
+code does not have to compiled into binary, we are still using Makefile
+because in this case, it does several important steps such as creating
+the documentation and putting files into a right place in order to
+run the module as part of GRASS GIS. Most of instructions how to do that
+are part of GRASS GIS and our Makefile will just use those. Thus, our
+Makefile is exactly the same as any other script except the name of the
+module which we need to provide as a value of ``PGM`` variable.
 
+::
 
+    MODULE_TOPDIR = ../..
+
+    PGM = r.plus
+
+    include $(MODULE_TOPDIR)/include/Make/Script.make
+
+    default: script
+
+The Makefile is used by a tool called *make*. This tool needs to know
+where to find the Makefiles which come with GRASS GIS. For that we need
+use the ``MODULE_TOPDIR`` variable.
+
+However, before that it is important to note that we need to have *make*
+installed and we need GRASS GIS with these Makefiles. To achieve that on
+Ubuntu, we need to install GRASS GIS development package which is called
+``grass-dev``.
+
+::
+
+    sudo apt install grass-dev
+
+Now we could run *make*, but since GRASS GIS 7.2 provides the same
+functionality in a more convenient way, we will use that. We can run
+*g.extension* module and point it to the directory with the module::
+
+    g.extension extension=r.plus url=/your/directory/with/the/module
+
+After this, when we are in GRASS GIS command line, we can run our
+*r.plus* module in the same was as any other GRASS GIS module, i.e.
+without ``./`` or ``python`` and with GUI if requested.
+
+Obtain short help in command line::
+
+    r.plus --help
+
+Run the module without parameters (GUI should appear)::
+
+    r.plus
+
+Publishing and downloading
+--------------------------
+
+If we were putting to the module to GRASS GIS Addons, we would now check
+the submitting guidelines, conditions for submitting code and gaining
+access to the repository at an official page:
+
+https://grass.osgeo.org/development/code-submission/
+
+In our case, we are just publishing the code using GitHub, so we need
+to add files to Git, commit, and push.
+
+Now on another computer which currently also needs to be Linux (or
+potentially Mac OS), we can test installing the module from GitHub::
+
+    g.extension extension=r.plus url=github.com/anndoe/r.plus
 
 Resources
 ---------
 
 Texts
------
+`````
 
 * `How to write a Python GRASS GIS 7 addon  <https://github.com/wenzeslaus/python-grass-addon>`_
 * `GRASS GIS Python scripting with script package <https://grass.osgeo.org/grass72/manuals/libpython/script_intro.html>`_ (official documentation)

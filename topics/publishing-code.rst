@@ -112,7 +112,7 @@ Resources
 ---------
 
 Texts
------
+`````
 
 * `How to write a Python GRASS GIS 7 addon  <https://github.com/wenzeslaus/python-grass-addon>`_
 
