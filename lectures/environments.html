@@ -253,6 +253,14 @@ docker run -p 8888:8888 -t test1 /code/computation.sh
     <li>useful for program settings and parameters
 </ul>
 <pre style="font-size: 90%;">
-docker run -p 8888:8888 -t test1 /code/computation.sh
+docker run -e VARIABLE_NAME=42 -t test1 /code/computation.sh
+</pre>
+</section>
+
+
+<section>
+<h2>Passing parameters to the process</h2>
+<pre style="font-size: 90%;">
+docker run -t test1 /code/computation.sh param1 param2
 </pre>
 </section>
