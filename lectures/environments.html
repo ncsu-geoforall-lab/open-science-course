@@ -55,10 +55,10 @@
 
 
 <section>
-<h2>Documentation</h2>
+<h2>Data</h2>
 <ul>
-    <li>imprecise documentation
-    <li>lack of documentation
+    <li>data for computations
+    <li>software/system configuration
 </ul>
 </section>
 
@@ -66,18 +66,21 @@
 <section>
 <h2>Code rot</h2>
 <ul>
+    <li>bit rot, software rot, software erosion, software decay, software entropy
     <li>dependencies change
-    <li>then code breaks
-    <li>then code gives different results in different environment
+    <li>code breaks
+    <li>code gives different results in different environments
 </ul>
 </section>
 
 
 <section>
-<h2>Data</h2>
+<h2>Documentation</h2>
 <ul>
-    <li>data for computations
-    <li>software/system configuration
+    <li>imprecise documentation
+    <li>lack of documentation
+    <li>completeness of documentation
+    <li>how to put all things together?
 </ul>
 </section>
 
@@ -91,7 +94,8 @@
 <h2>Python Virtual Environments</h2>
 <ul>
     <li><code>python -m venv</code>
-    <li>isolated intallation of Python packages
+    <li>isolated installation of Python packages
+    <li>each environment has a separate set of packages
 </ul>
 </section>
 
@@ -99,6 +103,9 @@
 <section>
 <h2>Virtual Machines</h2>
 <ul>
+    <li>guest operating system is running on a virtual machine
+    <li>virtual machine disk/image contains (installed) operating system,
+        libraries, and executable programs (and data)
     <li>open source: QEMU (Quick Emulator), VirtualBox (Oracle VM VirtualBox)
     <li>proprietary: VMware Workstation, Parallels Desktop for Mac
 </ul>
@@ -111,22 +118,141 @@
 
 
 <section>
-<h2>Docker vs virtual machine</h2>
+<h2>Docker vs Virtual Machine</h2>
 
 <div class="left">
-<p></p>
+<p>Docker:</p>
 <ul>
-    <li>
-    <li>
+    <li>containers running on a host system (kernel)
+    <li>shares resources
+    <li>operating system and dependencies in layers
+    <li>lightweight, fast
 </ul>
 </div>
 
 <div class="right">
-<p></p>
+<p>Virtual Machine:</p>
 <ul>
-    <li>
-    <li>
+    <li>host system runs virtual machine with guest system
+    <li>needs lot of computational resources
+    <li>heavyweight, slow
+    <li>completely isolated
 </ul>
 </div>
 
+</section>
+
+
+<section>
+<h2>Docker running non-Linux OS</h2>
+<ul>
+    <li>possible to run MS Windows, but you or people using your code
+        will likely break the license agreement sooner or later
+    <li>MS Windows (more or less) requires MS Windows host operating system
+</ul>
+</section>
+
+
+<section>
+<h2>Problems in scientific use</h2>
+<ul>
+    <li>operating system may get outdated, base image may disappear
+    <li>operating system package repository is decommissioned
+    <li>convenient advanced images may disappear
+    <li>base image gets updated
+    <li>too much focus on clouds and industry
+        <small>
+        (e.g. new versions for MS Windows require professional edition)
+        </small>
+</ul>
+<p>
+    Many problems appear only when only a Dockerfile is published.
+    Publishing image removes some of the problems, but brings some
+    disadvantages such as big binary files.
+</p>
+</section>
+
+
+<section>
+<h2>Alternatives</h2>
+<ul>
+    <li>Open Container Initiative (OCI), CoreOS rkt (Rocket), Vagrant, ...
+</ul>
+</section>
+
+
+<section>
+<h1>Using Docker</h1>
+</section>
+
+
+<section>
+<h3>Dockerfile</h3>
+<pre style="width: 40%; font-size: 90%;">
+FROM ubuntu:16.04
+RUN apt-get update
+RUN apt-get install -y \
+        g++ \
+        python \
+        python-numpy \
+        ...
+</pre>
+</section>
+
+
+<section>
+<h2>Building an image</h2>
+<ul>
+    <li>build image using a Dockerfile
+    <li>in a directory (repository) with a Dockerfile
+</ul>
+<pre style="font-size: 90%;">
+docker build -t test1 .
+</pre>
+</section>
+
+<section>
+<h2>Running a container</h2>
+<ul>
+    <li>run a container based on an image
+    <li>runs any associated or specified command
+</ul>
+<pre style="font-size: 90%;">
+docker run -t test1 /code/computation.sh
+</pre>
+</section>
+
+
+<section>
+<h2>Linking directories</h2>
+<ul>
+    <li>link local (guest) directory with a directory in a container
+    <li>useful for getting large data in and out from a container
+</ul>
+<pre style="font-size: 90%;">
+docker run -v /home/.../test1-data:/data -t test1 /code/computation.sh
+</pre>
+</section>
+
+
+<section>
+<h2>Linking ports</h2>
+<ul>
+    <li>link guest port to port in a container
+    <li>needed for web applications such as Jupyter Notebook
+</ul>
+<pre style="font-size: 90%;">
+docker run -p 8888:8888 -t test1 /code/computation.sh
+</pre>
+</section>
+
+<section>
+<h2>Setting environmental variables</h2>
+<ul>
+    <li>set system environmental variable in the container
+    <li>useful for program settings and parameters
+</ul>
+<pre style="font-size: 90%;">
+docker run -p 8888:8888 -t test1 /code/computation.sh
+</pre>
 </section>
