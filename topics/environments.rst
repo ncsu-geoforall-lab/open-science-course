@@ -71,9 +71,7 @@ Assignment
 
 See the lecture (slides or videos), install Docker (see above) and run
 a Jupyter Notebook inside a Docker container based on this repository:
-gs.run_command('r.terrain.texture', elevation="terrain", texture="terrain_texture", convexity="terrain_convexity", concavity="terrain_concavity", feature="terrain_features")
-gs.run_command('r.geomorphon', elevation="dsm", forms="dsm_forms", search="12", skip="8", flat="10", overwrite=True)
-gs.run_command('v.lidar.mcc', input="uav_points", ground="mcc_ground", nonground="mcc_nonground")
+
 https://github.com/wenzeslaus/Notebook-for-processing-point-clouds-in-GRASS-GIS
 
 See the instructions above or in the repository readme file on how to
