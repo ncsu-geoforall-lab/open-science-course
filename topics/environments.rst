@@ -3,18 +3,49 @@ Reproducible computational environments
 
 
 
+Docker
+------
+
 Official Docker website: https://www.docker.com/
 
+Docker is open source under Apache 2.0 license but some additional
+components and tools are under different licenses including proprietary
+ones.
 
+Installing Docker
+`````````````````
+
+For this week we will need to install Docker. Here are instructions for different operating systems. The version you need to install for MS Windows and Mac OS is called Docker Toolbox. On Ubuntu, the package is currently called docker.io.
+
+MS Windows:
+
+https://docs.docker.com/toolbox/toolbox_install_windows/
+
+Mac OS:
+
+https://docs.docker.com/toolbox/toolbox_install_mac/
+
+Ubuntu:
+
+sudo apt-get install docker.io
+sudo groupadd docker
+sudo usermod -aG docker $USER
+
+You may need to agree with EULA or some terms and conditions in order
+to get the MS Windows or Mac OS version. If you don't feel comfortable
+installing it on your computer at this point or it doesn't work for you,
+you can use NCSU VCL Ubuntu machine.
+
+Building and running
+````````````````````
 
 Build an image using content of a GitHub repository::
 
-    docker build github.com/wenzeslaus/Notebook-for-processing-point-clouds-in-GRASS-GIS -t pointcloud-nb
+    docker build -t pointcloud-nb github.com/wenzeslaus/Notebook-for-processing-point-clouds-in-GRASS-GIS
 
 Now run a container based on the newly created image::
 
     docker run -p 8888:8888 pointcloud-nb
-
 
 Resources
 ---------
@@ -38,9 +69,14 @@ References
 Assignment
 ----------
 
-Install Docker and run a Jupyter Notebook inside a Docker container
-based on this repository:
-
+See the lecture (slides or videos), install Docker (see above) and run
+a Jupyter Notebook inside a Docker container based on this repository:
+gs.run_command('r.terrain.texture', elevation="terrain", texture="terrain_texture", convexity="terrain_convexity", concavity="terrain_concavity", feature="terrain_features")
+gs.run_command('r.geomorphon', elevation="dsm", forms="dsm_forms", search="12", skip="8", flat="10", overwrite=True)
+gs.run_command('v.lidar.mcc', input="uav_points", ground="mcc_ground", nonground="mcc_nonground")
 https://github.com/wenzeslaus/Notebook-for-processing-point-clouds-in-GRASS-GIS
 
-See the instructions above or in the repository readme.
+See the instructions above or in the repository readme file on how to
+run the notebook. Report on how that went and if you were able to run
+the whole notebook. The notebook has a section called Bonus tasks,
+skip that. You can run the Python or the Bash notebook or both.
