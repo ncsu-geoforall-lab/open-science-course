@@ -27,9 +27,11 @@ https://docs.docker.com/toolbox/toolbox_install_mac/
 
 Ubuntu:
 
-sudo apt-get install docker.io
-sudo groupadd docker
-sudo usermod -aG docker $USER
+::
+
+    sudo apt-get install docker.io
+    sudo groupadd docker
+    sudo usermod -aG docker $USER
 
 You may need to agree with EULA or some terms and conditions in order
 to get the MS Windows or Mac OS version. If you don't feel comfortable
