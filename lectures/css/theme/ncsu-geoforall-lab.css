@@ -268,12 +268,13 @@ ul.ps li {
 .reveal small {
   display: inline-block;
   font-size: smaller;
+  color: #3c3c3cdd;;
   line-height: 1.2em;
-  vertical-align: bottom;
+  vertical-align: baseline;
   margin: 0.1em; }
 
 .reveal small * {
-  vertical-align: bottom; }
+  vertical-align: baseline; }
 
 .reveal .credit {
   font-size: small;
