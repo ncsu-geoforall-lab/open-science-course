@@ -18,11 +18,14 @@
 
 
 <section>
-<h2>Publishing science</h2>
-<img src="img/philosophical_transactions.jpg" class="stretch">
+<h2>Publishing research</h2>
+<img src="img/philosophical_transactions_vol_1_239_242.png" class="stretch box-glow">
 <p class="credit glow">
-    CC BY Stefan Janusz,
-    <a href="https://en.wikipedia.org/wiki/File:Philosophical_Transactions_Volume_1_frontispiece.jpg">Wikipedia</a>
+    The Particulars. Of Those Observations of the Planet Mars,
+    Formerly Intimated to Have Been Made at London in
+    the Months of February and March A. 1665/6. (1665).
+    Philosophical Transactions (1665-1678), 1, 239-242.
+    Retrieved from <a href="http://www.jstor.org/stable/101500">JSTOR</a>
 </p>
 </section>
 
@@ -47,6 +50,14 @@
     Image credit: CC BY-SA Comtebenoit,
     <a href="https://commons.wikimedia.org/wiki/File:Spectrum_of_reproducible_research.png">Wikimedia</a>
 <!--
+J. Buckheit and D. L. Donoho. Wavelets and Statistics, chapter Wavelab and reproducible research.
+Springer-Verlag, Berlin, New York, 1995.
+(paraphrased/pseudo-quote Jon Claerbout of Stanford)
+An article about computational science in a scientific publication
+is not the scholarship itself, it is merely advertising of the scholarship.
+The actual scholarship is the complete software development environment
+and the complete set of instructions which generated the figures.
+
 Peng, R. D. (2011). Reproducible research in computational science.
 Science, 334(6060), 1226-1227.
 DOI: 10.1126/science.1213847
@@ -65,64 +76,37 @@ DOI: 10.1007/s10816-015-9272-9
 </p>
 </section>
 
-<!--
-J. Buckheit and D. L. Donoho. Wavelets and Statistics, chapter Wavelab and reproducible research.
-Springer-Verlag, Berlin, New York, 1995.
-(paraphrased/pseudo-quote Jon Claerbout of Stanford)
-An article about computational science in a scientific publication
-is not the scholarship itself, it is merely advertising of the scholarship.
-The actual scholarship is the complete software development environment
-and the complete set of instructions which generated the figures.
--->
-
-<section>
-<h2>Scientists rely on software</h2>
-    <blockquote style="width: 100%; margin: 0.1em;">
-        <p>
-            It's impossible to conduct research without software,
-            say 7 out of 10 UK researchers
-        </p>
-        <p>
-            <!-- &mdash; Simon Hettrick -->
-            &mdash; Hettrick et al, UK Research Software Survey 2014
-        </p>
-    </blockquote>
-<!--
-<small>92% of academics use research software</small>
-https://www.software.ac.uk/blog/2016-09-12-its-impossible-conduct-research-without-software-say-7-out-10-uk-researchers
--->
-</section>
-
-
-<section>
-<h2>Software needs to be shared</h2>
-    <blockquote style="width: 100%; margin: 0.1em;">
-        <p>
-            Software [...] developed as part of novel methods is as important
-            for the method's implementation [...]
-            Such software [...] must be made available to readers upon publication.
-        </p>
-        <p>
-            &mdash;Nature Methods - 4, 189 (2007)
-            <br>
-            doi:10.1038/nmeth0307-189
-        </p>
-    </blockquote>
-<!--
-scientific community we have been largely unsuccessful in sharing
-our research methods and results in a reproducible way.
-
-current scientific publishing requires more than writing a paper
-new ways of sharing our research
--->
-</section>
-
 
 <!--Software solutions for software problem-->
 
 
 <section>
-<h2>Scripting</h2>
+    <h2>Text</h2>
+    <p>
+        If the paper source format is LaTeX or other markup,
+        the figures, tables, or even bigger parts can be generated using
+        scripts and automatically included.
+    </p>
+    <p>
+        If the paper source format is Jupyter Notebook or other notebook-like format,
+        everything including text, figures, and code is at one place
+        included in the final document.
+    </p>
+    <img src="img/petras2017generalized_paper.png" class="stretch box-glow">
+</section>
+
+
+<section>
+<h2>Collaborative writing</h2>
+Overleaf, Authorea, ...
+<br>
+combined with Git
+<img src="img/overleaf.png" class="stretch box-glow">
+</section>
+
+
+<section>
+<h2>Scripting the process</h2>
 
 Bash and GRASS GIS
 <pre class="bash" style="font-size: x-large;"><code>r.in.lidar input=points.las output=elevation -e
@@ -142,30 +126,85 @@ of hoping we entered the same values as last time when rerunning the analysis wi
 </section>
 
 
-
 <section>
-    <h2>Paper: "PDF"</h2>
-    <p>
-        If the paper source format is LaTeX or other markup,
-        the figures, tables, or even bigger parts can be generated using
-        scripts and automatically included.
-    </p>
-    <p>
-        If the paper source format is Jupyter Notebook or other notebook-like format,
-        everything including text, figures, and code is at one place
-        included in the final document.
-    </p>
-    <img src="img/petras2017generalized_paper.png" class="stretch box-glow">
+<h2>Computational notebooks</h2>
+<ul>
+    <li>interactive document with text, code, and figures
+    <li>languages: Python, R, Bash, C, C++, Octave, ...
+    <li>Jupyter Notebook, R Markdown (Notebook), Emacs Org-mode, ...
+</ul>
+<img src="img/jupyter.png" class="stretch box-glow">
+<!-- Jupyter and R Markdown let us track the reasoning behind our experiments and analyses. -->
 </section>
 
 
 <section>
-<h2>Paper: Code</h2>
+<h2>Publishing code</h2>
 
 <img src="img/spatio-temporal-countour-evolution_code.png" class="stretch">
 </section>
 <!--A terrain modeling paper will serve as an example of sharing a full description
 of a published method.-->
+
+<section>
+    <h2>Published computational research</h2>
+    <p>FUTURES - urban-rural landscape patterns simulation</p>
+    <p>model implemented as a set of GRASS GIS addon modules</p>
+    <p><em>r.futures.pga, r.futures.demand, r.futures.parallelpga, ...</em></p>
+    <img src="img/futures.jpg" class="stretch">
+</section>
+
+<section>
+<h3 style="margin-top: 3ex; margin-bottom: 3ex">FUTURES: Text</h3>
+<img src="img/futures_paper.png" class="stretch">
+<!-- A landscape change model will be used to demonstrate reusable research. -->
+</section>
+
+<section>
+<h3>FUTURES: Source code</h3>
+<img src="img/futures_src.png" class="stretch">
+</section>
+
+<section>
+<h3>FUTURES: Source code history</h3>
+<img src="img/futures_log.png" class="stretch">
+</section>
+
+<section>
+<h3>FUTURES: Documentation</h3>
+<img src="img/futures_doc.png" class="stretch">
+</section>
+
+
+<section>
+<h3>FUTURES: Graphical user interface</h3>
+<img src="img/futures_gui.png" class="stretch box-glow">
+</section>
+
+
+<section>
+<h2>Integration into a larger project</h2>
+<ul>
+    <li>Maintenance and common features
+    <li>Preprocessing, visualization, and user interface (GUI, CLI, API)
+    <li>Integration with existing analytical tools
+    <li>Inputs, outputs, memory management
+    <li>Options: GRASS GIS module, R package, Python package, QGIS plugin, ...
+</ul>
+<p>
+<img src="img/grass_gis_addons_index.png" width=100>
+</section>
+
+
+<section>
+<h2>Environment to run the code</h2>
+<ul>
+    <li>dependencies
+    <li>environmental settings
+    <li>file structure
+    <li>Solutions: Docker, Vagrant, virtual machines ...
+</ul>
+</section>
 
 
 <section>
@@ -190,174 +229,60 @@ of our constantly evolving methods and R scripts.
 
 
 <section>
-<h2>Collaborative writing: Overleaf</h2>
-<img src="img/overleaf.png" class="stretch box-glow">
-</section>
-
-
-<section>
-<h2>Text and code: Jupyter Notebook</h2>
-<ul>
-    <li>interactive document with text, code, and figures
-    <li>languages: Python, R, Bash, C, C++, Octave, ...
-    <li>alternatives: R Markdown (Notebook), Emacs Org-mode, ...
-</ul>
-<img src="img/jupyter.png" class="stretch box-glow">
-<!-- Jupyter and R Markdown let us track the reasoning behind our experiments and analyses. -->
-</section>
-
-
-<section>
-<h2 style="margin-top: 3ex; margin-bottom: 3ex">Publishing a model</h2>
-<img src="img/futures_paper.png" class="stretch">
-<!-- A landscape change model will be used to demonstrate reusable research. -->
-</section>
-
-<section>
-<h3>Source code</h3>
-<img src="img/futures_src.png" class="stretch">
-</section>
-
-<section>
-<h3>Source code history</h3>
-<img src="img/futures_log.png" class="stretch">
-</section>
-
-<section>
-<h3>Documentation</h3>
-<img src="img/futures_doc.png" class="stretch">
-</section>
-
-
-<section>
-<h3>Graphical user interface</h3>
-<img src="img/futures_gui.png" class="stretch box-glow">
-</section>
-
-
-<section>
-<h3>Integration into a larger project</h3>
-<em style="font-size: larger;">Do I want to create a new software project?</em>
-<ul>
-    <li>Preprocessing, visualization, and user interface (GUI, CLI, API)
-    <li>Integration with existing analytical tools
-    <li>Inputs, outputs, memory management
-</ul>
-<p>
-<img src="img/logos/grass_gis_nobg.png" width=100>
-<br>
-FUTURES model implemented as GRASS GIS modules
-<br>
-<em>r.futures.pga, r.futures.demand, r.futures.parallelpga, ...</em>
-<p>
-<small>
-Alternatives: R package, Python package, QGIS plugin, ...
-</small>
-</section>
-
-
-<section>
-<h2>Running the code</h2>
-<ul>
-    <li>dependencies
-    <li>environment
-</ul>
-</section>
-
-
-<section>
-<h2>Complete environment</h2>
-<table>
-    <tr>
-        <th></th>
-        <th>My laptop</th>
-        <th>Any computer</th>
-        <th>Docker</th>
-    </tr>
-    <tr>
-        <td>What is required to recreate the study and run the software?</td>
-        <td>nothing*</td>
-        <td>text</td>
-        <td>text file</td>
-    </tr>
-    <tr>
-        <td>How are the dependencies handled?</td>
-        <td>?</td>
-        <td>?</td>
-        <td>specified</td>
-    </tr>
-</table>
-<small>*Except that I'm not going to lend you my laptop.</small>
-<!--
-Docker and Vagrant let us wrap entire workflow into one runtime environment
-so that our species distribution model can be used without our personal laptop.
--->
-</section>
-
-
-<section>
-<h3>Dockerfile</h3>
-<pre style="width: 40%; font-size: 90%;">
-FROM ubuntu:16.04
-RUN apt-get update
-RUN apt-get install -y \
-        g++ \
-        python \
-        python-numpy \
-        ...
-</pre>
-</section>
-
-
-<section>
 <h2>Research publication</h2>
 <table class="row-based">
     <tr>
-        <td>Paper</td>
+        <td>Text</td>
         <td>
             background, methods, results, discussion<td>
             <small>PDF, HTML</small>
         </td>
     </tr>
     <tr>
-        <td>Environment</td>
+        <td>Data</td>
         <td>
-            details about all dependencies and the code<td>
-            <small>Git, Docker</small>
-        </td>
-    </tr>
-    <tr>
-        <td>Specific code</td>
-        <td>
-            scripts to perform the analyses<td>
-            <small>Bash, Python</small>
+            methods as GRASS GIS modules<td>
+            <small>open formats, *</small>
         </td>
     </tr>
     <tr>
         <td>Reusable&nbsp;code</td>
         <td>
-            methods as GRASS GIS modules<td>
-            <small>Python, C</small>
+            generally and reusably implemented methods<td>
+            <small>Python, R, C</small>
+        </td>
+    </tr>
+    <tr>
+        <td>Specific&nbsp;code</td>
+        <td>
+            scripts to generate results<td>
+            <small>Bash, Python, R, *</small>
+        </td>
+    </tr>
+    <tr>
+        <td>Environment</td>
+        <td>
+            details about all dependencies and the code<td>
+            <small>Docker, Vagrant</small>
+        </td>
+    </tr>
+    <tr>
+        <td>Versions</td>
+        <td>
+            repository with current and previous versions<td>
+            <small>Git, Mercurial</small>
         </td>
     </tr>
 </table>
-<img src="img/fragmentation_paper.png" class="stretch box-glow">
-<small class="glow">
-    Petras, V., D. J. Newcomb, and H. Mitasova.
-    <em>Generalized 3D fragmentation index derived from lidar point clouds.</em>
-    In: Open Geospatial Data, Software and Standards [in print]
-</small>
+<p>
+    * Potentially included in computational notebooks such as Jupyter Notebook
+</p>
+<img src="img/spectrum_of_reproducible_research.png" class="stretch box-glow">
+<p class="credit glow">
+    Image credit: CC BY-SA Comtebenoit,
+    <a href="https://commons.wikimedia.org/wiki/File:Spectrum_of_reproducible_research.png">Wikimedia</a>
 </p>
 </section>
-
-
-<!--
-This talk will discuss several tools for reproducible research
-and show practical examples which will make your life and lives of your colleagues easier.
-
-Finally, a paper about vegetation structure will show how all pieces
-of the puzzle fit together.
--->
 
 
 <section>
@@ -371,42 +296,33 @@ of the puzzle fit together.
 
 
 <section>
-<h2>Next steps</h2>
-<ul>
-    <li>Publish R scripts with the next paper.
-    <li>Collaborate on code using Git.
-    <li>Collaborate on text using Overleaf.
-    <li>Use Jupyter Notebook for a report.
-</ul>
-</section>
-
-
-<section>
 <h2>Like irreproducibility more?</h2>
 <img src="img/top_tips_to_make_your_research_irreproducible.png" class="stretch box-glow">
 </section>
 
 
 <section>
-<h2>Resources</h2>
+<h2>Further Resources</h2>
 <div class="left">
-<h3>Tools for open geospatial science</h3>
+<h3>Data Carpentry</h3>
 <ul>
-    <li>North Carolina State University course, fall 2017
-    <li><a href="https://goo.gl/g8pFiE">goo.gl/g8pFiE</a>
-</ul>
-<br>
-<img src="../img/gear_wheel.png" style="height: 12ex;">
-<img src="img/url_g8pFiE_qrcode.png" style="height: 12ex; padding-left: 4em;">
-</div>
-<div class="right">
-<h3>Software and Data Carpentry</h3>
-<ul>
-    <li>workshop and lessons
-    <li><a href="http://software-carpentry.org">software-carpentry.org</a>
+    <li>Building communities teaching universal data literacy
     <li><a href="http://datacarpentry.org">datacarpentry.org</a>
 </ul>
 <br>
+<center>
 <img src="img/logos/data_carpentry.png" style="height: 8ex;">
+</center>
+</div>
+<div class="right">
+<h3>Software Carpentry</h3>
+<ul>
+    <li>Teaching basic lab skills for research computing
+    <li><a href="http://software-carpentry.org">software-carpentry.org</a>
+</ul>
+<br>
+<center>
+<img src="img/logos/software_carpentry.png" style="height: 8ex;">
+</center>
 </div>
 </section>
