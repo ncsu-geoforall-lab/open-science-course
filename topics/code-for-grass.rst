@@ -289,7 +289,7 @@ Texts
 * `GRASS GIS Python scripting with script package <https://grass.osgeo.org/grass72/manuals/libpython/script_intro.html>`_ (official documentation)
 * `Official instructions for code submission <https://grass.osgeo.org/development/code-submission/>`_
 * `Example of a GRASS GIS module implemented in Python <https://grass.osgeo.org/grass72/manuals/addons/r.bioclim.html>`_ (see the source code link at the bottom of the page)
-* `Introduction to GRASS GIS: Python scripting <http://ncsu-geoforall-lab.github.io/grass-intro-workshop/python.html>`
+* `Introduction to GRASS GIS: Python scripting <http://ncsu-geoforall-lab.github.io/grass-intro-workshop/python.html>`_
 * `Using Python and GRASS GIS <https://ncsu-geoforall-lab.github.io/uav-lidar-analytics-course/assignments/python.html>`_ (class material from GIS595/MEA792: UAV/lidar Data Analytics)
 
 Videos
