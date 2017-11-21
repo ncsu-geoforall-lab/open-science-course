@@ -60,6 +60,10 @@ Slides
 Videos
 ``````
 
+* `Reproducible computational environments: Overview of tools <http://fatra.cnr.ncsu.edu/open-science-course/environments-intro.mp4>`_ (recording from the class, 24 mins)
+* `Reproducible computational environments: Docker <http://fatra.cnr.ncsu.edu/open-science-course/environments-docker.mp4>`_ (recording from the class, 20 mins)
+* `Reproducible computational environments: How to use Docker <http://fatra.cnr.ncsu.edu/open-science-course/environments-docker-how.mp4>`_ (recording from the class, 40 mins)
+* `Reproducible computational environments: About Docker isolation <http://fatra.cnr.ncsu.edu/open-science-course/environments-docker-isolation.mp4>`_ (recording from the class, 2 mins)
 * `Docker Tutorial - What is Docker & Docker Containers, Images, etc? <https://www.youtube.com/watch?v=pGYAg7TMmp0>`_ (by LearnCode.academy, 8 mins)
 * `Introduction to Docker <https://www.youtube.com/watch?v=Q5POuMHxW-0>`_ (by Solomon Hykes at Twitter University, 47 mins)
 

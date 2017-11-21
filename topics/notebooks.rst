@@ -118,6 +118,9 @@ Texts
 Videos
 ``````
 
+* `Computational Notebooks: Introduction to Jupyter <http://fatra.cnr.ncsu.edu/open-science-course/notebooks-jupyter-intro.mp4>`_ (recording from the class, 14 mins)
+* `Computational Notebooks: Files in Jupyter <http://fatra.cnr.ncsu.edu/open-science-course/notebooks-jupyter-publish.mp4>`_ (recording from the class, 6 mins)
+* `Computational Notebooks: Files in Jupyter <http://fatra.cnr.ncsu.edu/open-science-course/notebooks-jupyter-files.mp4>`_ (recording from the class, 8 mins)
 * `Jupyter Notebook Tutorial: Introduction, Setup, and Walkthrough <https://www.youtube.com/watch?v=HW29067qVWk>`_ (30 mins)
 * `Jupyter Notebook Tutorial <https://www.youtube.com/watch?v=q_BzsPxwLOE&list=PLeo1K3hjS3uuZPwzACannnFSn9qHn8to8>`_ (YouTube playlist by codebasics)
 * `Scripting GRASS GIS 7 with Python <https://www.youtube.com/watch?v=PX2UpMhp2hc>`_ (2 hours)

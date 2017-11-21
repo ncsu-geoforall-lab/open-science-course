@@ -295,4 +295,5 @@ Texts
 Videos
 ``````
 
+* `Publishing code as a GRASS GIS module <http://fatra.cnr.ncsu.edu/open-science-course/code-as-grass-module.mp4>`_ (recording from the class, 1 hour)
 * `Scripting GRASS GIS 7 with Python <https://www.youtube.com/watch?v=PX2UpMhp2hc>`_
