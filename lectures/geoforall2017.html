@@ -14,12 +14,11 @@
         GeoForAll Webinar<br>
         December 1, 2017
     </p>
-</section>
-
-
-<section>
-<h2>Science</h2>
-<em>Science existed before journal papers.</em>
+    <p>
+        GitHub: <a href="http://github.com/wenzeslaus">wenzeslaus</a>
+        <br>
+        Twitter: <a href="http://twitter.com/vaclavpetras">vaclavpetras</a>
+    </p>
 </section>
 
 
@@ -35,7 +34,7 @@
 
 
 <section>
-<h2>Open Science</h2>
+<h2>Publishing goals</h2>
 <ul>
     <li>registration <small>so that scientists get credit</small>
     <li>archiving <small>so that we preserve knowledge for the future</small>
@@ -44,43 +43,6 @@
 </ul>
 </section>
 
-
-<section>
-<h2>Open Science</h2>
-
-<img src="img/spectrum_of_reproducible_research.png" class="stretch">
-<small>[Buckheit and Donoho 1995, Peng 2011, Rodríguez-Sánchez et al. 2016, Marwick 2016]</small>
-<p class="credit">
-    Image credit: CC BY-SA Comtebenoit,
-    <a href="https://commons.wikimedia.org/wiki/File:Spectrum_of_reproducible_research.png">Wikimedia</a>
-<!--
-Peng, R. D. (2011). Reproducible research in computational science.
-Science, 334(6060), 1226-1227.
-DOI: 10.1126/science.1213847
-
-Rodríguez-Sánchez, F., Bartomeus, I., Varela, S., Pérez-Luque, A.J.,
-Ciencia reproducible: qué, por qué, cómoEcosistemas [en linea] 2016, 25
-(Mayo-Agosto) : [Fecha de consulta: 4 de abril de 2017]
-Disponible en:<http://www.redalyc.org/articulo.oa?id=54046745011>
-ISSN 1132-6344
-
-Marwick, B. (2016). Computational reproducibility in archaeological research:
-basic principles and a case study of their implementation.
-Journal of Archaeological Method and Theory, 1-27.
-DOI: 10.1007/s10816-015-9272-9
--->
-</p>
-</section>
-
-<!--
-J. Buckheit and D. L. Donoho. Wavelets and Statistics, chapter Wavelab and reproducible research.
-Springer-Verlag, Berlin, New York, 1995.
-(paraphrased/pseudo-quote Jon Claerbout of Stanford)
-An article about computational science in a scientific publication
-is not the scholarship itself, it is merely advertising of the scholarship.
-The actual scholarship is the complete software development environment
-and the complete set of instructions which generated the figures.
--->
 
 <section>
 <h2>Scientists rely on software</h2>
@@ -125,35 +87,39 @@ new ways of sharing our research
 </section>
 
 
-<!--Software solutions for software problem-->
-
-
 <section>
-<h2>Screenshots</h2>
-<img src="img/r_in_lidar_1.png" width=300>
-<img src="img/r_in_lidar_2.png" width=300>
-<img src="img/r_in_lidar_3.png" width=300>
-<!--Czech localization of MS Excel has function names in Czech-->
-</section>
+<h2>Open Science</h2>
 
-<section>
-<h2>Scripting</h2>
-
-Bash
-<pre class="bash" style="font-size: x-large;"><code>r.in.lidar input=points.las output=elevation -e
-</code></pre>
-Python
-<pre class="python" style="font-size: x-large;"><code>from grass.script import run_command
-run_command("r.in.lidar", input="points.las", output="elevation", flags="e")
-</code></pre>
-R
-<pre class="python" style="font-size: x-large;"><code>library(rgrass7)
-execGRASS("r.in.lidar", input="points.las", output="elevation", flags="e")
-</code></pre>
+<img src="img/spectrum_of_reproducible_research.png" class="stretch">
+<small>[Buckheit and Donoho 1995, Peng 2011, Rodríguez-Sánchez et al. 2016, Marwick 2016]</small>
+<p class="credit">
+    Image credit: CC BY-SA Comtebenoit,
+    <a href="https://commons.wikimedia.org/wiki/File:Spectrum_of_reproducible_research.png">Wikimedia</a>
 <!--
-We can use Python and other languages to access powerful software features in an automated way instead
-of hoping we entered the same values as last time when rerunning the analysis with a new climate dataset.
+J. Buckheit and D. L. Donoho. Wavelets and Statistics, chapter Wavelab and reproducible research.
+Springer-Verlag, Berlin, New York, 1995.
+(paraphrased/pseudo-quote Jon Claerbout of Stanford)
+An article about computational science in a scientific publication
+is not the scholarship itself, it is merely advertising of the scholarship.
+The actual scholarship is the complete software development environment
+and the complete set of instructions which generated the figures.
+
+Peng, R. D. (2011). Reproducible research in computational science.
+Science, 334(6060), 1226-1227.
+DOI: 10.1126/science.1213847
+
+Rodríguez-Sánchez, F., Bartomeus, I., Varela, S., Pérez-Luque, A.J.,
+Ciencia reproducible: qué, por qué, cómoEcosistemas [en linea] 2016, 25
+(Mayo-Agosto) : [Fecha de consulta: 4 de abril de 2017]
+Disponible en:<http://www.redalyc.org/articulo.oa?id=54046745011>
+ISSN 1132-6344
+
+Marwick, B. (2016). Computational reproducibility in archaeological research:
+basic principles and a case study of their implementation.
+Journal of Archaeological Method and Theory, 1-27.
+DOI: 10.1007/s10816-015-9272-9
 -->
+</p>
 </section>
 
 
@@ -170,29 +136,6 @@ of hoping we entered the same values as last time when rerunning the analysis wi
 
 
 <section>
-<h2>Core Topics</h2>
-<ol start="6">
-    <li>QGIS, a free and open source geographic system
-    <li>Introduction to command line and remote access to computational resources
-    <li>Command line and Python tools for geospatial work
-    <li>GRASS GIS as software for geospatial research
-    <li>Publishing data on web
-</ol>
-</section>
-
-
-<section>
-<h2>Advanced Topics</h2>
-<ol start="11">
-    <li>Combining text, code and results into one document
-    <li>Publishing code as part of an open source project
-    <li>Reproducible computational environments
-    <li>Writing and reproducing an open science paper
-</ol>
-</section>
-
-
-<section>
 <h2>Paper: PDF</h2>
 
 <img src="img/petras2015mapping_paper.png" class="stretch">
@@ -200,12 +143,10 @@ of hoping we entered the same values as last time when rerunning the analysis wi
 
 
 <section>
-<h2>Paper: Code</h2>
-
-<img src="img/spatio-temporal-countour-evolution_code.png" class="stretch">
+<h2>Collaborative scientific writing</h2>
+<p>Overleaf, Authorea</p>
+<img src="img/overleaf.png" class="stretch box-glow">
 </section>
-<!--A terrain modeling paper will serve as an example of sharing a full description
-of a published method.-->
 
 
 <section>
@@ -232,9 +173,65 @@ There are GUIs as well.
 
 
 <section>
-<h2>Collaborative writing: Overleaf</h2>
-<img src="img/overleaf.png" class="stretch box-glow">
+<h2>Core Topics</h2>
+<ol start="6">
+    <li>QGIS, a free and open source geographic system
+    <li>Introduction to command line and remote access to computational resources
+    <li>Command line and Python tools for geospatial work
+    <li>GRASS GIS as software for geospatial research
+    <li>Publishing data on web
+</ol>
 </section>
+
+
+<section>
+<h2>Screenshots won't cut it</h2>
+<img src="img/r_in_lidar_1.png" width=300>
+<img src="img/r_in_lidar_2.png" width=300>
+<img src="img/r_in_lidar_3.png" width=300>
+<!--Czech localization of MS Excel has function names in Czech-->
+</section>
+
+
+<section>
+<h2>Scripting the process</h2>
+
+Bash and GRASS GIS
+<pre class="bash" style="font-size: x-large;"><code>r.in.lidar input=points.las output=elevation -e
+</code></pre>
+Python and GRASS GIS
+<pre class="python" style="font-size: x-large;"><code>from grass.script import run_command
+run_command("r.in.lidar", input="points.las", output="elevation", flags="e")
+</code></pre>
+R and GRASS GIS
+<pre class="python" style="font-size: x-large;"><code>library(rgrass7)
+execGRASS("r.in.lidar", input="points.las", output="elevation", flags="e")
+</code></pre>
+<!--
+We can use Python and other languages to access powerful software features in an automated way instead
+of hoping we entered the same values as last time when rerunning the analysis with a new climate dataset.
+-->
+</section>
+
+
+<section>
+<h2>Advanced Topics</h2>
+<ol start="11">
+    <li>Combining text, code and results into one document
+    <li>Publishing code as part of an open source project
+    <li>Reproducible computational environments
+    <li>Writing and reproducing an open science paper
+</ol>
+</section>
+
+
+<section>
+<h2>Paper: Code</h2>
+
+<img src="img/spatio-temporal-countour-evolution_code.png" class="stretch">
+</section>
+<!--A terrain modeling paper will serve as an example of sharing a full description
+of a published method.-->
 
 
 <section>
@@ -355,41 +352,62 @@ RUN apt-get install -y \
 <h2>Research publication</h2>
 <table class="row-based">
     <tr>
-        <td>Paper</td>
+        <td>Text</td>
         <td>
             background, methods, results, discussion<td>
-            <small>PDF, HTML</small>
+            <small>PDF, HTML, *</small>
+        </td>
+    </tr>
+    <tr>
+        <td>Data</td>
+        <td>
+            methods as GRASS GIS modules<td>
+            <small>open formats, **</small>
+        </td>
+    </tr>
+    <tr>
+        <td>Reusable&nbsp;code</td>
+        <td>
+            generally and reusably implemented methods<td>
+            <small>Python, R, C</small>
+        </td>
+    </tr>
+    <tr>
+        <td>Specific&nbsp;code</td>
+        <td>
+            scripts to generate results<td>
+            <small>Bash, Python, R, **</small>
         </td>
     </tr>
     <tr>
         <td>Environment</td>
         <td>
             details about all dependencies and the code<td>
-            <small>Git, Docker</small>
+            <small>Docker, Vagrant</small>
         </td>
     </tr>
     <tr>
-        <td>Specific code</td>
+        <td>Versions</td>
         <td>
-            scripts to perform the analyses<td>
-            <small>Bash, Python</small>
-        </td>
-    </tr>
-    <tr>
-        <td>Reusable&nbsp;code</td>
-        <td>
-            methods as GRASS GIS modules<td>
-            <small>Python, C</small>
+            repository with current and previous versions<td>
+            <small>Git, Mercurial</small>
         </td>
     </tr>
 </table>
+<p>
+    <small>
+    * Source format being e.g. LaTeX or Markdown
+    <br>
+    ** Potentially included in computational notebooks such as Jupyter Notebook
+    </small>
+</p>
 <img src="img/fragmentation_paper.png" class="stretch box-glow">
 <small class="glow">
-    Petras, V., D. J. Newcomb, and H. Mitasova.
-    <em>Generalized 3D fragmentation index derived from lidar point clouds.</em>
-    In: Open Geospatial Data, Software and Standards [in print]
+    Petras, V., Newcomb, D. J., & Mitasova, H. (2017).
+    Generalized 3D fragmentation index derived from lidar point clouds.
+    <em>Open Geospatial Data, Software and Standards</em>, 2(1), 9.
+    <a href="https://doi.org/10.1186/s40965-017-0021-8">doi:10.1186/s40965-017-0021-8</a>
 </small>
-</p>
 </section>
 
 
@@ -424,17 +442,12 @@ of the puzzle fit together.
 
 
 <section>
-<h2>Like irreproducibility more?</h2>
-<img src="img/top_tips_to_make_your_research_irreproducible.png" class="stretch box-glow">
-</section>
-
-
-<section>
 <h2>Resources</h2>
 <div class="left">
 <h3>Tools for open geospatial science</h3>
 <ul>
-    <li>North Carolina State University course, fall 2017
+    <li>North Carolina State University
+    <li>fall 2017, on-campus and distance
     <li><a href="https://goo.gl/g8pFiE">goo.gl/g8pFiE</a>
 </ul>
 <br>
@@ -442,13 +455,14 @@ of the puzzle fit together.
 <img src="img/url_g8pFiE_qrcode.png" style="height: 12ex; padding-left: 4em;">
 </div>
 <div class="right">
-<h3>Software and Data Carpentry</h3>
+<h3>NCSU GeoForAll Lab</h3>
 <ul>
-    <li>workshop and lessons
-    <li><a href="http://software-carpentry.org">software-carpentry.org</a>
-    <li><a href="http://datacarpentry.org">datacarpentry.org</a>
+    <li>courses and workshops
+    <li>research
+    <li>software development
+    <li><a href="https://geospatial.ncsu.edu/osgeorel">geospatial.ncsu.edu/osgeorel</a>
 </ul>
 <br>
-<img src="img/logos/data_carpentry.png" style="height: 8ex;">
+<img src="img/logos/ncstate.png" style="height: 10ex;">
 </div>
 </section>
