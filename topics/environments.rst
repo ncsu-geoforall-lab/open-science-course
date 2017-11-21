@@ -33,6 +33,15 @@ Ubuntu:
     sudo groupadd docker
     sudo usermod -aG docker $USER
 
+In the Ubuntu (Linux) installation, for the change of group to take
+place (``usermod``), you need to login again.
+Logging out and logging in is one way. A more convenient way
+is the following command:
+
+::
+
+    su - $USER
+
 You may need to agree with EULA or some terms and conditions in order
 to get the MS Windows or Mac OS version. If you don't feel comfortable
 installing it on your computer at this point or it doesn't work for you,
