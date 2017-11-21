@@ -38,6 +38,12 @@ Slides
 
 * `Lecture slides <../lectures/paper.html>`_ [main resource]
 
+Videos
+``````
+
+* `A reproducible paper: Overview of tools <http://fatra.cnr.ncsu.edu/open-science-course/paper-overview.mp4>`_ (recording from the class, 13 mins)
+* `A reproducible paper: Evaluating the tools in context of various open science concepts <http://fatra.cnr.ncsu.edu/open-science-course/paper-terms-and-evaluation.mp4>`_ (recording from the class, 15 mins)
+
 References
 ``````````
 
