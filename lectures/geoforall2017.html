@@ -335,15 +335,25 @@ so that our species distribution model can be used without our personal laptop.
 
 
 <section>
-<h3>Dockerfile</h3>
-<pre style="width: 40%; font-size: 90%;">
+<h2>Environment to run the code</h2>
+<ul>
+    <li>dependencies
+    <li>environmental settings
+    <li>file structure
+    <li>Solutions: Docker, Vagrant, virtual machines ...
+</ul>
+<pre style="width: 40%; font-size: 70%;">
+# Dockerfile
 FROM ubuntu:16.04
 RUN apt-get update
 RUN apt-get install -y \
         g++ \
         python \
         python-numpy \
+        netcdf-bin \
+        sqlite3 \
         ...
+WORKDIR /data
 </pre>
 </section>
 
@@ -442,6 +452,20 @@ of the puzzle fit together.
 
 
 <section>
+<h2>Available course material</h2>
+<ul>
+    <li>Course web site (HTML)
+    <li>Lecture slides (if applicable; in Reveal.js)
+    <li>Raw (plain text) weekly instructions in reStructuredText (on GitHub)
+    <li>Assignment for each week
+    <li>Recorded short videos from the class
+    <li>Flyer and other promotional material
+</ul>
+<a href="https://github.com/ncsu-geoforall-lab/open-science-course">github.com/ncsu-geoforall-lab/open-science-course</a>
+</section>
+
+
+<section>
 <h2>Resources</h2>
 <div class="left">
 <h3>Tools for open geospatial science</h3>
@@ -465,4 +489,47 @@ of the puzzle fit together.
 <br>
 <img src="img/logos/ncstate.png" style="height: 10ex;">
 </div>
+</section>
+
+
+<section>
+<h2>Additional resources</h2>
+
+<small style="font-size: 60%" class="glow">
+General references:
+
+<ul>
+<li>
+Watson, M. (2015). When will ‘open science’ become simply ‘science’?. Genome biology, 16(1), 101. <a href="https://doi.org/10.1186/s13059-015-0669-2">doi:10.1186/s13059-015-0669-2</a>
+<li>
+Morin, A et al. “Shining light into black boxes”. In: Science 336.6078 (2012), pp. 159–160. <a href="http://doi.org/10.1126/science.1218263">doi:10.1126/science.1218263</a>
+<li>
+Ince, Darrel C., Leslie Hatton, and John Graham-Cumming. “The case for open computer programs”. In: Nature 482.7386 (2012), pp. 485–488. <a href="http://doi.org/10.1038/nature10836">doi:10.1038/nature10836</a>
+<li>
+Piwowar, Heather A., Roger S. Day, and Douglas B. Fridsma. “Sharing Detailed Research Data Is Associated with Increased Citation Rate”. In: PLOS ONE 2.3 (Mar. 2007). <a href="http://doi.org/10.1371/journal.pone.0000308">doi:10.1371/journal.pone.0000308</a>
+</ul>
+
+Specific fields or solutions:
+<ul>
+<li>
+Rocchini, Duccio and Markus Neteler. “Let the four freedoms paradigm apply to ecology”. In: Trends in Ecology and Evolution (2012). <a href="http://doi.org/10.1016/j.tree.2012.03.009">doi:10.1016/j.tree.2012.03.009</a>
+<li>
+Lees, Jonathan M. “Open and free: Software and scientific reproducibility”. In: Seismological Research Letters 83.5 (2012), pp. 751–752. <a href="http://doi.org/10.1785/0220120091">doi:10.1007/s10816-015-9272-9</a>
+<li>
+Marwick, Ben. “Computational reproducibility in archaeological research: basic principles and a case study of their implementation”. In: Journal of Archaeological Method and Theory 24.2 (2017), pp. 424–450. <a href="http://doi.org/10.1007/s10816-015-9272-9">doi:10.1007/s10816-015-9272-9</a>
+<li>
+Boettiger, C. (2015). An introduction to Docker for reproducible research. ACM SIGOPS Operating Systems Review, 49(1), 71-79. https://doi.org/10.1145/2723872.2723882 (Preprint <a href="https://arxiv.org/pdf/1410.0846">arxiv.org/pdf/1410.0846</a>)
+</ul>
+
+Texts not published as papers:
+<ul>
+<li>
+Kieran Healy. Plain Person’s Guide to Plain Text Social Science. <a href="http://plain-text.co">plain-text.co</a>
+<li>
+Eva Amsen. 2014. What is open science? F1000Research blog. <a href="https://blog.f1000.com/2014/11/11/what-is-open-science/">blog.f1000.com/2014/11/11/what-is-open-science</a>
+<li>
+The Open Definition (Formal definition of open) <a href="http://opendefinition.org/">opendefinition.org</a>
+</ul>
+</small>
+
 </section>
