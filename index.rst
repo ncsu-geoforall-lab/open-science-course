@@ -18,7 +18,8 @@ work and how to apply this for research in a lab group. Students will
 have an option to participate in writing a collaborative publication
 covering the course topics.
 
-See also a `flyer <img/flyer.pdf>`_ and
+See also a `flyer <img/flyer.pdf>`_,
+`webinar slides about the course <lectures/geoforall2017.html>`_, and
 `slides on a related topic <lectures/us-iale2017.html>`_.
 
 Topics
