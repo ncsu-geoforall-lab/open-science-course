@@ -47,6 +47,7 @@ Texts
 * `The evolution of open science <https://www.elsevier.com/connect/the-evolution-of-open-science-how-digitization-is-transforming-research>`_ Elsevier interview with Dr. Stephane Berghmans (2015)
 * `What, exactly, is Open Science? <http://www.openscience.org/blog/?p=269>`_ by Dan Gezelter from The OpenScience Project (2009)
 * `What is open science? <http://blog.f1000research.com/2014/11/11/what-is-open-science/>`_ by Eva Amsen at F1000Research Blog (2014)
+* `Open science in archaeology <https://www.researchgate.net/publication/320068431_OPEN_SCIENCE_IN_ARCHAEOLOGY>`_ by Marwick et al. (2017)
 * `Plain Text Science <http://kieranhealy.org/files/papers/plain-person-text.pdf>`_
 * `Replication frustration <https://www.theguardian.com/science/head-quarters/2015/oct/16/roadblocks-to-successful-scientific-replications-materials-sharing-copyright>`_ by Pete Etchells in The Guardian
 * `Badges awarded at Open Science Framework <https://osf.io/tvyxz/wiki/1.%20View%20the%20Badges/>`_
