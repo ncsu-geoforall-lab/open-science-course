@@ -23,7 +23,12 @@
 
 
 <section>
-<h2>Open Science</h2>
+<h2>Open Science Beginnings</h2>
+
+<p>
+First journal ever published:<br>
+<em>Philosophical Transactions (of the Royal Society)</em>
+</p>
 
 <img src="img/philosophical_transactions.jpg" class="stretch">
 <p class="credit glow">
@@ -60,6 +65,7 @@
 <small>92% of academics use research software</small>
 https://www.software.ac.uk/blog/2016-09-12-its-impossible-conduct-research-without-software-say-7-out-10-uk-researchers
 -->
+<img src="img/grass_gis_gui_modeler.png" class="stretch box-glow">
 </section>
 
 
@@ -74,7 +80,7 @@ https://www.software.ac.uk/blog/2016-09-12-its-impossible-conduct-research-witho
         <p>
             &mdash;Nature Methods - 4, 189 (2007)
             <br>
-            doi:10.1038/nmeth0307-189
+            <a href="https://doi.org/10.1038/nmeth0307-189">doi:10.1038/nmeth0307-189</a>
         </p>
     </blockquote>
 <!--
@@ -84,6 +90,29 @@ our research methods and results in a reproducible way.
 current scientific publishing requires more than writing a paper
 new ways of sharing our research
 -->
+</section>
+
+
+<section>
+<h2>Open Data and Software</h2>
+    <blockquote style="width: 100%; margin: 0.1em;">
+        <p>
+            ...all research objects should be Findable, Accessible,
+            Interoperable and Reusable (FAIR)
+            both for machines and for people.
+        </p>
+        <p>
+            &mdash;Wilkinson et al.
+            <small>(and Jointly Designing a Data Fairport Workshop)</small>
+            <br>
+            <a href="https://doi.org/10.1038/sdata.2016.18">doi:10.1038/sdata.2016.18</a>
+        </p>
+    </blockquote>
+    <blockquote style="width: 100%; margin: 0.1em;">
+        <p>
+            Software is part of data?
+        </p>
+    </blockquote>
 </section>
 
 
@@ -124,7 +153,17 @@ DOI: 10.1007/s10816-015-9272-9
 
 
 <section>
-<h2>Basic Topics</h2>
+<h2>Tools for open geospatial science</h2>
+<ol>
+    <li>Basic topics
+    <li>Geospatial topics
+    <li>Advanced topics
+</ol>
+</section>
+
+
+<section>
+<h2>Course Syllabus: Basic Topics</h2>
 <ol start="1">
     <li>Introduction to and motivation for open science
     <li>Collaborative writing of scientific papers
@@ -132,20 +171,38 @@ DOI: 10.1007/s10816-015-9272-9
     <li>Revision control systems and wiki technologies
     <li>How open source communities and development work
 </ol>
+<br>
+<img src="img/grass_gis_dev_vis.png" class="stretch box-glow">
 </section>
 
 
 <section>
-<h2>Paper ~ PDF</h2>
-
-<img src="img/petras2017generalized_paper.png" class="stretch box-glow">
+<h2>Paper</h2>
+PDF, HTML
+<br>
+<img src="img/fragmentation_paper_pages_8_9.png" class="stretch box-glow">
+<br>
+<p class="credit glow">
+    Image source:
+    Petras, V., Newcomb, D. J., &amp; Mitasova, H. (2017).
+    Generalized 3D fragmentation index derived from lidar point clouds.
+    <em>Open Geospatial Data, Software and Standards</em>, 2(1), 9.
+    <a href="https://doi.org/10.1186/s40965-017-0021-8">doi:10.1186/s40965-017-0021-8</a>
+</p>
 </section>
 
 
 <section>
 <h2>Collaborative scientific writing</h2>
 <p>Overleaf, Authorea</p>
-<img src="img/overleaf.png" class="stretch box-glow">
+<img src="img/overleaf_figures.png" class="stretch box-glow">
+<p class="credit glow">
+    Image: Overleaf document for
+    Petras, V., Newcomb, D. J., &amp; Mitasova, H. (2017).
+    Generalized 3D fragmentation index derived from lidar point clouds.
+    <em>Open Geospatial Data, Software and Standards</em>, 2(1), 9.
+    <a href="https://doi.org/10.1186/s40965-017-0021-8">doi:10.1186/s40965-017-0021-8</a>
+</p>
 </section>
 
 
@@ -169,11 +226,32 @@ of our constantly evolving methods and R scripts.
 </code></pre>
 <br>
 There are GUIs as well.
+<br>
+<small>
+    Alternatives: Subversion (<code>svn</code>), Mercurial (<code>hg</code>), ...
+</small>
 </section>
 
 
 <section>
-<h2>Core Topics</h2>
+<h2>Revision control hosting</h2>
+<ul>
+    <li>GitHub
+        <ul>
+            <li>GitHub != Git
+            <li>proprietary software
+            <li>freemium service
+        </ul>
+    <li>Self-hosted open alternatives: GitLab, Gogs, Gitea, Gitolite, Trac, ...
+    <li>Alternative services: GitLab, Bitbucket, ...
+    <li>"software forges"
+</ul>
+<img src="img/logos/octocat.png" class="stretch">
+</section>
+
+
+<section>
+<h2>Course Syllabus: Geospatial Topics</h2>
 <ol start="6">
     <li>QGIS, a free and open source geographic system
     <li>Introduction to command line and remote access to computational resources
@@ -185,11 +263,18 @@ There are GUIs as well.
 
 
 <section>
+<h2>Geospatial workflows</h2>
+<ul>
+    <li>visual workflows with visual results
+</ul>
+<img src="img/grass_gis_gui.png" class="stretch box-glow">
+</section>
+
+<section>
 <h2>Screenshots won't cut it</h2>
 <img src="img/r_in_lidar_1.png" width=300>
 <img src="img/r_in_lidar_2.png" width=300>
 <img src="img/r_in_lidar_3.png" width=300>
-<!--Czech localization of MS Excel has function names in Czech-->
 </section>
 
 
@@ -207,15 +292,14 @@ R and GRASS GIS
 <pre class="python" style="font-size: x-large;"><code>library(rgrass7)
 execGRASS("r.in.lidar", input="points.las", output="elevation", flags="e")
 </code></pre>
-<!--
-We can use Python and other languages to access powerful software features in an automated way instead
-of hoping we entered the same values as last time when rerunning the analysis with a new climate dataset.
--->
+<small>
+    In general: Bash, Python, R, Ruby, Octave, Julia, ...
+</small>
 </section>
 
 
 <section>
-<h2>Advanced Topics</h2>
+<h2>Course Syllabus: Advanced Topics</h2>
 <ol start="11">
     <li>Combining text, code and results into one document
     <li>Publishing code as part of an open source project
@@ -249,33 +333,66 @@ of a published method.-->
 <section>
 <h2>Integration into a larger project</h2>
 <ul>
-    <li>Preprocessing, visualization, and user interface (GUI, CLI, API)
-    <li>Integration with existing analytical tools
-    <li>Inputs, outputs, memory management and other common features
-    <li>Long-term maintenance
-    <li>Options: GRASS GIS module, R package, Python package, QGIS plugin, ...
-    <li>Example: FUTURES model implemented as GRASS GIS modules
+    <li>Why?
+    <ul>
+        <li>Preprocessing, visualization, and user interface (GUI, CLI, API)
+        <li>Inputs, outputs, memory management and other common features
+        <li>Integration with existing analytical tools
+        <li>Long-term maintenance
+    </ul>
+    <li>Options: R package, Python package, GRASS GIS module, QGIS plugin, ...
+    <li>Integration gradient: unofficial extension - integrated extension - code addition
+    <li>Choose the project wisely <small>[Schweik and English, 2012]</small>
 </ul>
 <br>
-<img src="img/grass_gis_addons_index.png" class="stretch box-glow">
+<img src="img/grass_gis_gui_network.png" class="stretch box-glow">
+<p>
+<small style="font-size: 60%;" class="glow">
+    [Schweik and English, 2012]
+    Schweik, C. M., and English, R. C. 2012.
+    Internet Success: A Study of Open Source Software Commons.
+    <a href="http://works.bepress.com/charles_schweik/29/">works.bepress.com/charles_schweik/29</a>
+</small>
+</p>
+</section>
+
+
+<section>
+<h3>Example: FUTURES model</h3>
+<ul>
+    <li>urban-rural landscape patterns simulation
+    <li>computational research
+    <li>implemented as a set of GRASS GIS addon modules
+</ul>
+<br>
+<img src="img/futures_animation_tool.gif" class="stretch">
+<br>
+<small style="font-size: 50%;" class="glow">
+    Meentemeyer, R. K., Tang, W., Dorning, M. A., Vogler, J. B., Cunniffe, N. J., &amp; Shoemaker, D. A. (2013). FUTURES: multilevel simulations of emerging urban–rural landscape structure using a stochastic patch-growing algorithm. Annals of the Association of American Geographers, 103(4), 785-807.
+    <br>
+    Petrasova, A., Petras, V., Van Berkel, D., Harmon, B. A., Mitasova, H., &amp; Meentemeyer, R. K. (2016). Open source approach to urban growth simulation. Int Arch Photogramm Remote Sens Spat Inf Sci, 41, B7.
+</small>
 </section>
 
 
 <section>
 <h3>Source code</h3>
-<img src="img/futures_src.png" class="stretch">
+<img src="img/futures_src_detail.png" class="stretch">
+<a href="https://trac.osgeo.org/grass/browser/grass-addons/grass7/raster/r.futures#r.futures.calib">trac.osgeo.org/grass/browser/grass-addons/grass7/raster/r.futures</a>
 </section>
 
 
 <section>
 <h3>Source code history</h3>
-<img src="img/futures_log.png" class="stretch">
+<img src="img/futures_log_detail.png" class="stretch">
+<a href="https://trac.osgeo.org/grass/log/grass-addons/grass7/raster/r.futures">trac.osgeo.org/grass/log/grass-addons/grass7/raster/r.futures</a>
 </section>
 
 
 <section>
 <h3>Documentation</h3>
-<img src="img/futures_doc.png" class="stretch">
+<img src="img/futures_doc_detail.png" class="stretch">
+<a class="glow" href="https://grass.osgeo.org/grass7/manuals/addons/r.futures.html">grass.osgeo.org/grass7/manuals/addons/r.futures</a>
 </section>
 
 
@@ -291,7 +408,7 @@ of a published method.-->
     <li>dependencies
     <li>environmental settings
     <li>file structure
-    <li>Solutions: Docker, Vagrant, virtual machines ...
+    <li>solutions: Docker, Vagrant, virtual machines, ...
 </ul>
 <pre style="width: 40%; font-size: 70%;">
 # Dockerfile
@@ -306,6 +423,11 @@ RUN apt-get install -y \
         ...
 WORKDIR /data
 </pre>
+
+<img src="img/logos/docker.svg" class="stretch">
+<p class="credit glow">
+<a href="https://commons.wikimedia.org/wiki/File:Docker_(container_engine)_logo.svg">Image credit: Wikimedia Commons - Docker (container engine) logo</a>
+</p>
 </section>
 
 
@@ -322,7 +444,7 @@ WORKDIR /data
     <tr>
         <td>Data</td>
         <td>
-            methods as GRASS GIS modules<td>
+            collected data and computational results<td>
             <small>open formats, **</small>
         </td>
     </tr>
@@ -356,15 +478,15 @@ WORKDIR /data
     </tr>
 </table>
 <p>
-    <small>
+    <small style="font-size: 70%;">
     * Source format being e.g. LaTeX or Markdown
     <br>
     ** Potentially included in computational notebooks such as Jupyter Notebook
     </small>
 </p>
-<img src="img/fragmentation_paper.png" class="stretch box-glow">
+<img src="img/petras2017generalized_paper_detail.png" class="stretch box-glow">
 <small class="glow">
-    Petras, V., Newcomb, D. J., & Mitasova, H. (2017).
+    Petras, V., Newcomb, D. J., &amp; Mitasova, H. (2017).
     Generalized 3D fragmentation index derived from lidar point clouds.
     <em>Open Geospatial Data, Software and Standards</em>, 2(1), 9.
     <a href="https://doi.org/10.1186/s40965-017-0021-8">doi:10.1186/s40965-017-0021-8</a>
@@ -382,10 +504,10 @@ of the puzzle fit together.
 
 
 <section>
-<h2>Some concrete skills and applications</h2>
+<h2>Some practical skills and applications</h2>
 <ul>
     <li>Publishing a scripts with the next paper
-    <li>Managing code using Git and communicating trough GitHub
+    <li>Managing code using Git and communicating through GitHub
     <li>Collaborating on scientific text using Overleaf
     <li>Using Jupyter Notebook for a technical report
     <li>Navigating through contribution procedure of an open source project
@@ -399,7 +521,7 @@ of the puzzle fit together.
     <li>Texts: HTML and reStructuredText (plain text)
     <li>Conversions and building: Bash, Python, Pandoc
     <li>Revision control: Git
-    <li>Git hosting: GitHub; Web hosting: GitHub <small>(proprietary; free for publicly available projects)</small>
+    <li>Git hosting: GitHub; Web hosting: GitHub <small>(proprietary; freemium; free for publicly available projects)</small>
     <li>Lecture slides: Reveal.js (HTML5)
 </ul>
 <p>
@@ -460,6 +582,8 @@ ISPRS Int. J. Geo-Inf. 2015, 4(2), 942-956;
 <br>
 <img src="img/logos/ncstate.png" style="height: 10ex;">
 </div>
+
+<p class="stretch">Vaclav</p>
 </section>
 
 
