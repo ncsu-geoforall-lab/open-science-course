@@ -33,7 +33,8 @@ Web page
 ````````
 
 Now create a file in a text editor with the following HTML code,
-name the file ``index.html`` and open this file in a web browser::
+name the file ``index.html`` and open this file in a web browser
+(the page will be empty)::
 
     <!DOCTYPE html>
     <html>
@@ -78,8 +79,11 @@ Here is the basic JavaScript code to get OpenStreetMap as a base map::
         })
       });
 
-Now would be the time to reload the page in the web browser. After that
-we can add code to load our GeoJSON file before the code for
+Now would be the time to reload the page in the web browser
+(usually Ctrl+R). If you don't see anything or something else is not
+right, you may want to explore developer tools in your web browser
+(see below).
+Than we can add code to load our GeoJSON file before the code for
 OpenStreetMap::
 
       var vectorSource = new ol.source.Vector({
@@ -100,7 +104,6 @@ We need to edit the list of layers in the code add the GeoJSON::
           }),
           vectorLayer
         ],
-        ...
 
 Now you can look again in the web browser and you should see the borders
 of North Carolina as a separate layer.
@@ -253,7 +256,6 @@ We need to edit the list of layers again to add the raster::
           rasterLayer,
           vectorLayer
         ],
-        ...
 
 See the complete web page `here <../resources/openlayers_raster_and_vector.html>`_
 and compare it with yours (you can see the code of the page in your web
