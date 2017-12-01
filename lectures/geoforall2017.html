@@ -161,6 +161,10 @@ DOI: 10.1007/s10816-015-9272-9
 </ol>
 <br>
 <img src="img/grass_gis_dev_vis.png" class="stretch box-glow">
+<p class="credit glow">
+    Image source:
+    <a href="https://www.youtube.com/watch?v=MR4_5GSID2A">GRASS GIS 6.4 development visualization from 1999 to 2013</a>
+</p>
 </section>
 
 
@@ -252,7 +256,7 @@ There are GUIs as well.
 
 <section>
 <h2>Geospatial workflows</h2>
-<em>visual workflows with visual results</em>
+<em>as visual workflows with visual results</em>
 <br>
 <img src="img/grass_gis_gui.png" class="stretch box-glow">
 </section>
@@ -274,12 +278,10 @@ Bash and GRASS GIS
 <pre class="bash" style="font-size: x-large;"><code>r.in.lidar input=points.las output=elevation -e
 </code></pre>
 Python and GRASS GIS
-<pre class="python" style="font-size: x-large;"><code>from grass.script import run_command
-run_command("r.in.lidar", input="points.las", output="elevation", flags="e")
+<pre class="python" style="font-size: x-large;"><code>run_command("r.in.lidar", input="points.las", output="elevation", flags="e")
 </code></pre>
 R and GRASS GIS
-<pre class="python" style="font-size: x-large;"><code>library(rgrass7)
-execGRASS("r.in.lidar", input="points.las", output="elevation", flags="e")
+<pre class="python" style="font-size: x-large;"><code>execGRASS("r.in.lidar", input="points.las", output="elevation", flags="e")
 </code></pre>
 <small>
     In general: Bash, Python, R, Ruby, Octave, Julia, ...
