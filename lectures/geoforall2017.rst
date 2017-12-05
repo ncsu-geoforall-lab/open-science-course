@@ -54,3 +54,9 @@ software or even on different operating system?
 That's where scripting comes into play. Every line of code we are
 looking at now represents the same as the three screenshots we have seen
 before.
+We actually don't teach scripting or even programming to students.
+That's something which is covered in a different course and which
+definitively deserves at least a whole course.
+Most students who took the open science course this semester
+had some experience with scripting although it was not necessarily
+working experience.
