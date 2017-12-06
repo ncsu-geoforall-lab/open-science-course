@@ -1,4 +1,6 @@
 FILE=poster
+RESOLUTION=400
+ROTATE=90
 
 all: $(FILE).pdf
 
@@ -24,6 +26,8 @@ distclean:
 	make clean
 	rm -f $(FILE).pdf
 
-rasterized:
-	gs -sDEVICE=png16m -r400 -o $(FILE).png $(FILE).pdf
-	convert $(FILE).png -rotate 90 $(FILE)_rasterized.pdf
+$(FILE)_rasterized.pdf: $(FILE).pdf
+	gs -sDEVICE=png16m -r$(RESOLUTION) -o $(FILE).png $(FILE).pdf
+	convert $(FILE).png -rotate $(ROTATE) $(FILE)_rasterized.pdf
+
+rasterized: all $(FILE)_rasterized.pdf
