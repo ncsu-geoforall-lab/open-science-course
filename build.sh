@@ -104,6 +104,14 @@ do
     done
 done
 
+# Poster(s)
+# compiles posters and adds results to resources
+
+cd posters
+make FILE=agu2017
+cd ..
+cp posters/agu2017.pdf $OUTDIR/resources/
+
 # Topics index
 
 FILES="build/topics/*.html"

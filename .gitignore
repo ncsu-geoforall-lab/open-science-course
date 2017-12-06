@@ -1,1 +1,11 @@
 build
+posters/*.
+posters/*.aux
+posters/*.bbl
+posters/*.blg
+posters/*.log
+posters/*.out
+posters/*.tex.backup
+posters/*_rasterized.pdf
+posters/agu2017.pdf
+posters/agu2017.png
