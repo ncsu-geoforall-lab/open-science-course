@@ -109,8 +109,10 @@ done
 
 cd posters
 make FILE=agu2017
+make FILE=agu2017 RESOLUTION=150 ROTATE=0 rasterized
 cd ..
 cp posters/agu2017.pdf $OUTDIR/resources/
+cp posters/agu2017_rasterized.pdf $OUTDIR/resources/
 
 # Topics index
 
