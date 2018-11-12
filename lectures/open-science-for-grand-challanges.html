@@ -31,6 +31,13 @@
     115(11), p. 2584-2589.
     <a href="https://doi.org/10.1073/pnas.1708290115">DOI&nbsp;10.1073/pnas.1708290115</a>
     </small>
+
+    <small class="glow">
+        Discussion questions:
+        Do you know about similar studies?
+        What do they say?
+    </small>
+
     <aside class="notes">
         A recently published study showed that 74% of computational
         articles published in Science was not computationally reproducible.
@@ -181,8 +188,9 @@ so leaving it here as is.
 
 <p>
 <small>
-    Discussion question:
-    Is there something you would add to the list?
+    Discussion questions:
+    What would add to the list?
+    Do you see something for the first time?
 </small>
 
 </section>
@@ -194,11 +202,12 @@ There are six commonly accepted pillars of open science: open data,
 open access, open methodology, open source, open peer review and open education.
 -->
 
+
 <section>
 <h3>The “re” words</h3>
 
-No agreement on some of the definitions especially accords different field;
-definitions are often overlapping or swapped.
+No agreement on some of the definitions especially in different fields;
+definitions are often overlapping or swapped, some don't make any distinction.
 
 <ul>
     <li>replicability <small>independent validation of specific findings</small>
@@ -251,6 +260,174 @@ Internal or selfish reasons for doing open science
     Discussion questions:
     What is your experience with getting back to your own research
     or continuing research started by someone else?
+    <small>(See <a href="http://phdcomics.com/comics.php?f=1689">PhD Comics: Scratch</a>.)</small>
+</small>
+
+</section>
+
+
+<section>
+<h3>What open means</h3>
+
+<!-- TODO: links -->
+<ul>
+    <li>open, free, libre
+    <li>The Open Definition
+        <ul>
+            <li>Open means anyone can freely access, use, modify, and share
+                for any purpose
+                (subject, at most, to requirements that preserve
+                provenance and openness).
+                <small>[as officially summed up]</small>
+        </ul>
+    <li>Free Cultural Works
+    <li>The Open Source Definition
+    <li>The Free Software Definition
+    <li>the Debian Free Software Guidelines and the Debian Social Contract
+</ul>
+
+<p>
+<small>
+    Discussion questions:
+    What is the difference between “free as in free beer” and “free as in freedom”?
+    Have you seen “open” being used for something not fulfilling the definition?
+</small>
+
+</section>
+
+
+<section>
+<h3>Licensing</h3>
+
+<ul class="left">
+    <li>Creative Commons (CC) licenses
+        <ul>
+            <li>(levels of openness)
+        </ul>
+    <li>GNU licenses
+        <ul>
+            <li>e.g. GNU General Public License (GPL)
+        </ul>
+    <li>BSD licenses
+        <ul>
+            <li>2-Clause and 3-Clause BSD
+        </ul>
+    <li>...
+    <li>Lists of licenses and choosing a license:
+        <ul>
+            <li><a href="https://opensource.org/licenses">Open Source Initiative</a>
+            <li><a href="https://www.gnu.org/licenses/license-list.html">GNU (Free Software Foundation)</a>
+            <li><a href="https://choosealicense.com/">choosealicense.com</a> (for software)
+            <li><a href="https://creativecommons.org/choose/">creativecommons.org/choose</a>
+        </ul>
+</ul>
+
+<div class="right">
+<img style="max-height: 15em !important;" src="https://creativecommons.org/wp-content/uploads/2013/09/spectrum-with0.png">
+<p class="credit">
+    CC BY 4.0
+    <a href="https://creativecommons.org/share-your-work/public-domain/freeworks">Creative Commons</a>
+</p>
+</div>
+
+<p>
+<small>
+    Discussion questions:
+    Do you read “terms and conditions”?
+    Have you ever read any “terms and conditions” or end user license agreement (EULA)?
+    What about an open source software license?
+    <small>(Read <a href="https://trac.osgeo.org/gdal/wiki/FAQGeneral#WhatlicensedoesGDALOGRuse">license of GDAL</a> right now!)</small>
+</small>
+
+</section>
+
+
+
+<section>
+<h3>Computational and geospatial research</h3>
+
+<ul class="left">
+    <li>...
+</ul>
+
+<p>
+<small>
+    Discussion questions:
+</small>
+
+</section>
+
+
+<section>
+    <h3>Open Science Publication: Use Case</h3>
+    Petras et al. 2017
+    <br>
+    <img class="stretch" src="img/petras2017generalized_full.png">
+    <br>
+    <small class="credit">
+        Petras, V., Newcomb, D. J., &amp; Mitasova, H. (2017).
+        <em>Generalized 3D fragmentation index derived from lidar point clouds.</em>
+        In: Open Geospatial Data, Software and Standards 2(1), 9.
+        <a href="https://doi.org/10.1186/s40965-017-0021-8">DOI 10.1186/s40965-017-0021-8</a>
+    </small>
+</section>
+
+
+<section>
+<h3>Open Science Publication Components</h3>
+<table style="font-size: smaller;">
+    <tr>
+        <th>Publication Component</th>
+        <th>in the Petras et al. 2017 use case</th>
+    <tr>
+        <td>Text</td>
+        <td>
+            background, methods, results, discussion, conclusions, &hellip;
+        </td>
+    </tr>
+    <tr>
+        <td>Data</td>
+        <td>
+            input data <small>(formats readable by open source software)</small>
+        </td>
+    </tr>
+    <tr>
+        <td>Reusable&nbsp;Code</td>
+        <td>
+            methods as GRASS GIS modules <small>(C &amp; Python)</small>
+        </td>
+    </tr>
+    <tr>
+        <td>Publication-specific&nbsp;Code</td>
+        <td>
+            scripts to generate results <small>(Bash &amp Python)</small>
+        </td>
+    </tr>
+    <tr>
+        <td>Computational Environment</td>
+        <td>
+            details about all dependencies and the code <small>(Docker, Dockerfile*)</small>
+        </td>
+    </tr>
+    <tr>
+        <td>Versions</td>
+        <td>
+            repository with current and previous versions** <small>(Git, GitHub)</small>
+        </td>
+    </tr>
+</table>
+<p>
+    <small style="font-size: 70%;">
+    * Now also available at <a href="https://codeocean.com/2018/04/21/generalized-3d-fragmentation-index-derived-from-lidar-point-clouds/interface" title="Goes directly to the capsule interface">Code Ocean</a>.
+    <br>
+    ** Version associated with the publication included also as a supplemental file.
+    </small>
+</p>
+
+<small class="credit">
+Petras, V. (2018). <em>Geospatial analytics for point clouds
+in an open science framework</em>. Doctoral dissertation.
+<a href="http://www.lib.ncsu.edu/resolver/1840.20/35242">URI&nbsp;http://www.lib.ncsu.edu/resolver/1840.20/35242</a>
 </small>
 
 </section>
