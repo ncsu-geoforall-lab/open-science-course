@@ -21,7 +21,8 @@ covering the course topics.
 See also a `flyer <img/flyer.pdf>`_,
 `poster <resources/agu2017.pdf>`_,
 its `rasterized alternative <resources/agu2017_rasterized.pdf>`_,
-`webinar slides about the course <lectures/geoforall2017.html>`_, and
+`webinar slides about the course <lectures/geoforall2017.html>`_,
+`open science guest lecture <lectures/open-science-for-grand-challanges.html>`_, and
 `slides on a related topic <lectures/us-iale2017.html>`_.
 
 Topics
