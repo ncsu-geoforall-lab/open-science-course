@@ -19,9 +19,10 @@ have an option to participate in writing a collaborative publication
 covering the course topics.
 
 See also a `flyer <img/flyer.pdf>`_,
-`poster <resources/agu2017.pdf>`_,
-its `rasterized alternative <resources/agu2017_rasterized.pdf>`_,
-`webinar slides about the course <lectures/geoforall2017.html>`_,
+`poster <resources/agu2017.pdf>`_
+(or its `rasterized alternative <resources/agu2017_rasterized.pdf>`_),
+`recorded webinar about the course <https://youtu.be/k1cq0cqTez4>`_
+(`slides <lectures/geoforall2017.html>`_),
 `open science guest lecture <lectures/open-science-for-grand-challanges.html>`_, and
 `slides on a related topic <lectures/us-iale2017.html>`_.
 
