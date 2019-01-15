@@ -1,5 +1,5 @@
-NCSU GIS 610-003/603: Tools for open geospatial science
-=======================================================
+NCSU GIS 595-601: Tools for open geospatial science
+===================================================
 
 Description
 -----------
