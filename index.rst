@@ -69,34 +69,35 @@ Schedule
 --------
 
 === ============ ===
- 1. August 16    `Introduction to and motivation for open science <topics/open-science.html>`_
- 2. August 23    `Collaborative writing of scientific papers <topics/collaborative-writing.html>`_
- 3. August 30    `Advanced tools for papers and reports <topics/advanced-writing.html>`_
- 4. September 6  `Revision control systems and wiki technologies <topics/revision-control.html>`_
- 5. September 13 `How open source communities and development work <topics/open-source.html>`_
- 6. September 20 `Introduction to command line and remote access to computational resources <topics/linux.html>`_
- 7. September 27 `Command line and Python tools for geospatial work <topics/geospatial-command-line.html>`_
- 8. October 4    `Publishing data on web <topics/data.html>`_
- 9. October 11   `QGIS, a free and open source geographic system <topics/qgis.html>`_
-10. October 18   `GRASS GIS as software for geospatial research <topics/grass.html>`_
-11. October 25   `Combining text, code and results into one document <topics/notebooks.html>`_
-12. November 1   `Publishing code as part of an open source project <topics/publishing-code.html>`_
-13. November 8   `Reproducible computational environments <topics/environments.html>`_
-14. November 15  `Writing and reproducing an open science paper <topics/paper.html>`_
+ 1. June 24      `Introduction to and motivation for open science <topics/open-science.html>`_
+ 2. June 26      `Collaborative writing of scientific papers <topics/collaborative-writing.html>`_
+ 3. July 28      `Advanced tools for papers and reports <topics/advanced-writing.html>`_
+ 4. July 1       `Revision control systems and wiki technologies <topics/revision-control.html>`_
+ 5. July 3       `How open source communities and development work <topics/open-source.html>`_
+ 6. July 5       `Introduction to command line and remote access to computational resources <topics/linux.html>`_
+ 7. July 8       `Command line and Python tools for geospatial work <topics/geospatial-command-line.html>`_
+ 8. July 10      `Publishing data on web <topics/data.html>`_
+ 9. July 12       `QGIS, a free and open source geographic system <topics/qgis.html>`_
+10. July 15      `GRASS GIS as software for geospatial research <topics/grass.html>`_
+11. July 17      `Combining text, code and results into one document <topics/notebooks.html>`_
+12. July 19      `Publishing code as part of an open source project <topics/publishing-code.html>`_
+13. July 23      `Reproducible computational environments <topics/environments.html>`_
+14. July 25      `Writing and reproducing an open science paper <topics/paper.html>`_
 === ============ ===
 
 Assignments are always due the next week at the end of the day
-of the on-campus class which is Wednesday.
+on Wednesdays, but it is recommended to finish them the following day
+which is, for most of the days, intentionally left free.
 
-November 29 is time to wrap up the class, to work on reproducible paper,
-or to complete what we missed in the previous weeks.
+Exception to the above are the assignments from the last week of classes
+which are due on July 29.
 
-Relevant conferences during the semester:
-FOSS4G Boston (August 14-19, open source geospatial software),
-JupyterCon NY, (August 22-25),
-State of the Map US Boulder (October 19-22, OpenStreetMap),
-AllThingsOpen Raleigh (October 23-24), and
-AGU New Orleans (December 11-15, several sessions related to open).
+Relevant conferences to keep an eye on:
+FOSS4G and FOSS4G NA (open source geospatial software),
+JupyterCon (project Jupyter),
+State of the Map US (OpenStreetMap),
+AllThingsOpen (Raleigh), and
+AGU (usually includes several sessions related to open).
 
 Instructor
 ----------
@@ -104,7 +105,7 @@ Instructor
 Vaclav Petras and Helena Mitasova
 
 Office hours (Vaclav Petras):
-Tuesday 3:00 - 4:00pm and Thursday 3:00 - 4:00pm.
+Tuesday 1:30 - 2:30pm and Thursday 1:30 - 2:30pm.
 Before coming confirm by email the time and date (vpetras).
 
 Software
