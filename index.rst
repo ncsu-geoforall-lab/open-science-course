@@ -12,18 +12,17 @@ wider geospatial community. Several geospatial open source tools will
 be discussed in connection with general-purpose and text authoring
 tools such as next generation interactive documents and revision
 control tools. Although the focus of the course is open science, many
-of the tools used in the course are used in the industry. The course
+of the tools used in the course are used in the industry either for
+building cloud services or for fast prototyping. The course
 will cover how open source communities and software development process
-work and how to apply this for research in a lab group. Students will
-have an option to participate in writing a collaborative publication
-covering the course topics.
+work and how to apply this for research in a lab group.
 
 See also a `flyer <img/flyer.pdf>`_,
 `poster <resources/agu2017.pdf>`_
 (or its `rasterized alternative <resources/agu2017_rasterized.pdf>`_),
 `recorded webinar about the course <https://youtu.be/k1cq0cqTez4>`_
 (`slides <lectures/geoforall2017.html>`_),
-`open science guest lecture <lectures/open-science-for-grand-challanges.html>`_, and
+`slides for an open science guest lecture <lectures/open-science-for-grand-challanges.html>`_, and
 `slides on a related topic <lectures/us-iale2017.html>`_.
 
 Topics
@@ -48,12 +47,14 @@ Topics
     a. Computational notebooks
     b. Reproducible environments
 
-Instructors
------------
+Instructor
+----------
 
-Vaclav Petras, vpetras@ncsu.edu
+Vaclav Petras
 
-Helena Mitasova
+Office hours (Vaclav Petras):
+Tuesday 1:30 - 2:30pm and Thursday 1:30 - 2:30pm.
+Before coming always confirm by email the time and date (vpetras@ncsu.edu).
 
 Prerequisites
 -------------
@@ -77,7 +78,7 @@ Schedule
  6. July 5       `Introduction to command line and remote access to computational resources <topics/linux.html>`_
  7. July 8       `Command line and Python tools for geospatial work <topics/geospatial-command-line.html>`_
  8. July 10      `Publishing data on web <topics/data.html>`_
- 9. July 12       `QGIS, a free and open source geographic system <topics/qgis.html>`_
+ 9. July 12      `QGIS, a free and open source geographic system <topics/qgis.html>`_
 10. July 15      `GRASS GIS as software for geospatial research <topics/grass.html>`_
 11. July 17      `Combining text, code and results into one document <topics/notebooks.html>`_
 12. July 19      `Publishing code as part of an open source project <topics/publishing-code.html>`_
@@ -90,7 +91,7 @@ on Wednesdays, but it is recommended to finish them the following day
 which is, for most of the days, intentionally left free.
 
 Exception to the above are the assignments from the last week of classes
-which are due on July 29.
+(July 22-26) which are due on July 29.
 
 Relevant conferences to keep an eye on:
 FOSS4G and FOSS4G NA (open source geospatial software),
@@ -99,14 +100,19 @@ State of the Map US (OpenStreetMap),
 AllThingsOpen (Raleigh), and
 AGU (usually includes several sessions related to open).
 
-Instructor
-----------
+Grading
+-------
 
-Vaclav Petras and Helena Mitasova
+This course is satisfactory/unsatisfactory (pass/fail).
+There is 14 topics each with its own assignment. To pass the class,
+you need to do and deliver at least 10 assignments. What you do and
+deliver for each assignment needs to demonstrate sufficient level
+of understanding, otherwise it won't be counted towards your 10
+assignments and you need to redo it or do another one.
 
-Office hours (Vaclav Petras):
-Tuesday 1:30 - 2:30pm and Thursday 1:30 - 2:30pm.
-Before coming confirm by email the time and date (vpetras).
+In other words, you can choose up to 4 topics you can skip based on your
+personal preference, but you need to sufficient work for the
+remaining 10.
 
 Software
 --------
