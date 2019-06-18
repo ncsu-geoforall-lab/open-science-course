@@ -111,6 +111,32 @@ A detailed guide for this class is here_.
 Resources
 ---------
 
+Videos
+``````
+
+* `How Open Source Geospatial Development Works <https://cnr.online.ncsu.edu/online/Catalog/catalogs/geospatial-forum>`_ (find the talk in the list) [main resource]
+* `World Without Linux Final Episode #6 Free Burger <https://www.youtube.com/watch?v=fvPSNK8iB0Y>`_ (2.5 min, content applies to most open source software)
+
+Slides
+``````
+
+* `How Open Source Geospatial Development Works <http://wenzeslaus.github.io/presentations/geoforum2014-foss.pdf>`_
+* `Lecture slides <../lectures/open-source.html>`_
+* `Introduction to Open Source for Geospatial Analysis and Modeling <http://ncsu-geoforall-lab.github.io/foss-for-geospatial-analysis/intro-to-foss.html>`_
+
+
+Texts
+`````
+
+* `What is open source? <https://opensource.com/resources/what-open-source>`_ (opensource.com)
+* `If you were on a desert island, which license would you take with you? <https://opensource.com/article/17/7/what-open-license-would-i-choose-desert-island>`_ (opensource.com)
+
+Websites
+````````
+
+* `opensource.com <https://opensource.com>`_ (articles, use cases, and FAQs)
+
+
 Texts
 `````
 

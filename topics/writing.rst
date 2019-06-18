@@ -1,5 +1,5 @@
-Collaborative writing of scientific papers
-==========================================
+Collaborative and automated writing of papers and reports
+=========================================================
 
 We will look at Authorea, one of the platforms for creating scientific
 papers online in a collaborative way. Then we will look at what is
@@ -9,19 +9,6 @@ licensing, i.e. what can happen with the paper after it is published.
 
 Tools
 -----
-
-Authorea
-````````
-
-Authorea is freemium cloud platform for writing scientific articles.
-Try writing a document at:
-
-https://www.authorea.com/
-
-Note: When creating account or article on Authorea, use your
-institutional (NCSU) email, but don't send announcement about it
-to all people in the institution (which is something Authorea may
-do by default if you won't say no).
 
 Markdown
 ````````
@@ -51,6 +38,69 @@ the following text:
 
     Markdown when rendered (e.g., after converting to HTML)
 
+To practice Markdown, we will use online editor Dillinger (which can be
+used for free online and is also open source): 
+
+https://dillinger.io/
+
+Markdown with Pandoc
+````````````````````
+http://pandoc.org
+
+Markdown is a simple markup language for include formatting into a
+plain text document. Pandoc is a conversion tool which can convert
+Markdown files and many other files into other formats.
+
+Pandoc is licensed under GNU GPL.
+
+To see the format conversions without installing Pandoc use
+the `Try Pandoc! <https://pandoc.org/try/>`_ service.
+
+reStructuredText with Sphinx/Docutils
+`````````````````````````````````````
+
+reStructuredText: http://docutils.sourceforge.net/rst.html
+
+Docutils: http://docutils.sourceforge.net
+
+Sphinx: http://sphinx-doc.org
+
+**reStructuredText** is an plain text markup syntax similar to
+aforementioned Markdown. It is often used for software
+documentation, for example in Python docstrings.
+reStructuredText is, unlike Markdown, designed for extensibility for
+specific application domains.
+reStructuredText is applicable to non-trivial cases like LaTeX,
+but still striving to keep simple syntax like Markdown.
+
+**Docutils** is an open-source text processing system for processing
+plain text into formats, such as HTML, LaTeX, man-pages, open-document
+or XML.
+Docutils processes reStructuredText and can be used from command line
+or as a Python package. Another software which can process
+reStructuredText in a similar manner is Pandoc.
+
+**Sphinx** is a tool that creates documentation from reStructuredText sources.
+It is used for Python documentation and it is universal enough to be
+used for software projects in general.
+The output formats include HTML, LaTeX (for printable PDF versions),
+ePub, and more.
+Sphinx uses the Docutils to parse the reStructuredText.
+
+Sphinx is licensed under BSD and Docutils are placed into public domain.
+
+Authorea
+````````
+
+Authorea is freemium cloud platform for writing scientific articles.
+Optionally, try writing a document at:
+
+https://www.authorea.com/
+
+Note: When creating account or article on Authorea, use your
+institutional (NCSU) email, but don't send announcement about it
+to all people in the institution (which is something Authorea may
+do by default if you won't say no!).
 
 Open access and licenses
 ````````````````````````
@@ -97,15 +147,6 @@ and a full legal language license documents.
 Resources
 ---------
 
-Texts
-`````
-
-* `Freemium <https://en.wikipedia.org/wiki/Freemium>`_ (Wikipedia)
-* `Gratis versus libre <https://en.wikipedia.org/wiki/Gratis_versus_libre>`_ (Wikipedia)
-* `Markdown <https://daringfireball.net/projects/markdown/>`_ (Original Daring Fireball document)
-* `In the beginning, there is Markdown <https://heracl.es/markdown>`_
-* `Creative Commons Licenses <https://creativecommons.org/licenses/>`_ (About The Licenses)
-
 Videos
 ``````
 
@@ -115,6 +156,21 @@ Videos
 * `Open definition is about freedoms <http://fatra.cnr.ncsu.edu/open-science-course/writing-open-and-free.mp4>`_ (recording from the class, 3 mins)
 * `Is open a reaction to proprietary? <http://fatra.cnr.ncsu.edu/open-science-course/writing-reaction-or-standard.mp4>`_ (recording from the class, 3 mins)
 * `Creative Commons & Copyright Info <https://www.youtube.com/watch?v=8YkbeycRa2A>`_
+
+Texts
+`````
+
+* `Freemium <https://en.wikipedia.org/wiki/Freemium>`_ (Wikipedia)
+* `Gratis versus libre <https://en.wikipedia.org/wiki/Gratis_versus_libre>`_ (Wikipedia)
+* `Markdown <https://daringfireball.net/projects/markdown/>`_ (Original Daring Fireball document)
+* `In the beginning, there is Markdown <https://heracl.es/markdown>`_
+* `Creative Commons Licenses <https://creativecommons.org/licenses/>`_ (About The Licenses)
+* `Writing Technical Papers with Markdown <http://blog.kdheepak.com/writing-papers-with-markdown.html>`_
+* `reStructuredText Primer for Sphinx <http://www.sphinx-doc.org/en/stable/rest.html>`_
+* `Differencees between reStructuredText, Docutils, and Sphinx <https://coderwall.com/p/vemncg/what-is-the-difference-rest-docutils-sphinx-readthedocs>`_
+* `reStructuredText vs Markdown for documentation <http://zverovich.net/2016/06/16/rst-vs-markdown.html>`_
+* `WYSIWYG <https://en.wikipedia.org/wiki/WYSIWYG>`_
+* `WYSIWYM <https://en.wikipedia.org/wiki/WYSIWYM>`_
 
 References
 ----------

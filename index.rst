@@ -71,27 +71,27 @@ Schedule
 
 === ============ ===
  1. June 24      `Introduction to and motivation for open science <topics/open-science.html>`_
- 2. June 26      `Collaborative writing of scientific papers <topics/collaborative-writing.html>`_
- 3. July 28      `Advanced tools for papers and reports <topics/advanced-writing.html>`_
- 4. July 1       `Revision control systems and wiki technologies <topics/revision-control.html>`_
- 5. July 3       `How open source communities and development work <topics/open-source.html>`_
- 6. July 5       `Introduction to command line and remote access to computational resources <topics/linux.html>`_
- 7. July 8       `Command line and Python tools for geospatial work <topics/geospatial-command-line.html>`_
- 8. July 10      `Publishing data on web <topics/data.html>`_
- 9. July 12      `QGIS, a free and open source geographic system <topics/qgis.html>`_
-10. July 15      `GRASS GIS as software for geospatial research <topics/grass.html>`_
-11. July 17      `Combining text, code and results into one document <topics/notebooks.html>`_
-12. July 19      `Publishing code as part of an open source project <topics/publishing-code.html>`_
-13. July 23      `Reproducible computational environments <topics/environments.html>`_
-14. July 25      `Writing and reproducing an open science paper <topics/paper.html>`_
+ 2. June 27      `Collaborative and automated writing of papers and reports <topics/writing.html>`_
+ 3. July 1       `Revision control systems and wiki technologies <topics/revision-control.html>`_
+ 4. July 3       `Introduction to command line and remote access to computational resources <topics/linux.html>`_
+    July 4       Independence Day 🇺🇸
+ 5. July 9       `Command line and Python tools for geospatial work <topics/geospatial-command-line.html>`_
+ 6. July 11      `Open source GIS <topics/open-source-gis.html>`_
+ 7. July 16      `Publishing source code <topics/code.html>`_
+ 8. July 18      `Publishing data on web <topics/data.html>`_
+ 9. July 22      `Combining text, code, results, and software <topics/combined-document.html>`_
+10. July 25      `Writing and reproducing an open science paper <topics/paper.html>`_
+    July 29      Remaining assignments due
+    August 1     Grades
 === ============ ===
 
-Assignments are always due the next week at the end of the day
-on Wednesdays, but it is recommended to finish them the following day
+
+Assignments are always due the next week on Mondays at the end of the
+day, but it is recommended to finish them the following day
 which is, for most of the days, intentionally left free.
 
-Exception to the above are the assignments from the last week of classes
-(July 22-26) which are due on July 29.
+The above applies also to the assignments from the last week of classes
+(July 21-26) which are due on July 29.
 
 Relevant conferences to keep an eye on:
 FOSS4G and FOSS4G NA (open source geospatial software),
@@ -104,15 +104,13 @@ Grading
 -------
 
 This course is satisfactory/unsatisfactory (pass/fail).
-There is 14 topics each with its own assignment. To pass the class,
-you need to do and deliver at least 10 assignments. What you do and
-deliver for each assignment needs to demonstrate sufficient level
-of understanding, otherwise it won't be counted towards your 10
-assignments and you need to redo it or do another one.
-
-In other words, you can choose up to 4 topics you can skip based on your
-personal preference, but you need to sufficient work for the
-remaining 10.
+There is 10 topics each with its own assignment. To pass the class,
+you need to do and deliver at least 9 assignments. What you do for each
+assignment needs to demonstrate sufficient level of understanding
+and it needs to be delivered on time, otherwise it won't be counted
+towards your 9 assignments and you need to redo it or do another one.
+In other words, you can leave out one topic if you want and it is up to
+you which one.
 
 Software
 --------
