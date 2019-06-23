@@ -90,3 +90,5 @@ resources and how can this change how you do research.
 Additionally, think about this text as a help to other students who
 did not see this particular resource or
 are deciding if it is worth to read it.
+
+Post this to the *Assignment 1* thread on Moodle.
