@@ -1,4 +1,4 @@
-NCSU GIS 595-601: Tools for open geospatial science
+NCSU GIS 595-601: Tools for Open Geospatial Science
 ===================================================
 
 Description
@@ -84,7 +84,6 @@ Schedule
     July 29      Remaining assignments due
     August 1     Grades
 === ============ ===
-
 
 Assignments are always due the next week on Mondays at the end of the
 day, but it is recommended to finish them the following day
