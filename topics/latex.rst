@@ -1,20 +1,29 @@
 LaTeX
 =====
 
-In this part we focus on LaTeX, how to use with Overleaf,
-and we compare it with Markdown and reStructuredText
-which can be used e.g. with Pandoc.
-
-Tools
------
+In this part, we focus on LaTeX and how to use with Overleaf.
+In this course, we present LaTeX as a more powerful alternative to
+lightweight markups such as Markdown and reStructuredText.
+However, there is more differences:
+LaTeX tool-chain is aimed at creating a document typically in PDF
+format while Markdown can be turned into many other formats, including
+LaTeX, PDF, and HTML using, for example, Pandoc.
+In that regard, LaTeX as a markup language compares to HTML focusing
+on a specific output format, web page for HTML and PDF or printable
+document for LaTeX.
 
 Overleaf
-````````
+--------
 
 https://www.overleaf.com
 
 Overleaf is a freemium cloud platform with core processing
 backend - LaTeX - which is open source software.
+
+Overleaf allows users to collaboratively write documents using LaTeX
+syntax and tools.
+Overleaf also has a rich text mode which is good for people who don't
+know LaTeX.
 
 Overleaf project can be downloaded as a ZIP file of text files and
 images which can be processed on any computer with LaTeX installed.
@@ -27,11 +36,11 @@ Thanks to this, Overleaf is a cloud platform which provides users
 with a way out, thus preserving their freedom (in the area of software,
 tools, and service providers).
 
-Overleaf also has a rich text mode which is good for people who don't
-know LaTeX.
+We will use LaTeX through Overleaf, but all you learn will be applicable
+also for the local installation of LaTeX.
 
 LaTeX
-`````
+-----
 
 Here is an example LaTeX code::
 
@@ -132,8 +141,11 @@ HTML and web browser work when formatting web pages.
 
 .. figure:: img/word_latex_markdown_learning_curve.png
 
-    A very "scientific" comparison of Word, LaTeX, and Markdown.
-    This figure is from `Writing Technical Papers with Markdown`_ © 2015 Dheepak Krishnamurthy.
+    A very "scientific" comparison of Word, LaTeX, and Markdown
+    in terms of document complexity as independent variable and
+    implementation complexity as dependent variable.
+    This figure is from `Writing Technical Papers with Markdown`_
+    © 2015 Dheepak Krishnamurthy (accessed: 2019-06-23).
 
 .. _Writing Technical Papers with Markdown: http://blog.kdheepak.com/writing-papers-with-markdown.html
 
@@ -204,20 +216,6 @@ as follows::
 .. _TeXample.net: http://www.texample.net/tikz/examples/foldable-dodecahedron-with-calendar/
 .. _Overleaf: https://www.overleaf.com/docs?snip_uri=http://www.texample.net/media/tikz/examples/TEX/foldable-dodecahedron-with-calendar.tex&splash=none
 
-
-
-ShareLaTeX
-``````````
-
-https://www.sharelatex.com
-
-ShareLaTeX is a freemium cloud platform and an open source software
-(i.e. you can either use the freemium cloud platform or setup ShareLaTeX
-on any server).
-ShareLaTeX is under GNU AGPL license.
-
-You can use LaTeX in ShareLaTeX in the same way as you can use it in
-Overleaf.
 
 Resources
 ---------

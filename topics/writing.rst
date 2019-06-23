@@ -1,9 +1,9 @@
 Collaborative and automated writing of papers and reports
 =========================================================
 
-We will look at Authorea, one of the platforms for creating scientific
-papers online in a collaborative way. Then we will look at what is
-Markdown and how do we use it on Authorea.
+Here we will look at markup languages used for writing texts as well
+as at online tools to do the writing and command line tools which
+do format transformations and typesetting.
 Finally, we will look at one aspect of open access, particularly
 licensing, i.e. what can happen with the paper after it is published.
 
@@ -93,6 +93,7 @@ Authorea
 ````````
 
 Authorea is freemium cloud platform for writing scientific articles.
+Markdown is one way to author text in Authorea.
 Optionally, try writing a document at:
 
 https://www.authorea.com/
@@ -102,8 +103,22 @@ institutional (NCSU) email, but don't send announcement about it
 to all people in the institution (which is something Authorea may
 do by default if you won't say no!).
 
+LaTeX
+`````
+
+LaTeX is markup language, typesetting software, and software ecosystem.
+
+Go through `a dedicated page <latex.html>`_ (that's required).
+
 Open access and licenses
 ````````````````````````
+
+Although open access independent from the tools discussed above,
+it often comes into play together. For example, many papers at arXiv
+are typesetted (and presumably prepared) using LaTeX and Authorea offers
+a pre-print service.
+Here we will discuss a specific and key aspect of open access which is
+licensing.
 
 Publishing an article as open access is usually achieved by licensing
 it using one of the Creative Commons licenses.
@@ -182,25 +197,4 @@ References
 Assignment
 ----------
 
-Write a paragraph or two using about Authorea or Creative Commons into
-the following documents. Use Markdown to write it. Include a heading
-of the topic you are writing about and some other formating. Pick
-a topic which is not yet described by other student.
-
-If writing about Authorea the topics may include:
-using Markdown, using the default editor, using LaTeX, including
-figures, tables, exports, imports, account policies and payments,
-etc. Try out the feature as you are writing about it.
-If writing about Creative Commons, the topics may include:
-description of a specific license, advantages and disadvantages,
-use cases, etc. Feel free to search for existing texts
-and draw from them (and cite and quote them).
-
-You will need to request access by emailing the class instructor (vpetras).
-The links to the documents follow.
-
-Authorea:
-https://www.authorea.com/users/23014/articles/195127-title
-
-Creative Commons:
-https://www.authorea.com/users/23014/articles/195129-title
+Follow the *Assignment* in the `LaTeX part <latex.html>`_.
