@@ -52,9 +52,8 @@ Instructor
 
 Vaclav Petras
 
-Office hours (Vaclav Petras):
-Tuesday 1:30 - 2:30pm and Thursday 1:30 - 2:30pm.
-Before coming always confirm by email the time and date (vpetras@ncsu.edu).
+Office hours:
+Follow date and time for weekly help sessions.
 
 Prerequisites
 -------------
