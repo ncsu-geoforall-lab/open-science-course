@@ -7,9 +7,10 @@ Week 1: Welcome and first two topics
 Welcome to the Tools for Open Geospatial Science course
 which will uncover the world of reproducible science.
 
-In this course, we will use two Moodle for communication and assignment
-submissions and feedback. Furthermore, the following website contains
-or links all the learning resources for the course:
+In this course, we will use Moodle for communication, assignment
+submissions, and feedback. Furthermore, we will use the following
+website which contains or links all the learning resources for the
+course:
 
 https://ncsu-geoforall-lab.github.io/open-science-course/
 
