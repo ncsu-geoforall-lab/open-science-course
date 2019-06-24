@@ -39,6 +39,9 @@ tools, and service providers).
 We will use LaTeX through Overleaf, but all you learn will be applicable
 also for the local installation of LaTeX.
 
+NCSU has a Pro license for Overleaf, so use your NCSU email when
+registering to get the most of the platform.
+
 LaTeX
 -----
 

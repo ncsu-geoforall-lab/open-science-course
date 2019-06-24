@@ -30,6 +30,11 @@ https://ncsu-geoforall-lab.github.io/open-science-course/topics/open-science.htm
 
 https://ncsu-geoforall-lab.github.io/open-science-course/topics/writing.html
 
+The first topic is introduction to and motivation for open science.
+The second topic dives into writing tools often used in conjunction with
+open science principles. It will get us ready for adopting potentially
+a very new and very different mindset in the following weeks.
+
 The suggested days for the topics are Tuesday and Thursday. Both
 assignments are due on Monday next week.
 
