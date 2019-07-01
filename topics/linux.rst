@@ -4,6 +4,9 @@ Introduction to command line
 This topic is an introduction to command line and remote access to
 computational resources using GNU/Linux operating system.
 
+Refer to the assignment instructions for instructions where to run
+the commands.
+
 Basics commands
 ---------------
 
@@ -11,7 +14,8 @@ Find which directory you are in::
 
     pwd
 
-Go the the root directory::
+Go the the root directory
+(i.e., the directory at the top of the directory tree)::
 
     cd /
 
@@ -19,16 +23,18 @@ See what is there::
 
     ls
 
-Go back to your home directory::
+Go back to your home directory
+(``~`` is automatically replaced by your home directory path)::
 
     cd ~
 
-Edit a file with nano::
+Edit a file with *nano* (a common default command line editor)::
 
     nano test1.txt
 
-Write some text. Put the word "apple" on couple of lines and make couple
-of lines without the word "apple." To exit nano, press Ctrl+X, then
+Write some text. Put the word "apple" on couple of lines together with other text
+and make couple of lines with other text without the word "apple."
+To exit nano, press Ctrl+X, then
 press Y to confirm that you want to save the file, and then Enter to
 confirm the file name.
 
@@ -37,18 +43,18 @@ you just created)::
 
     ls
 
-To display its content in the command line, you can use cat::
+To display its content in the command line, you can use *cat*::
 
     cat test1.txt
 
-For browsing content of a larger file, use less::
+For browsing content of a larger file, use *less*::
 
     less test1.txt
 
 Search content of a file
 ````````````````````````
 
-Usin grep, search for a line which contains ``apple`` in the file
+Using *grep*, search for a line which contains ``apple`` in the file
 called ``test1.txt``::
 
     grep apple test1.txt
@@ -56,13 +62,26 @@ called ``test1.txt``::
 Spaces in the command line
 ``````````````````````````
 
-Spaces separate individual parameters. The command ``echo`` prints
-its parameters separated by spaces. If you want to pass spaces as part
-of the parameter, use quotes::
+Spaces in the command line separate individual parameters
+passed to the program. First item in the command line is
+the name of the program (or full path to it).
+Here we call the program called *echo* with one parameter
+which is ``Hello``::
 
     echo Hello
+
+We will use this program *echo* as an example.
+It prints its parameters in the way that the parameters in
+the output are separated by spaces.
+Given that multiple spaces still are just separating two
+parameters from each other, the following will print the same:
+
     echo Hello World
     echo Hello       World
+
+If you want to pass spaces as part
+of the parameter, use quotes::
+
     echo "Hello       World!"
     echo "Hello
     World!"
@@ -75,81 +94,12 @@ situation::
 
     cat
 
-To get out of it, use Ctrl+D to end the input (which ends ``cat``)
+To get out of it, use Ctrl+D to end the input
+(which will consequently end ``cat``)
 or Ctrl+C to terminate ``cat``.
+These shortcuts will work similarly with other programs
+as well.
 
-Parallel processing
--------------------
-
-
-First we need to prepare a text file with commands to run::
-
-    nano test2.txt
-
-Use the following as the content of the file. This is just for the
-exercise. Each line would be, e.g. a call of a Python script which
-does some computations::
-
-    sleep 10 && echo 1;
-    sleep 25 && echo 2;
-    sleep 10 && echo 3;
-    sleep 25 && echo 4;
-    sleep 20 && echo 5;
-    sleep 10 && echo 6;
-    sleep 10 && echo 7;
-    sleep 10 && echo 8;
-
-
-Installing a program
-````````````````````
-
-When we run the program GNU Parallel, systems informs us that we don'
-have it::
-
-    parallel
-
-On Ubuntu and similar distributions, we can install it using
-``apt-get install``::
-
-    apt-get install parallel
-
-However, only administrator (aka super user or root) can install new
-programs. We can execute program in that way using *sudo*::
-
-    sudo apt-get install parallel
-
-Exploring the documentation
-```````````````````````````
-
-Now when we have the program, we can get suggestion how to use it
-using ``--help`` option::
-
-    parallel --help
-
-A more detailed documetation is in the manual (exit by pressing Q)::
-
-    man parallel
-
-Running in parallel
-```````````````````
-
-Now run the commands from the text file in parallel::
-
-    parallel -j 2 -a test2.txt
-
-The ``-j`` option specifies the number of jobs (commands) to execute
-in parallel at the same time and the ``-a`` option specifies the
-file with the commands to execute.
-
-Observe how long it takes to execute the following commands::
-
-    time parallel -j 1 -a test2.txt
-    time parallel -j 2 -a test2.txt
-    time parallel -j 4 -a test2.txt
-
-When doing actual processing, how much you gain by increasing number of
-jobs depends on how many CPUs you actually have available on your
-machine.
 
 Redirecting inputs and outputs
 ------------------------------
@@ -167,8 +117,8 @@ The output file is identical with what we read, that's not that useful
 
     cat test3.txt
 
-When it starts to be useful, is when we first pipe (redirect) the output
-to input of another command, here *grep*::
+When it starts to be useful, is when we pipe (redirect) the output
+to input of another command, here *grep*, before redirecting it to a file::
 
     cat test1.txt | grep apple > test3.txt
     cat test3.txt
@@ -186,18 +136,26 @@ to command input::
     grep apple test1.txt
     grep apple < test1.txt
 
-Both input and output can be connected to files at the same time::
+Both input and output can be redirected (connected) to files at the same time::
 
     grep apple < test1.txt > test3.txt
     cat test3.txt
 
-The *cat* command can concatenate multiple files together::
+Now, the *cat* command we were using can also concatenate
+multiple files together::
 
     cat test1.txt test2.txt
 
 The result can be redirected to another command::
 
     cat test1.txt test2.txt | grep apple
+
+And then redirected to another file::
+
+    cat test1.txt test2.txt | grep apple > test5.txt
+
+Filtering program outputs
+-------------------------
 
 The *find* command is good for searching all files matching a pattern,
 here we search for all files in the directory ``/bin`` which start with
@@ -228,17 +186,19 @@ extension in our home directory::
 
     find ~ -name "*.txt"
 
-The *find* command is different to *ls* which we often also use with
+As a side note,
+the *find* command is different to *ls* which we often also use with
 pattern, but the pattern is not in quotes and is evaluated by the
 command line (shell) itself rather than the *ls* program::
 
     ls /bin/z*
 
 Pausing execution
-`````````````````
+-----------------
 
-Sometimes, an examples are one of the cases, it is good to pause
-execution of a script for some time::
+Sometimes, examples are one of the cases, it is good to pause
+execution of a script for some time. Try the *sleep* command
+in command line::
 
     sleep 5
 
@@ -266,6 +226,89 @@ line::
     gedit &
 
 
+Parallel processing
+-------------------
+
+In this section, we will execute multiple commands in parallel
+which will allow us to take advantage of multiple CPU cores
+(processing elements).
+
+Getting ready
+`````````````
+
+First we need to prepare a text file with commands to run::
+
+    nano test2.txt
+
+Use the following as the content of the file. The following lines
+are spending some time in a program called *sleep* and then
+printing a number using *echo*. These are just for the exercise.
+In reality, each line would be, e.g., a call of
+a Python script doing some useful computation::
+
+    sleep 10 && echo 1;
+    sleep 25 && echo 2;
+    sleep 10 && echo 3;
+    sleep 25 && echo 4;
+    sleep 20 && echo 5;
+    sleep 10 && echo 6;
+    sleep 10 && echo 7;
+    sleep 10 && echo 8;
+
+
+Installing a program
+````````````````````
+
+When we run the program GNU Parallel, systems informs us that we don't
+have it::
+
+    parallel
+
+On Ubuntu and similar distributions, we can install it using
+``apt install``::
+
+    apt install parallel
+
+However, only administrator (aka super user or root) can install new
+programs. We can execute program in that way using *sudo*::
+
+    sudo apt install parallel
+
+Exploring the documentation
+```````````````````````````
+
+Now when we have the program, we can get suggestion how to use it
+using ``--help`` option::
+
+    parallel --help
+
+A more detailed documentation is in the manual (exit by pressing Q)::
+
+    man parallel
+
+Running in parallel
+```````````````````
+
+Now run the commands from the text file in parallel::
+
+    parallel -j 2 -a test2.txt
+
+The ``-j`` option specifies the number of jobs (commands) to execute
+in parallel at the same time and the ``-a`` option specifies the
+file with the commands to execute.
+
+Observe how long it takes to execute the following commands::
+
+    time parallel -j 1 -a test2.txt
+    time parallel -j 2 -a test2.txt
+    time parallel -j 4 -a test2.txt
+    time parallel -j 8 -a test2.txt
+
+When doing actual processing, how much you gain by increasing number of
+jobs depends on how many core you actually have available on your
+machine.
+
+
 Remote access using SSH
 -----------------------
 
@@ -273,14 +316,18 @@ Although different remote desktop solutions are quite common,
 it is even more common to connect to servers and remote computational
 resources, such as high performance computing clusters, using SSH.
 The whole operation is done in command line and all further interaction
-happens in command line as well (see how the command line prompt
-changed)::
+happens in command line as well. You would typically see that the
+command line prompt changed to indicate that the terminal is now
+connected to a different machine.
+
+::
 
     ssh anndoe@154.2.15.319 -X
 
 The ``-X`` option is useful for servers which support applications with
 GUI, specifically servers with X server, and clients which support this
-type of connection (most of Linux distributions support that while
+type of connection (most of Linux distributions support that
+and on macOS it is possible to get it working reasonably well while
 on MS Windows it is harder to get that). When ``-X`` is used, GUI
 applications can be started from command line and the GUI appears
 on the client side similarly to the applications running on the client.
@@ -291,17 +338,46 @@ Bonus: Changing the path variable
 
 This is how path variable can be changed to enable a program installed
 in non-standard location in the command line for the given session
-(expects Ubuntu 16.04)::
+(the following expects Ubuntu 16.04).
+
+The first command should work, the second should fail.
+
+::
 
     ls
     sl
+
+We install the missing program::
+
     sudo apt-get install sl
+
+The following should still fail because this not-so-standard
+program is not "on path". It was installed to ``/usr/games``.
+
     sl
+
+We inspect the ``PATH`` variable if ``/usr/games`` is
+really not there::
+
     echo $PATH
+
+And we add the path to the ``PATH`` variable.
+First we use *echo* to inspect how our command will look
+like and then we actually run it::
+
     echo export PATH="/usr/games:$PATH"
     export PATH="/usr/games:$PATH"
-    ls
+
+Finally, we run our newly installed command::
+
     sl
+
+If you see train, all went well.
+
+Note that this changes the ``PATH`` variable only temporarily
+in the given terminal session which is usually what you should
+do (limit yourself to).
+
 
 Resources
 ---------
