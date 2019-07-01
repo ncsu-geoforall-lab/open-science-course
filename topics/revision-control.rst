@@ -1,11 +1,18 @@
 Revision control systems and wiki technologies
 ==============================================
 
+As an example of a revision (version) control system,
+we will look at Git. Each revision control system has its specifics
+often related to a different underling philosophy.
+However, they share a lot in common and Git is currently the most
+common tool used.
+
 Git
 ---
 
 Git is a revision (version) control system.
-Git is free and open source software:
+Git is free and open source software
+[`source <https://git-scm.com/about/free-and-open-source>`_]:
 
     Git is released under the GNU General Public License version 2.0,
     which is an open source license. The Git project chose to use GPLv2
@@ -19,6 +26,11 @@ https://git-scm.com/
 
 Using Overleaf with Git
 -----------------------
+
+To get us started, we will use Git together with Overleaf.
+Although using Git with software source code is the most typical use case,
+we will see that using it with markup documents such as LaTeX
+works exactly in the same way.
 
 You will need some experimental document in Overleaf
 (i.e. some document which is yours only and you can break it).
