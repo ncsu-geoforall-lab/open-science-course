@@ -34,11 +34,14 @@ works exactly in the same way.
 
 You will need some experimental document in Overleaf
 (i.e. some document which is yours only and you can break it).
-Go to this document and go to *Share* and use the *Clone With Git*
+Go to this document and go to *Menu* and use the *Git*
 option. Use this in your local Git installation to clone the repository.
 In command line, the operation looks like::
 
     git clone https://git.overleaf.com/somehash
+
+Note that GIt will need to ask you for authentication to Overleaf,
+use your Overleaf user name (typically your email) and password.
 
 Make some changes in the main TeX file (``main.tex``) using a text
 editor. Now let's see the status of the repository::
@@ -58,15 +61,18 @@ changes word by word::
 After reviewing the changes, tell Git to record the current state
 using ``git commit``. Specify also the message to describe the changes::
 
-    git commit -am "a test change"
+    git commit -am "A test change"
 
 No let's put the these changes to Overleaf using::
 
     git push
 
 Now check if you see the changes you made in Overleaf.
-Then make some changes in Overleaf and get them synchronized to your
-computer::
+You should see the changes in the *Source* view.
+
+Then try it the other way around.
+Make some changes in Overleaf and then get them synchronized to your
+computer using::
 
     git pull
 
@@ -90,7 +96,7 @@ To see what files where changed, added or deleted use::
 
 Now commit the changes::
 
-    git commit -am "a file with trivial content"
+    git commit -am "A file with trivial content"
 
 Now do some changes in the file; add some lines, remove some lines,
 and edit some lines.
@@ -100,17 +106,22 @@ To review the changes in the files use::
 
 Now again commit the changes::
 
-    git commit -am "a file with trivial content"
+    git commit -am "Some trivial changes"
 
 Let's review the states we have recorded::
 
     git log
 
+If you don't see your command line prompt, i.e. you can't enter
+more commands, press *Q* to get out of the log view.
 The are GUIs for this, but depending on the occasion we may want to use
 some command line parameters to get a differently formated revision tree
 in the command line, for example::
 
     git log --oneline --graph --decorate --all
+
+Again, if your log is long, you will be in the log view mode,
+press *Q* to get out of it.
 
 Branches in Git
 ---------------
@@ -124,35 +135,41 @@ using ``git checkout``. Usually this is done together in one command::
 
 Now we have a branch called ``experiment`` and we are currently in it.
 In other words, the ``experiment`` branch is active now.
+Any changes we do and commit will be recored as part of this branch
+and won't affect any of the other branches.
+Modifications done in different branches can be combined together,
+for example, using ``git merge`` command.
+A common way how branches are used is in combination with pull or
+merge requests (see the assignment).
 
 Submitting changes to a project
 -------------------------------
 
 Usually there are two options how to submit a change to the code in the
 repository of a project we want to contribute code to.
-You can submit a patch (aka diff) as a file or you can submit a pull
-request.
+You can submit a patch (aka diff) as a file or you can submit
+a pull or merge request.
 
 The basic way is to submit a patch (aka diff) as a file.
 First you clone the repository, make changes and then create the patch.
 The patch (diff) is obtained using command similar to the following
-example::
+example
+(assuming unix-like command line here, i.e., Git Bash on Windows)::
 
     git diff > your_additions.diff
 
-(assuming unix-like command line, i.e. Git Bash on Windows):
+Now open an issue (ticket, bug report) and add the patch as an attachment.
 
-Now open an issue (bug report) and add the patch.
-
-However, now many projects use pull requests instead of sending
-a file. See the assignment for this workflow.
+However, now many projects use pull or merge requests instead of sending
+a file. See the assignment for a pull request workflow.
 
 Software licenses
 -----------------
 
 Proprietary software use is usually governed by end user license
 agreements (EULA). Users usually buy permission to use the software.
-The permission is often called license.
+This permission is often called license and users are required to
+read and agree to the EULA before using the software.
 
 Open source software use governed by open source licenses.
 There are different licenses with different purposes.
@@ -161,6 +178,14 @@ project and gives a good practical overview of some of the basic
 concepts and differences:
 
 https://choosealicense.com/
+
+To understand what you can do with a software or source code under
+a specific license, it is good to check *Open Source Definition* by
+the Open Source Initiative and their list of compliant licenses:
+
+https://opensource.org/osd
+
+https://opensource.org/licenses/category
 
 
 Resources
@@ -194,7 +219,7 @@ The assignment has four parts. First, install Git on your computer.
 
 Second, go to your document in Overleaf
 from the last assignment or create some other test document in Overleaf.
-Go to *Share* and use the *Clone With Git* option. Use this in your
+Go to *Menu* and use the *Git* option. Use this in your
 local Git installation to clone the repository. In command line,
 the operation looks something like:
 
