@@ -7,14 +7,27 @@ For Python, we will use IPython as the interpreter.
 All the tools we will use are open source under various licenses.
 With many tools, you can use parameters ``--version``, ``--help``,
 or ``--license`` or run *man* to find out what is the specific license.
+However, all tools we will use are under licenses which fit
+the Open Source Definition by the Open Source Initiative.
 
 GDAL
 ----
 
 GDAL is a free and open source project under MIT license.
-GDAL has CLI and and also C and Python APIs and is used broadly by other
+GDAL has CLI and also C and Python APIs and is used broadly by other
 software as a backend especially for format transformations.
 GDAL is an OSGeo project.
+
+https://gdal.org/
+
+GDAL has a raster part and vector part. The vector part is sometimes
+referred to as OGR and in that case GDAL is referred to as GDAL/OGR.
+There is multiple interfaces and wrappers of GDAL, but here we will
+focus mainly on command line where the raster commands start typically
+with ``gdal`` and the vector ones with ``ogr``.
+
+We will assume an Ubuntu machine in the following examples,
+but please see installation instructions for your operating system.
 
 Preparation
 ```````````
@@ -31,7 +44,7 @@ Download data::
 
     wget https://www.grassbook.org/wp-content/uploads/data_extra/o35078g6_NC.tif.gz
 
-Unpack (GZIP format)::
+Uncompress (GZIP format)::
 
     gunzip o35078g6_NC.tif.gz
 
@@ -42,23 +55,26 @@ Get info::
 
     gdalinfo o35078g6_NC.tif
 
-Get just first part::
+The output is too long, let's get just first part::
 
     gdalinfo o35078g6_NC.tif | head
 
-Get little more::
+Let's get first 50 lines::
 
     gdalinfo o35078g6_NC.tif | head -n 50
 
-Browser through all::
+Browse through all using *less* (use *Q* to exit)::
 
     gdalinfo o35078g6_NC.tif | less
 
-See if there is some option for getting just the basic info::
+See if there is some option for getting just the basic info
+(use arrow keys or *Page Up* and *Page Down* to navigate, *Q* to exit)::
 
     man gdalinfo
 
-Disable printing color table and raster attribute table::
+There is couple of options which start with `-no` which will allow
+us to print less information without additional command line tricks.
+Let's disable printing color table and raster attribute table::
 
     gdalinfo -noct -norat o35078g6_NC.tif
 
@@ -72,96 +88,36 @@ Unpack the data (TAR.GZ format)::
     tar xvf nc_rast_geotiff.tar.gz
     tar xvf nc_shape.tar.gz
 
-Get info::
+Get info using *ogrinfo* with ``-so`` which is for printing only the
+summary::
 
     ogrinfo -so ncshape/lakes.shp lakes
+
+Note that we are specifying the file, a data source to be exact,
+and a layer within that data source. Here it is file ``lakes.shp`` in
+directory ``shape`` and layer ``lakes`` which is the base part of the
+file name in this case since Shapefiles have only one layer in them.
 
 Rasterization
 `````````````
 
-Rasterize the vector::
-
-    gdal_rasterize -burn 100 -te 610760 196084 677119 258303 -tr 100 100 -l lakes ncshape/lakes.shp lakes.tif
-
-Convert TIFF to PNG for visualization using ImageMagick)::
-
-    convert lakes.tif lakes.png
-
-Show PNG using Eye of GNOME::
-
-    eog lakes.png
-
-Processing textual outputs
-``````````````````````````
-
-In the previous example, we needed the extent of the vector and we
-manually transfered the values. That would not be feasible if we
-would need to do it repetitively or in a reproducible way.
-Any textual output of a command (standard output), can be easily
-processed in the command line. Sometimes we have to be careful on how
-likely is the format to change in the future, but for now, we can
-consider the *ogrinfo* output to be stable enough.
-
-We start with extracting just the line we are interested in using
-the *grep* command::
-
-    ogrinfo -so ncshape/lakes.shp lakes | grep Extent:
-
-Now, we need only the numbers from this line. There is couple of
-different ways how to do it, like using *sed*, *awk*. Here, we will use
-Python, and although regular expressions are a powerful tool we could
-use, it will enough to just use *replace* function. We will use
-packaged called *fileinput* which takes care of reading from the
-standard input (and files if needed). Create a file
-called ``filter_numbers.py`` and use the following content:
+Rasterize the vector using *gdal_rasterize*. The ``-burn`` parameter
+specifies what raster value we want to use for the vector features
+(objects) and the ``-tr`` parameter specifies the resolution of
+the resulting raster.
 
 ::
 
-    #!/usr/bin/env python
+    gdal_rasterize -burn 100 -tr 100 100 -l lakes ncshape/lakes.shp lakes.tif
 
-    import fileinput
+Convert TIFF to PNG for visualization using ImageMagick
+command *convert*::
 
-    for line in fileinput.input():
-        print(line
-              .replace("Extent: ", "")
-              .replace("(", "")
-              .replace(")", "")
-              .replace(",", "")
-              .replace("- ", "")
-              )
+    convert lakes.tif lakes.png
 
-Now use the Python script file in the command::
+Show PNG using Eye of GNOME (*eog*)::
 
-    ogrinfo -so ncshape/lakes.shp lakes | grep Extent: | python filter_numbers.py
-
-In unix-like systems, we can make any file executable when it makes
-sense, so we will do it also with our script. It is done using the
-*chmod* command with parameter ``u+x`` which adds (``+``) executable
-permissions (``x``) to the user who is the file owner (``u``)::
-
-    chmod u+x filter_numbers.py
-
-Now we can use the script without specifying Python as the interpreter
-because that will be taken from the first line of the script which
-starts with ``#!``. This line is called *shebang*.
-However, we need to be explicit about the script being a file by
-adding ``./`` when it is in the current directory to distinguish it
-from other commands (for safety and organization purposes)::
-
-    ogrinfo -so ncshape/lakes.shp lakes | grep Extent: | ./filter_numbers.py
-
-At this point we have the numbers separated by spaces and we can get
-back to the *gdal_rasterize* command. We need to include these numbers
-are part of the *gdal_rasterize* command. This can be done using
-``$()`` which is for command substitution which places standard output
-of one command into the given context, in our case command line
-parameters of *gdal_rasterize*. See the final command and notice also
-the slashes at the end of the first two lines which are telling the
-interpreter that the command continues on the following line::
-
-    gdal_rasterize -burn 100 \
-        -te $(ogrinfo -so ncshape/lakes.shp lakes | grep Extent: | python filter_numbers.py) \
-        -tr 100 100 -l lakes ncshape/lakes.shp lakes.tif
+    eog lakes.png
 
 To preserve georeferencing, we can use *gdal_translate* to convert TIFF
 to PNG::
@@ -198,6 +154,10 @@ are set to the first and second parameter in the command line.
     #!/bin/bash
 
     gdal_translate -of PNG -scale -co worldfile=yes $1 $2
+
+This script can be used in the following way::
+
+./tif2png.sh lakes.tif lakes.png
 
 Resampling and animation
 ````````````````````````
@@ -316,8 +276,10 @@ A sequence of numbers can be generated using *seq*::
 
     seq -w 50 50 300
 
-It is worth noting that the subcommand syntax above (``$()``) can be
-used also in this context::
+Finally, you can include into you script a textual result of another
+command using the subcommand syntax. The syntax is ``$(command here)``.
+The textual output will be simply put into the place of ``$(...)``.
+This can be used in the context of a for loop like this::
 
     for NUM in $(seq -w 50 50 300)
     do
