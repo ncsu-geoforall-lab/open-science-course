@@ -103,3 +103,72 @@ Go through the `instructions <https://ncsu-geoforall-lab.github.io/open-science-
 In some Linux command line (e.g. in NCSU VCL Ubuntu machine), find out how many CPUs has the machine you are working on. To find out that information, use file called /proc/cpuinfo which contains information about CPUs. Construct command line which will in one command print the number of CPUs, but nothing more. Post the command as a (online) text in Moodle. I created an assignment for it in Moodle.
 
 Please do post questions to the forum as you are going through the provided material, just don't post possible solutions for that CPU command, so that others can come up with their own solutions.
+
+Week 7: Command line and Python tools for geospatial work
+---------------------------------------------------------
+
+Go through the instructions and examples about GDAL. For smooth experience, it is recommended to use NCSU VCL Ubuntu machine, but testing GDAL on your own computer is highly encouraged.
+
+https://ncsu-geoforall-lab.github.io/open-science-course/topics/geospatial-command-line.html
+
+Then take the part which is resampling the rasters and creating and animated GIF and create a Bash script which does this procedure without repeating commands. If possible, include also download of the file and its unpacking of needed so that your result can be reproduced on any computer. Submit this file to Moodle.
+
+I recommend you to do the assignment before October 18 (GRASS GIS as software for geospatial research) where you can use what you learn from this assignment.
+
+
+Week 8: Publishing data on web
+------------------------------
+
+Here is the assignment for this week: Explore the general repositories for scientific data linked in the class material and search for a repository which is used in your field. If you find something what is not on the list, you can share it on the message board (in the discussion in the Assignments forum).
+
+Then go through the instructions to create your own simple, but interactive web map showing a raster and vector and publish it through GitHub. Send the link to the repository and to the web page online to the message board (again, to the Assignments forum).
+
+https://ncsu-geoforall-lab.github.io/open-science-course/topics/data.html
+
+If you did some of these things in the class, you don't need to do them again, but in any case, publish the web page through GitHub as described in the instructions.
+
+
+Week 9: QGIS, a free and open source geographic system
+------------------------------------------------------
+
+This week is dedicated to learning QGIS.
+
+On campus students: Please, install QGIS on your computer before you come to class on Wednesday (if you have a problem, you can always use NCSU VCL).
+
+Online students: Please, also install QGIS and go through one of the linked (text or video) tutorials. It is up to you how much do you want to do, but at the end, you should be comfortable with using QGIS for basic geospatial tasks.
+
+If you already know QGIS, you may want skip the tutorials and dedicate the time to exploring some feature or features you don't know.
+
+As always, ask on message board if you have some issues and you can also share some things you learned if you want.
+
+
+Week 10: GRASS GIS as platform for open science
+-----------------------------------------------
+
+This week we are exploring GRASS GIS as platform for open science
+
+https://ncsu-geoforall-lab.github.io/open-science-course/topics/grass.html
+
+See the recorded talk about GRASS GIS linked from the class material. I have also included links to HTML slides for this talk and for a related presentation focused on dynamic visualizations.
+
+In addition to providing overview of GRASS GIS evolution and features related to research, the presentations highlight connection of GRASS modules and tools to published scientific papers which you will find on several slides and GRASS manual pages, such as these (scroll down to see the references, link to source code and recent history of changes):
+
+https://grass.osgeo.org/grass72/manuals/v.surf.rst.html
+
+https://grass.osgeo.org/grass72/manuals/r.watershed
+
+To gain some hands-on experience with GRASS GIS, I highly recommend that you go at least through some sections of the workshop "From GRASS GIS novice to power user" - see the link on the webpage or here:
+
+https://grasswiki.osgeo.org/wiki/From_GRASS_GIS_novice_to_power_user_(workshop_at_FOSS4G_Boston_2017)
+
+Even if you are familiar with GRASS GIS, you will likely learn something new as did the participants of the FOSS4G Boston workshop.
+
+In class we looked at running GRASS GIS commands from the shell and saving the history file, you can try it yourself following the "Recording your work in GRASS GIS" section on this topic's webpage.
+
+For an Assignment, there is a link to a recent paper:
+
+"Fusion of high-resolution DEMs for water flow modeling"
+
+https://opengeospatialdata.springeropen.com/articles/10.1186/s40965-017-0019-2
+
+which presents a technique for updating lidar-based DEM with 3D data acquired by UAS(drone) using GRASS GIS. You should try to reproduce the results presented in this paper - e.g. can you generate the same image as Fig. 3?
