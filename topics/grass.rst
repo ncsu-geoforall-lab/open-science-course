@@ -5,17 +5,33 @@ GRASS GIS is a free and open source desktop geographic system
 and geospatial analytics library which serves as a platform for
 open science. It is licensed under GNU GPL.
 
-Learn about GRASS GIS: 
+To learn about GRASS GIS:
 
-* `Slides <https://ncsu-geoforall-lab.github.io/grass-as-a-platform/ncgis2017.html>`_
-* `Recorded Video: 33 Years Of GRASS GIS As An Innovation Platform <https://www.youtube.com/watch?v=Vv5NnPg6MOY>`_
-* `Slides From Dynamic visualizations to Tangible modeling <https://ncsu-geoforall-lab.github.io/grass-as-a-platform/autocarto.html#/>`_
+* `Video: 33 Years Of GRASS GIS As An Innovation Platform <https://www.youtube.com/watch?v=Vv5NnPg6MOY>`_
+* `Slides: 33 Years Of GRASS GIS As An Innovation Platform <https://ncsu-geoforall-lab.github.io/grass-as-a-platform/ncgis2017.html>`_
+* `Slides: From Dynamic Visualizations to Tangible Modeling <https://ncsu-geoforall-lab.github.io/grass-as-a-platform/autocarto.html>`_
 
-Learn how to use GRASS GIS:
+In addition to providing overview of GRASS GIS evolution and features
+related to research, the presentations highlight connection of GRASS GIS
+modules and tools to published scientific papers which you will find in
+the GRASS GIS manual pages. For example, scroll down at the end of these
+two pages to see the references as well as links to recent source code
+changes in the context of other documentation:
+
+https://grass.osgeo.org/grass76/manuals/v.surf.rst
+
+https://grass.osgeo.org/grass76/manuals/r.watershed
+
+To learn how to use GRASS GIS, you can use:
 
 * `From GRASS GIS novice to power user <https://grasswiki.osgeo.org/wiki/From_GRASS_GIS_novice_to_power_user_(workshop_at_FOSS4G_Boston_2017)>`_ (workshop material for FOSS4G Boston 2017)
 
 Official website and download: https://grass.osgeo.org
+
+Here, we will focus on reproducibility, particularly on how to keeps
+records of your work done in GRASS GIS, and we will see how GRASS GIS
+is used to publish geospatial research.
+
 
 Recording your work in GRASS GIS
 ------------------------------------
@@ -116,9 +132,16 @@ Books
 * Petrasova, A., Harmon, B., Petras, V., Mitasova, H., 2015, Tangible Modeling with Open Source GIS, Springer International Publishing, 135 p. eBook ISBN: 978-3-319-25775-4, Hardcover ISBN: 978-3-319-25773-0, DOI: 10.1007/978-3-319-25775-4
 
 
-Assignment
-----------
+Optional Assignment
+-------------------
 
 Try to reproduce the following paper and let us know how far did you get:
 
 * https://opengeospatialdata.springeropen.com/articles/10.1186/s40965-017-0019-2
+
+This paper, *Fusion of high-resolution DEMs for water flow modeling*,
+presents a technique for updating lidar-based DEM with 3D data acquired
+by UAS (drone). The software used for computations is GRASS GIS
+and the code implementing the presented method is available. You should
+try to reproduce the results presented in this paper, for example,
+you can generate the same image as figure 3 in the paper.
