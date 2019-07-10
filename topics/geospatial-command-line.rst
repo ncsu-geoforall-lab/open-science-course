@@ -32,6 +32,10 @@ but please see installation instructions for your operating system.
 Preparation
 ```````````
 
+Update your package information in the system::
+
+    sudo apt update
+
 Install GDAL (command for Ubuntu)::
 
     sudo apt install gdal-bin
