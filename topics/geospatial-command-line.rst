@@ -155,9 +155,20 @@ are set to the first and second parameter in the command line.
 
     gdal_translate -of PNG -scale -co worldfile=yes $1 $2
 
+To make the script executable, run the following *chmod* command
+which adds the executable permissions::
+
+    chmod u+x tif2png.sh
+
 This script can be used in the following way::
 
-./tif2png.sh lakes.tif lakes.png
+    ./tif2png.sh lakes.tif lakes.png
+
+The ``./`` part or whatever directory path the script is on is still
+necessary because the script is not in the directory specified by the
+``PATH`` variable, i.e. it is not on path. This is perfectly fine and
+usually desired for scripts.
+
 
 Resampling and animation
 ````````````````````````
