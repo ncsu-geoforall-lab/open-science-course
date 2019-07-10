@@ -196,3 +196,19 @@ We will get back to this in the topic 10 at the end of the course.
 
 As always, ask on message board if you have some issues and you can also
 share some things you learned if you want.
+
+
+Help session announcement template
+----------------------------------
+
+The help session for the next week is scheduled for Day, Mon X,
+Y-Zpm ET. On campus, we will meet in Jordan Hall, room N, and remotely
+with Zoom:
+
+
+Remote session description template
+-----------------------------------
+
+Tools for Open Geospatial Science X
+
+Help Session: Tools for Open Geospatial Science, Week X
