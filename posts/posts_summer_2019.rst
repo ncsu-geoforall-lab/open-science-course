@@ -198,6 +198,55 @@ As always, ask on message board if you have some issues and you can also
 share some things you learned if you want.
 
 
+Week 4: Publishing code and data
+--------------------------------
+
+Our first topic for this week is publishing code as part of an open
+source project (topic 7). Please, read the material and watch the linked
+video.
+
+https://ncsu-geoforall-lab.github.io/open-science-course/topics/code.html
+
+There is several principles common to most projects. GRASS GIS will
+serve as an example because it is often used by scientists as a platform
+to publish their geospatial research.
+
+Although this topic is mostly about the concepts and terms in open
+source development, it is also about becoming an aware user.
+The assignment has a mandatory part which is more from user and
+a potential contributor perspective. The optional part of the assignment
+then goes into process of making a real contribution to an open source
+software, again using GRASS GIS as an example. Even if contributing
+to a software project sounds distant to you, most of the steps needed
+are actually for greater reproducibility of the analytical process and
+are therefore useful even if you are working alone and not sharing
+the code with anyone (a great example of that would be documentation!).
+
+The optional part should be relatively straightforward to do, although
+some of the concepts might be new to you. However, it is a lot of steps,
+so don't hesitate to write to the message board to bring the issue up.
+
+The deliverables for both mandatory and optional part are links to the
+respective Git repositories containing the work you did. You can add
+comments too if you want.
+
+Our second topic this week is publishing data (topic 8) which will focus
+on an easy way of self-publishing smaller datasets.
+
+https://ncsu-geoforall-lab.github.io/open-science-course/topics/data.html
+
+No reading or watching videos is required, although extra study
+resources are available. The assignment has two parts.
+
+For the first part of the assignment, you will explore data repositories
+in you field. In the second part, you will follow the instructions
+on the topic page which will lead you through the process of creating
+and publishing a custom web site with a map and your own geospatial
+datasets. We will relying on Mapbox for the mapping part, but a very
+similar effect can be achieved with pure Leaflet or OpenLayers
+JavaScript libraries.
+
+
 Help session announcement template
 ----------------------------------
 

@@ -1,8 +1,8 @@
 Posts Fall 2017
 ===============
 
-Welcome and first week instructions
------------------------------------
+Week 1: Welcome and first week instructions
+-------------------------------------------
 
 Welcome to the Tools for Open Geospatial Science course which will uncover the world of reproducible science.
 
@@ -104,6 +104,7 @@ In some Linux command line (e.g. in NCSU VCL Ubuntu machine), find out how many 
 
 Please do post questions to the forum as you are going through the provided material, just don't post possible solutions for that CPU command, so that others can come up with their own solutions.
 
+
 Week 7: Command line and Python tools for geospatial work
 ---------------------------------------------------------
 
@@ -172,3 +173,46 @@ For an Assignment, there is a link to a recent paper:
 https://opengeospatialdata.springeropen.com/articles/10.1186/s40965-017-0019-2
 
 which presents a technique for updating lidar-based DEM with 3D data acquired by UAS(drone) using GRASS GIS. You should try to reproduce the results presented in this paper - e.g. can you generate the same image as Fig. 3?
+
+
+Week 11: Combining text, code and results into one document
+-----------------------------------------------------------
+
+For this week we are focusing on Jupyter which is an example of a tool for putting together text, code and computational results.
+
+Practice and get familiar with using Jupyter Notebooks use the Try Jupyter! service. If needed, use one of the linked resources to learn about Jupyter.
+
+https://try.jupyter.org/
+
+Try using the Jupyter for geospatial tasks with GRASS GIS using the URL given in the other post in Moodle. Go through the code in of the notebooks and execute it. See how GRASS GIS is set up at the beginning, so you can copy that to a notebook on your computer.
+
+Then, install Jupyter on your computer (see the assignment page) and try to run it with GRASS GIS. If that fails for some reason, use the NCSU VCL Ubuntu machine for the rest of the assignment.
+
+Then transfer the following code (all or just a part) to a Jupyter notebook on your computer, execute the code, do modifications if needed, and create a PDF document with the results.
+
+https://github.com/wenzeslaus/geospatial-modeling-course-jupyter/blob/master/notebooks/buffers_cost_python.ipynb
+
+Submit the created PDF to Moodle. If you did something different for the installation or you were not able to install it at all, submit comments on that as part of the document.
+
+Ask on the message board if you want help resolving any issues with this assignment. It is a more challenging software setup this time, so don't worry and ask.
+
+
+
+Week 12: Publishing code as part of an open source project
+----------------------------------------------------------
+
+Here is the assignment for this week. Read through the page for this week and if you want study some of the linked examples and resources. The assignment is focused on GRASS GIS and it would be great if you learn the specifics of GRASS GIS, but keep in mind that most of the things, like following the guidelines, licensing, and Makefiles, would be similar in many other open source projects.
+
+https://ncsu-geoforall-lab.github.io/open-science-course/topics/publishing-code.html
+
+Then take some geospatial procedure you performed and write it as a GRASS GIS Python module, i.e. Python script including interface description, documentation and a (trivial) Makefile. Publish this using GitHub or other service (we would use an official GRASS GIS Addons repository in a real case). Then try to install it from that source locally (currently, you need to use Linux or Mac OS to do that, use NCSU VCL if needed).
+
+If you don't have a good procedure you want to script, you can implement some trivial process.
+
+The following page should lead you through the whole process:
+
+https://ncsu-geoforall-lab.github.io/open-science-course/topics/code-for-grass.html
+
+Please be patient with this assignment. It should be relatively straightforward to do, although some of the concepts might be new to you. However, it is a lot of steps and I might have missed something, so don't hesitate to write to the message board to bring the issue up.
+
+The deliverable is a link to the repository. You can add comments too if you want. See the assignment in Moodle.
