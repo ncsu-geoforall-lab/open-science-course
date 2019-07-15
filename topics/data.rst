@@ -11,7 +11,7 @@ applicable also for non-scientific geospatial data.
 Mapbox GL - An Interactive Mapping Platform for Geospatial Data
 ===============================================================
 
-.. figure:: img/stress_toggle.gif
+.. figure:: /img/stress_toggle.gif
 
 Mapbox provides many tools to build maps into 
 your website or web-based application, 
@@ -56,7 +56,7 @@ Git
 -  Go to the repo settings tab and set the Github Pages source to the
    master branch:
 
-   -  .. figure:: img/gh_pages.png
+   -  .. figure:: /img/gh_pages.png
 
 -  Open terminal/cmd to clone repo to local directory:
 
@@ -122,7 +122,7 @@ Publishing to Web
 -  Now let’s see what it looks like on the web with a quick double
    click:
 
-.. figure:: img/initial_index_open.gif
+.. figure:: /img/initial_index_open.gif
 
 -  Return to your terminal/cmd window
 
@@ -217,7 +217,7 @@ Now that you have a workable GeoJSON format of some of your own data:
 
 \5. If you’re feeling fancy, take a look into your own exported GeoJSON file, and find the property value you’re mainly interested in visualizing/coloring in your map display (it doesn’t *always* have to be just one property, but lets keep it simple for now). An example of what this would look like in the GeoJSON, say if I’m interested in coloring the example raster data (``do_rast1`` in the GeoJSON file below), it would look like:
 
-.. figure:: img/geojson_prop_value_ident.png
+.. figure:: /img/geojson_prop_value_ident.png
 
 \6. Now, fly away little bird. Use the html code below (which is **NOT** a standalone script, it is only intended to be used for examples on how to add/apply the functions: ``map.addSource({})`` and ``map.addLayer({})`` to edit your pre-existing html script. 
 
@@ -434,7 +434,7 @@ If you run into any troubles, for instance, your data won’t show up on the map
 
 - Example of what it *should* look like:
 
-.. figure:: img/geojson.io.png
+.. figure:: /img/geojson.io.png
 
 
 - If all else fails, my last recommendation would be looking into `GeoJSON Utilities <https://jasonheppler.org/courses/csu-workshop/geojson-utilities.html>`_, some cmd/terminal utilities “that make things easier”. Sorry, you’re on your own at this point. If these options didn’t help and you’re feeling utterly helpless, welcome to the club ;D.
