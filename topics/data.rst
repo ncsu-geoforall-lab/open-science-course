@@ -8,8 +8,8 @@ For the practical part, we will try an absolutely general method which
 does not use a centralized scientific repository, but which is
 applicable also for non-scientific geospatial data.
 
-Mapbox GL - An Interactive Mapping Platform for Geospatial Data
-===============================================================
+Mapbox GL JS - An Interactive Mapping Platform for Geospatial Data
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. figure:: /img/stress_toggle.gif
 
@@ -17,9 +17,6 @@ Mapbox provides many tools to build maps into
 your website or web-based application, 
 including Mapbox GL JS. Mapbox GL JS is an opensource JavaScript library you can use to display your Mapbox maps, add
 interactivity, and customize the map experience in your application.
-
-Mapbox GL JS
-~~~~~~~~~~~~
 
 -  In active development — new features always being added, improving existing features, and fixing bugs
 -  Maps are rendered client-side by the browser
@@ -31,7 +28,7 @@ What You’ll Need
 -  Mapbox account and access token.
 -  Mapbox GL JS, a Javascript Library.
 -  Text Editor, Sublime, Atom, Visual Studio Code, etc.
--  sp data object of choice
+-  Spatial data object of choice.
 -  index.html file representing skeleton of interactive application in
    Mapbox. I won’t give you all the answers throughout the tutorial, but
    this will hopefully serve as a decent basis for working from after
@@ -56,7 +53,7 @@ Git
 -  Go to the repo settings tab and set the Github Pages source to the
    master branch:
 
-   -  .. figure:: /img/gh_pages.png
+   .. figure:: /img/gh_pages.png
 
 -  Open terminal/cmd to clone repo to local directory:
 
@@ -102,7 +99,8 @@ Git
                     });
                   </script>
               </body>
-      </html>
+            </html>
+
 
 Publishing to Web
 ~~~~~~~~~~~~~~~~~
@@ -219,7 +217,7 @@ Now that you have a workable GeoJSON format of some of your own data:
 
 .. figure:: /img/geojson_prop_value_ident.png
 
-\6. Now, fly away little bird. Use the html code below (which is **NOT** a standalone script, it is only intended to be used for examples on how to add/apply the functions: ``map.addSource({})`` and ``map.addLayer({})`` to edit your pre-existing html script. 
+\6. Now, fly away little bird. Use the html code below (which is **NOT** a standalone script, it is only intended to be used for examples on how to add/apply the functions: ``map.addSource({})`` and ``map.addLayer({})``) to edit your pre-existing html script. 
 
 \7. Let’s see if you can use them to add and colorize your data of interest:
 
@@ -416,12 +414,12 @@ in your mapping application.
 
 
 Further Operations
-------------------
+~~~~~~~~~~~~~~~~~~
 
 Now, this is where I leave you. Use your well-earned extra time to continue exploring some Mapbox features you think would be interesting to add to your mapping application.
 
 Troubleshooting
----------------
+~~~~~~~~~~~~~~~
 
 If you run into any troubles, for instance, your data won’t show up on the map, and you have already looked into Chrome’s or Firefox’s Inspector, seeing no outputted errors in the process, 99% chance it is the formatting of your GeoJSON (don’t @ me).
 
@@ -440,10 +438,10 @@ If you run into any troubles, for instance, your data won’t show up on the map
 - If all else fails, my last recommendation would be looking into `GeoJSON Utilities <https://jasonheppler.org/courses/csu-workshop/geojson-utilities.html>`_, some cmd/terminal utilities “that make things easier”. Sorry, you’re on your own at this point. If these options didn’t help and you’re feeling utterly helpless, welcome to the club ;D.
 
 Resources
----------
+~~~~~~~~~~~
 
 Repositories
-^^^^^^^^^^^^
+------------
 
 * `How to deposit data on the OSF <https://osf.io/a5imq/wiki/How%20to%20Upload%20Data%20to%20the%20OSF>`_ (part of Reproducibility Project: Cancer Biology)
 * `Hosting Data on Authorea <https://intercom.help/authorea/host-data>`_ (Authorea help pages)
@@ -456,7 +454,7 @@ Repositories
 * `Recommended Data Repositories by Nature <https://www.nature.com/sdata/policies/repositories>`_
 
 Other
-^^^^^^^^^^^^
+-----
 
 * `Rendering and diffing images on GitHub <https://help.github.com/articles/rendering-and-diffing-images/>`_
 * `Mapping GeoJSON files on GitHub <https://help.github.com/articles/mapping-geojson-files-on-github/>`_
@@ -464,7 +462,7 @@ Other
 * `OpenLayers <http://openlayers.org/>`_
 
 Assignment
-----------
+~~~~~~~~~~~
 
 Explore the general repositories for scientific data linked above
 and search for a repository which is used in your field. If you find
