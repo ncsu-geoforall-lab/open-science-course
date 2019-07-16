@@ -244,7 +244,9 @@ on the topic page which will lead you through the process of creating
 and publishing a custom web site with a map and your own geospatial
 datasets. We will relying on Mapbox for the mapping part, but a very
 similar effect can be achieved with pure Leaflet or OpenLayers
-JavaScript libraries.
+JavaScript libraries. The instructions were prepared by PhD student
+Garrett Millar who is using this technique to publish data from his
+research.
 
 
 Help session announcement template
