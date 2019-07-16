@@ -120,7 +120,7 @@ Publishing to Web
 -  Now let’s see what it looks like on the web with a quick double
    click:
 
-.. figure:: /img/initial_index_open.gif
+.. figure:: /img/initial_index_open.png
 
 -  Return to your terminal/cmd window
 
