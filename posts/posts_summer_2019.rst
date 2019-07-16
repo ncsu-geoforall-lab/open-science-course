@@ -248,6 +248,8 @@ JavaScript libraries. The instructions were prepared by PhD student
 Garrett Millar who is using this technique to publish data from his
 research.
 
+As always, please post to the message board if you have any questions.
+
 
 Help session announcement template
 ----------------------------------
