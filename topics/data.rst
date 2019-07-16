@@ -8,357 +8,440 @@ For the practical part, we will try an absolutely general method which
 does not use a centralized scientific repository, but which is
 applicable also for non-scientific geospatial data.
 
-Custom web page with geospatial data
-------------------------------------
+Mapbox GL JS - An Interactive Mapping Platform for Geospatial Data
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Preparation
-```````````
+.. figure:: /img/stress_toggle.gif
 
-Install GDAL (command for Ubuntu)::
+Mapbox provides many tools to build maps into 
+your website or web-based application, 
+including Mapbox GL JS. Mapbox GL JS is an opensource JavaScript library you can use to display your Mapbox maps, add
+interactivity, and customize the map experience in your application.
 
-    sudo apt install gdal-bin
+-  In active development — new features always being added, improving existing features, and fixing bugs
+-  Maps are rendered client-side by the browser
+-  Map data and styles can be changed dynamically
 
-Get data and upack them::
+What You’ll Need
+~~~~~~~~~~~~~~~~
 
-    wget http://grass.osgeo.org/sampledata/north_carolina/nc_rast_geotiff.tar.gz
-    wget http://grass.osgeo.org/sampledata/north_carolina/nc_shape.tar.gz
-    tar xvf nc_rast_geotiff.tar.gz
-    tar xvf nc_shape.tar.gz
+-  Mapbox account and access token.
+-  Mapbox GL JS, a Javascript Library.
+-  Text Editor, Sublime, Atom, Visual Studio Code, etc.
+-  Spatial data object of choice.
+-  index.html file representing skeleton of interactive application in
+   Mapbox. I won’t give you all the answers throughout the tutorial, but
+   this will hopefully serve as a decent basis for working from after
+   the lab if desired.
 
-Covert Shapefile to GeoJSON::
+Learning **‘Goal’**
+~~~~~~~~~~~~~~~~~~~
 
-    ogr2ogr -f GeoJSON -t_srs crs:84 nc_state.geojson ncshape/nc_state.shp
+-  Personally useful and relevant, web-based (published to web)
+   interactive mapping application.
 
-Web page
-````````
+Getting Started
+~~~~~~~~~~~~~~~
 
-Now create a file in a text editor with the following HTML code,
-name the file ``index.html`` and open this file in a web browser
-(the page will be empty)::
+Git
+---
+
+-  Create new repo on Github
+
+   -  Example: mapbox-workshop
+
+-  Go to the repo settings tab and set the Github Pages source to the
+   master branch:
+
+   .. figure:: /img/gh_pages.png
+
+-  Open terminal/cmd to clone repo to local directory:
+
+   -  ``git clone "https://github.com/<'your_user_name_here'>/mapbox-workshop.git"``
+   -  ``git cd mapbox-workshop``
+
+-  Download (or copy & paste into editor) ``index.html`` into the newly
+   created file directory (e.g., mapbox-workshop)
+-  It should look like:
+
+  .. code:: html
+
+        <!DOCTYPE html>
+            <html>
+              <head>
+                  <meta charset='utf-8' />
+                  <title>Mapbox GL Workshop</title>
+                  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+                  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.js'></script>
+                  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css' rel='stylesheet' />
+                  <style>
+                    body { margin:0; padding:0; }
+                    #map { position:absolute; top:0; bottom:0; width:100%; }
+                  </style>
+              </head>
+              <body>
+                  <div id='map'></div>
+                  <script>
+                    mapboxgl.accessToken = '<YOUR_TOKEN_KEY_HERE_PLS>'; // don't keep '<' & '>' when pasting token
+                    
+                    var map = new mapboxgl.Map({
+                    container: 'map', // container id
+                    style: 'mapbox://styles/mapbox/streets-v10', //hosted style id;  
+                    //others: 
+                    //	'mapbox://styles/mapbox/light-v10'
+                    //	'mapbox://styles/mapbox/streets-v10' 
+                    //	'mapbox://styles/mapbox/dark-v10'
+                    //	'mapbox://styles/mapbox/outdoors-v10'  
+                    //	'mapbox://styles/mapbox/satellite-v10' 
+                    //	'mapbox://styles/mapbox/traffic-night-v2'
+                    center: [-78.6382, 35.7796], // change starting position to coordinates associated w/ your data.
+                    zoom: 6 // starting zoom
+                    });
+                  </script>
+              </body>
+            </html>
+
+
+Publishing to Web
+~~~~~~~~~~~~~~~~~
+
+-  First, open html content in your text editor of choice and do an
+   overall inspection of its structure:
+
+   -  What do you recognize?
+   -  What parameters have been set?
+   -  Can you understand it?
+   -  What is it calling on? Where? How?
+
+-  **Insert your own token ID**
+
+-  Save file
+
+-  Now let’s see what it looks like on the web with a quick double
+   click:
+
+.. figure:: /img/initial_index_open.png
+
+-  Return to your terminal/cmd window
+
+-  Check on the directory’s status with: ``git status``
+
+-  Newly inserted index.html should be shown in red as modified / added
+   content
+
+-  Run:
+
+   -  ``git add .``
+   -  ``git commit -m "initial commit"``
+   -  ``git push``
+
+Understanding Mapbox Features
+-----------------------------
+
+While we’re waiting for our changes to be published online, use the links below to explore a few examples of some useful Mapbox features. 
+
+Map Layers
+^^^^^^^^^^
+
+- `Show & hide layers <https://docs.mapbox.com/mapbox-gl-js/example/toggle-layers/>`_
+
+- `Adding polygons <https://docs.mapbox.com/mapbox-gl-js/example/geojson-polygon/>`_
+
+
+- `3D Buildings <https://docs.mapbox.com/mapbox-gl-js/example/3d-buildings/>`_
+
+
+- `Adjust a layer’s opacity <https://docs.mapbox.com/mapbox-gl-js/example/adjust-layer-opacity/>`_
+
+
+- `Animate series of images <ocs.mapbox.com/mapbox-gl-js/example/animate-images/>`_
+
+User Interaction
+^^^^^^^^^^^^^^^^
+
+- `Create a time slider <https://docs.mapbox.com/mapbox-gl-js/example/timeline-animation/>`_
+
+- `Create a hover effect <https://docs.mapbox.com/mapbox-gl-js/example/hover-styles/>`_
+
+- `Draggable marker <https://docs.mapbox.com/mapbox-gl-js/example/drag-a-marker/>`_
+
+- `Filter features based on map view <https://docs.mapbox.com/mapbox-gl-js/example/filter-features-within-map-view/>`_
+
+
+Making Mapbox Useful
+--------------------
+
+Its all about the GeoJSON now. First load either some raster or
+vector data you’ve recently been working with. Using GDAL (2.3.1), specifically the `ogr2ogr <https://gdal.org/programs/ogr2ogr.html>`_ function, we take our original data (in this example in .shp format), ensure it is in lat/lon, while converting it from .shp to GeoJSON, all with the line below:
+
+  ``ogr2ogr -f "GeoJSON" "Raleigh_Zoning_reproj.geojson" "Raleigh_Zoning_2019_05.shp" -t_srs EPSG:4326``
+
+This specifically **ensures that the coordinates being registered to
+your GeoJSON (most importantly once exported) are in lat/lon format,
+which Mapbox requires**. If this feels like a sin to do to your data,
+preach it to the choir. I suppose there is a chance of a setting or
+parameter being available to circumvent the necessity. However, I have
+yet to come across such a feature.
+
+Connecting to the Web
+---------------------
+
+Now that you have a workable GeoJSON format of some of your own data: 
+
+\1. Upload your data to your Github by:
+
+- Saving data into local Git directory
+- Running same Git workflow as earlier:
+
+  * ``git add .``
+  * ``git commit -m "upload data"``
+  * ``git push``
+
+\2. Once changes have been published, go to your online repository and retrieve the online link to your fresh, hot-off-the-plate GeoJSON:
+
+- ``'https://raw.githubusercontent.com/mmamanat/gis714/master/rasters/do_rast1'``
+
+\3. Now, lets see what you’re really made of. Try to customize the original index.html with a Mapbox feature of choice. 
+
+- But first, make sure you change the preset coordinates to the location of your data. Note that this doesn’t have to be spot on, just some coordinates that at least allow you to see your data. You can always adjust them at a later time (for an entire hour, decimal point by decimal point.. do as I say, not as I do):
+
+  * ``center: [-81.2023, 28.7302], // starting position``
+
+\4. Finally, in index.html, use the following code chunk (should be inserted after initialization of Mapbox map) as guide to adding your own data to your map. 
+
+- **Note**: If you don’t have your data ready, feel free to use the data links in provided example below to explore how you could apply the same techniques to your own data in the future. However, the data does not correspond to the initial map location (in index.html; North Carolina). The data links below pertain to collected field data on Cyanobacteria (Blue-green algae) blooms in Florida.
+
+- **Note 2**: The coordinates corresponding to the example data is the same as the coordinate example given above ``[-81.2023, 28.7302]``.
+
+\5. If you’re feeling fancy, take a look into your own exported GeoJSON file, and find the property value you’re mainly interested in visualizing/coloring in your map display (it doesn’t *always* have to be just one property, but lets keep it simple for now). An example of what this would look like in the GeoJSON, say if I’m interested in coloring the example raster data (``do_rast1`` in the GeoJSON file below), it would look like:
+
+.. figure:: /img/geojson_prop_value_ident.png
+
+\6. Now, fly away little bird. Use the html code below (which is **NOT** a standalone script, it is only intended to be used for examples on how to add/apply the functions: ``map.addSource({})`` and ``map.addLayer({})``) to edit your pre-existing html script. 
+
+\7. Let’s see if you can use them to add and colorize your data of interest:
+
+   .. code:: html
+
+      <!DOCTYPE html>
+          <html>
+                <script>
+                  //  # Add source of data (you will run into the least amount of problems when 
+                  // adding source as online link --> View 'Raw' data file on Github --> Copy link)
+                    map.addSource('do_rast1', {
+                        type: 'geojson',
+                        data: 'https://raw.githubusercontent.com/mmamanat/gis714/master/rasters/do_rast1'
+                    });
+                    //  # -- Add source of data as map layer -- #
+                    // # Continuing with the same example data, we can find out what the property value 
+                    // of interests' range / interquartile ranges are (recommended to do in R considering 
+                    // it should still be loaded in your environment)
+                    // # we then take the data values (I've found 5 values tend to be sufficient for some 
+                    // straightforward color mapping), and associate them with HEX color codes 
+                    // (e.g., #fff = white) by adding "stops". Done like below:
+                    map.addLayer({
+                     'id': 'do_rast1',
+                     "type": "fill",
+                     "source": "do_rast1",
+                     'layout': {},
+                     'paint': {
+                         'fill-color': {
+                           property: 'do_rast1',
+                           type: 'exponential',
+                           stops: [
+                           [8.312620, '#edf8fb'],
+                           [8.656304, '#b2e2e2'],
+                           [8.7, '#66c2a4'],
+                           [8.9, '#2ca25f'],
+                           [9.119719, '#006d2c']
+                           ],
+                         },
+                         'fill-opacity': 0.2
+                     }
+                 });
+
+Feeling Confident?
+------------------
+
+Below is a **full, standalone example html script** that allows the
+filtering of your displayed data, based on their defined source and
+through some simple CSS properties. See if you can use it as a guide to
+create a toggable menu that allows you to switch between displayed data
+in your mapping application.
+
+- **Note**: This script assumes you have multiple data sources to be added as separate map layers, to then later be called on as a ``toggleableLayerIds`` variable. This variable is then sent to the CSS property ``menu`` as an HTML DOM activeElement Property (study the values in bottom of the script below, ‘``active``’ and ‘``visible``’ to get a better understanding if wanted/needed).
+
+-  E.g., ``var toggleableLayerIds = [ 'contours', 'museums' ];``
+
+  .. code:: html
 
     <!DOCTYPE html>
-    <html>
-      <head>
-        <title>OpenLayers simple raster and vector</title>
-        <link rel="stylesheet" href="https://openlayers.org/en/v4.3.4/css/ol.css" type="text/css">
-        <!-- The line below is only needed for old environments like Internet Explorer and Android 4.x -->
-        <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList,URL"></script>
-        <script src="https://openlayers.org/en/v4.3.4/build/ol.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.4.4/proj4.js"></script>
-      </head>
-      <body>
-        <div id="map" class="map"></div>
-        <script>
-            /* JavaScript goes here */
-        </script>
-      </body>
+      <html>
+        <head>
+            <meta charset='utf-8' />
+            <title>Show and hide layers</title>
+            <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+            <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.js'></script>
+            <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css' rel='stylesheet' />
+            <style>
+              body { margin:0; padding:0; }
+              #map { position:absolute; top:0; bottom:0; width:100%; }
+            </style>
+        </head>
+        <body>
+            <style>
+              #menu {
+                background: #fff;
+                position: absolute;
+                z-index: 1;
+                top: 10px;
+                right: 10px;
+                border-radius: 3px;
+                width: 120px;
+                border: 1px solid rgba(0,0,0,0.4);
+                font-family: 'Open Sans', sans-serif;
+              }
+              #menu a {
+                font-size: 13px;
+                color: #404040;
+                display: block;
+                margin: 0;
+                padding: 0;
+                padding: 10px;
+                text-decoration: none;
+                border-bottom: 1px solid rgba(0,0,0,0.25);
+                text-align: center;
+              }
+              #menu a:last-child {
+                border: none;
+              }
+              #menu a:hover {
+                background-color: #f8f8f8;
+                color: #404040;
+              }
+              #menu a.active {
+                background-color: #3887be;
+                color: #ffffff;
+              }
+              #menu a.active:hover {
+                background: #3074a4;
+              }
+            </style>
+            <nav id="menu"></nav>
+            <div id="map"></div>
+            <script>
+              mapboxgl.accessToken = '<YOUR_TOKEN_KEY_HERE_PLS>';
+              var map = new mapboxgl.Map({
+              container: 'map',
+              style: 'mapbox://styles/mapbox/streets-v11',
+              zoom: 15,
+              center: [-71.97722138410576, -13.517379300798098]
+              });
+                
+              map.on('load', function () {
+              map.addSource('museums', {
+                type: 'vector',
+                url: 'mapbox://mapbox.2opop9hr'
+              });
+              map.addLayer({
+                'id': 'museums',
+                'type': 'circle',
+                'source': 'museums',
+                'layout': {
+                'visibility': 'visible'
+              },
+                'paint': {
+                  'circle-radius': 8,
+                  'circle-color': 'rgba(55,148,179,1)'
+              },
+              'source-layer': 'museum-cusco'
+              });
+                
+              map.addSource('contours', {
+                type: 'vector',
+                url: 'mapbox://mapbox.mapbox-terrain-v2'
+              });
+              map.addLayer({
+                'id': 'contours',
+                'type': 'line',
+                'source': 'contours',
+                'source-layer': 'contour',
+                'layout': {
+                  'visibility': 'visible',
+                  'line-join': 'round',
+                  'line-cap': 'round'
+                },
+                'paint': {
+                  'line-color': '#877b59',
+                  'line-width': 1
+              }
+              });
+              });
+                
+              var toggleableLayerIds = [ 'contours', 'museums' ];
+                
+              for (var i = 0; i < toggleableLayerIds.length; i++) {
+              var id = toggleableLayerIds[i];
+                
+              var link = document.createElement('a');
+                link.href = '#';
+                link.className = 'active';
+                link.textContent = id;
+                
+              link.onclick = function (e) {
+                var clickedLayer = this.textContent;
+                e.preventDefault();
+                e.stopPropagation();
+                
+              var visibility = map.getLayoutProperty(clickedLayer, 'visibility');
+                
+              if (visibility === 'visible') {
+                map.setLayoutProperty(clickedLayer, 'visibility', 'none');
+                this.className = '';
+                } else {
+                this.className = 'active';
+                map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
+                }
+              };
+                
+              var layers = document.getElementById('menu');
+                layers.appendChild(link);
+              }
+
+            </script>
+        </body>
     </html>
 
-The first half of the file links to OpenLayers JavaScript mapping library
-(CSS files and JavaScript files). The second half is mostly empty and
-we will fill it now.
 
-Here is the basic JavaScript code to get OpenStreetMap as a base map::
+Further Operations
+~~~~~~~~~~~~~~~~~~
 
-      var map = new ol.Map({
-        layers: [
-          new ol.layer.Tile({
-            source: new ol.source.OSM()
-          })
-        ],
-        target: 'map',
-        controls: ol.control.defaults({
-            attributionOptions: ({
-            collapsible: false
-          })
-        }),
-        view: new ol.View({
-          projection: 'EPSG:4326',
-          center: [0, 0],
-          zoom: 2
-        })
-      });
+Now, this is where I leave you. Use your well-earned extra time to continue exploring some Mapbox features you think would be interesting to add to your mapping application.
 
-Now would be the time to reload the page in the web browser
-(usually Ctrl+R). If you don't see anything or something else is not
-right, you may want to explore developer tools in your web browser
-(see below).
-Than we can add code to load our GeoJSON file before the code for
-OpenStreetMap::
+Troubleshooting
+~~~~~~~~~~~~~~~
 
-      var vectorSource = new ol.source.Vector({
-        format: new ol.format.GeoJSON(),
-        url: 'nc_state.geojson',
-        attributions: "NC Boundary: Neteler &amp; Mitasova 2008"
-      });
-      var vectorLayer = new ol.layer.Vector({
-        source: vectorSource
-      });
+If you run into any troubles, for instance, your data won’t show up on the map, and you have already looked into Chrome’s or Firefox’s Inspector, seeing no outputted errors in the process, 99% chance it is the formatting of your GeoJSON (don’t @ me).
 
-We need to edit the list of layers in the code add the GeoJSON::
+\1. First, ensure your GeoJSON is actually in lon/lat format by opening the raw data file and seeing the format of the coordinates property.* If you discover it is not, try re-running the GDAL code from earlier:
 
-    var map = new ol.Map({
-        layers: [
-          new ol.layer.Tile({
-            source: new ol.source.OSM()
-          }),
-          vectorLayer
-        ],
+  ``ogr2ogr -f "GeoJSON" "Raleigh_Zoning_reproj.geojson" "Raleigh_Zoning_2019_05.shp" -t_srs EPSG:4326``
 
-Now you can look again in the web browser and you should see the borders
-of North Carolina as a separate layer.
 
-If you don't see it the reason might error in your JavaScript code or
-the reason might be same-origin policy in you web browser.
-You can tell the difference by starting developer tools in your web
-browser and looking at messages in the console or log (e.g. in Firefox,
-Tools -> Web Developer -> Toggle Tools -> Console).
-Firefox `policy <https://developer.mozilla.org/en-US/docs/Same-origin_policy_for_file:_URIs>`_
-allows for a local file in the same directory to be loaded,
-so you should be good to go when using Firefox.
-However, Chrome and Chromium require a special command line option
-(replace ``chromium-browser`` by ``chrome`` or path to it if needed)::
+\2. If the coordinates check out, go to `GeoJSON.io <GeoJSON.io>`_ and copy and paste your GeoJSON values (or open as file if it is a lot of data). **IF** it is in the correct format, meaning there are no leading white-spaces, strangely placed brackets or commas, etc. etc. (I know the GeoJSON is very sensitive–whisper sweet nothings into its ear while copying and pasting for extra troubleshooting ability), then you should see it quickly displayed on the map to the left. Something is probably wrong IF: (1) the map is blank; or (2) your data is “displayed” (you may see a coulpe vector points, or if you’re lucky an entire raster), but seems to be hosted on a blank map with no surrounding geographic features shown.
 
-    chromium-browser --disable-web-security --user-data-dir
+- Example of what it *should* look like:
 
-Converting raster and its extracting metadata
-`````````````````````````````````````````````
+.. figure:: /img/geojson.io.png
 
-To make sharing of the geospatial data easier, we will again convert to
-CRS:84. For that we will use *gdalwarp*. However, PNG cannot be written
-directly using *gdalwarp* with the current version of GDAL, so we first
-write a GDAL virtual dataset (VRT) and then we use *gdal_translate* to
-convert the reprojected VRT to PNG.
 
-::
-
-    gdalwarp -of VRT -r average -t_srs crs:84 ncrast/elev_state_500m.tif elev_state_500m.vrt
-    gdal_translate -of PNG elev_state_500m.vrt elev_state_500m.png
-
-We are using PNG because unlike TIFF, web browsers can display it.
-However, the PNG file itself does not carry the geospatial metadata
-(unlike GeoTIFF). Therefore, we need to get the information from
-the metadata and put it to JavaScript code manually. We already know
-the coordinate reference system (but we can check it). What we need
-to get is the extent and we can do that using *gdalinfo*::
-
-    gdalinfo elev_state_500m.png
-
-All we need is ``Lower Left`` and ``Upper Right`` and we could just
-copy the numbers to the JavaScript code in the next section. However,
-for this exercise, we will extract the extent in an automated way.
-If you can't get GDAL version 2 or *jq* (see below), you can skip
-executing commands in this part and just read through it
-(but you should be good to go if you are using, e.g. an Ubuntu machine
-from NCSU VCL).
-
-What we want to get is the following line::
-
-    [-84.4223856,  33.4882788, -75.0518788,  36.6207207]
-
-The previous *gdalinfo* command gives output which can be processed by
-*grep* and other command line tools, but the output format may not be
-guaranteed to stay the same, so a new version may not work with command
-based on it. For this reason we will use a more stable JSON output
-offered by *gdalinfo*. For this, we need GDAL version 2 or higher,
-so you need to make sure you have it. For example, on Ubuntu 16.04,
-the version of GDAL is 1, so we need to add a PPA (Personal Package
-Archive) repository which provides a more recent version of GDAL
-with the cost of potential less stability within thesoftware or in
-relation to other installed software. The commands to do it follow::
-
-    sudo add-apt-repository ppa:ubuntugis/ubuntugis-unstable
-    sudo apt update
-    sudo apt upgrade
-
-Now, with GDAL version 2 or higher, we can use the ``-json`` option
-to obtain JSON output::
-
-    gdalinfo -json elev_state_500m.png
-
-JSON is not easily parseable with tools such as *grep*, however there
-is a tool called *jq* which works in a similar way as *grep* and other
-tools but for JSON. Here is an installation command for Ubuntu::
-
-    sudo apt install jq
-
-Now we can use *jq* and pipes in the same way we would use *grep*.
-JSON format consists of keys and values in dictionaries where values
-can be strings, numbers, lists, or dictionaries.
-Using the ``.key`` syntax we get only the value associated with the
-given key::
-
-    gdalinfo -json elev_state_500m.png | jq .cornerCoordinates
-
-We can pipe the output again to *jq* and get values for two keys
-using ``.oneKey, .anotherKey`` syntax::
-
-    gdalinfo -json elev_state_500m.png | jq .cornerCoordinates | \
-        jq ".lowerLeft, .upperRight"
-
-This gives us all information we need but not formated exactly
-as we want it, i.e. a single list in one line, so we use *tr* to replace
-newlines by spaces (``tr "\n" " "``), *sed* to replace ``] [`` by comma
-(using expression ``/\] \[/,/``), and finally we use tr again to squeeze
-all repeated spaces into one::
-
-    gdalinfo -json elev_state_500m.png | jq .cornerCoordinates | \
-        jq ".lowerLeft, .upperRight" | \
-        tr "\n" " " | sed -e "s/\] \[/,/g" | tr -s " "
-
-Alternatively, we can leverage more the *jq* command. The *jq* command
-itself has a pipe syntax which has similar logic to the command line
-pipes, so we can actually write expression
-``.cornerCoordinates | lowerLeft, .upperRight``. To merge the two
-separate list (which are the values ``.lowerLeft`` and ``.upperRight``),
-we can use the plus operator in the *jq* expression
-(``lowerLeft + .upperRight``). To avoid *jq* default formatting with one
-list item per line, we use ``-c`` to create compact output. Then we
-use *sed* just to replace comma by comma followed by a space
-(expression ``/,/, /``) to have a better coding style in the JavaScript
-code::
-
-    gdalinfo -json elev_state_500m.png | \
-        jq -c ".cornerCoordinates | [.lowerLeft[], .upperRight[]]" | \
-        sed "s/,/, /g"
-
-You can learn more about *jq* online or using::
-
-    man jq
-
-Same applies to *tr* and *sed* but using the *info* command instead of
-the *man* command will give you full documentation::
-
-    info tr
-
-Adding raster
-`````````````
-
-Now, we can add the JavaScript code to the web page::
-
-      var imageExtent = [-84.4223856, 33.4882788, -75.0518788, 36.6207207];
-      var rasterLayer = new ol.layer.Image({
-            source: new ol.source.ImageStatic({
-              url: 'elev_state_500m.png',
-              crossOrigin: '',
-              projection: 'CRS:84',
-              imageExtent: imageExtent,
-              attributions: "NC Elevation: Neteler &amp; Mitasova 2008"
-            })});
-
-We need to edit the list of layers again to add the raster::
-
-    var map = new ol.Map({
-        layers: [
-          new ol.layer.Tile({
-            source: new ol.source.OSM()
-          }),
-          rasterLayer,
-          vectorLayer
-        ],
-
-See the complete web page `here <../resources/openlayers_raster_and_vector.html>`_
-and compare it with yours (you can see the code of the page in your web
-browsers; usually using Ctrl+U).
-
-Publishing with GitHub
-``````````````````````
-
-Now we will publish the web page using GitHub, specifically GitHub
-Pages service which can be activated for any Git repository on GitHub.
-
-Install Git on your local machine (command for Ubuntu)::
-
-    sudo apt install git
-
-Create a repository on GitHub. You will need write access to
-the repository, so you need to use HTTPS and know your GitHub password
-or set up SSH keys. If you are on a machine which is not yours (like
-NCSU VCL machine), HTTPS will be easiest. Alternatively, just login to
-GitHub (in a web browser) and use direct upload (e.g. with drag and
-drop).
-
-Now clone the repository. We will call it ``openlayers-test``
-(``...`` stands for URL of the repository).
-
-::
-
-    git clone ... openlayers-test
-
-Move the web page files into the repository, i.e. the HTML file,
-the PNG file, and the GeoJSON file. Then change the directory to the
-repository. You can use *mv* and *cd* to do that::
-
-    mv index.html openlayers-test
-    mv nc_state.geojson openlayers-test
-    mv elev_state_500m.png openlayers-test
-    cd openlayers-test
-
-Add the files to the repository::
-
-    git add index.html nc_state.geojson elev_state_500m.png
-
-Now you can commit and push::
-
-    git commit ...
-    git push
-
-Now go to the repository page on GitHub in your web browser, go to
-*Settings* and in *Options* (loaded by default) find *GitHub Pages*.
-In *Source* select *master branch*, then click *Save*. Wait for the page
-to reload and show you the URL of the newly created web site which is
-at yourusername.github.io/repository-name.
-
-Colorize the raster and examine the change on GitHub
-````````````````````````````````````````````````````
-
-Now let's change the color table of the raster. For that we will use
-*gdaldem* which accepts color tables in format one value-color pair per
-line (similar format to what e.g. GRASS GIS uses).
-
-The color table needs to be in a file. We can create a file from command
-line without using a text editor, just by copy pasting the following
-command line code block (all lines together)::
-
-    cat > colors.txt <<EOF
-    100% 255 255 255
-    60%  235 220 175
-    40%  190 185 135
-    5%   240 250 150
-    0     50 180  50
-    nv   0 0 0 0
-    EOF
-
-The above code uses what is called *here-document*. The ``<<EOF``
-part starts a content of a file and all is part of this file until
-the line which says ``EOF``. This file (here-document) is used as input
-to *cat* command which writes it to an actual file on the disk
-(``cat > colors.txt``).
-
-We use *gdaldem* in the ``color-relief`` mode, use the VRT dataset
-as input, and output PNG (change the path to files as needed)::
-
-    gdaldem color-relief -of PNG elev_state_500m.vrt colors.txt elev_state_500m.png -alpha
-
-The ``-alpha`` option ensures that an alpha channel (transparency and
-opacity) is written to the PNG file and together with ``nv 0 0 0 0``
-line in  color table file, it ensures that NULL values are transparent.
-
-Then commit the change in the PNG file and push::
-
-    git commit elev_state_500m.png ...
-    git push
-
-Finally, go to GitHub and find the commit (change) you just made.
-While Git in command line can't show differences in binary files such
-as PNGs, GitHub has several different ways of exploring changes in
-selected binary formats including PNGs.
+- If all else fails, my last recommendation would be looking into `GeoJSON Utilities <https://jasonheppler.org/courses/csu-workshop/geojson-utilities.html>`_, some cmd/terminal utilities “that make things easier”. Sorry, you’re on your own at this point. If these options didn’t help and you’re feeling utterly helpless, welcome to the club ;D.
 
 Resources
----------
+~~~~~~~~~~~
 
 Repositories
-````````````
+------------
 
 * `How to deposit data on the OSF <https://osf.io/a5imq/wiki/How%20to%20Upload%20Data%20to%20the%20OSF>`_ (part of Reproducibility Project: Cancer Biology)
 * `Hosting Data on Authorea <https://intercom.help/authorea/host-data>`_ (Authorea help pages)
@@ -371,7 +454,7 @@ Repositories
 * `Recommended Data Repositories by Nature <https://www.nature.com/sdata/policies/repositories>`_
 
 Other
-`````
+-----
 
 * `Rendering and diffing images on GitHub <https://help.github.com/articles/rendering-and-diffing-images/>`_
 * `Mapping GeoJSON files on GitHub <https://help.github.com/articles/mapping-geojson-files-on-github/>`_
@@ -379,7 +462,7 @@ Other
 * `OpenLayers <http://openlayers.org/>`_
 
 Assignment
-----------
+~~~~~~~~~~~
 
 Explore the general repositories for scientific data linked above
 and search for a repository which is used in your field. If you find
