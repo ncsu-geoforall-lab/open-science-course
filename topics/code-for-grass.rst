@@ -134,7 +134,7 @@ We end the script with ``if __name__ == "__main__":`` block which is a
 top level code, i.e. not indented code. The ``if`` condition tells
 Python to execute the code if the file is a used as a main file in
 program execution which is the case for our script. Together with
-``def main():`` this is a commonly used best practice. 
+``def main():`` this is a commonly used best practice.
 
 ::
 
