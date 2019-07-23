@@ -251,6 +251,54 @@ research.
 As always, please post to the message board if you have any questions.
 
 
+Week 5: Publishing all parts of research
+----------------------------------------
+
+In our two topics for this week we are looking at how to publish all
+parts of geospatial computational research together.
+
+In the first topic of the week (topic 9), we are focusing on notebooks,
+specifically on Jupyter which is an example of a tool for putting
+together text, code and computational results. We will combine it with
+another tool, Docker, which is used today to build clouds and share
+software prototypes, but it is also a great tool for open science as it
+encapsulates all software together, i.e. not only your code, but also
+all the pieces your code depends on.
+
+https://ncsu-geoforall-lab.github.io/open-science-course/topics/combined-document.html
+
+We won't go that far as creating our own environment, but in the
+assignment you will run a custom environment I prepared which contains
+GRASS GIS. Feel free to explore what I did and try adding more
+if you feel courageous.
+
+This is complementary with what we did in the topic 8. There, we created
+a website and although we were not running anything on the sever side
+(it was just couple of files), we could and many websites do. The
+Jupyter Notebooks are actually such website. They run Python and
+potentially other things, such as GRASS GIS, in the background on the
+sever side. When the Jupyter Notebooks are wrapped using Docker there
+is no need to install all individual pieces making it almost as simple
+as the case with just one HTML file (or at least simpler than
+installing everything).
+
+The second topic of the week (topic 10) which is our final topic
+puts you in a situation where you need to reproduce figures of a given
+scientific paper, e.g. because you want be sure it is a good basis for
+your work or because you doubt its results.
+
+https://ncsu-geoforall-lab.github.io/open-science-course/topics/paper.html
+
+This might be extremely difficult for some papers, but the paper in the
+assignment follows open science principles and uses some of the tools
+and techniques which you now know from the course. The idea of course is
+that it should be simple to reproduce, but the reality might be
+different, so your assignment is to test that.
+
+As always, ask on the message board if you want help resolving any
+issues with this assignments.
+
+
 Help session announcement template
 ----------------------------------
 
