@@ -216,3 +216,35 @@ https://ncsu-geoforall-lab.github.io/open-science-course/topics/code-for-grass.h
 Please be patient with this assignment. It should be relatively straightforward to do, although some of the concepts might be new to you. However, it is a lot of steps and I might have missed something, so don't hesitate to write to the message board to bring the issue up.
 
 The deliverable is a link to the repository. You can add comments too if you want. See the assignment in Moodle.
+
+
+Week 13: Reproducible computational environments
+------------------------------------------------
+
+Topic for this week are reproducible computational environments, specifically Docker. Use the following page to get to the resources, see the lecture slides (I'll try to upload the lecture video next week).
+
+https://ncsu-geoforall-lab.github.io/open-science-course/topics/environments.html
+
+Then install Docker (see the instructions in the other post or on the topic page) and run a Jupyter Notebook inside a Docker container based on this repository:
+
+https://github.com/wenzeslaus/Notebook-for-processing-point-clouds-in-GRASS-GIS
+
+See the instructions above or in the repository readme file on how to run the notebook. Report on how that went and if you were able to run the whole notebook. The notebook has a section called Bonus tasks, skip that. You can run the Python or the Bash notebook or both.
+
+As always, if you can't make Docker work on your computer, use NCSU VCL. If you have questions or problems, ask on Moodle.
+
+
+Week 14: Writing and reproducing an open science paper
+------------------------------------------------------
+
+For the week number 14, please study how to write a reproducible paper. The lecture goes over various things we learned during the semester and puts them in context of publishing a scientific paper which follows principles of open science. See:
+
+https://ncsu-geoforall-lab.github.io/open-science-course/topics/paper.html
+
+For the assignment, try to reproduce the following paper:
+
+    https://doi.org/10.1186/s40965-017-0021-8
+
+Report on how that went and how far did you get. Based on the last lecture, identify what may prevent others from reproducing the results of this paper and based on the whole class, identify what may prevent others from reusing methods and code presented in the paper. Consider how that may work in the future and consider also different potential audiences. Submit a (short) report using Moodle.
+
+I'm not including any details how to go about reproducing the paper since you should have enough information from the course and from the paper. However, as always, please ask on Moodle when you encounter some issues.

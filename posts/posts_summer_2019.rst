@@ -302,6 +302,8 @@ issues with this assignments.
 Help session announcement template
 ----------------------------------
 
+Week 5 help session
+
 The help session for the next week is scheduled for Day, Mon X,
 Y-Zpm ET. On campus, we will meet in Jordan Hall, room N, and remotely
 with Zoom:
