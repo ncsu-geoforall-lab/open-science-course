@@ -68,6 +68,7 @@ also different potential audiences.
 
 As you have surely noticed, there are no instructions here on how to
 reproduce the above paper. The paper itself gives instructions on how
-to do that. Hint: Don't read the whole paper, but look for the tools
-you know from the course or any reproducibility-related information you
-would expect based on what you learned.
+to do that. Hint: Don't read the whole paper, but look for the tools,
+platforms or any reproducibility-related information you
+would expect based on what you learned. More than one way of
+reproducing is provided, but one way is much simpler than the others.
