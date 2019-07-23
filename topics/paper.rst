@@ -36,7 +36,7 @@ Resources
 Slides
 ``````
 
-* `Lecture slides <../lectures/paper.html>`_ [main resource]
+* `Reproducible paper <../lectures/paper.html>`_
 
 Videos
 ``````
@@ -55,7 +55,7 @@ References
 Assignment
 ----------
 
-Try to reproduce the following paper:
+Try to reproduce figures from the following paper:
 
 * https://doi.org/10.1186/s40965-017-0021-8
 
@@ -65,3 +65,9 @@ reproducing the results of this paper and based on the whole class,
 identify what may prevent others from reusing methods and code presented
 in the paper. Consider how that may work in the future and consider
 also different potential audiences.
+
+As you have surely noticed, there are no instructions here on how to
+reproduce the above paper. The paper itself gives instructions on how
+to do that. Hint: Don't read the whole paper, but look for the tools
+you know from the course or any reproducibility-related information you
+would expect based on what you learned.

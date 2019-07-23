@@ -229,6 +229,9 @@ above to learn about Jupyter.
 
 Using the instructions above, install Docker on NCSU VCL Ubuntu
 machine and run the notebook (from the instructions).
+It is in fact collection of notebooks, so once you see them all in the
+web browser, pick one (e.g. ``buffers_cost_python.ipynb`` is a good one
+to at least try out).
 
 In the web browser, in the notebook itself, add a line stating that this
 is your assignment and add you name. Then execute all cells
