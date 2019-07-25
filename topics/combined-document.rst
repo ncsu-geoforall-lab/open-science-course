@@ -78,6 +78,11 @@ prefix the command line with an exclamation mark::
 The variables from Python code are referenced in the same way as
 variables in Bash.
 
+For a geospatial example, see this notebook which is using GRASS GIS
+to perform spatial operations:
+
+https://mybinder.org/v2/gh/ncsu-geoforall-lab/open-science-course-grass-notebook/master?filepath=notebook.ipynb
+
 You can see further examples as well as complete guide to Jupyter
 at:
 
