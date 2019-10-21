@@ -22,7 +22,7 @@ See also a `flyer <img/flyer.pdf>`_,
 (or its `rasterized alternative <resources/agu2017_rasterized.pdf>`_),
 `recorded webinar about the course <https://youtu.be/k1cq0cqTez4>`_
 (`slides <lectures/geoforall2017.html>`_),
-`slides for an open science guest lecture <lectures/open-science-for-grand-challanges.html>`_, and
+`slides for an open science guest lecture <lectures/open-science-for-grand-challenges.html>`_, and
 `slides on a related topic <lectures/us-iale2017.html>`_.
 
 Topics
