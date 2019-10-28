@@ -95,6 +95,11 @@ Geospatial and more advanced examples
    * https://github.com/wenzeslaus/try-grass-in-jupyter-with-bash
    * Highlights: plain Bash, start file
 
+Outro
+-----
+
+* `Open Science: Outro <../lectures/open-science-for-grand-challenges-outro.html>`_
+
 Discussion exercise
 -------------------
 
