@@ -69,6 +69,11 @@ Geospatial and more advanced examples
 
    * https://doi.org/10.24433/CO.3986355.v2
 
+1. FUTURES model in JupyterLab using Binder
+
+   * https://github.com/wenzeslaus/futures-model-intro-notebook
+   * Highlights: model by CGA, R, compiled GRASS GIS, Binder files in a subdirectory
+
 1. Script and container-based solution without notebooks for running locally
 
    * https://doi.org/10.1186/s40965-017-0021-8
@@ -89,11 +94,6 @@ Geospatial and more advanced examples
 
    * https://github.com/wenzeslaus/try-grass-in-jupyter-with-bash
    * Highlights: plain Bash, start file
-
-1. FUTURES model in JupyterLab using Binder
-
-   * https://github.com/wenzeslaus/futures-model-intro-notebook
-   * Highlights: model by CGA, R, compiled GRASS GIS, Binder files in a subdirectory
 
 Discussion exercise
 -------------------
