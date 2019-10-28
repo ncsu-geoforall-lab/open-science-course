@@ -33,6 +33,7 @@ Contributors:
 * Helena Mitasova, NCSU CGA and MEAS
 * Anna Petrasova, NCSU CGA
 * Jeff Essic, NCSU Libraries
+* Corey White, NCSU CGA
 
 ## Copyright and license
 

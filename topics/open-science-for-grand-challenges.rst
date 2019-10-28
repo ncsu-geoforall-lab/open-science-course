@@ -37,6 +37,35 @@ Steps:
 Geospatial and more advanced examples
 -------------------------------------
 
+1. GRASS GIS in Jupyter Notebook using Binder
+
+   * https://github.com/wenzeslaus/try-grass-in-jupyter
+   * Highlights: Dataset download, general image display
+
+1. Zonal statistics of solar time series in GRASS GIS with Python
+
+   * https://github.com/wenzeslaus/grass-zonal-of-solar
+   * Highlights: Two different types of image display (general and Matplotlib)
+
+1. Google Colaboratory
+
+   * From Google Earth Engine to GRASS GIS and back in a notebook
+
+1. Notebooks for NCSU Geospatial Modeling and Analysis course
+
+   * https://github.com/wenzeslaus/geospatial-modeling-course-jupyter
+   * Highlights: Dockerfile, massive collection, converted from website, plain Python and IPython versions
+
+1. GRASS GIS in Jupyter Notebook with Bash
+
+   * https://github.com/wenzeslaus/try-grass-in-jupyter-with-bash
+   * Highlights: plain Bash, start file
+
+1. FUTURES model in JupyterLab using Binder
+
+   * https://github.com/wenzeslaus/futures-model-intro-notebook
+   * Highlights: model by CGA, R, compiled GRASS GIS, Binder files in a subdirectory
+
 Discussion exercise
 -------------------
 
