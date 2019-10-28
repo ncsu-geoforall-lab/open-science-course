@@ -34,6 +34,20 @@ Steps:
 * Modify the code
 * Update the repository content
 
+Reading
+-------
+
+Please, consider reading the following papers as a preparation for the
+discussion. They are all pro-open science, but they all will help you to
+defend your stances in the debate. They are also useful for writing your
+next paper which applies open science principles.
+
+* Watson, M. (2015). When will ‘open science’ become simply ‘science’?. Genome biology, 16(1), 101. https://doi.org/10.1186/s13059-015-0669-2
+
+* Ince, Darrel C., Leslie Hatton, and John Graham-Cumming. “The case for open computer programs”. In: Nature 482.7386 (2012), pp. 485–488. http://doi.org/10.1038/nature10836
+
+* Rocchini, Duccio and Markus Neteler. “Let the four freedoms paradigm apply to ecology”. In: Trends in Ecology and Evolution (2012). http://doi.org/10.1016/j.tree.2012.03.009
+
 Geospatial and more advanced examples
 -------------------------------------
 
