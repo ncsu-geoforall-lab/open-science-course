@@ -65,6 +65,21 @@ Geospatial and more advanced examples
 
    * From Google Earth Engine to GRASS GIS and back in a notebook
 
+1. Code Ocean
+
+   * https://doi.org/10.24433/CO.3986355.v2
+
+1. Script and container-based solution without notebooks for running locally
+
+   * https://doi.org/10.1186/s40965-017-0021-8
+   * https://github.com/wenzeslaus/forestfrag3d
+   * Highlights: Dockerfile, no notebooks, Travis CI, reusable code
+
+1. Repository with reusable code
+
+   * https://gitlab.com/vpetras/v.net.tripplanner
+   * Highlights: GitLab, static generated web page
+
 1. Notebooks for NCSU Geospatial Modeling and Analysis course
 
    * https://github.com/wenzeslaus/geospatial-modeling-course-jupyter
