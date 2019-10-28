@@ -115,6 +115,7 @@ Possible questions to start with:
 
 * Why is open science necessary for science?
 * Why is open science good?
+* What are our goals in science and how much do they overlap with open science?
 
 Group 2
 ```````
@@ -125,8 +126,10 @@ Possible questions to start with:
 
 * What are the reasons not to do open science?
 * Is it even realistic?
+* Does it now or would it ever deliver on its promises?
 * Can open science be sometimes even bad?
 * Isn’t open science more trouble than it’s worth?
+* How is open science supposed to work for industry?
 
 Group 3
 ```````
@@ -139,6 +142,7 @@ Possible questions to start with:
 * How to implement something to satisfy both groups above?
 * Is something like partial open science more sustainable?
 * Should we implement something transitional (for now)?
+* Does reviewer needs to see more than a reader?
 
 Assignment
 ----------
