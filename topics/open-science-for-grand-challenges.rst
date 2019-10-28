@@ -33,3 +33,48 @@ Steps:
 * Run the code
 * Modify the code
 * Update the repository content
+
+Geospatial and more advanced examples
+-------------------------------------
+
+Discussion exercise
+-------------------
+
+* Split into three groups.
+* Discuss open science using one of the three following positions.
+
+Group 1
+```````
+
+For (open science proponents, in favor of open science)
+
+Possible questions to start with:
+* Why is open science necessary for science?
+* Why is open science good?
+
+Group 2
+```````
+
+Against (status quo proponents, opposed to open science)
+
+Possible questions to start with:
+* What are the reasons not to do open science?
+* Is it even realistic?
+* Can open science be sometimes even bad?
+* Isn’t open science more trouble than it’s worth?
+
+Group 3
+```````
+
+Middle way (pragmatics, neither for or against)
+
+Possible questions to start with:
+* Is there something in between?
+* How to implement something to satisfy both groups above?
+* Is something like partial open science more sustainable?
+* Should we implement something transitional (for now)?
+
+Assignment
+----------
+
+Write a blog post.
