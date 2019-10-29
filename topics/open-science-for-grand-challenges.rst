@@ -147,4 +147,14 @@ Possible questions to start with:
 Assignment
 ----------
 
-Write a blog post.
+Blog Assignment. Reflect on the theory and practice of open geospatial
+science. In 250 words or less, please share your viewpoint on where you
+stand in today's role playing debate. Also consider sharing challenges
+that are preventing you from practicing open science if you are in
+favor of it. Your blog will be evaluated based on the following rubric:
+1) clarity (good grammar, succinct logical flow and organization), 2)
+compellingness (persuasiveness, well-grounded in evidence), critical
+thinking (evaluation of facts to form a judgment or opinion), and 3)
+creativity (originality of ideas). Please submit your blog post as a
+PDF by email to Corey White with the subject GIS710 Open Science
+Blog by November 3.
