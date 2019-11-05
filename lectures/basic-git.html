@@ -373,3 +373,24 @@ Did you mean this?
 </ul>
 <img src="img/logos/gitlab.png" class="stretch">
 </section>
+
+
+<section>
+<h2>More Tips and Tricks</h2>
+<ul>
+    <li>Stage only part of a file
+<pre class="bash" style="font-size: x-large;"><code>git add -p
+</code></pre>
+    <li>Experiment in a branch <small>(one way of doing it)</small>
+<pre class="bash" style="font-size: x-large;"><code>git checkout -b simpler-equations
+git add file.txt script.R
+git commit -m "Use simpler equations"
+git merge master
+git checkout master
+git merge simpler-equations
+</code></pre>
+    <li>Change default text editor for Git
+<pre class="bash" style="font-size: x-large;"><code>git config --global core.editor micro
+</code></pre>
+</ul>
+</section>
