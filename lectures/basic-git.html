@@ -138,21 +138,37 @@
 
 
 <section>
-<h3>Source Code History: Log</h3>
+<h3>History: Log</h3>
 <pre class="bash" style="font-size: x-large;"><code>git log script.py
 </code></pre>
 <img src="img/futures_log_detail.png" class="stretch">
+<br>
 <a href="https://trac.osgeo.org/grass/log/grass-addons/grass7/raster/r.futures">trac.osgeo.org/grass/log/grass-addons/grass7/raster/r.futures</a>
 </section>
 
 
 <section>
-<h3>Source Code Origins: Blame</h3>
+<h3>Origins: Blame</h3>
 <pre class="bash" style="font-size: x-large;"><code>git blame script.py
 </code></pre>
 <img src="img/blame_of_grass_init_on_github.png" class="stretch">
+<br>
 <a class="glow" href="https://github.com/OSGeo/grass/blame/master/lib/init/grass.py">
     github.com/OSGeo/grass/blame/master/lib/init/grass.py
+</a>
+</section>
+
+
+<section>
+<h3>Individual Changes: Diff</h3>
+<pre class="bash" style="font-size: x-large;"><code>git show 1183b8b
+git diff 6090b2c..1183b8b
+git diff
+</code></pre>
+<img src="img/git_show_commit_on_github.png" class="stretch">
+<br>
+<a class="glow" href="https://github.com/OSGeo/grass/commit/158b74b76bf80603b10d81a5ac7522c18e2f8f77">
+    github.com/OSGeo/grass/commit/158b74b76bf80603b10d81a5ac7522c18e2f8f77
 </a>
 </section>
 
@@ -213,6 +229,15 @@ Untracked files:
 
 no changes added to commit (use "git add" and/or "git commit -a")
 </code></pre>
+</section>
+
+
+<section>
+<h3>Inspecting Individual Changes</h3>
+<pre class="bash" style="font-size: x-large;"><code>git diff
+git diff script.py
+</code></pre>
+<img src="img/git_diff_in_command_line.png" class="stretch box-glow">
 </section>
 
 
