@@ -91,8 +91,8 @@
 
 <section>
 <h3>Source code</h3>
-<img src="img/futures_src_detail.png" class="stretch">
-<a href="https://trac.osgeo.org/grass/browser/grass-addons/grass7/raster/r.futures#r.futures.calib">trac.osgeo.org/grass/browser/grass-addons/grass7/raster/r.futures</a>
+<img src="img/sample_of_futures_code_on_github.png" class="stretch">
+<a class="glow" href="https://github.com/OSGeo/grass-addons/blob/master/grass7/raster/r.futures/r.futures.calib/r.futures.calib.py">github.com/OSGeo/grass-addons/blob/master/grass7/raster/r.futures/r.futures.calib/r.futures.calib.py</a>
 </section>
 
 
@@ -107,7 +107,7 @@
         </ul>
     <li>keep track
     <li>collaborate
-    <li>
+    <li><small>backup? sort of (better than none)</small>
 </ul>
 <br>
 <img src="img/revisions.svg" class="stretch">
@@ -117,42 +117,102 @@
 <section>
 <h2>Git</h2>
 <ul>
-    <li>
-    <li>keep track
+    <li>open source (GNU GPL 2.0)
     <li>Alternatives: Mercurial (<code>hg</code>), Fossil, Subversion (<code>svn</code>), ...
 </ul>
 <br>
 <img src="img/logos/git.svg" class="stretch">
 <small>
-    
+
 </small>
 </section>
 
 
 <section>
-<h2>Revision control</h2>
+<h2>Tracking Versions</h2>
 <br>
 <img src="img/revisions.svg" class="stretch">
-<pre class="bash" style="font-size: x-large;"><code>git commit script.py -m "replaced part of the main equation"
+<pre class="bash" style="font-size: x-large;"><code>git commit script.py -m "Remove unused variables and equations"
 </code></pre>
-<br>
-There are GUIs as well.
 </section>
 
 
 <section>
-<h3>Source code history</h3>
+<h3>Source Code History: Log</h3>
+<pre class="bash" style="font-size: x-large;"><code>git log script.py
+</code></pre>
 <img src="img/futures_log_detail.png" class="stretch">
 <a href="https://trac.osgeo.org/grass/log/grass-addons/grass7/raster/r.futures">trac.osgeo.org/grass/log/grass-addons/grass7/raster/r.futures</a>
 </section>
 
 
+<section>
+<h3>Source Code Origins: Blame</h3>
+<pre class="bash" style="font-size: x-large;"><code>git blame script.py
+</code></pre>
+<img src="img/blame_of_grass_init_on_github.png" class="stretch">
+<a class="glow" href="https://github.com/OSGeo/grass/blame/master/lib/init/grass.py">
+    github.com/OSGeo/grass/blame/master/lib/init/grass.py
+</a>
+</section>
+
 
 <section>
-    <h3>staging, committing, and pushing,</h3>
+    <h3>Remote Repository and Local Clone</h3>
     <ul>
-        <li>
+        <li>Remote Repository<small>, e.g.,</small>
+            <ul>
+                <li>On GitHub
+                <li>On local server with Gitolite
+                <li>Directory on a network drive
+            </ul>
+        <li>Local Repository (Clone):
+            <ul>
+                <li>Directory on your computer
+                <li>Contains “normal” files
+                <li>Git stores its information in <code>.git</code> subdirectory
+            </ul>
     </ul>
+<pre class="bash" style="font-size: x-large;"><code>git clone https://github.com/wenzeslaus/dissertation-presentation.git
+</code></pre>
+</section>
+
+
+<section>
+    <h3>Getting Local Changes to a Remote Repository</h3>
+    <ul>
+        <li>Stage, Commit, and Push Workflow
+            <ul>
+                <li>Stage: mark changes for commit
+                <li>Commit: record the given version of files
+                <li>Push: upload commits into the remote repository
+            </ul>
+    </ul>
+<pre class="bash" style="font-size: x-large;"><code>git add README.md list.txt
+git commit -m "Add file to keep my list of things"
+git push
+</code></pre>
+</section>
+
+
+<section>
+    <h3>Inspecting current state of the directory</h3>
+<pre class="bash" style="font-size: x-large;"><code>$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+  (use "git add &lt;file&gt;..." to update what will be committed)
+  (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
+
+    modified:   README.md
+
+Untracked files:
+  (use "git add &lt;file&gt;..." to include in what will be committed)
+
+    list.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+</code></pre>
 </section>
 
 
@@ -226,7 +286,7 @@ Did you mean this?
 
 
 <section>
-<h2>Revision control hosting</h2>
+<h2>Revision Control Hosting</h2>
 <ul>
     <li>GitHub
         <ul>
@@ -235,9 +295,56 @@ Did you mean this?
             <li>freemium service
         </ul>
     <li>Alternative services: GitLab, Bitbucket, SourceForge, ...
-    <li>Self-hosted open alternatives: GitLab, Gogs, Gitea, Gitolite, Trac, ...
-    <li>"software forges"
+    <li>Self-hosted open alternatives: GitLab, Gogs, Gitea, Gitolite, Fossil, Trac, ...
+    <li>“software forges”
+    <li>Many provide more than just Git repo hosting
+        <ul>
+            <li>Issue tracking, wikis, CI/CD, website publishing, ...
+        </ul>
 </ul>
 <img src="img/logos/octocat.png" class="stretch">
 </section>
 
+
+<section>
+<h2>Complete Example and a Website</h2>
+<ul class="glow">
+    <li><a href="https://github.com/new">github.com/new</a>
+        <ul>
+            <li>Check: <em>Initialize this repository with a README</em>
+            <li>See also: <em>Add .gitignore</em> and <em>Add a license</em>
+        </ul>
+    <li>Tell GitHub to publish the repo as a website
+        <small>(it takes some time to take effect)</small>
+        <ul>
+            <li><em>Settings &gt; GitHub Pages &gt; Source: master branch</em>
+        </ul>
+    <li>Clone the repo
+        <ul>
+            <li><em>Clone or download</em>: Get the URL for cloning
+                <small>(HTTPS, later on maybe SSH)</small>
+            <li><code>git clone https://github.com/your-user-name/your-repo-name.git</code>
+        </ul>
+    <li>Add and edit files <small>(here: <code>index.html</code>)</small>
+    <li>Record new version
+        <ul>
+            <li><code>git status</code>
+            <li><code>git diff</code>
+            <li><code>git add index.html</code>
+            <li><code>git commit -m "Add index file with test content"</code>
+            <li><code>git push</code>
+        </ul>
+</ul>
+</section>
+
+
+<section>
+<h2>Explore a Real Example</h2>
+<ul>
+    <li><a href="https://gitlab.com/vpetras/v.net.tripplanner">gitlab.com/vpetras/v.net.tripplanner</a>
+    <li>Small project
+    <li>GitLab
+    <li>CI/CD is used to generate a static website
+</ul>
+<img src="img/logos/gitlab.png" class="stretch">
+</section>
