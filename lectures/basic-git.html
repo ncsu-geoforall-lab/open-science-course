@@ -212,6 +212,22 @@ git push
 
 
 <section>
+    <h3>Getting Updates from the Remote Repository</h3>
+    <ul>
+        <li>Pull: Shortcut for fetch and merge
+        <li>Fetch and merge
+            <ul>
+                <li>Fetch: get the remote changes
+                <li>Merge: combine them into
+            </ul>
+        <li>Fetch and rebase
+    </ul>
+<pre class="bash" style="font-size: x-large;"><code>git pull
+</code></pre>
+</section>
+
+
+<section>
     <h3>Inspecting current state of the directory</h3>
 <pre class="bash" style="font-size: x-large;"><code>$ git status
 On branch master
@@ -396,6 +412,10 @@ Did you mean this?
 <ul>
     <li>Stage only part of a file
 <pre class="bash" style="font-size: x-large;"><code>git add -p
+</code></pre>
+<li>Hide stages into stash
+<pre class="bash" style="font-size: x-large;"><code>git stash
+git stash apply
 </code></pre>
     <li>Experiment in a branch <small>(one way of doing it)</small>
 <pre class="bash" style="font-size: x-large;"><code>git checkout -b simpler-equations
