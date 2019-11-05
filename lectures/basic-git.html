@@ -1,0 +1,243 @@
+<section>
+<h2>Basic Workflows for Managing Projects with Git</h2>
+<h3 style="margin-top: 0.5em">
+    Vaclav (Vashek) Petras</h3>
+<p class="title-foot">
+    <a href="https://geospatial.ncsu.edu/geoforall/">NCSU GeoForAll Lab</a>
+    at the
+    <a href="http://geospatial.ncsu.edu/">Center for Geospatial Analytics</a>
+    <br>
+    <a href="http://www.ncsu.edu/">North Carolina State University</a>
+</p>
+<img style="width: 25%;" src="img/logos/ncstate.png">
+<p>
+    Lunch and Learn by the Geospatial Graduate Student Organization
+    <br>
+    Part of the Open Science Literacy Series by NCSU CGA
+    <br>
+    November 4, 2019
+</p>
+<p class="glow" style="font-size: 200%;">
+    <a href="https://bit.ly/">bit.ly/</a>
+</p>
+</section>
+
+
+<section>
+    <h3>Learning Objectives</h3>
+    <ul>
+        <li>What is Git and why to use it
+        <li>Basic Git commands for managing one-person projects
+        <li>Organizing your code, some documents, small data
+        <li>How to deal with problems
+        <li>Publish a website with your work on GitHub
+        <li>Know the difference between Git and GitHub
+    </ul>
+    <br>
+    <img src="img/logos/git.svg" class="stretch">
+</section>
+
+
+<section>
+    <h3>Warning</h3>
+    <ul>
+        <li>There will be command line in this tutorial!
+        <li>No, you don't have to use it yourself.
+        <li>Yes, you should use it yourself.
+    </ul>
+    <p style="font-size: 8em; color: #F03C2E;">!</p>
+</section>
+
+
+<section>
+    <h3>More Warnings</h3>
+    <blockquote cite="https://stackoverflow.com/questions/5760293/alternatives-to-git">
+        [particular Git feature]
+        can get you really frustrated as a newbie [...]
+        <br>
+        Still didn't find why it is needed.
+    </blockquote>
+    <ul>
+        <li>It will be frustrating at times.
+        <li>It will be confusing at times.
+        <li>It won't get any better*.
+    </ul>
+    <p><small>
+        *Hopefully because you will start using more advanced features.
+    </small></p>
+</section>
+
+
+<section>
+    <h3>The bright side</h3>
+    <ul>
+        <li>Git will not eat your dog. As long as you use:
+            <br>
+            <code>git --dont-eat-dog</code>
+        <li>Git will not eat your files. Unless you use:
+            <br>
+            <code>git reset --hard HEAD~3</code>
+            <br>
+            <code>git clean -dffx</code>
+    </ul>
+</section>
+
+
+<section>
+<h2>File versions</h2>
+<img src="img/file_versions.png" class="stretch box-glow">
+</section>
+
+
+<section>
+<h3>Source code</h3>
+<img src="img/futures_src_detail.png" class="stretch">
+<a href="https://trac.osgeo.org/grass/browser/grass-addons/grass7/raster/r.futures#r.futures.calib">trac.osgeo.org/grass/browser/grass-addons/grass7/raster/r.futures</a>
+</section>
+
+
+<section>
+<h2>Revision control</h2>
+<ul>
+    <li>alternative names
+        <ul>
+            <li>version control (version-control systems)
+            <li>source control management (SCM tools)
+            <li>source code management
+        </ul>
+    <li>keep track
+    <li>collaborate
+    <li>
+</ul>
+<br>
+<img src="img/revisions.svg" class="stretch">
+</section>
+
+
+<section>
+<h2>Git</h2>
+<ul>
+    <li>
+    <li>keep track
+    <li>Alternatives: Mercurial (<code>hg</code>), Fossil, Subversion (<code>svn</code>), ...
+</ul>
+<br>
+<img src="img/logos/git.svg" class="stretch">
+<small>
+    
+</small>
+</section>
+
+
+<section>
+<h2>Revision control</h2>
+<br>
+<img src="img/revisions.svg" class="stretch">
+<pre class="bash" style="font-size: x-large;"><code>git commit script.py -m "replaced part of the main equation"
+</code></pre>
+<br>
+There are GUIs as well.
+</section>
+
+
+<section>
+<h3>Source code history</h3>
+<img src="img/futures_log_detail.png" class="stretch">
+<a href="https://trac.osgeo.org/grass/log/grass-addons/grass7/raster/r.futures">trac.osgeo.org/grass/log/grass-addons/grass7/raster/r.futures</a>
+</section>
+
+
+
+<section>
+    <h3>staging, committing, and pushing,</h3>
+    <ul>
+        <li>
+    </ul>
+</section>
+
+
+<section>
+    <h3>Finding Help</h3>
+    <p style="font-size: 6em; color: #F03C2E;"><code>git help</code></p>
+</section>
+
+
+<section>
+    <h3>Git Help in Command Line</h3>
+<pre class="bash" style="font-size: x-large;"><code>$ git help
+git help
+...
+These are common Git commands used in various situations:
+start a working area (see also: git help tutorial)
+   clone      Clone a repository into a new directory
+   init       Create an empty Git repository or reinitialize an existing one
+work on the current change (see also: git help everyday)
+   add        Add file contents to the index
+   mv         Move or rename a file, a directory, or a symlink
+...
+$ git duff
+git: 'duff' is not a git command. See 'git --help'.
+
+Did you mean this?
+    diff
+</code></pre>
+</section>
+
+
+<section>
+    <h3>Git Manual Pages</h3>
+<img src="img/git_commit_man_page.png" class="stretch box-glow" alt="Git">
+    <p>
+    <small class="glow">
+        <a href="https://www.git-scm.com/docs/git-commit">Git - git-commit Documentation</a>
+    </small>
+    </p>
+</section>
+
+
+<section>
+    <h3>Git Man Page Generator</h3>
+    <img src="img/git_man_page_generator.png" class="stretch box-glow" alt="Git">
+    <p>
+    <small class="glow">
+        <a href="https://git-man-page-generator.lokaltog.net/#a9ddd6746c62bca36ce9475bdcb4825f">Git man page generator</a>
+    </small>
+    </p>
+</section>
+
+
+<section>
+    <h3>When Everything Fails</h3>
+    <img src="img/xkcd_git_cc_by_nc.png" class="stretch box-glow" alt="Git">
+    <p>
+    <small class="glow">
+        If that doesn't fix it, git.txt contains the phone number of a
+        friend of mine who understands git. Just wait through a few
+        minutes of 'It's really pretty simple, just think of branches
+        as...' and eventually you'll learn the commands that will fix
+        everything.
+        <br>
+        <a href="https://xkcd.com/1597/">xkcd: Git</a>
+        <br>
+        xkcd comic is licensed under a Creative Commons Attribution-NonCommercial 2.5 License.
+    </small>
+    </p>
+</section>
+
+
+<section>
+<h2>Revision control hosting</h2>
+<ul>
+    <li>GitHub
+        <ul>
+            <li>GitHub != Git
+            <li>proprietary software
+            <li>freemium service
+        </ul>
+    <li>Alternative services: GitLab, Bitbucket, SourceForge, ...
+    <li>Self-hosted open alternatives: GitLab, Gogs, Gitea, Gitolite, Trac, ...
+    <li>"software forges"
+</ul>
+<img src="img/logos/octocat.png" class="stretch">
+</section>
+
