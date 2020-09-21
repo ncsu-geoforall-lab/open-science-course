@@ -1,5 +1,7 @@
 # Tools for Open Geospatial Science Course
 
+[![Publish the website](https://github.com/ncsu-geoforall-lab/open-science-course/workflows/Publish%20the%20website/badge.svg?branch=master)](https://github.com/ncsu-geoforall-lab/open-science-course/actions?query=workflow%3A%22Publish+the+website%22)
+
 ## When and where was the course taught
 
 * NCSU GIS 595-601: Tools for open geospatial science (Special Topics in Geospatial Information Science, Summer II 2019, distance)
