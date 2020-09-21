@@ -68,21 +68,21 @@ Lecture combined with hands-on exercise which overlaps with a short homework.
 Schedule
 --------
 
-=== ============ ===
- 1. June 24      `Introduction to and motivation for open science <topics/open-science.html>`_
- 2. June 27      `Collaborative and automated writing of papers and reports <topics/writing.html>`_
- 3. July 1       `Revision control systems and wiki technologies <topics/revision-control.html>`_
- 4. July 3       `Introduction to command line and remote access to computational resources <topics/linux.html>`_
-    July 4       Independence Day 🇺🇸
- 5. July 9       `Command line and Python tools for geospatial work <topics/geospatial-command-line.html>`_
- 6. July 11      `Open source GIS <topics/open-source-gis.html>`_
- 7. July 16      `Publishing source code <topics/code.html>`_
- 8. July 18      `Publishing data on web <topics/data.html>`_
- 9. July 22      `Combining text, code, results, and software <topics/combined-document.html>`_
-10. July 25      `Writing and reproducing an open science paper <topics/paper.html>`_
-    July 29      Remaining assignments due
-    August 1     Grades
-=== ============ ===
+==== ============ ===
+  1. June 24      `Introduction to and motivation for open science <topics/open-science.html>`_
+  2. June 27      `Collaborative and automated writing of papers and reports <topics/writing.html>`_
+  3. July 1       `Revision control systems and wiki technologies <topics/revision-control.html>`_
+  4. July 3       `Introduction to command line and remote access to computational resources <topics/linux.html>`_
+ ... July 4       Independence Day 🇺🇸
+  5. July 9       `Command line and Python tools for geospatial work <topics/geospatial-command-line.html>`_
+  6. July 11      `Open source GIS <topics/open-source-gis.html>`_
+  7. July 16      `Publishing source code <topics/code.html>`_
+  8. July 18      `Publishing data on web <topics/data.html>`_
+  9. July 22      `Combining text, code, results, and software <topics/combined-document.html>`_
+ 10. July 25      `Writing and reproducing an open science paper <topics/paper.html>`_
+ ... July 29      Remaining assignments due
+ ... August 1     Grades
+==== ============ ===
 
 Assignments are always due the next week on Mondays at the end of the
 day, but it is recommended to finish them the following day
