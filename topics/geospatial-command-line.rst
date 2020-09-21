@@ -259,6 +259,7 @@ Texts
 * `GDAL at Spatial Ecology <http://spatial-ecology.net/dokuwiki/doku.php?id=wiki:gdal>`_ (collection of tutorials)
 * `pktools at Spatial Ecology <http://spatial-ecology.net/dokuwiki/doku.php?id=wiki:pk_tools>`_ (collection of tutorials)
 * `Python GDAL/OGR Cookbook <https://pcjericks.github.io/py-gdalogr-cookbook/>`_
+* `Automate the Boring Stuff with Python` <https://automatetheboringstuff.com/>`_ (general Python, free (CC BY-NC-SA) book)
 
 Videos
 ``````
