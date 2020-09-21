@@ -1,3 +1,4 @@
+*~
 build
 posters/*.
 posters/*.aux
@@ -9,3 +10,4 @@ posters/*.tex.backup
 posters/*_rasterized.pdf
 posters/agu2017.pdf
 posters/agu2017.png
+.DS_Store
