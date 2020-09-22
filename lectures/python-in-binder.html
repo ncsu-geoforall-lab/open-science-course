@@ -1,5 +1,5 @@
 <section>
-<h2>Open Science: Python in Binder</h2>
+<h2>Python and Open Science Technologies</h2>
 <h3 style="margin-top: 0.5em">
     Vaclav (Vashek) Petras</h3>
 <p class="title-foot">
@@ -12,15 +12,26 @@
 <img style="width: 25%;" src="img/logos/ncstate.png">
 <p>
     GIS 710: Geospatial Analytics for Grand Challenges<br>
-    October 21, 2019
+    October 5, 2020
 </p>
 <p>
     <a href="../topics/open-science-for-grand-challenges.html">https://bit.ly/2oR9owy</a>
 </p>
 </section>
 
+
 <section>
-    <h3>Python</h3>
+    <h3>Learning Objectives</h3>
+    <ul>
+        <li>bits and pieces needed for re-running code
+        <li>overview of concrete technologies for computational reproducibility
+        <li>hands-on practice with some of these technologies (Python, Jupyter, Binder)
+    </ul>
+</section>
+
+
+<section>
+    <h3>Code: Python</h3>
     <ul>
         <li>readable syntax, close to ad-hoc pseudo-code
         <li>scripting, interpreted
@@ -42,15 +53,15 @@
 
 
 <section>
-    <h3>Jupyter</h3>
+    <h3>Interaction: Jupyter</h3>
     <ul class="left">
         <li>Julia, Python, R (and many others)
-        <li>IPython, Jupyter Notebooks, JupyterLab
+        <li>JupyterLab, Jupyter Notebooks, IPython
         <li>combination of text, images, computational results, code, ...
         <li>alternatives:
             <ul>
-                <li>RStudio
-                <li>other notebooks and literate programing tools
+                <li>RStudio, R Markdown
+                <li>other <em>notebooks</em> and <em>literate programing</em> tools
             </ul>
     </ul>
     <div class="right">
@@ -64,16 +75,16 @@
 
 
 <section>
-    <h3>GitHub</h3>
+    <h3>Code Management: Git and GitHub</h3>
     <ul>
-        <li>something else than Git!
-        <li>Service providing Git repository hosting and related services
-        <li>not open source (i.e., proprietary)
-        <li>alternatives:
+        <li>GitHub is something else than Git!
+        <li>Git is a version-control system.
+        <li>GitHub is a service providing Git repository hosting and related services.
+        <li>Git is open source. GitHub is proprietary, freemium service.
+        <li>Alternatives:
             <ul>
-                <li>GitLab
-                <li>Bitbucket
-                <li>...
+                <li>Mercurial, Bazaar, Fossil, Subversion, ...
+                <li>GitLab, Bitbucket, ...
             </ul>
     </ul>
     <br>
@@ -86,17 +97,17 @@
 
 
 <section>
-    <h3>Binder</h3>
+    <h3>Running and Sharing: Binder</h3>
     <ul>
         <li>mybinder.org
         <li>Service turning (Git) repositories into computational environments
         <li>Jupyter Notebooks, JupyterLab, RStudio, RShiny, Jupyter Appmode, presentation slides, ...
-        <li>open source
+        <li>open source <small>(building blocks of Binder: JupyterHub, BinderHub, repo2docker)</small>
         <li>alternatives:
             <ul>
-                <li>JupyterHub, BinderHub, repo2docker
-                <li>Code Ocean
-                <li>CoCalc
+                <li>Code Ocean <small>(Jupyter, RStudio, preservation)</small>
+                <li>CoCalc <small>(Jupyter, ..., desktop applications)</small>
+                <li>Google Colab <small>(Jupyter Notebooks, Google Cloud Platform)</small>
                 <li>?
             </ul>
     </ul>
@@ -110,16 +121,17 @@
 
 
 <section>
-    <h3>Docker</h3>
+    <h3>Computational Environment: Docker</h3>
     <ul>
-        <li>virtualization tool to wrap software with all its dependencies in one package (image, container)
+        <li>virtualization tool to wrap software with all its dependencies into one package
+        <li>image is the software or binary, container is what is running
         <li>enables to run many isolated computational environments
         <li>open source code and freemium platform
         <li>alternatives:
             <ul>
-                <li>virtual machines
-                <li>Vagrant
-                <li>Singularity
+                <li>virtual machines <small>(local or in the cloud)</small>
+                <li>Vagrant <small>(configuration like Docker, but for virtual machines)</small>
+                <li>Singularity <small>(similar to Docker, but for HPC clusters)</small>
                 <li>...
             </ul>
     </ul>
@@ -133,7 +145,7 @@
 
 
 <section>
-    <h3>Environment specifications</h3>
+    <h3>Computational Environment: Specifications</h3>
 
 <div class="left">
 <p>
@@ -176,9 +188,9 @@ GDAL==3.0.1
 <section>
     <h3>Summary</h3>
     <ul>
-        <li>GitHub hosts Git repositories and allows editing the content
-        <li>Binder uses Docker to create the customized computational environments
-        <li>JupyterLab runs and and enables editing of Python scripts and Jupter Notebooks
+        <li>GitHub hosts Git repositories and allows editing the content.
+        <li>Binder uses Docker to create the customized computational environments.
+        <li>People use JupyterLab to run and edit scripts and Jupyter Notebooks.
     </ul>
     <br>
     <img class="stretch" src="img/jupyterlab.png">
