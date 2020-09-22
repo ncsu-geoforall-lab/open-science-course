@@ -41,7 +41,7 @@ Contributors:
 
 *Not applicable to linked materials.*
 
-&copy; 2017-2019 The Authors
+&copy; 2017-2020 The Authors
 
 License:
 [Creative Commons Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/) (CC BY-SA)
