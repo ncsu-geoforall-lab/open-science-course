@@ -158,5 +158,4 @@ favor of it. Your blog will be evaluated based on the following rubric:
 compellingness (persuasiveness, well-grounded in evidence), critical
 thinking (evaluation of facts to form a judgment or opinion), and 3)
 creativity (originality of ideas). Please submit your blog post as a
-PDF by email to Corey White with the subject GIS710 Open Science
-Blog by November 3.
+PDF to Moodle by October 12.
