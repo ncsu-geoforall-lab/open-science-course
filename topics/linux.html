@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>NCSU GIS 595-601: Tools for Open Geospatial Science</title>
+
+<link rel="shortcut icon" href="../img/favicon.png" />
+
+<link href="../layout.css" rel="stylesheet" type="text/css" media="screen">
+<link href="../style.css" rel="stylesheet" type="text/css" media="screen">
+
+</head>
+
+<body>
+
+<div id="outercontainer">
+<div id="container">
+
+<header>
+<div id="header-image">
+</div>
+
+<nav>
+<ul class="nav">
+<li><a href="../index.html">Syllabus</a></li>
+<li><a href="../index.html#schedule">Schedule</a></li>
+</ul>
+</nav>
+
+</header>
+
+<main>
+<!-- This is a generated file. Do not edit. -->
+<h1 id="introduction-to-command-line">Introduction to command line</h1>
+<p>This topic is an introduction to command line and remote access to computational resources using GNU/Linux operating system.</p>
+<p>Refer to the assignment instructions for instructions where to run the commands.</p>
+<h2 id="basics-commands">Basics commands</h2>
+<p>Find which directory you are in:</p>
+<pre><code>pwd</code></pre>
+<p>Go the the root directory (i.e., the directory at the top of the directory tree):</p>
+<pre><code>cd /</code></pre>
+<p>See what is there:</p>
+<pre><code>ls</code></pre>
+<p>Go back to your home directory (<code>~</code> is automatically replaced by your home directory path):</p>
+<pre><code>cd ~</code></pre>
+<p>Edit a file with <em>nano</em> (a common default command line editor):</p>
+<pre><code>nano test1.txt</code></pre>
+<p>Write some text. Put the word "apple" on couple of lines together with other text and make couple of lines with other text without the word "apple." To exit nano, press Ctrl+X, then press Y to confirm that you want to save the file, and then Enter to confirm the file name.</p>
+<p>Now list the files in the current directory (you should see the file you just created):</p>
+<pre><code>ls</code></pre>
+<p>To display its content in the command line, you can use <em>cat</em>:</p>
+<pre><code>cat test1.txt</code></pre>
+<p>For browsing content of a larger file, use <em>less</em>:</p>
+<pre><code>less test1.txt</code></pre>
+<h3 id="search-content-of-a-file">Search content of a file</h3>
+<p>Using <em>grep</em>, search for a line which contains <code>apple</code> in the file called <code>test1.txt</code>:</p>
+<pre><code>grep apple test1.txt</code></pre>
+<h3 id="spaces-in-the-command-line">Spaces in the command line</h3>
+<p>Spaces in the command line separate individual parameters passed to the program. First item in the command line is the name of the program (or full path to it). Here we call the program called <em>echo</em> with one parameter which is <code>Hello</code>:</p>
+<pre><code>echo Hello</code></pre>
+<p>We will use this program <em>echo</em> as an example. It prints its parameters in the way that the parameters in the output are separated by spaces. Given that multiple spaces still are just separating two parameters from each other, the following will print the same:</p>
+<blockquote>
+<p>echo Hello World echo Hello World</p>
+</blockquote>
+<p>If you want to pass spaces as part of the parameter, use quotes:</p>
+<pre><code>echo &quot;Hello       World!&quot;
+echo &quot;Hello
+World!&quot;</code></pre>
+<h3 id="confusion-with-cat">Confusion with cat</h3>
+<p>When you run <code>cat</code> without any parameters, you get into a strange situation:</p>
+<pre><code>cat</code></pre>
+<p>To get out of it, use Ctrl+D to end the input (which will consequently end <code>cat</code>) or Ctrl+C to terminate <code>cat</code>. These shortcuts will work similarly with other programs as well.</p>
+<h2 id="redirecting-inputs-and-outputs">Redirecting inputs and outputs</h2>
+<p>Here the output of <em>cat</em> goes to the terminal:</p>
+<pre><code>cat test1.txt</code></pre>
+<p>Here the output is redirected to a file:</p>
+<pre><code>cat test1.txt &gt; test3.txt</code></pre>
+<p>The output file is identical with what we read, that's not that useful (since we just could use <code>cp test1.txt test3.txt</code> to create a copy):</p>
+<pre><code>cat test3.txt</code></pre>
+<p>When it starts to be useful, is when we pipe (redirect) the output to input of another command, here <em>grep</em>, before redirecting it to a file:</p>
+<pre><code>cat test1.txt | grep apple &gt; test3.txt
+cat test3.txt</code></pre>
+<p>Let's get just the lines which don't contain "apple" using the <code>-v</code> option:</p>
+<pre><code>cat test1.txt | grep -v apple
+cat test1.txt | grep -v apple &gt; test3.txt
+cat test3.txt</code></pre>
+<p>Similarly to redirection to a file, we can do redirection from a file to command input:</p>
+<pre><code>grep apple test1.txt
+grep apple &lt; test1.txt</code></pre>
+<p>Both input and output can be redirected (connected) to files at the same time:</p>
+<pre><code>grep apple &lt; test1.txt &gt; test3.txt
+cat test3.txt</code></pre>
+<p>Now, the <em>cat</em> command we were using can also concatenate multiple files together:</p>
+<pre><code>cat test1.txt test2.txt</code></pre>
+<p>The result can be redirected to another command:</p>
+<pre><code>cat test1.txt test2.txt | grep apple</code></pre>
+<p>And then redirected to another file:</p>
+<pre><code>cat test1.txt test2.txt | grep apple &gt; test5.txt</code></pre>
+<h2 id="filtering-program-outputs">Filtering program outputs</h2>
+<p>The <em>find</em> command is good for searching all files matching a pattern, here we search for all files in the directory <code>/bin</code> which start with letter <code>z</code>:</p>
+<pre><code>find /bin -name &quot;z*&quot;</code></pre>
+<p>There is couple of programs which have "grep" in their name, we can filter then out and leave the rest. First see how our filter works:</p>
+<pre><code>find /bin -name &quot;z*&quot; | grep grep</code></pre>
+<p>Then tell <em>grep</em> to leave them out using the <code>-v</code> option:</p>
+<pre><code>find /bin -name &quot;z*&quot; | grep -v grep</code></pre>
+<p>Now we can use <em>wc</em> to count lines, words, and characters in this output:</p>
+<pre><code>find /bin/ -name &quot;z*&quot; | grep -v grep | wc</code></pre>
+<p>To get just the number of lines, we can use <code>-l</code> option:</p>
+<pre><code>find /bin/ -name &quot;z*&quot; | grep -v grep | wc -l</code></pre>
+<p>Here is how we can use <em>find</em> to search for all files with particular extension in our home directory:</p>
+<pre><code>find ~ -name &quot;*.txt&quot;</code></pre>
+<p>As a side note, the <em>find</em> command is different to <em>ls</em> which we often also use with pattern, but the pattern is not in quotes and is evaluated by the command line (shell) itself rather than the <em>ls</em> program:</p>
+<pre><code>ls /bin/z*</code></pre>
+<h2 id="pausing-execution">Pausing execution</h2>
+<p>Sometimes, examples are one of the cases, it is good to pause execution of a script for some time. Try the <em>sleep</em> command in command line:</p>
+<pre><code>sleep 5</code></pre>
+<h2 id="running-program-in-the-background">Running program in the background</h2>
+<p>So far all commands we were running were blocking the command line and we needed to wait for them to finish:</p>
+<pre><code>sleep 10</code></pre>
+<p>If we want to run a long-running program in the background, we can use ampersand at the end of the line:</p>
+<pre><code>sleep 10 &amp;</code></pre>
+<p>This also works in the scripts enabling parallel processing. In that case you may find <em>wait</em> command to be useful for waiting for all processes to finish.</p>
+<p>Ampersand is also useful when running GUI applications from the command line:</p>
+<pre><code>gedit
+gedit &amp;</code></pre>
+<h2 id="parallel-processing">Parallel processing</h2>
+<p>In this section, we will execute multiple commands in parallel which will allow us to take advantage of multiple CPU cores (processing elements).</p>
+<h3 id="getting-ready">Getting ready</h3>
+<p>First we need to prepare a text file with commands to run:</p>
+<pre><code>nano test2.txt</code></pre>
+<p>Use the following as the content of the file. The following lines are spending some time in a program called <em>sleep</em> and then printing a number using <em>echo</em>. These are just for the exercise. In reality, each line would be, e.g., a call of a Python script doing some useful computation:</p>
+<pre><code>sleep 10 &amp;&amp; echo 1;
+sleep 25 &amp;&amp; echo 2;
+sleep 10 &amp;&amp; echo 3;
+sleep 25 &amp;&amp; echo 4;
+sleep 20 &amp;&amp; echo 5;
+sleep 10 &amp;&amp; echo 6;
+sleep 10 &amp;&amp; echo 7;
+sleep 10 &amp;&amp; echo 8;</code></pre>
+<h3 id="installing-a-program">Installing a program</h3>
+<p>When we run the program GNU Parallel, systems informs us that we don't have it:</p>
+<pre><code>parallel</code></pre>
+<p>On Ubuntu and similar distributions, we can install it using <code>apt install</code>:</p>
+<pre><code>apt install parallel</code></pre>
+<p>However, only administrator (aka super user or root) can install new programs. We can execute program in that way using <em>sudo</em>:</p>
+<pre><code>sudo apt install parallel</code></pre>
+<h3 id="exploring-the-documentation">Exploring the documentation</h3>
+<p>Now when we have the program, we can get suggestion how to use it using <code>--help</code> option:</p>
+<pre><code>parallel --help</code></pre>
+<p>A more detailed documentation is in the manual (exit by pressing Q):</p>
+<pre><code>man parallel</code></pre>
+<h3 id="running-in-parallel">Running in parallel</h3>
+<p>Now run the commands from the text file in parallel:</p>
+<pre><code>parallel -j 2 -a test2.txt</code></pre>
+<p>The <code>-j</code> option specifies the number of jobs (commands) to execute in parallel at the same time and the <code>-a</code> option specifies the file with the commands to execute.</p>
+<p>Observe how long it takes to execute the following commands:</p>
+<pre><code>time parallel -j 1 -a test2.txt
+time parallel -j 2 -a test2.txt
+time parallel -j 4 -a test2.txt
+time parallel -j 8 -a test2.txt</code></pre>
+<p>When doing actual processing, how much you gain by increasing number of jobs depends on how many core you actually have available on your machine.</p>
+<h2 id="remote-access-using-ssh">Remote access using SSH</h2>
+<p>Although different remote desktop solutions are quite common, it is even more common to connect to servers and remote computational resources, such as high performance computing clusters, using SSH. The whole operation is done in command line and all further interaction happens in command line as well. You would typically see that the command line prompt changed to indicate that the terminal is now connected to a different machine.</p>
+<pre><code>ssh anndoe@154.2.15.319 -X</code></pre>
+<p>The <code>-X</code> option is useful for servers which support applications with GUI, specifically servers with X server, and clients which support this type of connection (most of Linux distributions support that and on macOS it is possible to get it working reasonably well while on MS Windows it is harder to get that). When <code>-X</code> is used, GUI applications can be started from command line and the GUI appears on the client side similarly to the applications running on the client.</p>
+<h2 id="bonus-changing-the-path-variable">Bonus: Changing the path variable</h2>
+<p>This is how path variable can be changed to enable a program installed in non-standard location in the command line for the given session (the following expects Ubuntu 16.04).</p>
+<p>The first command should work, the second should fail.</p>
+<pre><code>ls
+sl</code></pre>
+<p>We install the missing program:</p>
+<pre><code>sudo apt-get install sl</code></pre>
+<p>The following should still fail because this not-so-standard program is not "on path". It was installed to <code>/usr/games</code>.</p>
+<blockquote>
+<p>sl</p>
+</blockquote>
+<p>We inspect the <code>PATH</code> variable if <code>/usr/games</code> is really not there:</p>
+<pre><code>echo $PATH</code></pre>
+<p>And we add the path to the <code>PATH</code> variable. First we use <em>echo</em> to inspect how our command will look like and then we actually run it:</p>
+<pre><code>echo export PATH=&quot;/usr/games:$PATH&quot;
+export PATH=&quot;/usr/games:$PATH&quot;</code></pre>
+<p>Finally, we run our newly installed command:</p>
+<pre><code>sl</code></pre>
+<p>If you see train, all went well.</p>
+<p>Note that this changes the <code>PATH</code> variable only temporarily in the given terminal session which is usually what you should do (limit yourself to).</p>
+<h2 id="resources">Resources</h2>
+<ul>
+<li><a href="https://www.guru99.com/introduction-linux.html">Introduction to the Linux Operating System</a> from Guru99</li>
+<li><a href="http://www.linfo.org/">The Linux Information Project</a></li>
+<li><a href="http://heather.cs.ucdavis.edu/~matloff/UnixAndC/Unix/UnixBareMn.pdf">Unix—the Bare Minimum</a> by Norman Matloff</li>
+<li><a href="http://tille.garrels.be/training/tldp/">Introduction to Linux</a> by Machtelt Garrels</li>
+<li><a href="https://www.digitalocean.com/community/tutorials/an-introduction-to-linux-basics">An Introduction to Linux Basics</a> at DigitalOcean</li>
+<li><a href="http://www.ee.surrey.ac.uk/Teaching/Unix/">UNIX Tutorial for Beginners</a> by M. Stonebank</li>
+<li><a href="https://ryanstutorials.net/linuxtutorial/piping.php">Piping and Redirection!</a> By Ryan Chadwick</li>
+<li><a href="https://stackoverflow.com/questions/556405/what-do-real-user-and-sys-mean-in-the-output-of-time1">What do 'real', 'user' and 'sys' mean in the output of time(1)?</a></li>
+</ul>
+<h3 id="videos">Videos</h3>
+<ul>
+<li><a href="http://fatra.cnr.ncsu.edu/open-science-course/linux-pwd-cd-cat-less.mp4">Basic commands</a> (recording from the class, 14min)</li>
+<li><a href="http://fatra.cnr.ncsu.edu/open-science-course/linux-tab-key.mp4">Using Tab key</a> (recording from the class, 1.5min)</li>
+<li><a href="https://www.youtube.com/watch?v=fvPSNK8iB0Y">World Without Linux Final Episode #6 Free Burger</a> (many Linux-related terms in under 3 minutes)</li>
+</ul>
+<h2 id="assignment">Assignment</h2>
+<p>Go through the above instructions. You can use NCSU VCL, specifically one of the Ubuntu machines. When you login in into the machine, use terminal to input commands. Alternatively, you can use terminal on Mac OS or Git Bash from the last class if you are using MS Windows but you may not be able to do all the steps. If you were in the class, you can skip this part and do the next one right away.</p>
+<p>In some Linux command line (e.g. in NCSU VCL Ubuntu machine), find out how many CPUs has the machine you are working on. To find out that information, use file called <code>/proc/cpuinfo</code> which contains information about CPUs. Construct command line which will in one command print the number of CPUs, but nothing more. Post the command as a (online) text as assignment in Moodle.</p>
+<p>Please do post questions to the forum as you are going through the provided material, just don't post possible solutions for that CPU command, so that others can come up with their own solutions.</p>
+
+</main>
+
+<footer>
+
+<nav>
+<ul>
+<li><a class="term-changes" href="https://moodle-courses1920.wolfware.ncsu.edu/course/view.php?id=1581">Moodle site</a></li>
+<li><a href="http://help.ncsu.edu/">Computing Help</a></li>
+<li><a href="http://geospatial.ncsu.edu/">GIST Home</a></li>
+<li><a href="http://www.ncsu.edu/policies/prr-disclaimer.php">Disclaimer</a></li>
+<li><a href="http://oit.ncsu.edu/itaccess">Accessibility</a></li>
+<li><a href="https://github.com/ncsu-geoforall-lab/open-science-course" title="Fork on GitHub" alt="octocat">
+    <img src="../img/github_logo.png">
+</a></li>
+<li title="Copyright and license (not applicable to linked materials)">
+    &copy; 2017-2020
+    <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA</a>
+    <a href="https://github.com/ncsu-geoforall-lab/open-science-course#authors">The Authors</a>
+    from the
+    <a href="http://geospatial.ncsu.edu/geoforall/">NCSU GeoForAll Lab</a>
+</li>
+</ul>
+</nav>
+
+</footer>
+
+</div>
+</div>
+
+</body>
+</html>

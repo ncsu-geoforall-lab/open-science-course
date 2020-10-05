@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>NCSU GIS 595-601: Tools for Open Geospatial Science</title>
+
+<link rel="shortcut icon" href="../img/favicon.png" />
+
+<link href="../layout.css" rel="stylesheet" type="text/css" media="screen">
+<link href="../style.css" rel="stylesheet" type="text/css" media="screen">
+
+</head>
+
+<body>
+
+<div id="outercontainer">
+<div id="container">
+
+<header>
+<div id="header-image">
+</div>
+
+<nav>
+<ul class="nav">
+<li><a href="../index.html">Syllabus</a></li>
+<li><a href="../index.html#schedule">Schedule</a></li>
+</ul>
+</nav>
+
+</header>
+
+<main>
+<!-- This is a generated file. Do not edit. -->
+<h1 id="publishing-code-as-part-of-grass-gis">Publishing code as part of GRASS GIS</h1>
+<p>This guide counts on using Ubuntu, so please use NCSU VCL if you want to or need to follow the guide closely. The guide requires GRASS GIS version 7.2, so on Ubuntu 16.04, you need to install GRASS GIS from UbuntuGIS PPA:</p>
+<pre><code>sudo add-apt-repository ppa:ubuntugis/ubuntugis-unstable
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install grass grass-gui</code></pre>
+<h2 id="basic-structure">Basic structure</h2>
+<p>A minimal GRASS GIS module written in Python needs to contain these three following files:</p>
+<ul>
+<li>Python script</li>
+<li>HTML documentation</li>
+<li>Makefile</li>
+</ul>
+<p>These files are placed into a directory which has the same name as the module. In GRASS GIS Addons, this would be a subdirectory in the Addons repository. In our case, this will be a name of the Git repository we will use. In this example, we will create a module to add two maps together using raster algebra operator plus. It is a module which processes rasters and all these modules in GRASS GIS start with <code>r.</code>. So, we will name our module <code>r.plus</code>. For your assignment, pick a name which is appropriate for the processing you are doing. Create a repository on GitHub or similar service and clone it.</p>
+<h2 id="python-script">Python script</h2>
+<p>The script is in Python, so we use <code>.py</code> as file extension and the name of the module is <em>r.plus</em>, so the file name is <code>r.plus.py</code>.</p>
+<p>Python script starts with shebang, the first line we have already seen in Bash scripts or Python scripts for unix-like system:</p>
+<pre><code>#!/usr/bin/env python</code></pre>
+<p>This is followed by a block of Python comments (lines starting with <code>#</code>) which provide basic information about the module. The way it is formated is common for GRASS GIS, but other projects have similar standards.</p>
+<pre><code>########################################################################
+#
+# MODULE:       r.plus
+# AUTHOR:       Ann Doe
+# PURPOSE:      Adds two rasters using raster algebra
+# COPYRIGHT:    (C) 2017 Ann Doe
+#               This program is free software under the GNU General
+#               Public License (&gt;=v2). Read the file COPYING that
+#               comes with GRASS for details.
+#
+########################################################################</code></pre>
+<p>The next part is again just a Python comment, but this time it is formated in a very specific way and GRASS GIS reads this information and uses that to build CLI, GUI, documentation and more. The description of the syntax can be found on the manual page of the <a href="https://grass.osgeo.org/grass72/manuals/g.parser.html">g.parse</a> module.</p>
+<pre><code>#%module
+#% description: Adds the values of two rasters (A + B)
+#% keyword: raster
+#% keyword: algebra
+#% keyword: sum
+#%end
+#%option G_OPT_R_INPUT
+#% key: araster
+#% description: Name of input raster A in an expression A + B
+#%end
+#%option G_OPT_R_INPUT
+#% key: braster
+#% description: Name of input raster B in an expression A + B
+#%end
+#%option G_OPT_R_OUTPUT
+#%end</code></pre>
+<p>This description contains four blocks: one <code>module</code>, and three <code>option</code> blocks. The <code>module</code> block contains a short <code>description</code> of the module and <code>keyword</code>s (tags) which should help users to find the module. Each <code>option</code> block defines type, name, and description for each of the options (parameters). Here, all three are using predefined options (called standard options) which provide default values each of the entries. <code>G_OPT_R_INPUT</code> stands for "raster input GRASS option", i.e. an parameter specifying a name of a raster map which will be used as input. Here we have two inputs, so we need to define our own name and description and that's done using <code>key</code> and <code>description</code>.</p>
+<p>Now the actual code follows, starting with imports:</p>
+<pre><code>import sys
+
+import grass.script as gscript</code></pre>
+<p>The main part of the code is not on the top level (with no indentation), but as part of a function which we named <code>main</code>. In other words, the code is after <code>def main():</code> and is indented. This is a best practice used by many, if not all, projects in Python.</p>
+<p>Here, the first part of the <code>main()</code> function code is reading what was provided in the command line and storing it into Python variables. The next part is the processing, here is it just one line calling <code>mapcalc()</code> function which in turn calls GRASS GIS module <em>r.mapcalc</em>, the GRASS GIS module for raster algebra. Finally, we use <code>return 0</code> which is in this context a way of saying that everything went well.</p>
+<pre><code>def main():
+    options, flags = gscript.parser()
+    araster = options[&#39;araster&#39;]
+    braster = options[&#39;braster&#39;]
+    output = options[&#39;output&#39;]
+
+    gscript.mapcalc(&#39;{r} = {a} + {b}&#39;.format(r=output, a=araster, b=braster))
+
+    return 0</code></pre>
+<p>We end the script with <code>if __name__ == "__main__":</code> block which is a top level code, i.e. not indented code. The <code>if</code> condition tells Python to execute the code if the file is a used as a main file in program execution which is the case for our script. Together with <code>def main():</code> this is a commonly used best practice.</p>
+<pre><code>if __name__ == &quot;__main__&quot;:
+    sys.exit(main())</code></pre>
+<p>This is file by itself will run when we execute it in GRASS GIS. We can use GRASS GIS Simple Python Editor to do that, or we can use command line:</p>
+<pre><code>python r.plus.py</code></pre>
+<p>However, for scripts on unix-like systems, we set executable permissions:</p>
+<pre><code>chmod u+x r.plus.py</code></pre>
+<p>Then we can execute the script like this:</p>
+<pre><code>./r.plus.py</code></pre>
+<p>To increase chances our code is accepted by community, we should check it against the GRASS GIS submitting guidelines for Python code:</p>
+<p><a href="https://trac.osgeo.org/grass/wiki/Submitting/Python">https://trac.osgeo.org/grass/wiki/Submitting/Python</a></p>
+<h2 id="html-documentation">HTML documentation</h2>
+<p>A documentation of a module in GRASS GIS uses HTML as the markup language, but the HTML code for the full web page is generated automatically. We need to provide just basic sections:: description, see also, and author or authors. These sections are marked as heading level 2, i.e. <code>&lt;h2&gt;</code>. The name of the file is the name of the module with the extension <code>.html</code>, so <code>r.plus.html</code> in our case.</p>
+<p>The description section should explain what the module does, how it does it, and how to use it. Here we provide just an short oversimplified description as a place holder:</p>
+<pre><code>&lt;h2&gt;DESCRIPTION&lt;/h2&gt;
+
+&lt;em&gt;r.plus&lt;/em&gt; adds two rasters together using addition operator
+in raster algebra. The options are members of equation
+``c = a + b``. All parameters are mandatory for obvious reasons.</code></pre>
+<p>Another required section is a see also section which contains links to modules which are related to the new module. It can be modules which are alternative, explain the same concept, are part of the same workflow, or, as in our case, are used in the implementation.</p>
+<pre><code>&lt;h2&gt;SEE ALSO&lt;/h2&gt;
+
+&lt;em&gt;&lt;a href=&quot;r.mapcalc.html&quot;&gt;r.mapcalc&lt;/a&gt;&lt;/em&gt;</code></pre>
+<p>Finally we also include authors, this can be a simple list of names but it can also include institutions, funding sources, or how individual authors contributed to the code.</p>
+<pre><code>&lt;h2&gt;AUTHOR&lt;/h2&gt;
+
+Ann Doe</code></pre>
+<p>For more information, see the GRASS GIS submitting guidelines for documentation:</p>
+<p><a href="https://trac.osgeo.org/grass/wiki/Submitting/Docs">https://trac.osgeo.org/grass/wiki/Submitting/Docs</a></p>
+<h2 id="makefile">Makefile</h2>
+<p>A Makefile is a file which typically gives instructions how to compile code (e.g. C or C++ code) into a executable (binary). Although Python code does not have to compiled into binary, we are still using Makefile because in this case, it does several important steps such as creating the documentation and putting files into a right place in order to run the module as part of GRASS GIS. Most of instructions how to do that are part of GRASS GIS and our Makefile will just use those. Thus, our Makefile is exactly the same as any other script except the name of the module which we need to provide as a value of <code>PGM</code> variable.</p>
+<pre><code>MODULE_TOPDIR = ../..
+
+PGM = r.plus
+
+include $(MODULE_TOPDIR)/include/Make/Script.make
+
+default: script</code></pre>
+<p>The Makefile is used by a tool called <em>make</em>. This tool needs to know where to find the Makefiles which come with GRASS GIS. For that we need use the <code>MODULE_TOPDIR</code> variable.</p>
+<p>However, before that it is important to note that we need to have <em>make</em> installed and we need GRASS GIS with these Makefiles. To achieve that on Ubuntu, we need to install GRASS GIS development package which is called <code>grass-dev</code>.</p>
+<pre><code>sudo apt install grass-dev</code></pre>
+<p>Now we could run <em>make</em>, but since GRASS GIS 7.2 provides the same functionality in a more convenient way, we will use that. We can run <em>g.extension</em> module and point it to the directory with the module:</p>
+<pre><code>g.extension extension=r.plus url=/your/directory/with/the/module</code></pre>
+<p>After this, when we are in GRASS GIS command line, we can run our <em>r.plus</em> module in the same was as any other GRASS GIS module, i.e. without <code>./</code> or <code>python</code> and with GUI if requested.</p>
+<p>Obtain short help in command line:</p>
+<pre><code>r.plus --help</code></pre>
+<p>Run the module without parameters (GUI should appear):</p>
+<pre><code>r.plus</code></pre>
+<h2 id="publishing-and-downloading">Publishing and downloading</h2>
+<p>If we were putting to the module to GRASS GIS Addons, we would now check the submitting guidelines, conditions for submitting code and gaining access to the repository at an official page:</p>
+<p><a href="https://grass.osgeo.org/development/code-submission/">https://grass.osgeo.org/development/code-submission/</a></p>
+<p>In our case, we are just publishing the code using GitHub, so we need to add files to Git, commit, and push.</p>
+<p>Now on another computer which currently also needs to be Linux (or potentially Mac OS), we can test installing the module from GitHub:</p>
+<pre><code>g.extension extension=r.plus url=github.com/anndoe/r.plus</code></pre>
+<h2 id="resources">Resources</h2>
+<h3 id="texts">Texts</h3>
+<ul>
+<li><a href="https://github.com/wenzeslaus/python-grass-addon">How to write a Python GRASS GIS 7 addon</a></li>
+<li><a href="https://grass.osgeo.org/grass72/manuals/libpython/script_intro.html">GRASS GIS Python scripting with script package</a> (official documentation)</li>
+<li><a href="https://grass.osgeo.org/development/code-submission/">Official instructions for code submission</a></li>
+<li><a href="https://grass.osgeo.org/grass72/manuals/addons/r.bioclim.html">Example of a GRASS GIS module implemented in Python</a> (see the source code link at the bottom of the page)</li>
+<li><a href="http://ncsu-geoforall-lab.github.io/grass-intro-workshop/python.html">Introduction to GRASS GIS: Python scripting</a></li>
+<li><a href="https://ncsu-geoforall-lab.github.io/uav-lidar-analytics-course/assignments/python.html">Using Python and GRASS GIS</a> (class material from GIS595/MEA792: UAV/lidar Data Analytics)</li>
+</ul>
+<h3 id="videos">Videos</h3>
+<ul>
+<li><a href="http://fatra.cnr.ncsu.edu/open-science-course/code-as-grass-module.mp4">Publishing code as a GRASS GIS module</a> (recording from the class, 1 hour)</li>
+<li><a href="https://www.youtube.com/watch?v=PX2UpMhp2hc">Scripting GRASS GIS 7 with Python</a></li>
+</ul>
+
+</main>
+
+<footer>
+
+<nav>
+<ul>
+<li><a class="term-changes" href="https://moodle-courses1920.wolfware.ncsu.edu/course/view.php?id=1581">Moodle site</a></li>
+<li><a href="http://help.ncsu.edu/">Computing Help</a></li>
+<li><a href="http://geospatial.ncsu.edu/">GIST Home</a></li>
+<li><a href="http://www.ncsu.edu/policies/prr-disclaimer.php">Disclaimer</a></li>
+<li><a href="http://oit.ncsu.edu/itaccess">Accessibility</a></li>
+<li><a href="https://github.com/ncsu-geoforall-lab/open-science-course" title="Fork on GitHub" alt="octocat">
+    <img src="../img/github_logo.png">
+</a></li>
+<li title="Copyright and license (not applicable to linked materials)">
+    &copy; 2017-2020
+    <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA</a>
+    <a href="https://github.com/ncsu-geoforall-lab/open-science-course#authors">The Authors</a>
+    from the
+    <a href="http://geospatial.ncsu.edu/geoforall/">NCSU GeoForAll Lab</a>
+</li>
+</ul>
+</nav>
+
+</footer>
+
+</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>NCSU GIS 595-601: Tools for Open Geospatial Science</title>
+
+<link rel="shortcut icon" href="../img/favicon.png" />
+
+<link href="../layout.css" rel="stylesheet" type="text/css" media="screen">
+<link href="../style.css" rel="stylesheet" type="text/css" media="screen">
+
+</head>
+
+<body>
+
+<div id="outercontainer">
+<div id="container">
+
+<header>
+<div id="header-image">
+</div>
+
+<nav>
+<ul class="nav">
+<li><a href="../index.html">Syllabus</a></li>
+<li><a href="../index.html#schedule">Schedule</a></li>
+</ul>
+</nav>
+
+</header>
+
+<main>
+<!-- This is a generated file. Do not edit. -->
+<h1 id="latex">LaTeX</h1>
+<p>In this part, we focus on LaTeX and how to use with Overleaf. In this course, we present LaTeX as a more powerful alternative to lightweight markups such as Markdown and reStructuredText. However, there is more differences: LaTeX tool-chain is aimed at creating a document typically in PDF format while Markdown can be turned into many other formats, including LaTeX, PDF, and HTML using, for example, Pandoc. In that regard, LaTeX as a markup language compares to HTML focusing on a specific output format, web page for HTML and PDF or printable document for LaTeX.</p>
+<h2 id="overleaf">Overleaf</h2>
+<p><a href="https://www.overleaf.com">https://www.overleaf.com</a></p>
+<p>Overleaf is a freemium cloud platform with core processing backend - LaTeX - which is open source software.</p>
+<p>Overleaf allows users to collaboratively write documents using LaTeX syntax and tools. Overleaf also has a rich text mode which is good for people who don't know LaTeX.</p>
+<p>Overleaf project can be downloaded as a ZIP file of text files and images which can be processed on any computer with LaTeX installed. Typical LaTeX installation consist of several backend (command line) tools such as <em>tex</em> or <em>pdflatex</em> and a dedicated text editor, for example <em>Texmaker</em> or <em>Kile</em>, which understands the LaTeX syntax and can compile the files into an output document, typically PDF. Thanks to this, Overleaf is a cloud platform which provides users with a way out, thus preserving their freedom (in the area of software, tools, and service providers).</p>
+<p>We will use LaTeX through Overleaf, but all you learn will be applicable also for the local installation of LaTeX.</p>
+<p>NCSU has a Pro license for Overleaf, so use your NCSU email when registering to get the most of the platform.</p>
+<h2 id="latex-1">LaTeX</h2>
+<p>Here is an example LaTeX code:</p>
+<pre><code>\section{This is a heading}
+
+This is \emph{emphasis}.
+
+\begin{itemize}
+\item This is a list.
+\item Of different items.
+\end{itemize}</code></pre>
+<figure>
+<img src="img/latex.png" alt="LaTeX when edited in a text editor or in Overleaf" /><figcaption>LaTeX when edited in a text editor or in Overleaf</figcaption>
+</figure>
+<figure>
+<img src="img/latex_rendered.png" alt="Part of the PDF generated from the LaTeX code" /><figcaption>Part of the PDF generated from the LaTeX code</figcaption>
+</figure>
+<p><strong>What is LaTeX?</strong> LaTeX is a typesetting system or simply a program for creating text documents such as scientific papers or posters. Generally speaking LaTeX is a desktop publishing (DTP) program.</p>
+<p><strong>How to pronounce LaTeX?</strong> The <em>La</em> at the beginning is coming from original author Leslie Lamport who extended <em>TeX</em>. The <em>X</em> at the end is an uppercase Greek letter chi. In English, LaTeX is usually pronounced lah-tekh, lah-tek, or lay-tek.</p>
+<p><strong>What is LaTeX good for?</strong> The usage is very broad. It is most commonly used for technical and scientific texts such as scientific papers, dissertations, books and textbooks. It is also used for presentation slides or scientific posters. The code can be easily generated e.g. in Python, so it is used for automated generation of PDFs.</p>
+<p><strong>What LaTeX does?</strong> Besides common formatting of text such as cursive and bold, LaTeX can automatically create table of contents, numbered headings, cross references, footnotes, and literature citations. Advantages of LaTeX are best visible when creating numbered list and bullet points as everything is very organized and controlled. When using LaTeX you don't have to think much about typographic rules or know them because LaTeX will take of it.</p>
+<p><strong>What is LaTeX best know for?</strong> LaTeX is often highlighted as a tool to typeset math equations and the LaTeX syntax or LaTeX itself is used in other tools to create math equations. LaTeX is also generally better than other tools in typographically perfect justification of text into block where LaTeX automatically and reliably hyphenates words in different languages.</p>
+<p><strong>What are the limitations of LaTeX?</strong> The workflow usually requires The functionality of LaTeX is practically unlimited since it is a full programming language. If LaTeX can't do something, user can always program it to do it. Generally, this is of course not practiced because there is a large amount of packages which usually already cover the functionality you wish for.</p>
+<p><strong>Do I have to remember all the commands?</strong> That's not necessary, because the common commands can be included using a button in a editor. For complicated and less common commands, people usually use existing examples online.</p>
+<p><strong>What is the bare minimum I need to learn?</strong> The important part are the concepts, not the exact commands. First part is to become comfortable with textual representation of the formatting, for example that the bold text is not in bold in source text but it is marked with the specific command. Another part is that everything is a command. Creating a table of contents is as simple as writing bold text, it is one command.</p>
+<p><strong>What is the difference between LaTeX and a text editor?</strong> First, LaTeX is not a text editor. It is a program which creates PDF or other documents from plain text files which contain LaTeX commands. It is focused on text, not graphics, but it is actually quite powerful in creating graphics as well. LaTeX is commonly used with a text editor which understands LaTeX and supports user in writing LaTeX documents. Things related to the text file such as spell checking are handled by the text editor (rather than LaTeX).</p>
+<p><strong>How is LaTeX used without Overleaf?</strong> As users, we write text in a text editor which supports LaTeX. Whenever we run LaTeX (e.g. using a button or shortcut the in editor), LaTeX creates a PDF document (typically) which can be viewed in a PDF viewer (or embedded viewer in the editor).</p>
+<p><strong>How LaTeX works?</strong> As users, we add tags (or commands) to the text which tell LaTeX how to process and typeset the text. It is similar to how HTML and web browser work when formatting web pages.</p>
+<figure>
+<img src="img/word_latex_markdown_learning_curve.png" alt="A very &quot;scientific&quot; comparison of Word, LaTeX, and Markdown in terms of document complexity as independent variable and implementation complexity as dependent variable. This figure is from Writing Technical Papers with Markdown © 2015 Dheepak Krishnamurthy (accessed: 2019-06-23)." /><figcaption>A very "scientific" comparison of Word, LaTeX, and Markdown in terms of document complexity as independent variable and implementation complexity as dependent variable. This figure is from <a href="http://blog.kdheepak.com/writing-papers-with-markdown.html">Writing Technical Papers with Markdown</a> © 2015 Dheepak Krishnamurthy (accessed: 2019-06-23).</figcaption>
+</figure>
+<figure>
+<img src="img/programming_languages_as_an_essay.jpg" alt="If programming languages were essays. Note the LaTeX part: Your paper makes no sense, but it&#39;s the most beautiful thing I ever laid my eyes on. (Original author unknown.)" /><figcaption>If programming languages were essays. Note the LaTeX part: <em>Your paper makes no sense, but it's the most beautiful thing I ever laid my eyes on.</em> (Original author unknown.)</figcaption>
+</figure>
+<p>Here is an example of one of the advanced things you can do in LaTeX and that's definition of your own command. We will define command <code>\gmod</code> which we will use in text to refer to GRASS GIS modules (for the purpose of this example):</p>
+<pre><code>\newcommand{\gmod}[1]{\emph{#1}}</code></pre>
+<p>The parameter is refereed to using <code>#1</code>. Otherwise the syntax is:</p>
+<pre><code>\newcommand{\nameOfTheNewCommand}[number of parameters]{definition}</code></pre>
+<p>Here is how we use it:</p>
+<pre><code>Let&#39;s talk about some GRASS GIS modules, for example we can talk
+about \gmod{g.region} or perhaps \gmod{r.shade}. The \gmod{v.buffer}
+module is good too.</code></pre>
+<p>So far we were defining just the style (emphasis in particular), let's add a link to GRASS GIS documentation where name of the module is part of the URL which looks for example like:</p>
+<pre><code>https://grass.osgeo.org/grass72/manuals/g.region.html</code></pre>
+<p>The modified version of the command now uses <code>\href</code> command which has two parameters, the URL and the text to show:</p>
+<pre><code>\newcommand{\gmod}[1]{\href{https://grass.osgeo.org/grass72/manuals/#1.html}{\emph{#1}}}</code></pre>
+<p>During compilation, newlines are converted to spaces and whitespace at the beginning of the line is ignored, so we can also write the same on multiple lines. However, in that case, it is often necessary to (and a best practice) to include percent signs at the end of the line as follows:</p>
+<pre><code>\newcommand{\gmod}[1]{%
+    \href%
+        {https://grass.osgeo.org/grass72/manuals/#1.html}%
+        {\emph{#1}}%
+}</code></pre>
+<figure>
+<img src="img/latex_poster.png" alt="An example of a poster created in LaTeX using tikzposter package." /><figcaption>An example of a poster created in LaTeX using <em>tikzposter</em> package.</figcaption>
+</figure>
+<figure>
+<img src="img/latex_slide.png" alt="An example of one slide from a set of presentation slides created in LaTeX using beamer package." /><figcaption>An example of one slide from a set of presentation slides created in LaTeX using <em>beamer</em> package.</figcaption>
+</figure>
+<figure>
+<img src="img/latex_calendar.jpg" alt="Calendar as dodecahedron created in LaTeX using tikz package as an example what can be done. See it at TeXample.net or in Overleaf." /><figcaption>Calendar as dodecahedron created in LaTeX using <em>tikz</em> package as an example what can be done. See it at <a href="http://www.texample.net/tikz/examples/foldable-dodecahedron-with-calendar/">TeXample.net</a> or in <a href="https://www.overleaf.com/docs?snip_uri=http://www.texample.net/media/tikz/examples/TEX/foldable-dodecahedron-with-calendar.tex&amp;splash=none">Overleaf</a>.</figcaption>
+</figure>
+<h2 id="resources">Resources</h2>
+<h3 id="texts">Texts</h3>
+<ul>
+<li><a href="https://medium.com/the-start-codon/a-very-basic-guide-to-start-writing-in-latex-right-now-1c9062e2415a">A very basic guide to start writing in LaTeX right now</a></li>
+<li><a href="https://medium.com/thoughts-philosophy-writing/how-to-use-overleaf-to-write-your-papers-part-i-basic-minimalist-setup-6599268c095f">How to use Overleaf to Write your papers: Part I: Basic Minimalist setup</a></li>
+<li><a href="https://medium.com/thoughts-philosophy-writing/how-to-use-overleaf-to-write-your-papers-part-ii-tables-figures-bibliography-7a4e921227fd">How to use Overleaf to Write your papers: Part II: Tables, Figures, Bibliography</a></li>
+<li><a href="https://medium.com/thoughts-philosophy-writing/how-to-use-overleaf-to-write-your-papers-part-iii-how-to-use-markdown-with-overleaf-with-help-80f1e27a65a">How to use Overleaf to Write your papers: Part III: How to use Markdown with Overleaf with help from Git and Pandoc</a></li>
+<li><a href="https://medium.com/@arinbasu/how-to-organise-writing-and-research-using-overleaf-evernote-and-zotero-4c51870a91dc">How to Organise writing and research using Overleaf, Evernote, and Zotero</a> (example of full workflow involving several tools, some parts can be left out or replaced as needed)</li>
+</ul>
+<h3 id="videos">Videos</h3>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=g8Ejj0T0yG4">An Introduction to Overleaf</a> (3 mins)</li>
+<li><a href="https://www.youtube.com/watch?v=Qg2WtaSy-zQ&amp;list=PLCRFsOKSM7ePUBOfh3O-K5XZldM5uCPwk">Beginners LaTeX Tutorial with ShareLaTeX</a> (playlist)</li>
+</ul>
+<h3 id="related-services">Related services</h3>
+<ul>
+<li><a href="http://detexify.kirelabs.org/classify.html">Detexify</a> (converts handwritten symbols to LaTeX)</li>
+<li><a href="http://webdemo.myscript.com/views/math.html">MyScript Webdemo: Math</a> (converts handwritten equations to LaTeX)</li>
+</ul>
+<h2 id="assignment">Assignment</h2>
+<p>Take some of your documents which contain headings, figures, tables, equations, and bibliography and recreate it in LaTeX. If you don't have a suitable document, you can use this <a href="">paper</a> or any other suitable document which contains all or most of the aforementioned elements. Scientific papers will usually work. If you are writing a report for assignment from another class, you can use that as well. In any case, you don't have to recreate the whole document, include just enough to try each of the elements.</p>
+<p>Alternatively, if you already familiar with LaTeX, extend the following LaTeX document in Overleaf by providing a comprehensive description of some basic feature such as tables, equations or bibliography, or introduction to some advanced feature or package. Here is a read-only link for document (read-write link will be shared on the message board):</p>
+<p><a href="https://www.overleaf.com/read/gwmnkbcdrzmz">https://www.overleaf.com/read/gwmnkbcdrzmz</a></p>
+<p>Three more alternative or bonus tasks: Create some other type of document in LaTeX other than a paper, for example poster or presentation slides (link a read-only version in the document linked above). Install LaTeX on your computer and try the workflow on your desktop instead of using Overleaf. Upload your resulting document to Overleaf and link it and describe in the above document what your installed and did and what were the other options you had. Use Pandoc, Docutils or Sphinx to create a LaTeX document from some other format such as reStructuredText. Again, upload and link the result and describe the process.</p>
+
+</main>
+
+<footer>
+
+<nav>
+<ul>
+<li><a class="term-changes" href="https://moodle-courses1920.wolfware.ncsu.edu/course/view.php?id=1581">Moodle site</a></li>
+<li><a href="http://help.ncsu.edu/">Computing Help</a></li>
+<li><a href="http://geospatial.ncsu.edu/">GIST Home</a></li>
+<li><a href="http://www.ncsu.edu/policies/prr-disclaimer.php">Disclaimer</a></li>
+<li><a href="http://oit.ncsu.edu/itaccess">Accessibility</a></li>
+<li><a href="https://github.com/ncsu-geoforall-lab/open-science-course" title="Fork on GitHub" alt="octocat">
+    <img src="../img/github_logo.png">
+</a></li>
+<li title="Copyright and license (not applicable to linked materials)">
+    &copy; 2017-2020
+    <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA</a>
+    <a href="https://github.com/ncsu-geoforall-lab/open-science-course#authors">The Authors</a>
+    from the
+    <a href="http://geospatial.ncsu.edu/geoforall/">NCSU GeoForAll Lab</a>
+</li>
+</ul>
+</nav>
+
+</footer>
+
+</div>
+</div>
+
+</body>
+</html>

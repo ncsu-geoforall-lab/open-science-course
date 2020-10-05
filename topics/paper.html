@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>NCSU GIS 595-601: Tools for Open Geospatial Science</title>
+
+<link rel="shortcut icon" href="../img/favicon.png" />
+
+<link href="../layout.css" rel="stylesheet" type="text/css" media="screen">
+<link href="../style.css" rel="stylesheet" type="text/css" media="screen">
+
+</head>
+
+<body>
+
+<div id="outercontainer">
+<div id="container">
+
+<header>
+<div id="header-image">
+</div>
+
+<nav>
+<ul class="nav">
+<li><a href="../index.html">Syllabus</a></li>
+<li><a href="../index.html#schedule">Schedule</a></li>
+</ul>
+</nav>
+
+</header>
+
+<main>
+<!-- This is a generated file. Do not edit. -->
+<h1 id="writing-and-reproducing-an-open-science-paper">Writing and reproducing an open science paper</h1>
+<h2 id="components-of-a-reproducible-paper">Components of a reproducible paper</h2>
+<p>Based on overview from Buckheit and Donoho 1995, Peng 2011, Rodríguez-Sánchez et al. 2016, and Marwick 2016:</p>
+<ul>
+<li>text: textual (natural language) document describing the research</li>
+<li>data: values of all variables (both original data and results)</li>
+<li>code: machine readable instructions to get results from original data</li>
+<li>versions: differences and updates of all versions over time</li>
+</ul>
+<p>Based on lectures in this course:</p>
+<ul>
+<li>text: background, methods, results, discussion, conclusion (PDF, HTML)</li>
+<li>data: included directory or as links to established repositories (plain text, open formats)</li>
+<li>specific code: scripts to perform analysis (Python, R, Bash, ...)</li>
+<li>reusable code: methods as a general software or part of larger project (GRASS GIS, R, ...)</li>
+<li>environment: details about all dependencies and the code (Docker, Vagrant, ...)</li>
+<li>versions: revision control system and repository (Git, Subversion, ...)</li>
+</ul>
+<p>For example, Buckheit and Donoho 1995 referring to Jon Claerbout of Stanford say about the importance of text versus code and environment the following:</p>
+<blockquote>
+<p>An article about computational science in a scientific publication is not the scholarship itself, it is merely advertising of the scholarship. The actual scholarship is the complete software development environment and the complete set of instructions which generated the figures.</p>
+</blockquote>
+<h2 id="resources">Resources</h2>
+<h3 id="slides">Slides</h3>
+<ul>
+<li><a href="../lectures/paper.html">Reproducible paper</a></li>
+</ul>
+<h3 id="videos">Videos</h3>
+<ul>
+<li><a href="http://fatra.cnr.ncsu.edu/open-science-course/paper-overview.mp4">A reproducible paper: Overview of tools</a> (recording from the class, 13 mins)</li>
+<li><a href="http://fatra.cnr.ncsu.edu/open-science-course/paper-terms-and-evaluation.mp4">A reproducible paper: Evaluating the tools in context of various open science concepts</a> (recording from the class, 15 mins)</li>
+</ul>
+<h3 id="references">References</h3>
+<ul>
+<li><ol start="10" type="A">
+<li>Buckheit and D. L. Donoho. Wavelets and Statistics, chapter Wavelab and reproducible research. Springer-Verlag, Berlin, New York, 1995.</li>
+</ol></li>
+<li>Peng, R. D. (2011). Reproducible research in computational science. Science, 334(6060), 1226-1227. DOI: 10.1126/science.1213847</li>
+<li>Rodríguez-Sánchez, F., Bartomeus, I., Varela, S., Pérez-Luque, A.J., Ciencia reproducible: qué, por qué, cómo. Ecosistemas [en linea] 2016, 25 (Mayo-Agosto) [Fecha de consulta: 4 de abril de 2017] Disponible en:&lt;<a href="http://www.redalyc.org/articulo.oa?id=54046745011">http://www.redalyc.org/articulo.oa?id=54046745011</a>&gt; ISSN 1132-6344</li>
+<li>Marwick, B. (2016). Computational reproducibility in archaeological research: basic principles and a case study of their implementation. Journal of Archaeological Method and Theory, 1-27. DOI: 10.1007/s10816-015-9272-9</li>
+</ul>
+<h2 id="assignment">Assignment</h2>
+<p>Try to reproduce figures from the following paper:</p>
+<ul>
+<li><a href="https://doi.org/10.1186/s40965-017-0021-8">https://doi.org/10.1186/s40965-017-0021-8</a></li>
+</ul>
+<p>Report on how that went and how far did you get. Based on the last lecture, identify what may prevent others from reproducing the results of this paper and based on the whole class, identify what may prevent others from reusing methods and code presented in the paper. Consider how that may work in the future and consider also different potential audiences.</p>
+<p>As you have surely noticed, there are no instructions here on how to reproduce the above paper. The paper itself gives instructions on how to do that. Hint: Don't read the whole paper, but look for the tools, platforms or any reproducibility-related information you would expect based on what you learned. More than one way of reproducing is provided, but one way is much simpler than the others.</p>
+
+</main>
+
+<footer>
+
+<nav>
+<ul>
+<li><a class="term-changes" href="https://moodle-courses1920.wolfware.ncsu.edu/course/view.php?id=1581">Moodle site</a></li>
+<li><a href="http://help.ncsu.edu/">Computing Help</a></li>
+<li><a href="http://geospatial.ncsu.edu/">GIST Home</a></li>
+<li><a href="http://www.ncsu.edu/policies/prr-disclaimer.php">Disclaimer</a></li>
+<li><a href="http://oit.ncsu.edu/itaccess">Accessibility</a></li>
+<li><a href="https://github.com/ncsu-geoforall-lab/open-science-course" title="Fork on GitHub" alt="octocat">
+    <img src="../img/github_logo.png">
+</a></li>
+<li title="Copyright and license (not applicable to linked materials)">
+    &copy; 2017-2020
+    <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA</a>
+    <a href="https://github.com/ncsu-geoforall-lab/open-science-course#authors">The Authors</a>
+    from the
+    <a href="http://geospatial.ncsu.edu/geoforall/">NCSU GeoForAll Lab</a>
+</li>
+</ul>
+</nav>
+
+</footer>
+
+</div>
+</div>
+
+</body>
+</html>

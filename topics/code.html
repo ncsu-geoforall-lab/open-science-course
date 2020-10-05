@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>NCSU GIS 595-601: Tools for Open Geospatial Science</title>
+
+<link rel="shortcut icon" href="../img/favicon.png" />
+
+<link href="../layout.css" rel="stylesheet" type="text/css" media="screen">
+<link href="../style.css" rel="stylesheet" type="text/css" media="screen">
+
+</head>
+
+<body>
+
+<div id="outercontainer">
+<div id="container">
+
+<header>
+<div id="header-image">
+</div>
+
+<nav>
+<ul class="nav">
+<li><a href="../index.html">Syllabus</a></li>
+<li><a href="../index.html#schedule">Schedule</a></li>
+</ul>
+</nav>
+
+</header>
+
+<main>
+<!-- This is a generated file. Do not edit. -->
+<h1 id="publishing-code-as-part-of-an-open-source-project">Publishing code as part of an open source project</h1>
+<p>There is several ways how to publish code:</p>
+<ul>
+<li>Modifying a project by changing its source code
+<ul>
+<li>A change integrating or modifying a piece of code</li>
+<li>Using an internal extension mechanism</li>
+<li>Creating a new project which is a modification of the original one (fork)</li>
+</ul></li>
+<li>Extending a project by publishing an extension (addon, plugin, package)
+<ul>
+<li>In an official place (repository)</li>
+<li>In an unofficial place (repository)</li>
+</ul></li>
+<li>Creating an a new project
+<ul>
+<li>Using minimal dependencies (e.g. C or Python)</li>
+<li>Leveraging existing projects (e.g. QGIS, GRASS GIS)</li>
+</ul></li>
+</ul>
+<p>We will focus on ways which are using existing projects as a dependency providing basic functionality and as a place (channel) for publishing.</p>
+<p>First, view the <a href="">How Open Source Geospatial Development Works</a> lecture.</p>
+<h2 id="examples">Examples</h2>
+<h3 id="implementation-included-in-the-project">Implementation included in the project</h3>
+<p>Authors of the following paper wrote the code as a GRASS GIS module and included (or asked for inclusion of) the module into GRASS GIS (no the module is part of GRASS GIS).</p>
+<p>Brovelli, Maria A., Massimiliano Cannata, and Ulisse M. Longoni. "LIDAR data filtering and DTM interpolation within GRASS." Transactions in GIS 8.2 (2004): 155-174. <a href="https://doi.org/10.1111/j.1467-9671.2004.00173.x">https://doi.org/10.1111/j.1467-9671.2004.00173.x</a></p>
+<p><a href="https://grass.osgeo.org/grass76/manuals/v.surf.bspline.html">https://grass.osgeo.org/grass76/manuals/v.surf.bspline.html</a></p>
+<h3 id="extension-in-an-official-repository">Extension in an official repository</h3>
+<p>Authors of the following paper wrote the code as a GRASS GIS module and put the module into the official GRASS GIS Addons repository.</p>
+<p>Beaumont, B., Grippa, T., Lennert, M., Vanhuysse, S., Stephenne, N., and Wolff, E. "Toward an operational framework for fine-scale urban land-cover mapping in Wallonia using submeter remote sensing and ancillary vector data." Journal of Applied Remote Sensing 11.3 (2017): 036011. <a href="https://doi.org/10.3390/rs9040358">https://doi.org/10.3390/rs9040358</a></p>
+<p><a href="https://grass.osgeo.org/grass7/manuals/addons/r.object.geometry.html">https://grass.osgeo.org/grass7/manuals/addons/r.object.geometry.html</a></p>
+<h3 id="independent-extension-of-the-project">Independent extension of the project</h3>
+<p>Authors of the following paper wrote the code as a GRASS GIS module and published the code on GitHub. (Later, they put it also to the official GRASS GIS Addons repository.)</p>
+<p>Petrasova, A., Mitasova, H., Petras, V., and Jeziorska, J. "Fusion of high-resolution DEMs for water flow modeling." Open Geospatial Data, Software and Standards 2.1 (2017): 6. <a href="https://doi.org/10.1186/s40965-017-0019-2">https://doi.org/10.1186/s40965-017-0019-2</a></p>
+<p><a href="https://github.com/petrasovaa/r.patch.smooth">https://github.com/petrasovaa/r.patch.smooth</a></p>
+<h3 id="independent-project-using-an-existing-project">Independent project using an existing project</h3>
+<p>Authors of the following paper present their code as a standalone project called RHESSys. From point of view of this project, GRASS GIS is a dependency. At the same time, significant part of the code is implemented as a GRASS GIS modules.</p>
+<p>Tague, C. L., and L. E. Band. "RHESSys: Regional Hydro-Ecologic Simulation System—An object-oriented approach to spatially distributed modeling of carbon, water, and nutrient cycling." Earth Interactions 8.19 (2004): 1-42. <a href="https://doi.org/10.1175/1087-3562(2004)8%3C1:RRHSSO%3E2.0.CO;2">https://doi.org/10.1175/1087-3562(2004)8%3C1:RRHSSO%3E2.0.CO;2</a></p>
+<p><a href="https://github.com/RHESSys/RHESSys">https://github.com/RHESSys/RHESSys</a></p>
+<h2 id="grass-gis">GRASS GIS</h2>
+<p>GRASS GIS is a free and open source desktop geographic system and geospatial analytics library which serves as a platform for open science. It is licensed under GNU GPL.</p>
+<p>Official website and download: <a href="https://grass.osgeo.org">https://grass.osgeo.org</a></p>
+<p>Official instructions for contributing and publishing code through the project:</p>
+<p><a href="https://grass.osgeo.org/development/code-submission/">https://grass.osgeo.org/development/code-submission/</a></p>
+<p>Example of a GRASS GIS module implemented in Python (see the source code link at the bottom of the page):</p>
+<p><a href="https://grass.osgeo.org/grass7/manuals/addons/r.bioclim.html">https://grass.osgeo.org/grass7/manuals/addons/r.bioclim.html</a></p>
+<p>To get an idea about how one can write a custom module for GRASS GIS, see this <a href="code-for-grass.html">tutorial</a> about creating addons for GRASS GIS.</p>
+<h2 id="resources">Resources</h2>
+<h3 id="videos">Videos</h3>
+<ul>
+<li><a href="https://youtu.be/ENn9vTdtpko">How Open Source Geospatial Development Works</a> (<a href="https://cnr.online.ncsu.edu/online/Catalog/catalogs/geospatial-forum">alternative video page</a>) [main resource]</li>
+<li><a href="https://www.youtube.com/watch?v=fvPSNK8iB0Y">World Without Linux Final Episode #6 Free Burger</a> (2.5 min, content applies to most open source software)</li>
+<li><a href="https://www.youtube.com/watch?v=PX2UpMhp2hc">Scripting GRASS GIS 7 with Python</a></li>
+</ul>
+<h3 id="slides">Slides</h3>
+<ul>
+<li><a href="http://wenzeslaus.github.io/presentations/geoforum2014-foss.pdf">How Open Source Geospatial Development Works (slides)</a></li>
+<li><a href="../lectures/open-source.html">Additional lecture slides</a></li>
+<li><a href="http://ncsu-geoforall-lab.github.io/foss-for-geospatial-analysis/intro-to-foss.html">Introduction to Open Source for Geospatial Analysis and Modeling</a></li>
+</ul>
+<h3 id="texts">Texts</h3>
+<ul>
+<li><a href="https://opensource.com/resources/what-open-source">What is open source?</a> (opensource.com)</li>
+<li><a href="https://opensource.com/article/17/7/what-open-license-would-i-choose-desert-island">If you were on a desert island, which license would you take with you?</a> (opensource.com)</li>
+<li><a href="https://github.com/wenzeslaus/python-grass-addon">How to write a Python GRASS GIS 7 addon</a></li>
+</ul>
+<h3 id="websites">Websites</h3>
+<ul>
+<li><a href="https://opensource.com">opensource.com</a> (articles, use cases, and FAQs)</li>
+</ul>
+<h2 id="assignment">Assignment</h2>
+<h3 id="mandatory-part">Mandatory part</h3>
+<p>Pick an open source project you are using or considering to use. Search on the Internet or in the installation of the software (GUI, CLI, documentation) for information related to use of the project, its community, and development. Find what is the project license, whether the license is approved by OSI or FSF, which type of license it is (short, long, permissive, copyleft, ...), how to report bugs and request new features in the project, how to ask questions about using the project, how to contact developers, who provides commercial support, how to get latest source code, where to view the code online, where to get information about contributing to the project what would you have to do in oder to contribute some of your work to the project or as a project extension, whether the project is active, and anything else what you think is important.</p>
+<p>Please, don't do this for GRASS GIS since it is in the lecture presentation. Don't worry about somebody else picking the same project as long as you work on your answer without consulting their work.</p>
+<p>To practice Git, create a repository on GitHub or other service and put the answers there in a text file formated using Markdown or other lightweight markup. You can use Git and text editor on your computer, GitHub web interface, or any other tool to work on the text file and work with Git. Sent the link to it to message board.</p>
+<h3 id="optional-part">Optional part</h3>
+<p>Take some geospatial procedure you performed and write it as a GRASS GIS Python module, i.e. Python script including interface description, documentation and a (trivial) Makefile. Publish this using GitHub or other service (we would use an official GRASS GIS Addons repository in a real case). Then try to install it from that source locally (currently, you need to use Linux or Mac OS to do that, use NCSU VCL if needed).</p>
+<p>If you don't have a good procedure you want to script, you can implement some trivial process.</p>
+
+</main>
+
+<footer>
+
+<nav>
+<ul>
+<li><a class="term-changes" href="https://moodle-courses1920.wolfware.ncsu.edu/course/view.php?id=1581">Moodle site</a></li>
+<li><a href="http://help.ncsu.edu/">Computing Help</a></li>
+<li><a href="http://geospatial.ncsu.edu/">GIST Home</a></li>
+<li><a href="http://www.ncsu.edu/policies/prr-disclaimer.php">Disclaimer</a></li>
+<li><a href="http://oit.ncsu.edu/itaccess">Accessibility</a></li>
+<li><a href="https://github.com/ncsu-geoforall-lab/open-science-course" title="Fork on GitHub" alt="octocat">
+    <img src="../img/github_logo.png">
+</a></li>
+<li title="Copyright and license (not applicable to linked materials)">
+    &copy; 2017-2020
+    <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA</a>
+    <a href="https://github.com/ncsu-geoforall-lab/open-science-course#authors">The Authors</a>
+    from the
+    <a href="http://geospatial.ncsu.edu/geoforall/">NCSU GeoForAll Lab</a>
+</li>
+</ul>
+</nav>
+
+</footer>
+
+</div>
+</div>
+
+</body>
+</html>

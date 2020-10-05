@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>NCSU GIS 595-601: Tools for Open Geospatial Science</title>
+
+<link rel="shortcut icon" href="../img/favicon.png" />
+
+<link href="../layout.css" rel="stylesheet" type="text/css" media="screen">
+<link href="../style.css" rel="stylesheet" type="text/css" media="screen">
+
+</head>
+
+<body>
+
+<div id="outercontainer">
+<div id="container">
+
+<header>
+<div id="header-image">
+</div>
+
+<nav>
+<ul class="nav">
+<li><a href="../index.html">Syllabus</a></li>
+<li><a href="../index.html#schedule">Schedule</a></li>
+</ul>
+</nav>
+
+</header>
+
+<main>
+<!-- This is a generated file. Do not edit. -->
+<h1 id="command-line-and-python-tools-for-geospatial-work">Command line and Python tools for geospatial work</h1>
+<p>This topic is focused on processing geospatial data in command line. Specifically, we will use GDAL and unix-like command line. For Python, we will use IPython as the interpreter. All the tools we will use are open source under various licenses. With many tools, you can use parameters <code>--version</code>, <code>--help</code>, or <code>--license</code> or run <em>man</em> to find out what is the specific license. However, all tools we will use are under licenses which fit the Open Source Definition by the Open Source Initiative.</p>
+<h2 id="gdal">GDAL</h2>
+<p>GDAL is a free and open source project under MIT license. GDAL has CLI and also C and Python APIs and is used broadly by other software as a backend especially for format transformations. GDAL is an OSGeo project.</p>
+<p><a href="https://gdal.org/">https://gdal.org/</a></p>
+<p>GDAL has a raster part and vector part. The vector part is sometimes referred to as OGR and in that case GDAL is referred to as GDAL/OGR. There is multiple interfaces and wrappers of GDAL, but here we will focus mainly on command line where the raster commands start typically with <code>gdal</code> and the vector ones with <code>ogr</code>.</p>
+<p>We will assume an Ubuntu machine in the following examples, but please see installation instructions for your operating system.</p>
+<h3 id="preparation">Preparation</h3>
+<p>Update your package information in the system:</p>
+<pre><code>sudo apt update</code></pre>
+<p>Install GDAL (command for Ubuntu):</p>
+<pre><code>sudo apt install gdal-bin</code></pre>
+<p>Install additional programs (all at once):</p>
+<pre><code>sudo apt install python-gdal ipython imagemagick</code></pre>
+<p>Download data:</p>
+<pre><code>wget https://www.grassbook.org/wp-content/uploads/data_extra/o35078g6_NC.tif.gz</code></pre>
+<p>Uncompress (GZIP format):</p>
+<pre><code>gunzip o35078g6_NC.tif.gz</code></pre>
+<h3 id="basics">Basics</h3>
+<p>Get info:</p>
+<pre><code>gdalinfo o35078g6_NC.tif</code></pre>
+<p>The output is too long, let's get just first part:</p>
+<pre><code>gdalinfo o35078g6_NC.tif | head</code></pre>
+<p>Let's get first 50 lines:</p>
+<pre><code>gdalinfo o35078g6_NC.tif | head -n 50</code></pre>
+<p>Browse through all using <em>less</em> (use <em>Q</em> to exit):</p>
+<pre><code>gdalinfo o35078g6_NC.tif | less</code></pre>
+<p>See if there is some option for getting just the basic info (use arrow keys or <em>Page Up</em> and <em>Page Down</em> to navigate, <em>Q</em> to exit):</p>
+<pre><code>man gdalinfo</code></pre>
+<p>There is couple of options which start with <span class="title-ref">-no</span> which will allow us to print less information without additional command line tricks. Let's disable printing color table and raster attribute table:</p>
+<pre><code>gdalinfo -noct -norat o35078g6_NC.tif</code></pre>
+<p>Get more data:</p>
+<pre><code>wget http://grass.osgeo.org/sampledata/north_carolina/nc_rast_geotiff.tar.gz
+wget http://grass.osgeo.org/sampledata/north_carolina/nc_shape.tar.gz</code></pre>
+<p>Unpack the data (TAR.GZ format):</p>
+<pre><code>tar xvf nc_rast_geotiff.tar.gz
+tar xvf nc_shape.tar.gz</code></pre>
+<p>Get info using <em>ogrinfo</em> with <code>-so</code> which is for printing only the summary:</p>
+<pre><code>ogrinfo -so ncshape/lakes.shp lakes</code></pre>
+<p>Note that we are specifying the file, a data source to be exact, and a layer within that data source. Here it is file <code>lakes.shp</code> in directory <code>shape</code> and layer <code>lakes</code> which is the base part of the file name in this case since Shapefiles have only one layer in them.</p>
+<h3 id="rasterization">Rasterization</h3>
+<p>Rasterize the vector using <em>gdal_rasterize</em>. The <code>-burn</code> parameter specifies what raster value we want to use for the vector features (objects) and the <code>-tr</code> parameter specifies the resolution of the resulting raster.</p>
+<pre><code>gdal_rasterize -burn 100 -tr 100 100 -l lakes ncshape/lakes.shp lakes.tif</code></pre>
+<p>Convert TIFF to PNG for visualization using ImageMagick command <em>convert</em>:</p>
+<pre><code>convert lakes.tif lakes.png</code></pre>
+<p>Show PNG using Eye of GNOME (<em>eog</em>):</p>
+<pre><code>eog lakes.png</code></pre>
+<p>To preserve georeferencing, we can use <em>gdal_translate</em> to convert TIFF to PNG:</p>
+<pre><code>gdal_translate -of PNG -scale -co worldfile=yes lakes.tif lakes.png</code></pre>
+<p>To get basic information about a file program called <em>file</em> can be used. We use it to confirm that the format translation preserved number of pixels in the raster:</p>
+<pre><code>file lakes.tif
+file lakes.png</code></pre>
+<h3 id="bash-script-with-parameters">Bash script with parameters</h3>
+<p>The above conversion, although basic, requires much longer command than the one which used ImageMagic. Therefore, we will create a script to wrap it and allow for simpler syntax when used in the command line. Python would be unnecessarily complicated for this simple task, so we will use Bash which is using the same syntax as the command line we are using. We will name the file <code>tif2png.sh</code>. Although there is a potential for confusion, we don't have to worry if there is a command of the same name because we will need to specify the path or <code>./</code> when calling the command and we also named the file with file extension and that way, it will be clear what command is used. In the following file content, notice the first line (shebang) and also the numbers one and two preceded with a dollar sign. The dollar sign is used to access value of variables and the special variables <code>$1</code> and <code>$2</code> are set to the first and second parameter in the command line.</p>
+<pre><code>#!/bin/bash
+
+gdal_translate -of PNG -scale -co worldfile=yes $1 $2</code></pre>
+<p>To make the script executable, run the following <em>chmod</em> command which adds the executable permissions:</p>
+<pre><code>chmod u+x tif2png.sh</code></pre>
+<p>This script can be used in the following way:</p>
+<pre><code>./tif2png.sh lakes.tif lakes.png</code></pre>
+<p>The <code>./</code> part or whatever directory path the script is on is still necessary because the script is not in the directory specified by the <code>PATH</code> variable, i.e. it is not on path. This is perfectly fine and usually desired for scripts.</p>
+<h3 id="resampling-and-animation">Resampling and animation</h3>
+<p>The <em>gdalwarp</em> is a powerful tool for reprojection and other transformations. We will use it for resampling into lower resolution using <code>average</code> method:</p>
+<pre><code>gdalwarp -tr 300 300 -r average -co &quot;TFW=YES&quot; -overwrite ncrast/elev_ned_30m.tif srtm_300.tif</code></pre>
+<p>Let's do it for couple more resolutions:</p>
+<pre><code>gdalwarp -tr 200 200 -r average -co &quot;TFW=YES&quot; -overwrite ncrast/elev_ned_30m.tif srtm_200.tif
+gdalwarp -tr 100 100 -r average -co &quot;TFW=YES&quot; -overwrite ncrast/elev_ned_30m.tif srtm_100.tif
+gdalwarp -tr 50 50 -r average -co &quot;TFW=YES&quot; -overwrite ncrast/elev_ned_30m.tif srtm_050.tif</code></pre>
+<p>Using previously created script, convert the TIFFs to PNGs:</p>
+<pre><code>./tif2png.sh srtm_300.tif srtm_300.png
+./tif2png.sh srtm_200.tif srtm_200.png
+./tif2png.sh srtm_100.tif srtm_100.png
+./tif2png.sh srtm_050.tif srtm_050.png</code></pre>
+<p>Using ImageMagic, we can add all to one animated GIF:</p>
+<pre><code>convert -coalesce -delay 1/1 -resize 500x srtm_*.png srtm.gif</code></pre>
+<h3 id="point-buffer-in-python">Point buffer in Python</h3>
+<p>For Python, we will use interactive shell called IPython:</p>
+<pre><code>ipython</code></pre>
+<p>GDAL (and OGR) functionality is part of the <em>osgeo</em> package:</p>
+<pre><code>from osgeo import ogr</code></pre>
+<p>Creating a point:</p>
+<pre><code>point = ogr.Geometry(ogr.wkbPoint25D)
+point.AddPoint(610920, 196552, 320)</code></pre>
+<p>Simple printing of a point object:</p>
+<pre><code>print point</code></pre>
+<p>Point as GeoJSON string:</p>
+<pre><code>point.ExportToJson()</code></pre>
+<p>Creating a buffer around a point:</p>
+<pre><code>buffer = point.Buffer(200)</code></pre>
+<p>To write the GeoJSON to a file, open a file for writing (<code>'w'</code>):</p>
+<pre><code>buffer_file = open(&#39;buffer.json&#39;, &#39;w&#39;)</code></pre>
+<p>Write the GeoJSON string to the file:</p>
+<pre><code>buffer_file.write(buffer.ExportToJson())</code></pre>
+<p>Close the file (so that all changes are written to the disk and the system knows that we finished working with the file):</p>
+<pre><code>buffer_file.close()</code></pre>
+<p>Now it would be good to review content of that file. This can be easily done in command line using tools such as <em>cat</em>, <em>less</em>, or <em>head</em>. One of the advantages of IPython is that the command line tools are actually available using an exclamation mark at the beginning of the line like in the following example which shows the first 100 characters from the file:</p>
+<pre><code>!head -c 100 buffer.json</code></pre>
+<h2 id="resources">Resources</h2>
+<h3 id="texts">Texts</h3>
+<ul>
+<li><a href="http://spatial-ecology.net/dokuwiki/doku.php?id=wiki:gdal">GDAL at Spatial Ecology</a> (collection of tutorials)</li>
+<li><a href="http://spatial-ecology.net/dokuwiki/doku.php?id=wiki:pk_tools">pktools at Spatial Ecology</a> (collection of tutorials)</li>
+<li><a href="https://pcjericks.github.io/py-gdalogr-cookbook/">Python GDAL/OGR Cookbook</a></li>
+<li><span class="title-ref">Automate the Boring Stuff with Python</span> &lt;<a href="https://automatetheboringstuff.com/">https://automatetheboringstuff.com/</a>&gt;`_ (general Python, free (CC BY-NC-SA) book)</li>
+</ul>
+<h3 id="videos">Videos</h3>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=N_dmiQI1s24">An Introduction to GDAL</a> by Robert Simmon (30 mins)</li>
+<li><a href="https://www.youtube.com/watch?v=ap5Y-UcLDNA">Simple raster manipulation using GDAL</a> by Simon Marius Mudd (12 mins)</li>
+<li><a href="https://www.youtube.com/watch?v=uM8RQIJmfOk">Pragmatic GDAL</a> by Rob Labs (8 mins)</li>
+</ul>
+<h2 id="assignment">Assignment</h2>
+<p>Go through the above instructions and examples. For smooth experience, it is recommended to use NCSU VCL Ubuntu machine, but testing GDAL on your own computer is highly encouraged.</p>
+<p>Then take the part which is resampling the rasters and creating and animated GIF and create a Bash script which does this procedure without repeating commands. If possible, include also download of the file and its unpacking of needed so that your result can be reproduced on any computer. Submit this file to Moodle.</p>
+<p>You may find these two following things useful. For loop in Bash is:</p>
+<pre><code>for FRUIT in apple orange banana
+do
+    echo $FRUIT
+done</code></pre>
+<p>A sequence of numbers can be generated using <em>seq</em>:</p>
+<pre><code>seq -w 50 50 300</code></pre>
+<p>Finally, you can include into you script a textual result of another command using the subcommand syntax. The syntax is <code>$(command here)</code>. The textual output will be simply put into the place of <code>$(...)</code>. This can be used in the context of a for loop like this:</p>
+<pre><code>for NUM in $(seq -w 50 50 300)
+do
+    echo $NUM
+done</code></pre>
+
+</main>
+
+<footer>
+
+<nav>
+<ul>
+<li><a class="term-changes" href="https://moodle-courses1920.wolfware.ncsu.edu/course/view.php?id=1581">Moodle site</a></li>
+<li><a href="http://help.ncsu.edu/">Computing Help</a></li>
+<li><a href="http://geospatial.ncsu.edu/">GIST Home</a></li>
+<li><a href="http://www.ncsu.edu/policies/prr-disclaimer.php">Disclaimer</a></li>
+<li><a href="http://oit.ncsu.edu/itaccess">Accessibility</a></li>
+<li><a href="https://github.com/ncsu-geoforall-lab/open-science-course" title="Fork on GitHub" alt="octocat">
+    <img src="../img/github_logo.png">
+</a></li>
+<li title="Copyright and license (not applicable to linked materials)">
+    &copy; 2017-2020
+    <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA</a>
+    <a href="https://github.com/ncsu-geoforall-lab/open-science-course#authors">The Authors</a>
+    from the
+    <a href="http://geospatial.ncsu.edu/geoforall/">NCSU GeoForAll Lab</a>
+</li>
+</ul>
+</nav>
+
+</footer>
+
+</div>
+</div>
+
+</body>
+</html>

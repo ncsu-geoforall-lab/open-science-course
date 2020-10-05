@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>NCSU GIS 595-601: Tools for Open Geospatial Science</title>
+
+<link rel="shortcut icon" href="../img/favicon.png" />
+
+<link href="../layout.css" rel="stylesheet" type="text/css" media="screen">
+<link href="../style.css" rel="stylesheet" type="text/css" media="screen">
+
+</head>
+
+<body>
+
+<div id="outercontainer">
+<div id="container">
+
+<header>
+<div id="header-image">
+</div>
+
+<nav>
+<ul class="nav">
+<li><a href="../index.html">Syllabus</a></li>
+<li><a href="../index.html#schedule">Schedule</a></li>
+</ul>
+</nav>
+
+</header>
+
+<main>
+<!-- This is a generated file. Do not edit. -->
+<h1 id="combining-text-code-results-and-software">Combining text, code, results, and software</h1>
+<p>One innovation related to open science are computational notebooks also known as notebook interfaces or data science notebooks. These notebooks are electronic, interactive notebooks used for data analysis, visualization, computations and programming. Computational notebooks serve as word processing software, software development tool, and as a record of the result. We will focus on one specific notebook software called Jupyter, but there is more similar technologies such as R Markdown which can be used to create R Notebooks in RStudio.</p>
+<p>Jupyter Notebooks (formerly IPython Notebooks) are a tool aspiring to be a standard way of modern and future data analysis. The notebook format allows any code and its output to be viewed together and also run again. Besides the notebooks, Jupyter can be also used as JupyterLab which is an environment combining multiple notebooks, code editor, and file browser together. Jupyter supports different languages including Python, R, Julia, Haskell, and Ruby as well as access to system command line.</p>
+<p>Given all the dependencies and data are right, the computation and results can be reproduced on any computer. This is a big goal and Jupyter does not fulfill it by itself, but tool such as Docker (see below) help with bigger software portability challenges.</p>
+<h2 id="alternatives-to-jupyter">Alternatives to Jupyter</h2>
+<p>There are both open source and proprietary notebooks. Besides Jupyter, the open source ones include the aforementioned R Notebooks (R Markdown) and Apache Zeppelin. We can find concepts from the notebooks present also in tools which are usually not considered computational notebooks but can be used in the same way; examples include Emacs Org mode and LaTeX.</p>
+<h2 id="intro-to-jupyter">Intro to Jupyter</h2>
+<p>Official Jupyter website: <a href="https://jupyter.org/">https://jupyter.org/</a></p>
+<p>We will use a website called Binder (<a href="https://mybinder.org">https://mybinder.org</a>) which allows anybody to run a any public Git repository as a collection of Jupyter Notebooks.</p>
+<p><a href="https://mybinder.org/v2/gh/ncsu-geoforall-lab/open-science-course-notebook/master?filepath=notebook.ipynb">https://mybinder.org/v2/gh/ncsu-geoforall-lab/open-science-course-notebook/master?filepath=notebook.ipynb</a></p>
+<p>In the notebook Python code, can be executed as expected:</p>
+<pre><code>a = 6
+b = 7
+c = a + b</code></pre>
+<p>Each piece of code is called cell. To execute a cell, use Shift+Enter</p>
+<p>To show the result, as in interactive console, use just the name of the variable:</p>
+<pre><code>c</code></pre>
+<p>This should show number 13 right under the letter <code>c</code>.</p>
+<p>Alternatively, use print (statement in Python 2 and function in Python 3):</p>
+<pre><code>print &quot;Result is&quot;, c</code></pre>
+<p>One of the things unique to Jupyter is that Python code can be mixed with command line code (like Bash). To do that, it is enough just to prefix the command line with an exclamation mark:</p>
+<pre><code>!echo &quot;Result is $c&quot;</code></pre>
+<p>The variables from Python code are referenced in the same way as variables in Bash.</p>
+<p>For a geospatial example, see this notebook which is using GRASS GIS to perform spatial operations:</p>
+<p><a href="https://mybinder.org/v2/gh/ncsu-geoforall-lab/open-science-course-grass-notebook/master?filepath=notebook.ipynb">https://mybinder.org/v2/gh/ncsu-geoforall-lab/open-science-course-grass-notebook/master?filepath=notebook.ipynb</a></p>
+<p>You can see further examples as well as complete guide to Jupyter at:</p>
+<p><a href="https://jupyter.org/try">https://jupyter.org/try</a></p>
+<h2 id="adding-computational-environment">Adding computational environment</h2>
+<p>There is several ways how to add additional software to Binder we used above. Many of those work also in general for desktop computers. We will look at one which is the most powerful and most general one because in case of geospatial software, the other techniques are not enough and we often need to use this one. Specifically we will use Docker which is an example of technique which does not wrap just couple of Python packages or one software but it wraps a whole operating system together.</p>
+<p>Since we are wrapping other software using Docker and we are sharing the result (as something people can use themselves), it is most advantageous when the software is open source because this gives us the freedom to share it and distribute it in various forms.</p>
+<h3 id="docker">Docker</h3>
+<p>Docker is way of separating computational environments. In some ways, it is similar to virtual machines, but it is lightweight and configurable in a reproducible way.</p>
+<p>Docker is open source under Apache 2.0 license but some additional components and tools are under different licenses including proprietary ones.</p>
+<p>Official Docker website: <a href="https://www.docker.com/">https://www.docker.com/</a></p>
+<h3 id="installing-docker">Installing Docker</h3>
+<p>Docker runs on Linux, macOS and Windows, however we will use an NCSU VCL Ubuntu machine to simplify things. In the terminal, run the following set of commands which installs Docker and allows your user to access it:</p>
+<pre><code>sudo apt-get install docker.io
+sudo groupadd docker
+sudo usermod -aG docker $USER</code></pre>
+<p>The above changed added a group your user now belongs to. For this change to take place (specifically the <code>usermod</code> command), you need to login again. Logging out and logging in is one way. A more convenient way is the following command which logging you again just in the terminal you are using:</p>
+<pre><code>su - $USER</code></pre>
+<p>Side note: When you later on decide to install Docker on your computer, you may need to agree with EULA or some other terms and conditions in order to install it on MS Windows or macOS version as Docker installation for the these versions is not completely open source.</p>
+<h3 id="building-and-running-docker-image">Building and running Docker image</h3>
+<p>Build an image using content of a GitHub repository:</p>
+<pre><code>docker build -t geo-jupyter github.com/wenzeslaus/geospatial-modeling-course-jupyter/</code></pre>
+<p>Now run a container based on the newly created image:</p>
+<pre><code>docker run -p 8888:8888 geo-jupyter</code></pre>
+<p>It tells you an URL where you will find the running Jupyter Notebook (use web browser in the VCL machine). The URL you need to use will be something like:</p>
+<blockquote>
+<p>localhost:8888/?token=a_long_token</p>
+</blockquote>
+<p>The <code>a_long_token</code> is what you need to copy from the command line.</p>
+<p>The reason why the above works is that the Git repository contains a <em>Dockerfile</em> which defines what software to install. Docker follows the instructions in the Dockerfile, constructs a Docker <em>image</em>, here named <code>geo-jupyter</code> and we then run a Docker <em>container</em> based on this image.</p>
+<p>Docker is what Binder is using in the background and you can prepare an environment for Binder using a Dockerfile.</p>
+<h2 id="resources">Resources</h2>
+<h3 id="videos">Videos</h3>
+<ul>
+<li><a href="http://fatra.cnr.ncsu.edu/open-science-course/notebooks-jupyter-intro.mp4">Introduction to Jupyter</a> (recording from the class, 14 mins)</li>
+<li><a href="http://fatra.cnr.ncsu.edu/open-science-course/notebooks-jupyter-publish.mp4">Publishing a Jupyter Notebook</a> (recording from the class, 6 mins)</li>
+<li><a href="http://fatra.cnr.ncsu.edu/open-science-course/notebooks-jupyter-files.mp4">Files in Jupyter</a> (recording from the class, 8 mins)</li>
+<li><a href="http://fatra.cnr.ncsu.edu/open-science-course/notebooks-jupyter-install-linux.mp4">Installing Jupyter and GRASS GIS on Ubuntu</a> (recording from the class, 18 mins)</li>
+<li><a href="http://fatra.cnr.ncsu.edu/open-science-course/notebooks-jupyter-install-mswindows.mp4">Installing Jupyter on MS Windows with OSGeo4W</a> (recording from the class, 14 mins)</li>
+<li><a href="http://fatra.cnr.ncsu.edu/open-science-course/environments-intro.mp4">Reproducible computational environments: Overview of tools</a> (recording from the class, 24 mins)</li>
+<li><a href="http://fatra.cnr.ncsu.edu/open-science-course/environments-docker.mp4">Reproducible computational environments: Docker</a> (recording from the class, 20 mins)</li>
+<li><a href="http://fatra.cnr.ncsu.edu/open-science-course/environments-docker-how.mp4">Reproducible computational environments: How to use Docker</a> (recording from the class, 40 mins)</li>
+<li><a href="http://fatra.cnr.ncsu.edu/open-science-course/environments-docker-isolation.mp4">Reproducible computational environments: About Docker isolation</a> (recording from the class, 2 mins)</li>
+</ul>
+<h3 id="slides">Slides</h3>
+<ul>
+<li><a href="../lectures/environments.html">Reproducible computational environments</a></li>
+</ul>
+<h3 id="additional-videos">Additional videos</h3>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=HW29067qVWk">Jupyter Notebook Tutorial: Introduction, Setup, and Walkthrough</a> (30 mins)</li>
+<li><a href="https://www.youtube.com/watch?v=q_BzsPxwLOE&amp;list=PLeo1K3hjS3uuZPwzACannnFSn9qHn8to8">Jupyter Notebook Tutorial</a> (YouTube playlist by codebasics)</li>
+<li><a href="https://www.youtube.com/watch?v=PX2UpMhp2hc">Scripting GRASS GIS 7 with Python</a> (2 hours)</li>
+<li><a href="https://www.youtube.com/watch?v=pGYAg7TMmp0">Docker Tutorial - What is Docker &amp; Docker Containers, Images, etc?</a> (by LearnCode.academy, 8 mins)</li>
+<li><a href="https://www.youtube.com/watch?v=Q5POuMHxW-0">Introduction to Docker</a> (by Solomon Hykes at Twitter University, 47 mins)</li>
+</ul>
+<h3 id="texts">Texts</h3>
+<ul>
+<li><a href="https://www.datacamp.com/community/tutorials/tutorial-jupyter-notebook">Jupyter Notebook Tutorial: The Definitive Guide</a></li>
+<li><a href="https://datahub.packtpub.com/tutorials/basics-jupyter-notebook-python/">Basics of Jupyter Notebook and Python</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Notebook_interface">Notebook interface</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Literate_programming">Literate programming</a></li>
+</ul>
+<h3 id="references">References</h3>
+<ul>
+<li>Boettiger, C. (2015). An introduction to Docker for reproducible research. ACM SIGOPS Operating Systems Review, 49(1), 71-79.</li>
+</ul>
+<h2 id="assignment">Assignment</h2>
+<h3 id="running-jupyter-notebook-through-docker-mandatory">Running Jupyter Notebook through Docker (mandatory)</h3>
+<p>Get familiar with Jupyter Notebooks using the instructions and links above. If needed, use one of the linked resources above to learn about Jupyter.</p>
+<p>Using the instructions above, install Docker on NCSU VCL Ubuntu machine and run the notebook (from the instructions). It is in fact collection of notebooks, so once you see them all in the web browser, pick one (<code>buffers_cost_python.ipynb</code> is a good one to at least try out).</p>
+<p>In the web browser, in the notebook itself, add a line stating that this is your assignment and add you name. Then execute all cells (<em>Cell &gt; Run All</em>) and create a PDF document with the results.</p>
+<p>There are two way to create PDF: Either from <em>File &gt; Download as</em> (one or two items will say PDF or pdf) or <em>File &gt; Print Preview</em> and then print to PDF. If this fails for you, do <em>File &gt; Download as &gt; HTML</em>. Submit the resulting file to a Moodle assignment for this topic.</p>
+<p>If you want you can add any further comments about this to Moodle assignment as text.</p>
+<h3 id="installing-jupyter-on-your-computer-optional">Installing Jupyter on your computer (optional)</h3>
+<p>If you want to install Jupyter on your computer, you can, although we are not using it in the course like that. If you are already using Anaconda, use it to install Jupyter, otherwise follow the instructions for each operating system.</p>
+<h4 id="linux">Linux</h4>
+<p>Use system packages or pip packages, e.g. on Ubuntu:</p>
+<pre><code>sudo apt install python-pip
+sudo pip install jupyter</code></pre>
+<h4 id="windows">Windows</h4>
+<p>Install OSGeo4W, then run OSGeo4W Shell as administrator. There, update pip first:</p>
+<pre><code>pip install -U pip</code></pre>
+<p>Then update setuptools:</p>
+<pre><code>pip install -U setuptools</code></pre>
+<p>Then install Jupyter:</p>
+<pre><code>pip install Jupyter</code></pre>
+<h4 id="macos">macOS</h4>
+<p>Since we will be using Jupyter with GRASS GIS, run GRASS GIS first to be sure you will use Python which GRASS GIS uses.</p>
+<p>Then in the GRASS GIS terminal run:</p>
+<pre><code>pip install -U pip
+sudo pip install jupyter</code></pre>
+<p>Alternatively, if the above does not work, you can try Homebrew. Use it to install Jupyter:</p>
+<pre><code>brew install jupyter</code></pre>
+
+</main>
+
+<footer>
+
+<nav>
+<ul>
+<li><a class="term-changes" href="https://moodle-courses1920.wolfware.ncsu.edu/course/view.php?id=1581">Moodle site</a></li>
+<li><a href="http://help.ncsu.edu/">Computing Help</a></li>
+<li><a href="http://geospatial.ncsu.edu/">GIST Home</a></li>
+<li><a href="http://www.ncsu.edu/policies/prr-disclaimer.php">Disclaimer</a></li>
+<li><a href="http://oit.ncsu.edu/itaccess">Accessibility</a></li>
+<li><a href="https://github.com/ncsu-geoforall-lab/open-science-course" title="Fork on GitHub" alt="octocat">
+    <img src="../img/github_logo.png">
+</a></li>
+<li title="Copyright and license (not applicable to linked materials)">
+    &copy; 2017-2020
+    <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA</a>
+    <a href="https://github.com/ncsu-geoforall-lab/open-science-course#authors">The Authors</a>
+    from the
+    <a href="http://geospatial.ncsu.edu/geoforall/">NCSU GeoForAll Lab</a>
+</li>
+</ul>
+</nav>
+
+</footer>
+
+</div>
+</div>
+
+</body>
+</html>

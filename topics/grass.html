@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>NCSU GIS 595-601: Tools for Open Geospatial Science</title>
+
+<link rel="shortcut icon" href="../img/favicon.png" />
+
+<link href="../layout.css" rel="stylesheet" type="text/css" media="screen">
+<link href="../style.css" rel="stylesheet" type="text/css" media="screen">
+
+</head>
+
+<body>
+
+<div id="outercontainer">
+<div id="container">
+
+<header>
+<div id="header-image">
+</div>
+
+<nav>
+<ul class="nav">
+<li><a href="../index.html">Syllabus</a></li>
+<li><a href="../index.html#schedule">Schedule</a></li>
+</ul>
+</nav>
+
+</header>
+
+<main>
+<!-- This is a generated file. Do not edit. -->
+<h1 id="grass-gis">GRASS GIS</h1>
+<p>GRASS GIS is a free and open source desktop geographic system and geospatial analytics library which serves as a platform for open science. It is licensed under GNU GPL.</p>
+<p>To learn about GRASS GIS:</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=Vv5NnPg6MOY">Video: 33 Years Of GRASS GIS As An Innovation Platform</a></li>
+<li><a href="https://ncsu-geoforall-lab.github.io/grass-as-a-platform/ncgis2017.html">Slides: 33 Years Of GRASS GIS As An Innovation Platform</a></li>
+<li><a href="https://ncsu-geoforall-lab.github.io/grass-as-a-platform/autocarto.html">Slides: From Dynamic Visualizations to Tangible Modeling</a></li>
+</ul>
+<p>In addition to providing overview of GRASS GIS evolution and features related to research, the presentations highlight connection of GRASS GIS modules and tools to published scientific papers which you will find in the GRASS GIS manual pages. For example, scroll down at the end of these two pages to see the references as well as links to recent source code changes in the context of other documentation:</p>
+<p><a href="https://grass.osgeo.org/grass76/manuals/v.surf.rst">https://grass.osgeo.org/grass76/manuals/v.surf.rst</a></p>
+<p><a href="https://grass.osgeo.org/grass76/manuals/r.watershed">https://grass.osgeo.org/grass76/manuals/r.watershed</a></p>
+<p>To learn how to use GRASS GIS, you can use:</p>
+<ul>
+<li><a href="https://grasswiki.osgeo.org/wiki/From_GRASS_GIS_novice_to_power_user_(workshop_at_FOSS4G_Boston_2017)">From GRASS GIS novice to power user</a> (workshop material for FOSS4G Boston 2017)</li>
+</ul>
+<p>Official website and download: <a href="https://grass.osgeo.org">https://grass.osgeo.org</a></p>
+<p>Here, we will focus on reproducibility, particularly on how to keeps records of your work done in GRASS GIS, and we will see how GRASS GIS is used to publish geospatial research.</p>
+<h2 id="recording-your-work-in-grass-gis">Recording your work in GRASS GIS</h2>
+<p>In GUI Layer Manager save output window or save command prompt into log file.</p>
+<p>When working in shell (terminal) commands are saved in history file.</p>
+<h3 id="reviewing-history">Reviewing history</h3>
+<p>See the file where the history is saved:</p>
+<pre><code>echo $HISTFILE</code></pre>
+<p>Review the history:</p>
+<pre><code>less $HISTFILE</code></pre>
+<p>Make a backup of the currently used history file:</p>
+<pre><code>cp $HISTFILE workflow.txt</code></pre>
+<p>Store the unsaved history to the file:</p>
+<pre><code>history -a</code></pre>
+<h3 id="data-provenance">Data provenance</h3>
+<p>Basic raster map matedata with command used to create the map:</p>
+<pre><code>r.info elevation</code></pre>
+<p>The provenance information by itself:</p>
+<pre><code>r.info -h elevation</code></pre>
+<p>The provenance of a vector map (series of commands and additional information):</p>
+<pre><code>v.info -h lakes</code></pre>
+<h2 id="examples-of-how-grass-gis-is-used-to-publish-research">Examples of how GRASS GIS is used to publish research</h2>
+<p>Here is couple of examples of how GRASS GIS was used to publish and disseminate research.</p>
+<h3 id="futures">FUTURES</h3>
+<p>FUTURES urban model currently being developed at NCSU as GRASS GIS module.</p>
+<ul>
+<li><a href="https://grasswiki.osgeo.org/wiki/FUTURES_tutorial">https://grasswiki.osgeo.org/wiki/FUTURES_tutorial</a></li>
+<li><a href="https://grass.osgeo.org/grass7/manuals/addons/r.futures.html">https://grass.osgeo.org/grass7/manuals/addons/r.futures.html</a></li>
+</ul>
+<h3 id="temporal-framework">Temporal framework</h3>
+<p>Temporal framework for managing and analyzing time series developed by Soeren Gebbert an a part of GRASS GIS.</p>
+<ul>
+<li><a href="https://grasswiki.osgeo.org/wiki/Temporal_data_processing">https://grasswiki.osgeo.org/wiki/Temporal_data_processing</a></li>
+</ul>
+<h2 id="resources">Resources</h2>
+<ul>
+<li><a href="https://grasswiki.osgeo.org/wiki/From_GRASS_GIS_novice_to_power_user_(workshop_at_FOSS4G_Boston_2017)">From GRASS GIS novice to power user</a> (workshop material for FOSS4G Boston 2017)</li>
+<li><a href="https://grasswiki.osgeo.org/wiki/Unleash_the_power_of_GRASS_GIS_at_US-IALE_2017">Unleash the power of GRASS GIS at US-IALE 2017</a> (contains interfacing with R)</li>
+<li><a href="http://ncsu-geoforall-lab.github.io/grass-intro-workshop/network.html">Introduction to GRASS GIS: Network analysis using four interfaces</a> [primary resource]</li>
+<li><a href="http://ncsu-geoforall-lab.github.io/geospatial-modeling-course/grass/">GRASS GIS assignments for NCSU GIS/MEA582</a></li>
+<li><a href="https://grass.osgeo.org/grass72/manuals/wxGUI.modules.html">General explanation of GRASS GIS module dialogs</a> [primary resource]</li>
+</ul>
+<h3 id="videos">Videos</h3>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=9fcBvYetIsM">Getting started with GRASS GIS GUI</a></li>
+<li><a href="https://www.youtube.com/watch?v=VKaASntBq8U">Introduction to GRASS GIS with network analysis</a> (Geospatial Studio at NCSU, September 2016) [primary resource]</li>
+<li><a href="https://www.youtube.com/watch?v=PX2UpMhp2hc">Scripting GRASS GIS 7 with Python</a></li>
+<li><a href="https://www.youtube.com/watch?v=Fj0TO4ZKEc0">GRASS GIS A Point Cloud (LiDAR) Evaluation Resource</a></li>
+<li><a href="https://www.youtube.com/watch?v=Vv5NnPg6MOY">33 Years Of GRASS GIS As An Innovation Platform</a> [primary resource]</li>
+<li><a href="https://www.youtube.com/watch?v=t44_h4cA7GQ&amp;list=PLSCH2IXZ2pHqkSs9H19xhbW2MyxWC2F2h&amp;index=1">GRASS 7.2 and QGIS 2.15 Tutorials</a> (YouTube playlist of videos by Isaac Ullah)</li>
+</ul>
+<h3 id="papers">Papers</h3>
+<ul>
+<li>Rocchini, D., Petras, V., Petrasova, A., Horning, N., Furtkevicova, L., Neteler, M., Leutner, B., Wegmann, M. 2017, Open data and open source for remote sensing training in ecology. Ecological Informatics, <a href="http://dx.doi.org/10.1016/j.ecoinf.2017.05.004">DOI: 10.1016/j.ecoinf.2017.05.004</a></li>
+<li>Mitasova, H and Neteler, M, 2004, GRASS as Open Source - Free Software GIS: accomplishments and perspectives. Transactions in GIS 8(2), 145-154</li>
+<li>Neteler, Markus, M. H. Bowman, Martin Landa, and Markus Metz. “GRASS GIS: A Multi-Purpose Open Source GIS.” Environmental Modelling &amp; Software 31, 2012: 124–130.</li>
+</ul>
+<h3 id="books">Books</h3>
+<ul>
+<li>Neteler, M. and Mitasova, H., 2008, Open source GIS: A GRASS GIS Approach, Third edition, Springer, New York, 406p</li>
+<li>Hardin, E., Mitasova, H., Tateosian, L., Overton, M., 2014, GIS-based Analysis of Coastal Lidar Time-Series, Springer Briefs in Computer Science, Springer, New York, 84 p.</li>
+<li>Petrasova, A., Harmon, B., Petras, V., Mitasova, H., 2015, Tangible Modeling with Open Source GIS, Springer International Publishing, 135 p. eBook ISBN: 978-3-319-25775-4, Hardcover ISBN: 978-3-319-25773-0, DOI: 10.1007/978-3-319-25775-4</li>
+</ul>
+<h2 id="optional-assignment">Optional Assignment</h2>
+<p>Try to reproduce the following paper and let us know how far did you get:</p>
+<ul>
+<li><a href="https://opengeospatialdata.springeropen.com/articles/10.1186/s40965-017-0019-2">https://opengeospatialdata.springeropen.com/articles/10.1186/s40965-017-0019-2</a></li>
+</ul>
+<p>This paper, <em>Fusion of high-resolution DEMs for water flow modeling</em>, presents a technique for updating lidar-based DEM with 3D data acquired by UAS (drone). The software used for computations is GRASS GIS and the code implementing the presented method is available. You should try to reproduce the results presented in this paper, for example, you can generate the same image as figure 3 in the paper.</p>
+
+</main>
+
+<footer>
+
+<nav>
+<ul>
+<li><a class="term-changes" href="https://moodle-courses1920.wolfware.ncsu.edu/course/view.php?id=1581">Moodle site</a></li>
+<li><a href="http://help.ncsu.edu/">Computing Help</a></li>
+<li><a href="http://geospatial.ncsu.edu/">GIST Home</a></li>
+<li><a href="http://www.ncsu.edu/policies/prr-disclaimer.php">Disclaimer</a></li>
+<li><a href="http://oit.ncsu.edu/itaccess">Accessibility</a></li>
+<li><a href="https://github.com/ncsu-geoforall-lab/open-science-course" title="Fork on GitHub" alt="octocat">
+    <img src="../img/github_logo.png">
+</a></li>
+<li title="Copyright and license (not applicable to linked materials)">
+    &copy; 2017-2020
+    <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA</a>
+    <a href="https://github.com/ncsu-geoforall-lab/open-science-course#authors">The Authors</a>
+    from the
+    <a href="http://geospatial.ncsu.edu/geoforall/">NCSU GeoForAll Lab</a>
+</li>
+</ul>
+</nav>
+
+</footer>
+
+</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,882 @@
+<!doctype html>
+<html lang="en">
+<!-- This is a generated file. Do not edit. -->
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>Tools for open geospatial science</title>
+
+        <meta name="description" content="NCSU GIS 595-601: Tools for open geospatial science">
+        <meta name="author" content="Vaclav Petras">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<link rel="shortcut icon" href="../img/favicon.png" />
+
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/ncsu-geoforall-lab.css" id="theme">
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+        <!-- For chalkboard plugin -->
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+
+        <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+
+        <style>
+            body {
+                background-image: url("../img/header.svg");
+                background-repeat: repeat-x;
+                background-position: left bottom;
+                background-size: auto 10%;
+            }
+
+            .glow {
+                text-shadow: 0 0 20px white, 0 0 18px white, 0 0 16px white, 0 0 14px white, 0 0 12px white, 0 0 10px white, 0 0 8px white, 0 0 6px white;
+            }
+
+            .reveal .box-glow {
+                box-shadow: 0px 0px 15px 0px white, 0px 0px 10px 0px white, 0px 0px 5px 0px white;
+            }
+
+            /*
+            table {
+                margin: 10px;
+                border-collapse: separate;
+                border: none;
+            }
+
+            td {
+                display: inline-block;
+                border-radius: 5px;
+                background-color: #369;
+                color: green;
+                border: 5px solid red;
+            }*/
+
+            .reveal .row-based td {
+                border: none;
+            }
+
+            .row-based tr td:first-of-type {
+                font-weight: bold;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <div class="reveal">
+
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+<section>
+<h2>Open Science</h2>
+<h3 style="margin-top: 0.5em">
+    Vaclav (Vashek) Petras</h3>
+<p class="title-foot">
+    <a href="http://geospatial.ncsu.edu/osgeorel/">NCSU GeoForAll Lab</a>
+    at the
+    <a href="http://geospatial.ncsu.edu/">Center for Geospatial Analytics</a>
+    <br>
+    <a href="http://www.ncsu.edu/">North Carolina State University</a>
+</p>
+<img style="width: 25%;" src="img/logos/ncstate.png">
+<p>
+    GIS 710: Geospatial Analytics for Grand Challenges<br>
+    September 28, 2020
+</p>
+<p>
+    <a href="../topics/open-science-for-grand-challenges.html" style="font-size: 150%;">https://bit.ly/2oR9owy</a>
+</p>
+</section>
+
+
+<section>
+    <h3>Learning Objectives</h3>
+    <ul>
+        <li>Understating motivation for practicing open science
+        <li>Understating complexity of practicing open science
+        <li>Critical thinking about pros, cons, and challenges
+        <li>General understanding of tools and services involved
+        <li>Practical knowledge of tools for sharing research code and computations
+        <li>Ideas about how to use them in complex geospatial applications
+    </ul>
+</section>
+
+
+<section>
+    <h3>Reproducibility of Computational Articles</h3>
+    <p>
+    Stodden et al. (PNAS, March 13, 2018)<br>
+    204 computational articles from Science in 2011–2012
+    </p>
+    <img class="stretch" style="margin: 0px"; src="img/reproducibility_ratio_from_stodden.png" alt="26% reproducible, 74% irreproducible">
+    <small class="credit">
+    Stodden, V., Seiler, J., &amp; Ma, Z. (2018).
+    An empirical analysis of journal policy effectiveness for computational reproducibility.
+    In: <em>Proceedings of the National Academy of Sciences</em>
+    115(11), p. 2584-2589.
+    <a href="https://doi.org/10.1073/pnas.1708290115">DOI&nbsp;10.1073/pnas.1708290115</a>
+    </small>
+
+    <small class="glow">
+        Discussion questions:
+        Do you know about similar studies?
+        What do they say?
+    </small>
+
+    <aside class="notes">
+        A recently published study showed that 74% of computational
+        articles published in Science was not computationally reproducible.
+        This brings questions about validity of findings in these
+        articles and also about the peer-review process.
+        <!--
+        Are these articles useful even to read when we don't know how
+        the findings were obtained? ...let alone applying the findings.
+        -->
+    </aside>
+</section>
+
+<!--
+Stodden et al. (2018):
+We were able to obtain data and code from the authors of 89
+articles in our sample of 204, giving an estimate for the artifact
+recovery rate of 44% for articles published in Science shortly
+after the policy change: (65 + 24/204) with a 95% bootstrap
+confidence interval of [0.36, 0.50]. Of the 56 articles that were
+then deemed potentially reproducible, we randomly chose 22
+to attempt replication, and all but 1 of the 22 provided enough
+information that we were able to reproduce their computational
+findings (given sufficient resources and a willingness write some
+code). We estimate 95% (21/22) of the articles deemed reproducible
+by inspection are computationally reproducible, so for
+the full sample, we estimate 26% will computationally reproduce
+((56 ∗ (1 − 1/22))) with a 95% bootstrap confidence interval for
+the proportion [0.20, 0.32].
+((56 * (1 - 1./22)) / 204)
+-->
+
+
+<section>
+<h3>Open Science Beginnings</h3>
+
+<p>
+First journal ever published:<br>
+<em>Philosophical Transactions (of the Royal Society)</em>
+</p>
+
+<img src="img/philosophical_transactions.jpg" class="stretch">
+<p class="credit glow">
+    CC BY Stefan Janusz,
+    <a href="https://en.wikipedia.org/wiki/File:Philosophical_Transactions_Volume_1_frontispiece.jpg">Wikipedia</a>
+</p>
+</section>
+
+
+<section>
+<h3>Theoretical Publishing Goals</h3>
+<ul>
+    <li>registration <small>so that scientists get credit</small>
+    <li>archiving <small>so that we preserve knowledge for the future</small>
+    <li>dissemination <small>so that people can use this knowledge</small>
+    <li>peer review <small>so that we know it's worth it</small>
+</ul>
+
+<p>
+<small>
+    Discussion questions:
+    Do you agree with these publishing goals?
+    How these goals fit with “publish or perish” paradigm?
+    How are these goals different from goals of science?
+    Are these publishing goals fulfilled by journal papers?
+</small>
+</section>
+
+
+<section>
+<h3>Open Science</h3>
+
+<img src="img/spectrum_of_reproducible_research.png" class="stretch">
+<small>[Buckheit and Donoho 1995, Peng 2011, Rodríguez-Sánchez et al. 2016, Marwick 2016]</small>
+<p class="credit">
+    Image credit: CC BY-SA Comtebenoit,
+    <a href="https://commons.wikimedia.org/wiki/File:Spectrum_of_reproducible_research.png">Wikimedia</a>
+    <a href="https://commons.wikimedia.org/wiki/Commons:Undeletion_requests/Archive/2017-05#File:Reproducibility_Spectrum.png">(note: file freedom disputed)</a>
+<!--
+Peng, R. D. (2011). Reproducible research in computational science.
+Science, 334(6060), 1226-1227.
+DOI: 10.1126/science.1213847
+
+Rodríguez-Sánchez, F., Bartomeus, I., Varela, S., Pérez-Luque, A.J.,
+Ciencia reproducible: qué, por qué, cómoEcosistemas [en linea] 2016, 25
+(Mayo-Agosto) : [Fecha de consulta: 4 de abril de 2017]
+Disponible en:<http://www.redalyc.org/articulo.oa?id=54046745011>
+ISSN 1132-6344
+
+Marwick, B. (2016). Computational reproducibility in archaeological research:
+basic principles and a case study of their implementation.
+Journal of Archaeological Method and Theory, 1-27.
+DOI: 10.1007/s10816-015-9272-9
+
+There was "significant doubt about the freedom of a particular file"
+(https://commons.wikimedia.org/wiki/Commons:Undeletion_requests/Archive/2017-05#File:Reproducibility_Spectrum.png)
+but the references (especially with those added here) are present
+(covering the line of authors of the idea and the image),
+there was an effort and intention from authors to make things CC,
+and uncopyrightable concepts were used when creating the image,
+so leaving it here as is.
+-->
+</p>
+
+<p>
+<small>
+    Discussion questions:
+    Do you agree with this spectrum?
+    Is it a spectrum?
+    On which side of this spectrum have you published?
+</small>
+
+</section>
+
+
+<section>
+<h3>Open Science Components</h3>
+
+<div class="fragment">
+
+<ul class="left">
+<li>6 pillars <small>[Watson 2015]</small>:
+    <ul>
+        <li>open methodology
+        <li>open access
+        <li>open data
+        <li>open source
+        <li>open peer review
+        <li>open education (or educational resources)
+    </ul>
+<li>other components:
+    <ul>
+        <li>open hardware
+        <li>open formats
+        <li>open standards
+    </ul>
+</ul>
+
+<ul class="right">
+<li>related concepts:
+    <ul>
+        <li>Open-notebook science
+        <li>Provenance
+        <li>FAIR Principles
+        <li>Science 2.0 <small>(like Web 2.0)</small>
+        <li>Team science
+        <li>Citizen science
+        <li>Public science
+        <li>Participatory research
+        <li>Open innovation
+        <li>Open organization
+        <li>Crowdsourcing
+        <li>Preprints
+        <li>Inner source
+    </ul>
+</ul>
+
+<p>
+<small>
+    Discussion questions:
+    What would add to the list?
+    Do you see something for the first time?
+</small>
+
+</div>
+
+</section>
+
+<!--
+Watson, M. (2015). When will ‘open science’ become simply ‘science’?.
+Genome biology, 16(1), 101. doi:10.1186/s13059-015-0669-2
+There are six commonly accepted pillars of open science: open data,
+open access, open methodology, open source, open peer review and open education.
+-->
+
+
+<section>
+    <h3>FAIR Principles</h3>
+
+    <ul>
+        <li>Findable <small>persistent identifier and metadata for data</small>
+        <li>Accessible <small>sharing protocol is open, free, and universally implementable</small>
+        <li>Interoperable <small>formal language and references to other datasets</small>
+        <li>Reusable <small>clear usage license (can be restricted), detailed provenance</small>
+    </ul>
+
+    <p>
+        <em>
+            The principles emphasize machine-actionability (&hellip;)
+            because humans increasingly rely on computational support to deal with data (&hellip;)
+        </em>
+    </p>
+
+    <small class="credit">
+        [Wilkinson 2016]
+        <br>
+        <a href="https://www.go-fair.org/fair-principles/">https://www.go-fair.org/fair-principles</a>
+    </small>
+
+    <br>
+    <img class="stretch" src="img/fair_data_principles.jpg">
+    <p class="credit">
+        <small>
+            Image: “FAIR guiding principles for data resources” by <a href="https://commons.wikimedia.org/wiki/File:FAIR_data_principles.jpg">SangyaPundir</a> (CC BY-SA 4.0)
+        </small>
+    </p>
+
+    <p class="glow">
+    <small>
+        Discussion questions:
+        Which parts are unique to FAIR and not present in open science?
+        Should we consider source code data?
+        Is source code part of data provenance?
+    </small>
+</section>
+
+
+<section>
+<h3>The “re” Words</h3>
+
+<small>
+No agreement on some of the definitions especially in different fields;
+definitions are often overlapping or swapped, some don't make any distinction.
+</small>
+
+<ul>
+    <li>replicability <small>independent validation of specific findings</small>
+    <li>repeatability <small>same conditions, people, instruments, ... (test–retest reliability)</small>
+    <li>recomputability <small>same results in computational research</small>
+    <li>reproducibility <small>obtain again same results from the raw data</small>
+    <li>reusability <small>use again the same data or methods</small>
+</ul>
+
+<small>
+For example, Ince et al. (2012) in computational science
+distinguishes <em>direct reproducibility</em> as rerunning the code and
+<em>indirect reproducibility</em> as validating something other than the entire code.
+</small>
+
+<br>
+<img class="stretch" src="img/recycle.png">
+
+<!--
+    Openclipart, Public Domain, Green recycling, garethclubb
+    https://openclipart.org/detail/171146/green-recycling
+-->
+
+<br>
+<small class="glow">
+    Discussion questions:
+    How do want science to look like?
+    Are there some minimal requirements?
+    What should be possible or easy to do for you
+    when you receive a scientific publication (e.g. for review)?
+</small>
+
+</section>
+
+
+<section>
+<h3>Internal Reasons for Open Science</h3>
+
+<ul>
+    <li>Open science in your lab (team-oriented reasons):
+        <ul>
+            <li>collaboration <small>work together with your colleagues</small>
+            <li>transfer <small>transfer research between you and your colleague</small>
+            <li>longevity <small>re-usability of parts of research over time</small>
+        </ul>
+    <li>Open science by yourself (“selfish” reasons):
+        <ul>
+            <li>revisit <small>revisit or return to a project after some time</small>
+            <li>correction <small>correct a mistake in the research</small>
+            <li>extension <small>improve or build on an existing project</small>
+        </ul>
+</ul>
+
+<p>
+<small>
+    Discussion questions:
+    What is your experience with getting back to your own research
+    or continuing research started by someone else?
+    <small>(See <a href="http://phdcomics.com/comics.php?f=1689">PhD Comics: Scratch</a>.)</small>
+    How does open science relate to team science?
+    Do you have to make things public to achieve the desired effect?
+</small>
+
+</section>
+
+
+<section>
+<h3>What Open Means</h3>
+
+<!-- TODO: links -->
+<ul>
+    <li>The Open Definition
+        <ul>
+            <li>Knowledge is open if anyone is free to access, use, modify,
+                and share it — subject, at most, to measures
+                that preserve provenance and openness.
+                <small>[as officially summed up]</small>
+        </ul>
+    <li>More than one term in use: <em>open, free, libre</em>
+    <li>Free Cultural Works
+    <li>The Open Source Definition
+    <li>The Free Software Definition
+    <li>The Debian Free Software Guidelines and the Debian Social Contract
+</ul>
+
+<br>
+<img class="stretch" src="img/free_beer_bottles.jpg">
+<p class="credit">
+    <small>
+        Image: “Free beer bottles” by <a href="https://en.wikipedia.org/wiki/File:Free_beer_bottles.jpg">free beer pool</a> (CC BY 2.0)
+    </small>
+</p>
+
+<p>
+<small class="glow">
+    Discussion questions:
+    What is the difference between “free as in free beer” and “free as in freedom”?
+    Have you seen “open” being used for something not fulfilling the definition?
+</small>
+
+</section>
+
+
+<section>
+<h3>Licensing</h3>
+
+<ul class="left">
+    <li>Creative Commons (CC) licenses
+    <li>GNU licenses, BSD licenses, ...
+        <ul>
+            <li>e.g., GNU GPL 3.0
+        </ul>
+    <li>Choosing a license and lists of licenses:
+        <ul>
+            <li><a href="https://choosealicense.com/">choosealicense.com</a> <small>(for software)</small>
+            <li><a href="https://help.data.world/hc/en-us/articles/115006114287-Common-license-types-for-datasets">help.data.world/...</a> <small>(for data)</small>
+            <li><a href="https://creativecommons.org/choose/">creativecommons.org/choose</a> <small>(CC licenses; for anything except software)</small>
+            <li><a href="http://ufal.github.io/public-license-selector/">License Selector</a> <small>(software and CC licenses)</small>
+            <li><a href="https://www.openaire.eu/research-data-how-to-license/">OpenAIRE</a> <small>(data license Q&amp;A)</small>
+            <li><a href="https://opendatacommons.org/">Open Data Commons</a>
+            <li><a href="https://opensource.org/licenses">Open Source Initiative</a>
+            <li><a href="https://www.gnu.org/licenses/license-list.html">GNU (Free Software Foundation)</a>
+        </ul>
+</ul>
+
+<div class="right">
+<img style="max-height: 15em !important;" src="img/cc_license_spectrum.png">
+<p class="credit">
+    “Creative Commons License Spectrum” by <a href="https://commons.wikimedia.org/wiki/File:Creative_commons_license_spectrum.svg">Shaddim</a> (CC BY 4.0),
+    <a href="https://creativecommons.org/share-your-work/public-domain/freeworks">Creative Commons: Understanding Free Cultural Works</a>
+</p>
+</div>
+
+<p>
+<small class="glow">
+    Discussion questions:
+    Do you read “terms and conditions”?
+    Have you ever read any “terms and conditions” or end user license agreement (EULA)?
+    What about an open source software license?
+    <small>(Read <a href="https://trac.osgeo.org/gdal/wiki/FAQGeneral#WhatlicensedoesGDALOGRuse">license of GDAL</a> right now! It's less than 170 words.)</small>
+</small>
+
+</section>
+
+
+
+<section>
+<h3>Computational and Geospatial Research</h3>
+
+<ul>
+    <li>
+        code is a part of method description
+        <small>[Ince et al. 2012, Morin et al. 2012, Nature Methods 2007]</small>
+    <li>
+        use of open source tools is a part of reproducibility
+        <small>[Lees 2012, Alsberg &amp; Hagen 2006]</small>
+    <li>
+        <em>easily reproducible result</em> is a result obtained in 10 minutes
+        <small>[Schwab et al. 2000]</small>
+    <li>
+        geospatial research specifics:
+        <ul>
+            <li>some research introduces new code
+            <li>some research requires significant dependencies
+            <li>some research produces user-ready software
+        </ul>
+</ul>
+
+<p>
+<small>
+    Discussion questions:
+    Is spatial special?
+    Is recomputing the results useful for research?
+    Should dependencies be open source as well?
+    How long should it take to recompute results?
+</small>
+
+</section>
+
+
+<section>
+    <h3>Open Science Publication: Use Case</h3>
+    Petras et al. 2017
+    <br>
+    <img class="stretch" src="img/petras2017generalized_full.png">
+    <br>
+    <small class="credit">
+        Petras, V., Newcomb, D. J., &amp; Mitasova, H. (2017).
+        <em>Generalized 3D fragmentation index derived from lidar point clouds.</em>
+        In: Open Geospatial Data, Software and Standards 2(1), 9.
+        <a href="https://doi.org/10.1186/s40965-017-0021-8">DOI 10.1186/s40965-017-0021-8</a>
+    </small>
+</section>
+
+
+<section>
+<h3>Open Science Publication: Components</h3>
+<table style="font-size: smaller;">
+    <tr>
+        <th>Publication Component</th>
+        <th>in the Petras et al. 2017 use case</th>
+    <tr>
+        <td>Text</td>
+        <td>
+            background, methods, results, discussion, conclusions, &hellip; <small>(OA)</small>
+        </td>
+    </tr>
+    <tr>
+        <td>Data</td>
+        <td>
+            input data <small>(formats readable by open source software)</small>
+        </td>
+    </tr>
+    <tr>
+        <td>Reusable&nbsp;Code</td>
+        <td>
+            methods as GRASS GIS modules <small>(C &amp; Python)</small>
+        </td>
+    </tr>
+    <tr>
+        <td>Publication-specific&nbsp;Code</td>
+        <td>
+            scripts to generate results <small>(Bash &amp Python)</small>
+        </td>
+    </tr>
+    <tr>
+        <td>Computational Environment</td>
+        <td>
+            details about all dependencies and the code <small>(Docker, Dockerfile*)</small>
+        </td>
+    </tr>
+    <tr>
+        <td>Versions</td>
+        <td>
+            repository with current and previous versions* <small>(Git, GitHub)</small>
+        </td>
+    </tr>
+</table>
+<p>
+    <small style="font-size: 70%;">
+    * Version associated with the publication included also as a supplemental file.
+    </small>
+</p>
+
+<small class="credit">
+Petras, V. (2018). <em>Geospatial analytics for point clouds
+in an open science framework</em>. Doctoral dissertation.
+<a href="http://www.lib.ncsu.edu/resolver/1840.20/35242">URI&nbsp;http://www.lib.ncsu.edu/resolver/1840.20/35242</a>
+</small>
+
+<p>
+<small>
+    Discussion questions:
+    What are other technologies which are good fit for these components?
+    Are there other components or categories?
+</small>
+
+</section>
+
+
+<section>
+    <h3>Open Science Publication: In a Single Package Online</h3>
+    <ul>
+        <li>Components other than Text and Versions for Petras et al. 2017 are now also available at <a href="https://doi.org/10.24433/CO.3986355.v2" title="Goes to the capsule">Code Ocean</a> as a capsule.
+    </ul>
+
+    <img class="stretch" style="margin: 0px"; src="img/code_ocean_petras_2017.png" alt="Code Ocean capsule content in a web browser">
+    <br>
+    <small class="credit">
+    <a href="https://doi.org/10.24433/CO.3986355.v2">DOI&nbsp;10.24433/CO.3986355.v2</a>
+    </small>
+
+    <p class="glow">
+    <small>
+        Discussion questions:
+        How do we even call this?
+        What is the long-term sustainability of something like Code Ocean?
+    </small>
+</section>
+
+
+<section>
+    <h3>Open Science Publication: Software Platform</h3>
+    <ul>
+        <li>Preprocessing, visualization, and interfaces <small>(GUI, CLI, API)</small>
+        <li>Data inputs and outputs, memory management
+        <li>Integration with existing analytical tools
+        <li>Preservation of the reusable code component <small>(long-term maintenance)</small>
+        <li>Dependency which would be hard to change for something else
+        <li>Example: FUTURES model implemented as a set of GRASS GIS modules
+            <small>(<em>r.futures.pga, r.futures.demand, r.futures.parallelpga, ...</em>)</small>
+    </ul>
+
+    <small class="credit">
+        Petras, V. (2018). <em>Geospatial analytics for point clouds
+        in an open science framework</em>. Doctoral dissertation.
+        <a href="http://www.lib.ncsu.edu/resolver/1840.20/35242">URI&nbsp;http://www.lib.ncsu.edu/resolver/1840.20/35242</a>
+    </small>
+
+    <p class="glow">
+    <small>
+        Discussion questions:
+        What software can play this role?
+        What are the different levels of integration with a piece of software?
+    </small>
+</section>
+
+
+<section>
+<h3>References</h3>
+
+<small style="font-size: 50%" class="glow">
+
+<ul>
+<li>
+Alsberg, Bjørn K., and Ole Jacob Hagen. “How Octave Can Replace Matlab in Chemometrics.” Chemometrics and Intelligent Laboratory Systems, Selected papers presented at the 9th Scandinavian Symposium on Chemometrics Reykjavik, Iceland 21–25 August 2005, 84, no. 1 (December 1, 2006): 195–200. <a href="https://doi.org/10.1016/j.chemolab.2006.04.025">doi:10.1016/j.chemolab.2006.04.025</a>.
+<li>
+Buckheit, Jonathan B., and David L. Donoho. “WaveLab and Reproducible Research.” In Wavelets and Statistics, edited by Anestis Antoniadis and Georges Oppenheim, 103:55–81. Lecture Notes in Statistics. New York, NY: Springer New York, 1995. <a href="https://doi.org/10.1007/978-1-4612-2544-7_5">doi:10.1007/978-1-4612-2544-7_5</a>.
+<li>
+Ince, Darrel C., Leslie Hatton, and John Graham-Cumming. “The case for open computer programs”. In: Nature 482.7386 (2012), pp. 485–488. <a href="http://doi.org/10.1038/nature10836">doi:10.1038/nature10836</a>
+<li>
+Lees, Jonathan M. “Open and free: Software and scientific reproducibility”. In: Seismological Research Letters 83.5 (2012), pp. 751–752. <a href="http://doi.org/10.1785/0220120091">doi:10.1007/s10816-015-9272-9</a>
+<li>
+Marwick, Ben. “Computational reproducibility in archaeological research: basic principles and a case study of their implementation”. In: Journal of Archaeological Method and Theory 24.2 (2017), pp. 424–450. <a href="http://doi.org/10.1007/s10816-015-9272-9">doi:10.1007/s10816-015-9272-9</a>
+<li>
+Morin, A et al. “Shining light into black boxes”. In: Science 336.6078 (2012), pp. 159–160. <a href="http://doi.org/10.1126/science.1218263">doi:10.1126/science.1218263</a>
+<li>
+Nature Publishing Group. “Social Software.” Nature Methods 4, no. 3 (March 2007): 189. <a href="https://doi.org/10.1038/nmeth0307-189">doi:10.1038/nmeth0307-189</a>.
+<li>
+Peng, Roger D. “Reproducible Research in Computational Science.” Science (New York, N.Y.) 334, no. 6060 (December 2, 2011): 1226–27. <a href="https://doi.org/10.1126/science.1213847">doi:10.1126/science.1213847</a>
+<li>
+Petras, Vaclav. “Geospatial analytics for point clouds in an open science framework.” Doctoral dissertation. 2018. <a href="http://www.lib.ncsu.edu/resolver/1840.20/35242">www.lib.ncsu.edu/resolver/1840.20/35242</a>
+<li>
+Petras, Vaclav, Douglas J. Newcomb, and Helena Mitasova. “Generalized 3D Fragmentation Index Derived from Lidar Point Clouds.” Open Geospatial Data, Software and Standards 2, no. 1 (April 2017): 9. <a href="https://doi.org/10.1186/s40965-017-0021-8">doi:10.1186/s40965-017-0021-8</a>.
+<li>
+Rocchini, Duccio and Markus Neteler. “Let the four freedoms paradigm apply to ecology”. In: Trends in Ecology and Evolution (2012). <a href="http://doi.org/10.1016/j.tree.2012.03.009">doi:10.1016/j.tree.2012.03.009</a>
+<li>
+Rodriguez-Sanchez, Francisco, Antonio Jesús Pérez-Luque, Ignasi Bartomeus, and Sara Varela. “Ciencia Reproducible: Qué, Por Qué, Cómo.” Revista Ecosistemas 25, no. 2 (2016): 83–92.
+<li>
+Schwab, Matthias, Martin Karrenbach, and Jon Claerbout. “Making Scientific Computations Reproducible.” Computing in Science & Engineering 2, no. 6 (2000): 61–67. <a href="https://doi.org/10.1109/5992.881708">doi:10.1109/5992.881708</a>.
+<li>
+Stodden, V., Seiler, J., &amp; Ma, Z. (2018). “An empirical analysis of journal policy effectiveness for computational reproducibility.” In: <em>Proceedings of the National Academy of Sciences</em> 115(11), p. 2584-2589. <a href="https://doi.org/10.1073/pnas.1708290115">doi:10.1073/pnas.1708290115</a>
+<li>
+Watson, M. (2015). When will ‘open science’ become simply ‘science’?. Genome biology, 16(1), 101. <a href="https://doi.org/10.1186/s13059-015-0669-2">doi:10.1186/s13059-015-0669-2</a>
+<li>
+Wilkinson, M. D., Dumontier, M., Aalbersberg, I. J., Appleton, G., Axton, M., Baak, A., ... &amp; Bouwman, J. (2016).
+“The FAIR Guiding Principles for scientific data management and stewardship”. <em>Scientific data</em>, 3(1), 1-9.
+<a href="https://doi.org/10.1038/sdata.2016.18">doi:10.1038/sdata.2016.18</a>
+</ul>
+
+</small>
+
+</section>
+
+
+<section>
+    <h3>Discussion Exercise</h3>
+    <ul>
+        <li>For
+            <ul>
+                <li>open science proponents</li>
+                <li>in favor of open science</li>
+            </ul>
+        <li>Against
+            <ul>
+                <li>status quo proponents</li>
+                <li>opposed to open science</li>
+            </ul>
+        <li>Middle way
+            <ul>
+                <li>pragmatics</li>
+                <li>neither for or against</li>
+            </ul>
+    </ul>
+    <p>
+    <a href="../topics/open-science-for-grand-challenges.html" style="font-size: 150%;">https://bit.ly/2oR9owy</a>
+</section>
+<!-- This is a generated file. Do not edit. -->
+        </div>  <!-- slides -->
+
+    </div>  <!-- reveal -->
+
+    <!--<img class="timeline" id="line" />-->
+
+    <!--
+        Home button or link to a parent page
+        If you want this to be unique for every page (slide deck),
+        then remove it from here and put it at the end of each
+        file (or series of files) creating one page
+        (the position will be little different)
+        TODO: some JS is needed to move it to the right position
+    -->
+    <div class="parent-page">
+        <!-- alternative symbol: &#x1f3e0; -->
+        <a href=".." title="Course website">
+            <img width="15px" src="img/home.svg"></a>
+    </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+
+        <script>
+
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                // Display controls in the bottom right corner
+                controls: false,
+
+                // Display a presentation progress bar
+                progress: true,
+                
+                center: true,
+                
+                // Display the page number of the current slide
+                slideNumber: false,
+
+                // Enable the slide overview mode
+                overview: true,
+
+                // Turns fragments on and off globally
+                fragments: true,
+
+                // The "normal" size of the presentation, aspect ratio will be preserved
+                // when the presentation is scaled to fit different resolutions. Can be
+                // specified using percentage units.
+                // width: 960,
+                // height: 700,
+                
+                // Factor of the display size that should remain empty around the content
+                margin: 0.05,  // increase?
+
+                // Bounds for smallest/largest possible scale to apply to content
+                minScale: 0.5,
+                maxScale: 5.0,
+
+                theme: Reveal.getQueryHash().theme,  // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'none', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Push each slide change to the browser history
+                history: true,
+                // Enable keyboard shortcuts for navigation
+                keyboard: true,
+
+                // Vertical centering of slides
+                center: true,
+
+                // Enables touch navigation on devices with touch input
+                touch: true,
+
+                // Loop the presentation
+                loop: false,
+                // Flags if the presentation is running in an embedded mode,
+                // i.e. contained within a limited portion of the screen
+                embedded: false,
+
+                // Number of milliseconds between automatically proceeding to the
+                // next slide, disabled when set to 0, this value can be overwritten
+                // by using a data-autoslide attribute on your slides
+                autoSlide: 0,
+
+                // Stop auto-sliding after user input
+                autoSlideStoppable: true,
+
+                // Enable slide navigation via mouse wheel
+                mouseWheel: false,
+
+                // Hides the address bar on mobile devices
+                hideAddressBar: true,
+
+                // Opens links in an iframe preview overlay
+                previewLinks: false,
+
+                // Transition speed
+                transitionSpeed: 'default', // default/fast/slow
+
+                // Transition style for full page slide backgrounds
+                backgroundTransition: 'none', // default/none/slide/concave/convex/zoom
+
+                // Number of slides away from the current that are visible
+                viewDistance: 3,
+
+                // Parallax background image
+                //parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+                // Parallax background size
+                //parallaxBackgroundSize: '' // CSS syntax, e.g. "2100px 900px"
+                chalkboard: { 
+        		// optionally load pre-recorded chalkboard drawing from file
+            		src: "chalkboard.json",
+            	},
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+                    /* { src: 'plugin/math/math.js', async: true }, */
+                    { src: 'plugin/chalkboard/chalkboard.js' }
+                ],
+                keyboard: {
+            	    67: function() { RevealChalkboard.toggleNotesCanvas() },	// toggle notes canvas when 'c' is pressed
+            	    66: function() { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
+            	    46: function() { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
+            	     8: function() { RevealChalkboard.reset() },	// reset chalkboard data on current slide when 'BACKSPACE' is pressed
+            	    68: function() { RevealChalkboard.download() },	// downlad recorded chalkboard drawing when 'd' is pressed
+            	},
+            });
+
+        </script>
+
+    </body>
+</html>

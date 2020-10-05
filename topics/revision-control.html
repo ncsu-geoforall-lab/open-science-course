@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>NCSU GIS 595-601: Tools for Open Geospatial Science</title>
+
+<link rel="shortcut icon" href="../img/favicon.png" />
+
+<link href="../layout.css" rel="stylesheet" type="text/css" media="screen">
+<link href="../style.css" rel="stylesheet" type="text/css" media="screen">
+
+</head>
+
+<body>
+
+<div id="outercontainer">
+<div id="container">
+
+<header>
+<div id="header-image">
+</div>
+
+<nav>
+<ul class="nav">
+<li><a href="../index.html">Syllabus</a></li>
+<li><a href="../index.html#schedule">Schedule</a></li>
+</ul>
+</nav>
+
+</header>
+
+<main>
+<!-- This is a generated file. Do not edit. -->
+<h1 id="revision-control-systems-and-wiki-technologies">Revision control systems and wiki technologies</h1>
+<p>As an example of a revision (version) control system, we will look at Git. Each revision control system has its specifics often related to a different underling philosophy. However, they share a lot in common and Git is currently the most common tool used.</p>
+<h2 id="git">Git</h2>
+<p>Git is a revision (version) control system. Git is free and open source software [<a href="https://git-scm.com/about/free-and-open-source">source</a>]:</p>
+<blockquote>
+<p>Git is released under the GNU General Public License version 2.0, which is an open source license. The Git project chose to use GPLv2 to guarantee your freedom to share and change free software-to make sure the software is free for all its users.</p>
+</blockquote>
+<p>Install Git on your computer. You can obtain the instructions and download file on the official Git website:</p>
+<p><a href="https://git-scm.com/">https://git-scm.com/</a></p>
+<h2 id="using-overleaf-with-git">Using Overleaf with Git</h2>
+<p>To get us started, we will use Git together with Overleaf. Although using Git with software source code is the most typical use case, we will see that using it with markup documents such as LaTeX works exactly in the same way.</p>
+<p>You will need some experimental document in Overleaf (i.e. some document which is yours only and you can break it). Go to this document and go to <em>Menu</em> and use the <em>Git</em> option. Use this in your local Git installation to clone the repository. In command line, the operation looks like:</p>
+<pre><code>git clone https://git.overleaf.com/somehash</code></pre>
+<p>Note that GIt will need to ask you for authentication to Overleaf, use your Overleaf user name (typically your email) and password.</p>
+<p>Make some changes in the main TeX file (<code>main.tex</code>) using a text editor. Now let's see the status of the repository:</p>
+<pre><code>git status</code></pre>
+<p>This should show that one file was modified. Let's see what are the changes:</p>
+<pre><code>git diff</code></pre>
+<p>This showed the changes line by line. For text, it might be good to see changes word by word:</p>
+<pre><code>git diff --word-diff</code></pre>
+<p>After reviewing the changes, tell Git to record the current state using <code>git commit</code>. Specify also the message to describe the changes:</p>
+<pre><code>git commit -am &quot;A test change&quot;</code></pre>
+<p>No let's put the these changes to Overleaf using:</p>
+<pre><code>git push</code></pre>
+<p>Now check if you see the changes you made in Overleaf. You should see the changes in the <em>Source</em> view.</p>
+<p>Then try it the other way around. Make some changes in Overleaf and then get them synchronized to your computer using:</p>
+<pre><code>git pull</code></pre>
+<h2 id="starting-with-repository-on-your-computer">Starting with repository on your computer</h2>
+<p>Create a new empty directory and navigate your command line to it. Then initialize a Git repository there:</p>
+<pre><code>git init</code></pre>
+<p>Create a new plain text file using your text editor. Put there few lines of text. Once you created a new file, you have to tell Git to start tracking it:</p>
+<pre><code>git add some_file.txt</code></pre>
+<p>To see what files where changed, added or deleted use:</p>
+<pre><code>git status</code></pre>
+<p>Now commit the changes:</p>
+<pre><code>git commit -am &quot;A file with trivial content&quot;</code></pre>
+<p>Now do some changes in the file; add some lines, remove some lines, and edit some lines. To review the changes in the files use:</p>
+<pre><code>git diff</code></pre>
+<p>Now again commit the changes:</p>
+<pre><code>git commit -am &quot;Some trivial changes&quot;</code></pre>
+<p>Let's review the states we have recorded:</p>
+<pre><code>git log</code></pre>
+<p>If you don't see your command line prompt, i.e. you can't enter more commands, press <em>Q</em> to get out of the log view. The are GUIs for this, but depending on the occasion we may want to use some command line parameters to get a differently formated revision tree in the command line, for example:</p>
+<pre><code>git log --oneline --graph --decorate --all</code></pre>
+<p>Again, if your log is long, you will be in the log view mode, press <em>Q</em> to get out of it.</p>
+<h2 id="branches-in-git">Branches in Git</h2>
+<p>So far we were working in a single branch called <code>master</code>. Now we will create a new branch. This can be done using <code>git branch</code> and then you would switch to the newly created branch using <code>git checkout</code>. Usually this is done together in one command:</p>
+<pre><code>git checkout -b experiment</code></pre>
+<p>Now we have a branch called <code>experiment</code> and we are currently in it. In other words, the <code>experiment</code> branch is active now. Any changes we do and commit will be recored as part of this branch and won't affect any of the other branches. Modifications done in different branches can be combined together, for example, using <code>git merge</code> command. A common way how branches are used is in combination with pull or merge requests (see the assignment).</p>
+<h2 id="submitting-changes-to-a-project">Submitting changes to a project</h2>
+<p>Usually there are two options how to submit a change to the code in the repository of a project we want to contribute code to. You can submit a patch (aka diff) as a file or you can submit a pull or merge request.</p>
+<p>The basic way is to submit a patch (aka diff) as a file. First you clone the repository, make changes and then create the patch. The patch (diff) is obtained using command similar to the following example (assuming unix-like command line here, i.e., Git Bash on Windows):</p>
+<pre><code>git diff &gt; your_additions.diff</code></pre>
+<p>Now open an issue (ticket, bug report) and add the patch as an attachment.</p>
+<p>However, now many projects use pull or merge requests instead of sending a file. See the assignment for a pull request workflow.</p>
+<h2 id="software-licenses">Software licenses</h2>
+<p>Proprietary software use is usually governed by end user license agreements (EULA). Users usually buy permission to use the software. This permission is often called license and users are required to read and agree to the EULA before using the software.</p>
+<p>Open source software use governed by open source licenses. There are different licenses with different purposes. The following website is meant for choosing a license for your own project and gives a good practical overview of some of the basic concepts and differences:</p>
+<p><a href="https://choosealicense.com/">https://choosealicense.com/</a></p>
+<p>To understand what you can do with a software or source code under a specific license, it is good to check <em>Open Source Definition</em> by the Open Source Initiative and their list of compliant licenses:</p>
+<p><a href="https://opensource.org/osd">https://opensource.org/osd</a></p>
+<p><a href="https://opensource.org/licenses/category">https://opensource.org/licenses/category</a></p>
+<h2 id="resources">Resources</h2>
+<h3 id="texts">Texts</h3>
+<ul>
+<li><a href="https://gist.github.com/wenzeslaus/2cb7dbc9cdbb4a3867a2">Basic Git introduction</a></li>
+<li><a href="http://ncsu-geoforall-lab.github.io/git-and-github-workshop/">Git and GitHub workshop</a></li>
+</ul>
+<h3 id="videos">Videos</h3>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=HVsySz-h9r4">Git Tutorial for Beginners: Command-Line Fundamentals</a> by Corey Schafer (2015)</li>
+<li><a href="https://www.youtube.com/watch?v=SWYqp7iY_Tchttps://www.youtube.com/watch?v=SWYqp7iY_Tc">Git &amp; GitHub Crash Course For Beginners</a> by Brad Traversy (2017)</li>
+<li><a href="https://www.youtube.com/playlist?list=PLWKjhJtqVAbkFiqHnNaxpOPhh9tSWMXIF">Git &amp; GitHub (intermixed)</a> by freeCodeCamp (playlist)</li>
+</ul>
+<h3 id="documentation">Documentation</h3>
+<ul>
+<li><a href="http://git-scm.com/doc">Git documentation</a></li>
+<li><a href="http://git-scm.com/book">Pro Git book</a></li>
+<li><a href="https://help.github.com">GitHub documentation</a></li>
+<li><a href="https://try.github.io">Try Git online</a></li>
+</ul>
+<h2 id="assignment">Assignment</h2>
+<p>The assignment has four parts. First, install Git on your computer.</p>
+<p>Second, go to your document in Overleaf from the last assignment or create some other test document in Overleaf. Go to <em>Menu</em> and use the <em>Git</em> option. Use this in your local Git installation to clone the repository. In command line, the operation looks something like:</p>
+<pre><code>git clone https://git.overleaf.com/somehash</code></pre>
+<p>Make some changes, commit, push, and see what happened in Overleaf. Then make some changes in Overleaf and then pull into your desktop installation. You can repeat that so you feel comfortable.</p>
+<p>Third, create a repository on GitHub, GitLab, Bitbucket, or some other Git service. You will need to create an account. There will be a guide, wizard, or form which will lead you through everything. Once you have a repository there, clone the repository on your computer and do some commits. Push the changes to the remote repository and inspect them online. You can also make some changes online if that's possible (like in case of GitHub) and pull the changes to your local repository. Again, you can repeat that so you feel comfortable.</p>
+<p>Fourth, submit changes to some repository which is not yours. For this we will use GitHub, but the workflow would be similar in other cases as well. However, different projects prefer different practices and it is best to check guidelines for contributing. These are often in a file called something like <code>CONTRIBUTING</code>. We will use the following repository as the repository we are trying to submit changes to. (Tip: Check <span class="title-ref">CONTRIBUTING.md</span>.)</p>
+<p><a href="https://github.com/wenzeslaus/test-repository-for-open-science-class">https://github.com/wenzeslaus/test-repository-for-open-science-class</a></p>
+<p>Alternatively, you can use the same steps as for the above repository and submit some corrections or extensions to the repository for this course.</p>
+
+</main>
+
+<footer>
+
+<nav>
+<ul>
+<li><a class="term-changes" href="https://moodle-courses1920.wolfware.ncsu.edu/course/view.php?id=1581">Moodle site</a></li>
+<li><a href="http://help.ncsu.edu/">Computing Help</a></li>
+<li><a href="http://geospatial.ncsu.edu/">GIST Home</a></li>
+<li><a href="http://www.ncsu.edu/policies/prr-disclaimer.php">Disclaimer</a></li>
+<li><a href="http://oit.ncsu.edu/itaccess">Accessibility</a></li>
+<li><a href="https://github.com/ncsu-geoforall-lab/open-science-course" title="Fork on GitHub" alt="octocat">
+    <img src="../img/github_logo.png">
+</a></li>
+<li title="Copyright and license (not applicable to linked materials)">
+    &copy; 2017-2020
+    <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA</a>
+    <a href="https://github.com/ncsu-geoforall-lab/open-science-course#authors">The Authors</a>
+    from the
+    <a href="http://geospatial.ncsu.edu/geoforall/">NCSU GeoForAll Lab</a>
+</li>
+</ul>
+</nav>
+
+</footer>
+
+</div>
+</div>
+
+</body>
+</html>

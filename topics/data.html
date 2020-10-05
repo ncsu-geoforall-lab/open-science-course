@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>NCSU GIS 595-601: Tools for Open Geospatial Science</title>
+
+<link rel="shortcut icon" href="../img/favicon.png" />
+
+<link href="../layout.css" rel="stylesheet" type="text/css" media="screen">
+<link href="../style.css" rel="stylesheet" type="text/css" media="screen">
+
+</head>
+
+<body>
+
+<div id="outercontainer">
+<div id="container">
+
+<header>
+<div id="header-image">
+</div>
+
+<nav>
+<ul class="nav">
+<li><a href="../index.html">Syllabus</a></li>
+<li><a href="../index.html#schedule">Schedule</a></li>
+</ul>
+</nav>
+
+</header>
+
+<main>
+<!-- This is a generated file. Do not edit. -->
+<h1 id="publishing-data-on-web">Publishing data on web</h1>
+<p>To publish scientific data online, we have several choices based on the discipline and type of data. The resources section lists several repositories which are either general or with some geospatial focus. For the practical part, we will try an absolutely general method which does not use a centralized scientific repository, but which is applicable also for non-scientific geospatial data.</p>
+<h2 id="mapbox-gl-js---an-interactive-mapping-platform-for-geospatial-data">Mapbox GL JS - An Interactive Mapping Platform for Geospatial Data</h2>
+<figure>
+<img src="img/stress_toggle.gif" />
+</figure>
+<p>Mapbox provides many tools to build maps into your website or web-based application, including Mapbox GL JS. Mapbox GL JS is an opensource JavaScript library you can use to display your Mapbox maps, add interactivity, and customize the map experience in your application.</p>
+<ul>
+<li>In active development — new features always being added, improving existing features, and fixing bugs</li>
+<li>Maps are rendered client-side by the browser</li>
+<li>Map data and styles can be changed dynamically</li>
+</ul>
+<h2 id="what-youll-need">What You’ll Need</h2>
+<ul>
+<li>Mapbox account and access token.</li>
+<li>Mapbox GL JS, a Javascript Library.</li>
+<li>Text Editor, Sublime, Atom, Visual Studio Code, etc.</li>
+<li>Spatial data object of choice.</li>
+<li>index.html file representing skeleton of interactive application in Mapbox. I won’t give you all the answers throughout the tutorial, but this will hopefully serve as a decent basis for working from after the lab if desired.</li>
+</ul>
+<h2 id="learning-goal">Learning <strong>‘Goal’</strong></h2>
+<ul>
+<li>Personally useful and relevant, web-based (published to web) interactive mapping application.</li>
+</ul>
+<h2 id="getting-started">Getting Started</h2>
+<h3 id="git">Git</h3>
+<ul>
+<li>Create new repo on Github
+<ul>
+<li>Example: mapbox-workshop</li>
+</ul></li>
+<li><p>Go to the repo settings tab and set the Github Pages source to the master branch:</p>
+<figure>
+<img src="img/gh_pages.png" />
+</figure></li>
+<li>Open terminal/cmd to clone repo to local directory:
+<ul>
+<li><code>git clone "https://github.com/&lt;'your_user_name_here'&gt;/mapbox-workshop.git"</code></li>
+<li><code>git cd mapbox-workshop</code></li>
+</ul></li>
+<li>Download (or copy &amp; paste into editor) <code>index.html</code> into the newly created file directory (e.g., mapbox-workshop)</li>
+<li>It should look like:</li>
+</ul>
+<blockquote>
+<div class="sourceCode" id="cb1"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb1-1" title="1"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></a>
+<a class="sourceLine" id="cb1-2" title="2">    <span class="kw">&lt;html&gt;</span></a>
+<a class="sourceLine" id="cb1-3" title="3">      <span class="kw">&lt;head&gt;</span></a>
+<a class="sourceLine" id="cb1-4" title="4">          <span class="kw">&lt;meta</span><span class="ot"> charset=</span><span class="st">&#39;utf-8&#39;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb1-5" title="5">          <span class="kw">&lt;title&gt;</span>Mapbox GL Workshop<span class="kw">&lt;/title&gt;</span></a>
+<a class="sourceLine" id="cb1-6" title="6">          <span class="kw">&lt;meta</span><span class="ot"> name=</span><span class="st">&#39;viewport&#39;</span><span class="ot"> content=</span><span class="st">&#39;initial-scale=1,maximum-scale=1,user-scalable=no&#39;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb1-7" title="7">          <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&#39;https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.js&#39;</span><span class="kw">&gt;&lt;/script&gt;</span></a>
+<a class="sourceLine" id="cb1-8" title="8">          <span class="kw">&lt;link</span><span class="ot"> href=</span><span class="st">&#39;https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css&#39;</span><span class="ot"> rel=</span><span class="st">&#39;stylesheet&#39;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb1-9" title="9">          <span class="kw">&lt;style&gt;</span></a>
+<a class="sourceLine" id="cb1-10" title="10">            body { <span class="kw">margin</span>:<span class="dv">0</span><span class="op">;</span> <span class="kw">padding</span>:<span class="dv">0</span><span class="op">;</span> }</a>
+<a class="sourceLine" id="cb1-11" title="11">            <span class="pp">#map</span> { <span class="kw">position</span>:<span class="dv">absolute</span><span class="op">;</span> <span class="kw">top</span>:<span class="dv">0</span><span class="op">;</span> <span class="kw">bottom</span>:<span class="dv">0</span><span class="op">;</span> <span class="kw">width</span>:<span class="dv">100</span><span class="dt">%</span><span class="op">;</span> }</a>
+<a class="sourceLine" id="cb1-12" title="12">          <span class="kw">&lt;/style&gt;</span></a>
+<a class="sourceLine" id="cb1-13" title="13">      <span class="kw">&lt;/head&gt;</span></a>
+<a class="sourceLine" id="cb1-14" title="14">      <span class="kw">&lt;body&gt;</span></a>
+<a class="sourceLine" id="cb1-15" title="15">          <span class="kw">&lt;div</span><span class="ot"> id=</span><span class="st">&#39;map&#39;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb1-16" title="16">          <span class="kw">&lt;script&gt;</span></a>
+<a class="sourceLine" id="cb1-17" title="17">            <span class="va">mapboxgl</span>.<span class="at">accessToken</span> <span class="op">=</span> <span class="st">&#39;&lt;YOUR_TOKEN_KEY_HERE_PLS&gt;&#39;</span><span class="op">;</span> <span class="co">// don&#39;t keep &#39;&lt;&#39; &amp; &#39;&gt;&#39; when pasting token</span></a>
+<a class="sourceLine" id="cb1-18" title="18"></a>
+<a class="sourceLine" id="cb1-19" title="19">            <span class="kw">var</span> map <span class="op">=</span> <span class="kw">new</span> <span class="va">mapboxgl</span>.<span class="at">Map</span>(<span class="op">{</span></a>
+<a class="sourceLine" id="cb1-20" title="20">            <span class="dt">container</span><span class="op">:</span> <span class="st">&#39;map&#39;</span><span class="op">,</span> <span class="co">// container id</span></a>
+<a class="sourceLine" id="cb1-21" title="21">            <span class="dt">style</span><span class="op">:</span> <span class="st">&#39;mapbox://styles/mapbox/streets-v10&#39;</span><span class="op">,</span> <span class="co">//hosted style id;  </span></a>
+<a class="sourceLine" id="cb1-22" title="22">            <span class="co">//others: </span></a>
+<a class="sourceLine" id="cb1-23" title="23">            <span class="co">//  &#39;mapbox://styles/mapbox/light-v10&#39;</span></a>
+<a class="sourceLine" id="cb1-24" title="24">            <span class="co">//  &#39;mapbox://styles/mapbox/streets-v10&#39; </span></a>
+<a class="sourceLine" id="cb1-25" title="25">            <span class="co">//  &#39;mapbox://styles/mapbox/dark-v10&#39;</span></a>
+<a class="sourceLine" id="cb1-26" title="26">            <span class="co">//  &#39;mapbox://styles/mapbox/outdoors-v10&#39;  </span></a>
+<a class="sourceLine" id="cb1-27" title="27">            <span class="co">//  &#39;mapbox://styles/mapbox/satellite-v10&#39; </span></a>
+<a class="sourceLine" id="cb1-28" title="28">            <span class="co">//  &#39;mapbox://styles/mapbox/traffic-night-v2&#39;</span></a>
+<a class="sourceLine" id="cb1-29" title="29">            <span class="dt">center</span><span class="op">:</span> [<span class="op">-</span><span class="fl">78.6382</span><span class="op">,</span> <span class="fl">35.7796</span>]<span class="op">,</span> <span class="co">// change starting position to coordinates associated w/ your data.</span></a>
+<a class="sourceLine" id="cb1-30" title="30">            <span class="dt">zoom</span><span class="op">:</span> <span class="dv">6</span> <span class="co">// starting zoom</span></a>
+<a class="sourceLine" id="cb1-31" title="31">            <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-32" title="32">          <span class="kw">&lt;/script&gt;</span></a>
+<a class="sourceLine" id="cb1-33" title="33">      <span class="kw">&lt;/body&gt;</span></a>
+<a class="sourceLine" id="cb1-34" title="34">    <span class="kw">&lt;/html&gt;</span></a></code></pre></div>
+</blockquote>
+<h2 id="publishing-to-web">Publishing to Web</h2>
+<ul>
+<li>First, open html content in your text editor of choice and do an overall inspection of its structure:
+<ul>
+<li>What do you recognize?</li>
+<li>What parameters have been set?</li>
+<li>Can you understand it?</li>
+<li>What is it calling on? Where? How?</li>
+</ul></li>
+<li><strong>Insert your own token ID</strong></li>
+<li>Save file</li>
+<li>Now let’s see what it looks like on the web with a quick double click:</li>
+</ul>
+<figure>
+<img src="img/initial_index_open.png" />
+</figure>
+<ul>
+<li>Return to your terminal/cmd window</li>
+<li>Check on the directory’s status with: <code>git status</code></li>
+<li>Newly inserted index.html should be shown in red as modified / added content</li>
+<li>Run:
+<ul>
+<li><code>git add .</code></li>
+<li><code>git commit -m "initial commit"</code></li>
+<li><code>git push</code></li>
+</ul></li>
+</ul>
+<h3 id="understanding-mapbox-features">Understanding Mapbox Features</h3>
+<p>While we’re waiting for our changes to be published online, use the links below to explore a few examples of some useful Mapbox features.</p>
+<h4 id="map-layers">Map Layers</h4>
+<ul>
+<li><a href="https://docs.mapbox.com/mapbox-gl-js/example/toggle-layers/">Show &amp; hide layers</a></li>
+<li><a href="https://docs.mapbox.com/mapbox-gl-js/example/geojson-polygon/">Adding polygons</a></li>
+<li><a href="https://docs.mapbox.com/mapbox-gl-js/example/3d-buildings/">3D Buildings</a></li>
+<li><a href="https://docs.mapbox.com/mapbox-gl-js/example/adjust-layer-opacity/">Adjust a layer’s opacity</a></li>
+<li><a href="ocs.mapbox.com/mapbox-gl-js/example/animate-images/">Animate series of images</a></li>
+</ul>
+<h4 id="user-interaction">User Interaction</h4>
+<ul>
+<li><a href="https://docs.mapbox.com/mapbox-gl-js/example/timeline-animation/">Create a time slider</a></li>
+<li><a href="https://docs.mapbox.com/mapbox-gl-js/example/hover-styles/">Create a hover effect</a></li>
+<li><a href="https://docs.mapbox.com/mapbox-gl-js/example/drag-a-marker/">Draggable marker</a></li>
+<li><a href="https://docs.mapbox.com/mapbox-gl-js/example/filter-features-within-map-view/">Filter features based on map view</a></li>
+</ul>
+<h3 id="making-mapbox-useful">Making Mapbox Useful</h3>
+<p>Its all about the GeoJSON now. First load either some raster or vector data you’ve recently been working with. Using GDAL (2.3.1), specifically the <a href="https://gdal.org/programs/ogr2ogr.html">ogr2ogr</a> function, we take our original data (in this example in .shp format), ensure it is in lat/lon, while converting it from .shp to GeoJSON, all with the line below:</p>
+<blockquote>
+<p><code>ogr2ogr -f "GeoJSON" "Raleigh_Zoning_reproj.geojson" "Raleigh_Zoning_2019_05.shp" -t_srs EPSG:4326</code></p>
+</blockquote>
+<p>This specifically <strong>ensures that the coordinates being registered to your GeoJSON (most importantly once exported) are in lat/lon format, which Mapbox requires</strong>. If this feels like a sin to do to your data, preach it to the choir. I suppose there is a chance of a setting or parameter being available to circumvent the necessity. However, I have yet to come across such a feature.</p>
+<h3 id="connecting-to-the-web">Connecting to the Web</h3>
+<p>Now that you have a workable GeoJSON format of some of your own data:</p>
+<p>1. Upload your data to your Github by:</p>
+<ul>
+<li>Saving data into local Git directory</li>
+<li>Running same Git workflow as earlier:
+<ul>
+<li><code>git add .</code></li>
+<li><code>git commit -m "upload data"</code></li>
+<li><code>git push</code></li>
+</ul></li>
+</ul>
+<p>2. Once changes have been published, go to your online repository and retrieve the online link to your fresh, hot-off-the-plate GeoJSON:</p>
+<ul>
+<li><code>'https://raw.githubusercontent.com/mmamanat/gis714/master/rasters/do_rast1'</code></li>
+</ul>
+<p>3. Now, lets see what you’re really made of. Try to customize the original index.html with a Mapbox feature of choice.</p>
+<ul>
+<li>But first, make sure you change the preset coordinates to the location of your data. Note that this doesn’t have to be spot on, just some coordinates that at least allow you to see your data. You can always adjust them at a later time (for an entire hour, decimal point by decimal point.. do as I say, not as I do):
+<ul>
+<li><code>center: [-81.2023, 28.7302], // starting position</code></li>
+</ul></li>
+</ul>
+<p>4. Finally, in index.html, use the following code chunk (should be inserted after initialization of Mapbox map) as guide to adding your own data to your map.</p>
+<ul>
+<li><strong>Note</strong>: If you don’t have your data ready, feel free to use the data links in provided example below to explore how you could apply the same techniques to your own data in the future. However, the data does not correspond to the initial map location (in index.html; North Carolina). The data links below pertain to collected field data on Cyanobacteria (Blue-green algae) blooms in Florida.</li>
+<li><strong>Note 2</strong>: The coordinates corresponding to the example data is the same as the coordinate example given above <code>[-81.2023, 28.7302]</code>.</li>
+</ul>
+<p>5. If you’re feeling fancy, take a look into your own exported GeoJSON file, and find the property value you’re mainly interested in visualizing/coloring in your map display (it doesn’t <em>always</em> have to be just one property, but lets keep it simple for now). An example of what this would look like in the GeoJSON, say if I’m interested in coloring the example raster data (<code>do_rast1</code> in the GeoJSON file below), it would look like:</p>
+<figure>
+<img src="img/geojson_prop_value_ident.png" />
+</figure>
+<p>6. Now, fly away little bird. Use the html code below (which is <strong>NOT</strong> a standalone script, it is only intended to be used for examples on how to add/apply the functions: <code>map.addSource({})</code> and <code>map.addLayer({})</code>) to edit your pre-existing html script.</p>
+<p>7. Let’s see if you can use them to add and colorize your data of interest:</p>
+<blockquote>
+<div class="sourceCode" id="cb2"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb2-1" title="1"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></a>
+<a class="sourceLine" id="cb2-2" title="2">    <span class="kw">&lt;html&gt;</span></a>
+<a class="sourceLine" id="cb2-3" title="3">          <span class="kw">&lt;script&gt;</span></a>
+<a class="sourceLine" id="cb2-4" title="4">            <span class="co">//  # Add source of data (you will run into the least amount of problems when </span></a>
+<a class="sourceLine" id="cb2-5" title="5">            <span class="co">// adding source as online link --&gt; View &#39;Raw&#39; data file on Github --&gt; Copy link)</span></a>
+<a class="sourceLine" id="cb2-6" title="6">              <span class="va">map</span>.<span class="at">addSource</span>(<span class="st">&#39;do_rast1&#39;</span><span class="op">,</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb2-7" title="7">                  <span class="dt">type</span><span class="op">:</span> <span class="st">&#39;geojson&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb2-8" title="8">                  <span class="dt">data</span><span class="op">:</span> <span class="st">&#39;https://raw.githubusercontent.com/mmamanat/gis714/master/rasters/do_rast1&#39;</span></a>
+<a class="sourceLine" id="cb2-9" title="9">              <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb2-10" title="10">              <span class="co">//  # -- Add source of data as map layer -- #</span></a>
+<a class="sourceLine" id="cb2-11" title="11">              <span class="co">// # Continuing with the same example data, we can find out what the property value </span></a>
+<a class="sourceLine" id="cb2-12" title="12">              <span class="co">// of interests&#39; range / interquartile ranges are (recommended to do in R considering </span></a>
+<a class="sourceLine" id="cb2-13" title="13">              <span class="co">// it should still be loaded in your environment)</span></a>
+<a class="sourceLine" id="cb2-14" title="14">              <span class="co">// # we then take the data values (I&#39;ve found 5 values tend to be sufficient for some </span></a>
+<a class="sourceLine" id="cb2-15" title="15">              <span class="co">// straightforward color mapping), and associate them with HEX color codes </span></a>
+<a class="sourceLine" id="cb2-16" title="16">              <span class="co">// (e.g., #fff = white) by adding &quot;stops&quot;. Done like below:</span></a>
+<a class="sourceLine" id="cb2-17" title="17">              <span class="va">map</span>.<span class="at">addLayer</span>(<span class="op">{</span></a>
+<a class="sourceLine" id="cb2-18" title="18">               <span class="st">&#39;id&#39;</span><span class="op">:</span> <span class="st">&#39;do_rast1&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb2-19" title="19">               <span class="st">&quot;type&quot;</span><span class="op">:</span> <span class="st">&quot;fill&quot;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb2-20" title="20">               <span class="st">&quot;source&quot;</span><span class="op">:</span> <span class="st">&quot;do_rast1&quot;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb2-21" title="21">               <span class="st">&#39;layout&#39;</span><span class="op">:</span> <span class="op">{},</span></a>
+<a class="sourceLine" id="cb2-22" title="22">               <span class="st">&#39;paint&#39;</span><span class="op">:</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb2-23" title="23">                   <span class="st">&#39;fill-color&#39;</span><span class="op">:</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb2-24" title="24">                     <span class="dt">property</span><span class="op">:</span> <span class="st">&#39;do_rast1&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb2-25" title="25">                     <span class="dt">type</span><span class="op">:</span> <span class="st">&#39;exponential&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb2-26" title="26">                     <span class="dt">stops</span><span class="op">:</span> [</a>
+<a class="sourceLine" id="cb2-27" title="27">                     [<span class="fl">8.312620</span><span class="op">,</span> <span class="st">&#39;#edf8fb&#39;</span>]<span class="op">,</span></a>
+<a class="sourceLine" id="cb2-28" title="28">                     [<span class="fl">8.656304</span><span class="op">,</span> <span class="st">&#39;#b2e2e2&#39;</span>]<span class="op">,</span></a>
+<a class="sourceLine" id="cb2-29" title="29">                     [<span class="fl">8.7</span><span class="op">,</span> <span class="st">&#39;#66c2a4&#39;</span>]<span class="op">,</span></a>
+<a class="sourceLine" id="cb2-30" title="30">                     [<span class="fl">8.9</span><span class="op">,</span> <span class="st">&#39;#2ca25f&#39;</span>]<span class="op">,</span></a>
+<a class="sourceLine" id="cb2-31" title="31">                     [<span class="fl">9.119719</span><span class="op">,</span> <span class="st">&#39;#006d2c&#39;</span>]</a>
+<a class="sourceLine" id="cb2-32" title="32">                     ]<span class="op">,</span></a>
+<a class="sourceLine" id="cb2-33" title="33">                   <span class="op">},</span></a>
+<a class="sourceLine" id="cb2-34" title="34">                   <span class="st">&#39;fill-opacity&#39;</span><span class="op">:</span> <span class="fl">0.2</span></a>
+<a class="sourceLine" id="cb2-35" title="35">               <span class="op">}</span></a>
+<a class="sourceLine" id="cb2-36" title="36">           <span class="op">}</span>)<span class="op">;</span></a></code></pre></div>
+</blockquote>
+<h3 id="feeling-confident">Feeling Confident?</h3>
+<p>Below is a <strong>full, standalone example html script</strong> that allows the filtering of your displayed data, based on their defined source and through some simple CSS properties. See if you can use it as a guide to create a toggable menu that allows you to switch between displayed data in your mapping application.</p>
+<ul>
+<li><strong>Note</strong>: This script assumes you have multiple data sources to be added as separate map layers, to then later be called on as a <code>toggleableLayerIds</code> variable. This variable is then sent to the CSS property <code>menu</code> as an HTML DOM activeElement Property (study the values in bottom of the script below, ‘<code>active</code>’ and ‘<code>visible</code>’ to get a better understanding if wanted/needed).</li>
+<li>E.g., <code>var toggleableLayerIds = [ 'contours', 'museums' ];</code></li>
+</ul>
+<blockquote>
+<div class="sourceCode" id="cb3"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb3-1" title="1"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></a>
+<a class="sourceLine" id="cb3-2" title="2">  <span class="kw">&lt;html&gt;</span></a>
+<a class="sourceLine" id="cb3-3" title="3">    <span class="kw">&lt;head&gt;</span></a>
+<a class="sourceLine" id="cb3-4" title="4">        <span class="kw">&lt;meta</span><span class="ot"> charset=</span><span class="st">&#39;utf-8&#39;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb3-5" title="5">        <span class="kw">&lt;title&gt;</span>Show and hide layers<span class="kw">&lt;/title&gt;</span></a>
+<a class="sourceLine" id="cb3-6" title="6">        <span class="kw">&lt;meta</span><span class="ot"> name=</span><span class="st">&#39;viewport&#39;</span><span class="ot"> content=</span><span class="st">&#39;initial-scale=1,maximum-scale=1,user-scalable=no&#39;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb3-7" title="7">        <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&#39;https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.js&#39;</span><span class="kw">&gt;&lt;/script&gt;</span></a>
+<a class="sourceLine" id="cb3-8" title="8">        <span class="kw">&lt;link</span><span class="ot"> href=</span><span class="st">&#39;https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css&#39;</span><span class="ot"> rel=</span><span class="st">&#39;stylesheet&#39;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb3-9" title="9">        <span class="kw">&lt;style&gt;</span></a>
+<a class="sourceLine" id="cb3-10" title="10">          body { <span class="kw">margin</span>:<span class="dv">0</span><span class="op">;</span> <span class="kw">padding</span>:<span class="dv">0</span><span class="op">;</span> }</a>
+<a class="sourceLine" id="cb3-11" title="11">          <span class="pp">#map</span> { <span class="kw">position</span>:<span class="dv">absolute</span><span class="op">;</span> <span class="kw">top</span>:<span class="dv">0</span><span class="op">;</span> <span class="kw">bottom</span>:<span class="dv">0</span><span class="op">;</span> <span class="kw">width</span>:<span class="dv">100</span><span class="dt">%</span><span class="op">;</span> }</a>
+<a class="sourceLine" id="cb3-12" title="12">        <span class="kw">&lt;/style&gt;</span></a>
+<a class="sourceLine" id="cb3-13" title="13">    <span class="kw">&lt;/head&gt;</span></a>
+<a class="sourceLine" id="cb3-14" title="14">    <span class="kw">&lt;body&gt;</span></a>
+<a class="sourceLine" id="cb3-15" title="15">        <span class="kw">&lt;style&gt;</span></a>
+<a class="sourceLine" id="cb3-16" title="16">          <span class="pp">#menu</span> {</a>
+<a class="sourceLine" id="cb3-17" title="17">            <span class="kw">background</span>: <span class="cn">#fff</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-18" title="18">            <span class="kw">position</span>: <span class="dv">absolute</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-19" title="19">            <span class="kw">z-index</span>: <span class="dv">1</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-20" title="20">            <span class="kw">top</span>: <span class="dv">10</span><span class="dt">px</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-21" title="21">            <span class="kw">right</span>: <span class="dv">10</span><span class="dt">px</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-22" title="22">            <span class="kw">border-radius</span>: <span class="dv">3</span><span class="dt">px</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-23" title="23">            <span class="kw">width</span>: <span class="dv">120</span><span class="dt">px</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-24" title="24">            <span class="kw">border</span>: <span class="dv">1</span><span class="dt">px</span> <span class="dv">solid</span> <span class="fu">rgba(</span><span class="dv">0</span><span class="op">,</span><span class="dv">0</span><span class="op">,</span><span class="dv">0</span><span class="op">,</span><span class="dv">0.4</span><span class="fu">)</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-25" title="25">            <span class="kw">font-family</span>: <span class="st">&#39;Open Sans&#39;</span><span class="op">,</span> <span class="dv">sans-serif</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-26" title="26">          }</a>
+<a class="sourceLine" id="cb3-27" title="27">          <span class="pp">#menu</span> a {</a>
+<a class="sourceLine" id="cb3-28" title="28">            <span class="kw">font-size</span>: <span class="dv">13</span><span class="dt">px</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-29" title="29">            <span class="kw">color</span>: <span class="cn">#404040</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-30" title="30">            <span class="kw">display</span>: <span class="dv">block</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-31" title="31">            <span class="kw">margin</span>: <span class="dv">0</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-32" title="32">            <span class="kw">padding</span>: <span class="dv">0</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-33" title="33">            <span class="kw">padding</span>: <span class="dv">10</span><span class="dt">px</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-34" title="34">            <span class="kw">text-decoration</span>: <span class="dv">none</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-35" title="35">            <span class="kw">border-bottom</span>: <span class="dv">1</span><span class="dt">px</span> <span class="dv">solid</span> <span class="fu">rgba(</span><span class="dv">0</span><span class="op">,</span><span class="dv">0</span><span class="op">,</span><span class="dv">0</span><span class="op">,</span><span class="dv">0.25</span><span class="fu">)</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-36" title="36">            <span class="kw">text-align</span>: <span class="dv">center</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-37" title="37">          }</a>
+<a class="sourceLine" id="cb3-38" title="38">          <span class="pp">#menu</span> a<span class="in">:last-child</span> {</a>
+<a class="sourceLine" id="cb3-39" title="39">            <span class="kw">border</span>: <span class="dv">none</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-40" title="40">          }</a>
+<a class="sourceLine" id="cb3-41" title="41">          <span class="pp">#menu</span> a<span class="in">:hover</span> {</a>
+<a class="sourceLine" id="cb3-42" title="42">            <span class="kw">background-color</span>: <span class="cn">#f8f8f8</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-43" title="43">            <span class="kw">color</span>: <span class="cn">#404040</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-44" title="44">          }</a>
+<a class="sourceLine" id="cb3-45" title="45">          <span class="pp">#menu</span> a<span class="fu">.active</span> {</a>
+<a class="sourceLine" id="cb3-46" title="46">            <span class="kw">background-color</span>: <span class="cn">#3887be</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-47" title="47">            <span class="kw">color</span>: <span class="cn">#ffffff</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-48" title="48">          }</a>
+<a class="sourceLine" id="cb3-49" title="49">          <span class="pp">#menu</span> a<span class="fu">.active</span><span class="in">:hover</span> {</a>
+<a class="sourceLine" id="cb3-50" title="50">            <span class="kw">background</span>: <span class="cn">#3074a4</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-51" title="51">          }</a>
+<a class="sourceLine" id="cb3-52" title="52">        <span class="kw">&lt;/style&gt;</span></a>
+<a class="sourceLine" id="cb3-53" title="53">        <span class="kw">&lt;nav</span><span class="ot"> id=</span><span class="st">&quot;menu&quot;</span><span class="kw">&gt;&lt;/nav&gt;</span></a>
+<a class="sourceLine" id="cb3-54" title="54">        <span class="kw">&lt;div</span><span class="ot"> id=</span><span class="st">&quot;map&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb3-55" title="55">        <span class="kw">&lt;script&gt;</span></a>
+<a class="sourceLine" id="cb3-56" title="56">          <span class="va">mapboxgl</span>.<span class="at">accessToken</span> <span class="op">=</span> <span class="st">&#39;&lt;YOUR_TOKEN_KEY_HERE_PLS&gt;&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-57" title="57">          <span class="kw">var</span> map <span class="op">=</span> <span class="kw">new</span> <span class="va">mapboxgl</span>.<span class="at">Map</span>(<span class="op">{</span></a>
+<a class="sourceLine" id="cb3-58" title="58">          <span class="dt">container</span><span class="op">:</span> <span class="st">&#39;map&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb3-59" title="59">          <span class="dt">style</span><span class="op">:</span> <span class="st">&#39;mapbox://styles/mapbox/streets-v11&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb3-60" title="60">          <span class="dt">zoom</span><span class="op">:</span> <span class="dv">15</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb3-61" title="61">          <span class="dt">center</span><span class="op">:</span> [<span class="op">-</span><span class="fl">71.97722138410576</span><span class="op">,</span> <span class="fl">-13.517379300798098</span>]</a>
+<a class="sourceLine" id="cb3-62" title="62">          <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-63" title="63"></a>
+<a class="sourceLine" id="cb3-64" title="64">          <span class="va">map</span>.<span class="at">on</span>(<span class="st">&#39;load&#39;</span><span class="op">,</span> <span class="kw">function</span> () <span class="op">{</span></a>
+<a class="sourceLine" id="cb3-65" title="65">          <span class="va">map</span>.<span class="at">addSource</span>(<span class="st">&#39;museums&#39;</span><span class="op">,</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb3-66" title="66">            <span class="dt">type</span><span class="op">:</span> <span class="st">&#39;vector&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb3-67" title="67">            <span class="dt">url</span><span class="op">:</span> <span class="st">&#39;mapbox://mapbox.2opop9hr&#39;</span></a>
+<a class="sourceLine" id="cb3-68" title="68">          <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-69" title="69">          <span class="va">map</span>.<span class="at">addLayer</span>(<span class="op">{</span></a>
+<a class="sourceLine" id="cb3-70" title="70">            <span class="st">&#39;id&#39;</span><span class="op">:</span> <span class="st">&#39;museums&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb3-71" title="71">            <span class="st">&#39;type&#39;</span><span class="op">:</span> <span class="st">&#39;circle&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb3-72" title="72">            <span class="st">&#39;source&#39;</span><span class="op">:</span> <span class="st">&#39;museums&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb3-73" title="73">            <span class="st">&#39;layout&#39;</span><span class="op">:</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb3-74" title="74">            <span class="st">&#39;visibility&#39;</span><span class="op">:</span> <span class="st">&#39;visible&#39;</span></a>
+<a class="sourceLine" id="cb3-75" title="75">          <span class="op">},</span></a>
+<a class="sourceLine" id="cb3-76" title="76">            <span class="st">&#39;paint&#39;</span><span class="op">:</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb3-77" title="77">              <span class="st">&#39;circle-radius&#39;</span><span class="op">:</span> <span class="dv">8</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb3-78" title="78">              <span class="st">&#39;circle-color&#39;</span><span class="op">:</span> <span class="st">&#39;rgba(55,148,179,1)&#39;</span></a>
+<a class="sourceLine" id="cb3-79" title="79">          <span class="op">},</span></a>
+<a class="sourceLine" id="cb3-80" title="80">          <span class="st">&#39;source-layer&#39;</span><span class="op">:</span> <span class="st">&#39;museum-cusco&#39;</span></a>
+<a class="sourceLine" id="cb3-81" title="81">          <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-82" title="82"></a>
+<a class="sourceLine" id="cb3-83" title="83">          <span class="va">map</span>.<span class="at">addSource</span>(<span class="st">&#39;contours&#39;</span><span class="op">,</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb3-84" title="84">            <span class="dt">type</span><span class="op">:</span> <span class="st">&#39;vector&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb3-85" title="85">            <span class="dt">url</span><span class="op">:</span> <span class="st">&#39;mapbox://mapbox.mapbox-terrain-v2&#39;</span></a>
+<a class="sourceLine" id="cb3-86" title="86">          <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-87" title="87">          <span class="va">map</span>.<span class="at">addLayer</span>(<span class="op">{</span></a>
+<a class="sourceLine" id="cb3-88" title="88">            <span class="st">&#39;id&#39;</span><span class="op">:</span> <span class="st">&#39;contours&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb3-89" title="89">            <span class="st">&#39;type&#39;</span><span class="op">:</span> <span class="st">&#39;line&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb3-90" title="90">            <span class="st">&#39;source&#39;</span><span class="op">:</span> <span class="st">&#39;contours&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb3-91" title="91">            <span class="st">&#39;source-layer&#39;</span><span class="op">:</span> <span class="st">&#39;contour&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb3-92" title="92">            <span class="st">&#39;layout&#39;</span><span class="op">:</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb3-93" title="93">              <span class="st">&#39;visibility&#39;</span><span class="op">:</span> <span class="st">&#39;visible&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb3-94" title="94">              <span class="st">&#39;line-join&#39;</span><span class="op">:</span> <span class="st">&#39;round&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb3-95" title="95">              <span class="st">&#39;line-cap&#39;</span><span class="op">:</span> <span class="st">&#39;round&#39;</span></a>
+<a class="sourceLine" id="cb3-96" title="96">            <span class="op">},</span></a>
+<a class="sourceLine" id="cb3-97" title="97">            <span class="st">&#39;paint&#39;</span><span class="op">:</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb3-98" title="98">              <span class="st">&#39;line-color&#39;</span><span class="op">:</span> <span class="st">&#39;#877b59&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb3-99" title="99">              <span class="st">&#39;line-width&#39;</span><span class="op">:</span> <span class="dv">1</span></a>
+<a class="sourceLine" id="cb3-100" title="100">          <span class="op">}</span></a>
+<a class="sourceLine" id="cb3-101" title="101">          <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-102" title="102">          <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-103" title="103"></a>
+<a class="sourceLine" id="cb3-104" title="104">          <span class="kw">var</span> toggleableLayerIds <span class="op">=</span> [ <span class="st">&#39;contours&#39;</span><span class="op">,</span> <span class="st">&#39;museums&#39;</span> ]<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-105" title="105"></a>
+<a class="sourceLine" id="cb3-106" title="106">          <span class="cf">for</span> (<span class="kw">var</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="va">toggleableLayerIds</span>.<span class="at">length</span><span class="op">;</span> i<span class="op">++</span>) <span class="op">{</span></a>
+<a class="sourceLine" id="cb3-107" title="107">          <span class="kw">var</span> id <span class="op">=</span> toggleableLayerIds[i]<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-108" title="108"></a>
+<a class="sourceLine" id="cb3-109" title="109">          <span class="kw">var</span> link <span class="op">=</span> <span class="va">document</span>.<span class="at">createElement</span>(<span class="st">&#39;a&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-110" title="110">            <span class="va">link</span>.<span class="at">href</span> <span class="op">=</span> <span class="st">&#39;#&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-111" title="111">            <span class="va">link</span>.<span class="at">className</span> <span class="op">=</span> <span class="st">&#39;active&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-112" title="112">            <span class="va">link</span>.<span class="at">textContent</span> <span class="op">=</span> id<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-113" title="113"></a>
+<a class="sourceLine" id="cb3-114" title="114">          <span class="va">link</span>.<span class="at">onclick</span> <span class="op">=</span> <span class="kw">function</span> (e) <span class="op">{</span></a>
+<a class="sourceLine" id="cb3-115" title="115">            <span class="kw">var</span> clickedLayer <span class="op">=</span> <span class="kw">this</span>.<span class="at">textContent</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-116" title="116">            <span class="va">e</span>.<span class="at">preventDefault</span>()<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-117" title="117">            <span class="va">e</span>.<span class="at">stopPropagation</span>()<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-118" title="118"></a>
+<a class="sourceLine" id="cb3-119" title="119">          <span class="kw">var</span> visibility <span class="op">=</span> <span class="va">map</span>.<span class="at">getLayoutProperty</span>(clickedLayer<span class="op">,</span> <span class="st">&#39;visibility&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-120" title="120"></a>
+<a class="sourceLine" id="cb3-121" title="121">          <span class="cf">if</span> (visibility <span class="op">===</span> <span class="st">&#39;visible&#39;</span>) <span class="op">{</span></a>
+<a class="sourceLine" id="cb3-122" title="122">            <span class="va">map</span>.<span class="at">setLayoutProperty</span>(clickedLayer<span class="op">,</span> <span class="st">&#39;visibility&#39;</span><span class="op">,</span> <span class="st">&#39;none&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-123" title="123">            <span class="kw">this</span>.<span class="at">className</span> <span class="op">=</span> <span class="st">&#39;&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-124" title="124">            <span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb3-125" title="125">            <span class="kw">this</span>.<span class="at">className</span> <span class="op">=</span> <span class="st">&#39;active&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-126" title="126">            <span class="va">map</span>.<span class="at">setLayoutProperty</span>(clickedLayer<span class="op">,</span> <span class="st">&#39;visibility&#39;</span><span class="op">,</span> <span class="st">&#39;visible&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-127" title="127">            <span class="op">}</span></a>
+<a class="sourceLine" id="cb3-128" title="128">          <span class="op">};</span></a>
+<a class="sourceLine" id="cb3-129" title="129"></a>
+<a class="sourceLine" id="cb3-130" title="130">          <span class="kw">var</span> layers <span class="op">=</span> <span class="va">document</span>.<span class="at">getElementById</span>(<span class="st">&#39;menu&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-131" title="131">            <span class="va">layers</span>.<span class="at">appendChild</span>(link)<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-132" title="132">          <span class="op">}</span></a>
+<a class="sourceLine" id="cb3-133" title="133"></a>
+<a class="sourceLine" id="cb3-134" title="134">        <span class="kw">&lt;/script&gt;</span></a>
+<a class="sourceLine" id="cb3-135" title="135">    <span class="kw">&lt;/body&gt;</span></a>
+<a class="sourceLine" id="cb3-136" title="136"><span class="kw">&lt;/html&gt;</span></a></code></pre></div>
+</blockquote>
+<h2 id="further-operations">Further Operations</h2>
+<p>Now, this is where I leave you. Use your well-earned extra time to continue exploring some Mapbox features you think would be interesting to add to your mapping application.</p>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<p>If you run into any troubles, for instance, your data won’t show up on the map, and you have already looked into Chrome’s or Firefox’s Inspector, seeing no outputted errors in the process, 99% chance it is the formatting of your GeoJSON (don’t @ me).</p>
+<p>1. First, ensure your GeoJSON is actually in lon/lat format by opening the raw data file and seeing the format of the coordinates property.* If you discover it is not, try re-running the GDAL code from earlier:</p>
+<blockquote>
+<p><code>ogr2ogr -f "GeoJSON" "Raleigh_Zoning_reproj.geojson" "Raleigh_Zoning_2019_05.shp" -t_srs EPSG:4326</code></p>
+</blockquote>
+<p>2. If the coordinates check out, go to <a href="GeoJSON.io">GeoJSON.io</a> and copy and paste your GeoJSON values (or open as file if it is a lot of data). <strong>IF</strong> it is in the correct format, meaning there are no leading white-spaces, strangely placed brackets or commas, etc. etc. (I know the GeoJSON is very sensitive–whisper sweet nothings into its ear while copying and pasting for extra troubleshooting ability), then you should see it quickly displayed on the map to the left. Something is probably wrong IF: (1) the map is blank; or (2) your data is “displayed” (you may see a coulpe vector points, or if you’re lucky an entire raster), but seems to be hosted on a blank map with no surrounding geographic features shown.</p>
+<ul>
+<li>Example of what it <em>should</em> look like:</li>
+</ul>
+<figure>
+<img src="img/geojson.io.png" />
+</figure>
+<ul>
+<li>If all else fails, my last recommendation would be looking into <a href="https://jasonheppler.org/courses/csu-workshop/geojson-utilities.html">GeoJSON Utilities</a>, some cmd/terminal utilities “that make things easier”. Sorry, you’re on your own at this point. If these options didn’t help and you’re feeling utterly helpless, welcome to the club ;D.</li>
+</ul>
+<h2 id="resources">Resources</h2>
+<h3 id="repositories">Repositories</h3>
+<ul>
+<li><a href="https://osf.io/a5imq/wiki/How%20to%20Upload%20Data%20to%20the%20OSF">How to deposit data on the OSF</a> (part of Reproducibility Project: Cancer Biology)</li>
+<li><a href="https://intercom.help/authorea/host-data">Hosting Data on Authorea</a> (Authorea help pages)</li>
+<li><a href="https://support.figshare.com/support/solutions/folders/6000200032">Getting started with figshare: How to's</a> (figshare Support pages)</li>
+<li><a href="http://datadryad.org/pages/faq">Dryad Digital Repository: Frequently Asked Questions</a></li>
+<li><a href="http://zenodo.org/">Zenodo</a></li>
+<li><a href="https://data.world/">data.world</a></li>
+<li><a href="http://hydroshare.org/">Hydroshare</a></li>
+<li><a href="http://opentopography.org/">OpenTopography</a></li>
+<li><a href="https://www.nature.com/sdata/policies/repositories">Recommended Data Repositories by Nature</a></li>
+</ul>
+<h3 id="other">Other</h3>
+<ul>
+<li><a href="https://help.github.com/articles/rendering-and-diffing-images/">Rendering and diffing images on GitHub</a></li>
+<li><a href="https://help.github.com/articles/mapping-geojson-files-on-github/">Mapping GeoJSON files on GitHub</a></li>
+<li><a href="http://epsg.io/">EPSG.io</a> (Coordinate Systems Worldwide)</li>
+<li><a href="http://openlayers.org/">OpenLayers</a></li>
+</ul>
+<h2 id="assignment">Assignment</h2>
+<p>Explore the general repositories for scientific data linked above and search for a repository which is used in your field. If you find something what is not on the list, you can share it on the message board.</p>
+<p>Then go through the instructions to create your own simple, but interactive web map showing a raster and vector and publish it through GitHub. Send the link to the repository and to the web page online to the message board.</p>
+
+</main>
+
+<footer>
+
+<nav>
+<ul>
+<li><a class="term-changes" href="https://moodle-courses1920.wolfware.ncsu.edu/course/view.php?id=1581">Moodle site</a></li>
+<li><a href="http://help.ncsu.edu/">Computing Help</a></li>
+<li><a href="http://geospatial.ncsu.edu/">GIST Home</a></li>
+<li><a href="http://www.ncsu.edu/policies/prr-disclaimer.php">Disclaimer</a></li>
+<li><a href="http://oit.ncsu.edu/itaccess">Accessibility</a></li>
+<li><a href="https://github.com/ncsu-geoforall-lab/open-science-course" title="Fork on GitHub" alt="octocat">
+    <img src="../img/github_logo.png">
+</a></li>
+<li title="Copyright and license (not applicable to linked materials)">
+    &copy; 2017-2020
+    <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA</a>
+    <a href="https://github.com/ncsu-geoforall-lab/open-science-course#authors">The Authors</a>
+    from the
+    <a href="http://geospatial.ncsu.edu/geoforall/">NCSU GeoForAll Lab</a>
+</li>
+</ul>
+</nav>
+
+</footer>
+
+</div>
+</div>
+
+</body>
+</html>

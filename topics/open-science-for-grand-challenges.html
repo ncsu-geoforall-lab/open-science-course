@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>NCSU GIS 595-601: Tools for Open Geospatial Science</title>
+
+<link rel="shortcut icon" href="../img/favicon.png" />
+
+<link href="../layout.css" rel="stylesheet" type="text/css" media="screen">
+<link href="../style.css" rel="stylesheet" type="text/css" media="screen">
+
+</head>
+
+<body>
+
+<div id="outercontainer">
+<div id="container">
+
+<header>
+<div id="header-image">
+</div>
+
+<nav>
+<ul class="nav">
+<li><a href="../index.html">Syllabus</a></li>
+<li><a href="../index.html#schedule">Schedule</a></li>
+</ul>
+</nav>
+
+</header>
+
+<main>
+<!-- This is a generated file. Do not edit. -->
+<h1 id="open-science-for-grand-challenges">Open Science for Grand Challenges</h1>
+<p>This is material for a guest lecture in <em>GIS 710: Geospatial Analytics for Grand Challenges</em>.</p>
+<h2 id="reading">Reading</h2>
+<p>Please, read at least two of the following papers as a preparation for the lecture and the discussion. They are all pro-open science, but they all will help you to defend your stances in the debate. They are also useful for writing your next paper which applies open science principles.</p>
+<ul>
+<li>Watson, Mick (2015). “When will ‘open science’ become simply ‘science’?“. In: Genome biology, 16(1), 101. <a href="https://doi.org/10.1186/s13059-015-0669-2">https://doi.org/10.1186/s13059-015-0669-2</a></li>
+<li>Ince, Darrel C., Leslie Hatton, and John Graham-Cumming (2012). “The case for open computer programs”. In: Nature 482.7386, pp. 485–488. <a href="http://doi.org/10.1038/nature10836">http://doi.org/10.1038/nature10836</a></li>
+<li>Rocchini, Duccio and Markus Neteler (2012). “Let the four freedoms paradigm apply to ecology”. In: Trends in Ecology and Evolution. <a href="http://doi.org/10.1016/j.tree.2012.03.009">http://doi.org/10.1016/j.tree.2012.03.009</a></li>
+</ul>
+<h2 id="lecture">Lecture</h2>
+<ul>
+<li><a href="../lectures/open-science-for-grand-challenges.html">Open Science</a></li>
+</ul>
+<h2 id="discussion-exercise">Discussion exercise</h2>
+<ul>
+<li>Split into three groups.</li>
+<li>Each group will spend ~30 minutes preparing an argument for their prepared position. Each group will select one member to give a 1-2 minute opening statement outlining their position in addition to discussing their position in depth to select the best arguments in their favor.</li>
+<li>After re-grouping, each position will offer their opening statement before the discussion floor is opened to all participants. Participants should focus on discussing the relative strengths of their position while highlighting the relative weaknesses of the others.</li>
+<li>Discuss open science using one of the three following positions.</li>
+</ul>
+<h3 id="group-1">Group 1</h3>
+<p>For (open science proponents, in favor of open science)</p>
+<p>Possible questions to start with:</p>
+<ul>
+<li>Why is open science necessary for science?</li>
+<li>Why is open science good?</li>
+<li>What are our goals in science and how much do they overlap with open science?</li>
+</ul>
+<h3 id="group-2">Group 2</h3>
+<p>Against (status quo proponents, opposed to open science)</p>
+<p>Possible questions to start with:</p>
+<ul>
+<li>What are the reasons not to do open science?</li>
+<li>Is it even realistic?</li>
+<li>Does it now or would it ever deliver on its promises?</li>
+<li>Can open science be sometimes even bad?</li>
+<li>Isn’t open science more trouble than it’s worth?</li>
+<li>How is open science supposed to work for industry?</li>
+</ul>
+<h3 id="group-3">Group 3</h3>
+<p>Middle way (pragmatics, neither for or against)</p>
+<p>Possible questions to start with:</p>
+<ul>
+<li>Is there something in between?</li>
+<li>How to implement something to satisfy both groups above?</li>
+<li>Is something like partial open science more sustainable?</li>
+<li>Should we implement something transitional (for now)?</li>
+<li>Does reviewer needs to see more than a reader?</li>
+</ul>
+<h2 id="hands-on-exercise">Hands-on exercise</h2>
+<p>Goal: Public repository with research code and a way for everybody to run it.</p>
+<p>Introduction to the tools and technologies:</p>
+<ul>
+<li><a href="../lectures/python-in-binder.html">Python in Binder</a></li>
+</ul>
+<p>Examples:</p>
+<ul>
+<li><a href="https://github.com/wenzeslaus/trivial-example-for-binder">Simple example</a></li>
+<li><a href="https://github.com/wenzeslaus/trivial-geospatial-example-for-binder">Geospatial example</a></li>
+</ul>
+<p>Steps:</p>
+<ul>
+<li>If you don't have it already, create an account on GitHub (<a href="https://github.com">https://github.com</a>).</li>
+<li>Create a new (Git) repository on GitHub.</li>
+<li>Write a trivial Python script
+<ul>
+<li><code>c = a + b</code> followed by <code>print(c)</code> or something similar is sufficient.</li>
+<li>You can create and edit files on GitHub using the web interface</li>
+</ul></li>
+<li>Open the repository using Binder at <a href="https://mybinder.org">mybinder.org</a>.</li>
+<li>Create a new notebook.
+<ul>
+<li>New button in top right corner. Pick (notebook:) Python 3.</li>
+<li>Name the notebook at the top of the page (Example or Test 1 are good names here).</li>
+</ul></li>
+<li>Run the script from the notebook (<code>!python script_name.py</code>).</li>
+<li>Optionally, add some Python code to the notebook itself.</li>
+<li>Download the notebook.
+<ul>
+<li>You should end up with file with <code>.ipynb</code> extension.</li>
+</ul></li>
+<li>Upload the file to your repository on GitHub.</li>
+<li>Repeat as needed.
+<ul>
+<li>Typically, you would develop your code elsewhere avoiding the cumbersome update loop like in this workflow.</li>
+<li>JupyterLab and Jupyter Notebook in Binder allow you to save the document to your web browser storage allowing you to pick up where you left last time.</li>
+<li>It is not advised (by Binder) to upload to GitHub from Binder for security reasons (or enter any credentials) for security reasons (this may change in the future).</li>
+</ul></li>
+<li>Include link to Binder (the Launch Binder button) to your readme file.
+<ul>
+<li>Specify you want to use JupyterLab (instead of Jupyter Notebook) using <code>?urlpath=lab</code>.</li>
+<li>Make it show your notebook right away by extending the above to <code>?urlpath=lab/tree/Example.ipynb</code> where <code>Example.ipynb</code> is name of your notebook.</li>
+</ul></li>
+</ul>
+<p>Extra tasks:</p>
+<ul>
+<li>Write code which uses <em>rasterio</em> to display data or to get its CRS in the notebook.</li>
+<li>Put that code into a separate file and use it in notebook.
+<ul>
+<li>Do not run the file.</li>
+<li>Make it so that it works for the data display and that you can store the CRS in a variable.</li>
+</ul></li>
+</ul>
+<h2 id="geospatial-and-more-advanced-examples">Geospatial and more advanced examples</h2>
+<ol type="1">
+<li>GRASS GIS in Jupyter Notebook using Binder
+<ul>
+<li><a href="https://github.com/wenzeslaus/try-grass-in-jupyter">https://github.com/wenzeslaus/try-grass-in-jupyter</a></li>
+<li>Highlights: Dataset download, general image display</li>
+</ul></li>
+<li>Zonal statistics of solar time series in GRASS GIS with Python
+<ul>
+<li><a href="https://github.com/wenzeslaus/grass-zonal-of-solar">https://github.com/wenzeslaus/grass-zonal-of-solar</a></li>
+<li>Highlights: Two different types of image display (general and Matplotlib)</li>
+</ul></li>
+<li>Sudden Oak Death example for PoPS model in Binder
+<ul>
+<li><a href="https://github.com/ncsu-landscape-dynamics/pops-intro-grass-notebook">https://github.com/ncsu-landscape-dynamics/pops-intro-grass-notebook</a></li>
+<li>Highlights: model by CGA, compiled GRASS GIS, Binder files in a subdirectory, JupyterLab</li>
+</ul></li>
+<li>FUTURES model in JupyterLab using Binder
+<ul>
+<li><a href="https://github.com/wenzeslaus/futures-model-intro-notebook">https://github.com/wenzeslaus/futures-model-intro-notebook</a></li>
+<li>Highlights: model by CGA published as a GRASS GIS module, R, compiled GRASS GIS, Binder files in a subdirectory</li>
+</ul></li>
+<li>Species distribution modeling with R and GRASS GIS in RStudio
+<ul>
+<li><a href="https://github.com/LukasGab/R_grassgis">https://github.com/LukasGab/R_grassgis</a></li>
+<li>Highlights: RStudio in Binder</li>
+</ul></li>
+</ol>
+<p>Examples not using Binder:</p>
+<ol type="1">
+<li>Code Ocean
+<ul>
+<li><a href="https://doi.org/10.24433/CO.3986355.v2">https://doi.org/10.24433/CO.3986355.v2</a></li>
+</ul></li>
+<li>Script and container-based solution without notebooks for running locally
+<ul>
+<li><a href="https://doi.org/10.1186/s40965-017-0021-8">https://doi.org/10.1186/s40965-017-0021-8</a></li>
+<li><a href="https://github.com/wenzeslaus/forestfrag3d">https://github.com/wenzeslaus/forestfrag3d</a></li>
+<li>Highlights: Dockerfile, no notebooks, Travis CI, reusable code</li>
+</ul></li>
+<li>Repository with reusable code
+<ul>
+<li><a href="https://gitlab.com/vpetras/v.net.tripplanner">https://gitlab.com/vpetras/v.net.tripplanner</a></li>
+<li>Highlights: GitLab, static generated web page</li>
+</ul></li>
+</ol>
+<h2 id="outro">Outro</h2>
+<ul>
+<li><a href="../lectures/open-science-for-grand-challenges-outro.html">Open Science: Outro</a></li>
+</ul>
+<h2 id="assignment">Assignment</h2>
+<p>Blog Assignment. Reflect on the theory and practice of open geospatial science. In 250 words or less, please share your viewpoint on where you stand in today's role playing debate. Also consider sharing challenges that are preventing you from practicing open science if you are in favor of it. Your blog will be evaluated based on the following rubric: 1) clarity (good grammar, succinct logical flow and organization), 2) compellingness (persuasiveness, well-grounded in evidence), critical thinking (evaluation of facts to form a judgment or opinion), and 3) creativity (originality of ideas). Please submit your blog post as a PDF to Moodle by October 12.</p>
+
+</main>
+
+<footer>
+
+<nav>
+<ul>
+<li><a class="term-changes" href="https://moodle-courses1920.wolfware.ncsu.edu/course/view.php?id=1581">Moodle site</a></li>
+<li><a href="http://help.ncsu.edu/">Computing Help</a></li>
+<li><a href="http://geospatial.ncsu.edu/">GIST Home</a></li>
+<li><a href="http://www.ncsu.edu/policies/prr-disclaimer.php">Disclaimer</a></li>
+<li><a href="http://oit.ncsu.edu/itaccess">Accessibility</a></li>
+<li><a href="https://github.com/ncsu-geoforall-lab/open-science-course" title="Fork on GitHub" alt="octocat">
+    <img src="../img/github_logo.png">
+</a></li>
+<li title="Copyright and license (not applicable to linked materials)">
+    &copy; 2017-2020
+    <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA</a>
+    <a href="https://github.com/ncsu-geoforall-lab/open-science-course#authors">The Authors</a>
+    from the
+    <a href="http://geospatial.ncsu.edu/geoforall/">NCSU GeoForAll Lab</a>
+</li>
+</ul>
+</nav>
+
+</footer>
+
+</div>
+</div>
+
+</body>
+</html>

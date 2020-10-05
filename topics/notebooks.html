@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>NCSU GIS 595-601: Tools for Open Geospatial Science</title>
+
+<link rel="shortcut icon" href="../img/favicon.png" />
+
+<link href="../layout.css" rel="stylesheet" type="text/css" media="screen">
+<link href="../style.css" rel="stylesheet" type="text/css" media="screen">
+
+</head>
+
+<body>
+
+<div id="outercontainer">
+<div id="container">
+
+<header>
+<div id="header-image">
+</div>
+
+<nav>
+<ul class="nav">
+<li><a href="../index.html">Syllabus</a></li>
+<li><a href="../index.html#schedule">Schedule</a></li>
+</ul>
+</nav>
+
+</header>
+
+<main>
+<!-- This is a generated file. Do not edit. -->
+<h1 id="combining-text-code-and-results-into-one-document">Combining text, code and results into one document</h1>
+<p>One innovation related to open science are computational notebooks also known as notebook interfaces or data science notebooks. These notebooks are electronic, interactive notebooks used for data analysis, visualization, computations and programming. Computational notebooks serve as word processing software, software development tool, and as a record of the result. We will focus on one specific notebook software called Jupyter.</p>
+<p>Jupyter Notebooks (formerly IPython Notebooks) are a tool aspiring to be a standard way of modern and future data analysis. The notebook format allows any code and its output to be viewed together and also run again. Given all the dependencies and data are right, the computation and results can be reproduced on any computer.</p>
+<p>Jupyter supports different languages including Python, R, Julia, Haskell and Ruby.</p>
+<p>Official Jupyter website: <a href="https://jupyter.org/">https://jupyter.org/</a></p>
+<p>Python code, can be executed as expected:</p>
+<pre><code>a = 6
+b = 7
+c = a + b</code></pre>
+<p>Each piece of code is called cell. To execute a cell, use Shift+Enter</p>
+<p>To show the result, as in interactive console, use just the name of the variable:</p>
+<pre><code>c</code></pre>
+<p>This should show number 13 right under the letter <code>c</code>.</p>
+<p>Alternatively, use print (statement in Python 2 and function in Python 3):</p>
+<pre><code>print &quot;Result is&quot;, c</code></pre>
+<p>What is unique to Jupyter is that Python code can be mixed with command line code (like Bash). To do that, it is enough just to prefix the command line with an exclamation mark:</p>
+<pre><code>!echo &quot;Result is $c&quot;</code></pre>
+<p>The variables from Python code are referenced in the same way as variables in Bash.</p>
+<h2 id="install-jupyter-on-your-computer">Install Jupyter on your computer</h2>
+<p>If you are already using Anaconda, use it to install Jupyter, otherwise follow the instructions for each operating system.</p>
+<h3 id="linux">Linux</h3>
+<p>Use system packages or pip packages, e.g. on Ubuntu:</p>
+<pre><code>sudo apt install python-pip
+sudo pip install jupyter</code></pre>
+<h3 id="windows">Windows</h3>
+<p>Install OSGeo4W, then run OSGeo4W Shell as administrator. There, update pip first:</p>
+<pre><code>pip install -U pip</code></pre>
+<p>Then update setuptools:</p>
+<pre><code>pip install -U setuptools</code></pre>
+<p>Then install Jupyter:</p>
+<pre><code>pip install Jupyter</code></pre>
+<h3 id="mac-os">Mac OS</h3>
+<p>Since we will be using Jupyter with GRASS GIS, run GRASS GIS first to be sure you will use Python which GRASS GIS uses.</p>
+<p>Then in the GRASS GIS terminal run:</p>
+<pre><code>pip install -U pip
+sudo pip install jupyter</code></pre>
+<p>Alternatively, if the above does not work, you can try Homebrew. Use it to install Jupyter:</p>
+<pre><code>brew install jupyter</code></pre>
+<h2 id="alternatives-to-jupyter">Alternatives to Jupyter</h2>
+<p>There are both open source and proprietary notebooks. Besides Jupyter, the open source include R Notebooks (R Markdown) and Apache Zeppelin. Same concepts as we can find in notebooks are also in tools which are usually not considered computational notebooks but can be used in the same way; examples include Emacs Org mode and LaTeX.</p>
+<h2 id="resources">Resources</h2>
+<h3 id="texts">Texts</h3>
+<ul>
+<li><a href="https://www.datacamp.com/community/tutorials/tutorial-jupyter-notebook">Jupyter Notebook Tutorial: The Definitive Guide</a></li>
+<li><a href="https://datahub.packtpub.com/tutorials/basics-jupyter-notebook-python/">Basics of Jupyter Notebook and Python</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Notebook_interface">Notebook interface</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Literate_programming">Literate programming</a></li>
+</ul>
+<h3 id="videos">Videos</h3>
+<ul>
+<li><a href="http://fatra.cnr.ncsu.edu/open-science-course/notebooks-jupyter-intro.mp4">Computational Notebooks: Introduction to Jupyter</a> (recording from the class, 14 mins)</li>
+<li><a href="http://fatra.cnr.ncsu.edu/open-science-course/notebooks-jupyter-publish.mp4">Computational Notebooks: Files in Jupyter</a> (recording from the class, 6 mins)</li>
+<li><a href="http://fatra.cnr.ncsu.edu/open-science-course/notebooks-jupyter-files.mp4">Computational Notebooks: Files in Jupyter</a> (recording from the class, 8 mins)</li>
+<li><a href="http://fatra.cnr.ncsu.edu/open-science-course/notebooks-jupyter-install-linux.mp4">Computational Notebooks: Installing Jupyter and GRASS GIS on Ubuntu</a> (recording from the class, 18 mins)</li>
+<li><a href="http://fatra.cnr.ncsu.edu/open-science-course/notebooks-jupyter-install-mswindows.mp4">Computational Notebooks: Installing Jupyter on MS Windows with OSGeo4W</a> (recording from the class, 14 mins)</li>
+<li><a href="https://www.youtube.com/watch?v=HW29067qVWk">Jupyter Notebook Tutorial: Introduction, Setup, and Walkthrough</a> (30 mins)</li>
+<li><a href="https://www.youtube.com/watch?v=q_BzsPxwLOE&amp;list=PLeo1K3hjS3uuZPwzACannnFSn9qHn8to8">Jupyter Notebook Tutorial</a> (YouTube playlist by codebasics)</li>
+<li><a href="https://www.youtube.com/watch?v=PX2UpMhp2hc">Scripting GRASS GIS 7 with Python</a> (2 hours)</li>
+</ul>
+<h2 id="assignment">Assignment</h2>
+<p>Practice and get familiar with using Jupyter Notebooks using the Try Jupyter! service. If needed, use one of the linked resources above to learn about Jupyter.</p>
+<ul>
+<li><a href="https://try.jupyter.org/">https://try.jupyter.org/</a></li>
+</ul>
+<p>Try using the Jupyter for geospatial tasks with GRASS GIS using the URL given in Moodle. Go through the execution of one of the notebooks.</p>
+<p>Then, install Jupyter on your computer (see above) and try to run it with GRASS GIS. If that fails for some reason, use the NCSU VCL Ubuntu machine for the rest of the assignment.</p>
+<p>Then transfer the following code (all or just a part) to a Jupyter notebook on your computer, execute the code, do modifications if needed, and create a PDF document with the results.</p>
+<ul>
+<li><a href="https://github.com/wenzeslaus/geospatial-modeling-course-jupyter/blob/master/notebooks/buffers_cost_python.ipynb">https://github.com/wenzeslaus/geospatial-modeling-course-jupyter/blob/master/notebooks/buffers_cost_python.ipynb</a></li>
+</ul>
+<p>Submit the created PDF to Moodle. If you did something different for the installation or you were not able to install it at all, submit comments on that as part of the document.</p>
+
+</main>
+
+<footer>
+
+<nav>
+<ul>
+<li><a class="term-changes" href="https://moodle-courses1920.wolfware.ncsu.edu/course/view.php?id=1581">Moodle site</a></li>
+<li><a href="http://help.ncsu.edu/">Computing Help</a></li>
+<li><a href="http://geospatial.ncsu.edu/">GIST Home</a></li>
+<li><a href="http://www.ncsu.edu/policies/prr-disclaimer.php">Disclaimer</a></li>
+<li><a href="http://oit.ncsu.edu/itaccess">Accessibility</a></li>
+<li><a href="https://github.com/ncsu-geoforall-lab/open-science-course" title="Fork on GitHub" alt="octocat">
+    <img src="../img/github_logo.png">
+</a></li>
+<li title="Copyright and license (not applicable to linked materials)">
+    &copy; 2017-2020
+    <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA</a>
+    <a href="https://github.com/ncsu-geoforall-lab/open-science-course#authors">The Authors</a>
+    from the
+    <a href="http://geospatial.ncsu.edu/geoforall/">NCSU GeoForAll Lab</a>
+</li>
+</ul>
+</nav>
+
+</footer>
+
+</div>
+</div>
+
+</body>
+</html>
