@@ -85,14 +85,38 @@ Examples:
 
 Steps:
 
-* Create an account on GitHub (https://github.com)
-* Create repository on GitHub
-* Create and edit files on GitHub using the web interface
-* Write a trivial Python script (a + b or similar)
-* Open the repository using Binder with JupyterLab
-* Run the code
-* Modify the code
-* Update the repository content
+* If you don't have it already, create an account on GitHub (https://github.com).
+* Create a new (Git) repository on GitHub.
+* Write a trivial Python script
+  * ``c = a + b`` followed by ``print(c)`` or something similar is sufficient.
+  * You can create and edit files on GitHub using the web interface
+* Open the repository using Binder at `mybinder.org <https://mybinder.org>`_.
+* Create a new notebook.
+  * New button in top right corner. Pick (notebook:) Python 3.
+  * Name the notebook at the top of the page (Example or Test 1 are good names here).
+* Run the script from the notebook (``!python script_name.py``).
+* Optionally, add some Python code to the notebook itself.
+* Download the notebook.
+  * You should end up with file with ``.ipynb`` extension.
+* Upload the file to your repository on GitHub.
+* Repeat as needed.
+  * Typically, you would develop your code elsewhere avoiding the cumbersome update
+    like in this workflow.
+  * JupyterLab and Jupyter Notebook in Binder allow you to save the document to
+    your web browser storage allowing you to pick up where you left last time.
+  * It is not advised (by Binder) to upload to GitHub from Binder for security reasons (or enter
+    any credentials) for security reasons (this may change in the future).
+* Include link to Binder (the Launch Binder button) to your readme file.
+  * Specify you want to use JupyterLab (instead of Jupyter Notebook) using ``?urlpath=lab``.
+  * Make it show your notebook right away by extending the above to
+    ``?urlpath=lab/tree/Example.ipynb`` where ``Example.ipynb`` is name of your notebook.
+
+Extra tasks:
+
+* Write code which uses *rasterio* to display data or to get its CRS in the notebook.
+* Put that code into a separate file and use it in notebook.
+  * Do not run the file.
+  * Make it so that it works for the data display and that you can store the CRS in a variable.
 
 Geospatial and more advanced examples
 -------------------------------------
@@ -107,18 +131,26 @@ Geospatial and more advanced examples
    * https://github.com/wenzeslaus/grass-zonal-of-solar
    * Highlights: Two different types of image display (general and Matplotlib)
 
-1. Google Colaboratory
+1. Sudden Oak Death example for PoPS model in Binder
 
-   * From Google Earth Engine to GRASS GIS and back in a notebook
-
-1. Code Ocean
-
-   * https://doi.org/10.24433/CO.3986355.v2
+   * https://github.com/ncsu-landscape-dynamics/pops-intro-grass-notebook
+   * Highlights: model by CGA, compiled GRASS GIS, Binder files in a subdirectory, JupyterLab
 
 1. FUTURES model in JupyterLab using Binder
 
    * https://github.com/wenzeslaus/futures-model-intro-notebook
-   * Highlights: model by CGA, R, compiled GRASS GIS, Binder files in a subdirectory
+   * Highlights: model by CGA published as a GRASS GIS module, R, compiled GRASS GIS, Binder files in a subdirectory
+
+1. R and GRASS GIS in RStudio
+
+   * https://github.com/LukasGab/R_grassgis
+   * Highlights: RStudio in Binder
+
+Examples not using Binder:
+
+1. Code Ocean
+
+   * https://doi.org/10.24433/CO.3986355.v2
 
 1. Script and container-based solution without notebooks for running locally
 
@@ -130,16 +162,6 @@ Geospatial and more advanced examples
 
    * https://gitlab.com/vpetras/v.net.tripplanner
    * Highlights: GitLab, static generated web page
-
-1. Notebooks for NCSU Geospatial Modeling and Analysis course
-
-   * https://github.com/wenzeslaus/geospatial-modeling-course-jupyter
-   * Highlights: Dockerfile, massive collection, converted from website, plain Python and IPython versions
-
-1. GRASS GIS in Jupyter Notebook with Bash
-
-   * https://github.com/wenzeslaus/try-grass-in-jupyter-with-bash
-   * Highlights: plain Bash, start file
 
 Outro
 -----
