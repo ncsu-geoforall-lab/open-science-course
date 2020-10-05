@@ -106,9 +106,14 @@
             <ul>
                 <li>Code Ocean <small>(Jupyter, RStudio, preservation)</small>
                 <li>CoCalc <small>(Jupyter, ..., desktop applications)</small>
+                <li>RStudio Cloud <small>(R focused)</small>
                 <li>Google Colab <small>(Jupyter Notebooks, Google Cloud Platform)</small>
-                <li>RStudio Cloud <small>(R focus)</small>
-                <li>?
+                    <ul>
+                        <li>Good for collaboration, interaction with EE, but not for open science.
+                        <li>Requires sign in, notebook can access your Google Drive and credentials.
+                        <li>Setup of the environment is part of the notebook.
+                    </ul>
+                <li>...
             </ul>
     </ul>
     <br>
@@ -148,7 +153,7 @@
         <li>virtualization tool to wrap software with all its dependencies into one package
         <li>image is the software or binary, container is what is running
         <li>enables to run many isolated computational environments
-        <li>open source code and freemium platform
+        <li>open source software and related freemium platform
         <li>alternatives:
             <ul>
                 <li>virtual machines <small>(local or in the cloud)</small>
@@ -193,7 +198,7 @@ GDAL==3.0.1
 </pre>
 
 <p>
-    More on Binder: environment.yml, runtime.txt, apt.txt, DESCRIPTION, default.nix, postBuild, start, ...
+    More accepted by Binder: environment.yml, runtime.txt, apt.txt, DESCRIPTION, default.nix, postBuild, start, ...
 </p>
 
 </div>

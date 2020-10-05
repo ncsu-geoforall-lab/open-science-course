@@ -100,7 +100,7 @@ Steps:
   * You should end up with file with ``.ipynb`` extension.
 * Upload the file to your repository on GitHub.
 * Repeat as needed.
-  * Typically, you would develop your code elsewhere avoiding the cumbersome update
+  * Typically, you would develop your code elsewhere avoiding the cumbersome update loop
     like in this workflow.
   * JupyterLab and Jupyter Notebook in Binder allow you to save the document to
     your web browser storage allowing you to pick up where you left last time.
@@ -141,7 +141,7 @@ Geospatial and more advanced examples
    * https://github.com/wenzeslaus/futures-model-intro-notebook
    * Highlights: model by CGA published as a GRASS GIS module, R, compiled GRASS GIS, Binder files in a subdirectory
 
-1. R and GRASS GIS in RStudio
+1. Species distribution modeling with R and GRASS GIS in RStudio
 
    * https://github.com/LukasGab/R_grassgis
    * Highlights: RStudio in Binder
