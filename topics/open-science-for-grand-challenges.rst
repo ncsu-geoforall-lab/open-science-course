@@ -29,9 +29,6 @@ Discussion exercise
 * Split into three groups.
 * Each group will spend ~30 minutes preparing an argument for their prepared position. Each group will select one member to give a 1-2 minute opening statement outlining their position in addition to discussing their position in depth to select the best arguments in their favor. 
 * After re-grouping, each position will offer their opening statement before the discussion floor is opened to all participants. Participants should focus on discussing the relative strengths of their position while highlighting the relative weaknesses of the others. 
-
-
-
 * Discuss open science using one of the three following positions.
 
 Group 1
