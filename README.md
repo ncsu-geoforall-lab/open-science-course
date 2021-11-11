@@ -10,7 +10,7 @@
 ## Closely related teaching and presentations
 
 * Vaclav Petras. Open Science. Guest lecture in NCSU GIS 710: Geospatial Analytics for Grand Challenges. November 15 and 22, 2021.
-* Vaclav Petras. Open Science. Guest lecture in NCSU GIS 710: Geospatial Analytics for Grand Challenges. September 21 and 28. 2020.
+* Vaclav Petras. Open Science. Guest lecture in NCSU GIS 710: Geospatial Analytics for Grand Challenges. September 28 and October 5. 2020.
 * Vaclav Petras. Basic Workflows for Managing Projects with Git. Lunch and Learn. November 5, 2019.
 * Vaclav Petras. Open Science. Guest lecture in NCSU GIS 710: Geospatial Analytics for Grand Challenges. October 21, 2019.
 * Vaclav Petras. Open Science. Guest lecture in NCSU GIS 710: Geospatial Analytics for Grand Challenges. November 12, 2018.

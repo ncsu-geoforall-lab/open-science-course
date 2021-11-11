@@ -196,5 +196,5 @@ favor of it. Your blog will be evaluated based on the following rubric:
 1) clarity (good grammar, succinct logical flow and organization), 2)
 compellingness (persuasiveness, well-grounded in evidence), critical
 thinking (evaluation of facts to form a judgment or opinion), and 3)
-creativity (originality of ideas). Please submit your blog post as a
-PDF to Moodle by October 12.
+creativity (originality of ideas). Please see class instructions in
+Google Drive for the latest instructions and due date.
