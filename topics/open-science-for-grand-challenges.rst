@@ -7,12 +7,13 @@ This is material for a guest lecture in
 Reading
 -------
 
-Please, read at least two of the following papers as a preparation for the
-lecture and the discussion. They are all pro-open science, but they all will help you to
-defend your stances in the debate. They are also useful for writing your
-next paper which applies open science principles.
+Please, read the following papers as a preparation for the lecture and the discussion:
 
 * Watson, Mick (2015). “When will ‘open science’ become simply ‘science’?“. In: Genome biology, 16(1), 101. https://doi.org/10.1186/s13059-015-0669-2
+
+Optional: Here are two additional papers. Both are pro-open science,
+but they can help you to defend your stances in the classroom debate.
+They are also useful for writing your next paper which applies open science principles.
 
 * Ince, Darrel C., Leslie Hatton, and John Graham-Cumming (2012). “The case for open computer programs”. In: Nature 482.7386, pp. 485–488. http://doi.org/10.1038/nature10836
 
@@ -21,10 +22,14 @@ next paper which applies open science principles.
 Lecture
 -------
 
+(60 min)
+
 * `Open Science <../lectures/open-science-for-grand-challenges.html>`_
 
 Discussion exercise
 -------------------
+
+(30+30 min)
 
 * Split into three groups.
 * Each group will spend ~30 minutes preparing an argument for their prepared position. Each group will select one member to give a 1-2 minute opening statement outlining their position in addition to discussing their position in depth to select the best arguments in their favor. 
