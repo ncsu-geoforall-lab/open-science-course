@@ -74,16 +74,20 @@ Hands-on exercise
 
 Goal: Public repository with research code and a way for everybody to run it.
 
-Introduction to the tools and technologies:
+Introduction to the tools and technologies (20 min):
 
 * `Python in Binder <../lectures/python-in-binder.html>`_
 
-Examples:
+Examples (15 min):
 
 * `Simple example <https://github.com/wenzeslaus/trivial-example-for-binder>`_
 * `Geospatial example <https://github.com/wenzeslaus/trivial-geospatial-example-for-binder>`_
 
-Steps:
+Task:
+
+* Create a Git repository which opens in Binder and contains a script and a notebook.
+
+Steps (20-40 min):
 
 * If you don't have it already, create an account on GitHub (https://github.com).
 * Create a new (Git) repository on GitHub.
@@ -111,6 +115,8 @@ Steps:
   * Make it show your notebook right away by extending the above to
     ``?urlpath=lab/tree/Example.ipynb`` where ``Example.ipynb`` is name of your notebook.
 
+(Break: 10 min)
+
 Extra tasks:
 
 * Write code which uses *rasterio* to display data or to get its CRS in the notebook.
@@ -120,6 +126,8 @@ Extra tasks:
 
 Geospatial and more advanced examples
 -------------------------------------
+
+(60 min)
 
 1. GRASS GIS in Jupyter Notebook using Binder
 
@@ -165,6 +173,8 @@ Examples not using Binder:
 
 Outro
 -----
+
+(15 min)
 
 * `Open Science: Outro <../lectures/open-science-for-grand-challenges-outro.html>`_
 
