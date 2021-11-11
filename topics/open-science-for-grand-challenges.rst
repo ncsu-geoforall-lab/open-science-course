@@ -26,6 +26,8 @@ Lecture
 
 * `Open Science <../lectures/open-science-for-grand-challenges.html>`_
 
+(Break: 15 min)
+
 Discussion exercise
 -------------------
 
