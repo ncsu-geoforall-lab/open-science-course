@@ -136,24 +136,21 @@ Geospatial and more advanced examples
 
 (60 min)
 
-1. GRASS GIS in Jupyter Notebook using Binder
+Examples using Binder:
 
-   * https://github.com/wenzeslaus/try-grass-in-jupyter
-   * Highlights: Dataset download, general image display
+1. Hydrology and zonal statistics in GRASS GIS in JupyterLab
 
-1. Zonal statistics of solar time series in GRASS GIS with Python
+   * https://mybinder.org/v2/gh/OSGeo/grass/0e43bf349d8b6b0291e094681b9c1c79909bdda5?urlpath=lab%2Ftree%2Fdoc%2Fnotebooks%2Fhydrology.ipynb
+   * Highlights: Included dataset, two different types of plotting (GRASS-specific general and Matplotlib)
 
-   * https://github.com/wenzeslaus/grass-zonal-of-solar
-   * Highlights: Two different types of image display (general and Matplotlib)
-
-1. Sudden Oak Death example for PoPS model in Binder
+1. Sudden Oak Death example for PoPS model in JupyterLab
 
    * https://github.com/ncsu-landscape-dynamics/pops-intro-grass-notebook
    * Highlights: model by CGA, compiled GRASS GIS, Binder files in a subdirectory, JupyterLab
 
-1. FUTURES model in JupyterLab using Binder
+1. FUTURES model in JupyterLab
 
-   * https://github.com/wenzeslaus/futures-model-intro-notebook
+   * https://github.com/ncsu-landscape-dynamics/futures-model-intro-notebook
    * Highlights: model by CGA published as a GRASS GIS module, R, compiled GRASS GIS, Binder files in a subdirectory
 
 1. Species distribution modeling with R and GRASS GIS in RStudio
