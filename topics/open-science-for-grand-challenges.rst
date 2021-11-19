@@ -155,7 +155,7 @@ Examples using Binder:
 
 1. Species distribution modeling with R and GRASS GIS in RStudio
 
-   * https://github.com/LukasGab/R_grassgis
+   * https://github.com/LukasGab/R_grassgis/tree/link-external-data
    * Highlights: RStudio in Binder
 
 Examples not using Binder:
