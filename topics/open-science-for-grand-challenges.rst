@@ -11,9 +11,7 @@ Please, read the following papers as a preparation for the lecture and the discu
 
 * Watson, Mick (2015). “When will ‘open science’ become simply ‘science’?“. In: Genome biology, 16(1), 101. https://doi.org/10.1186/s13059-015-0669-2
 
-Optional: Here are two additional papers. Both are pro-open science,
-but they can help you to defend your stances in the classroom debate.
-They are also useful for writing your next paper which applies open science principles.
+Here are two optional papers:
 
 * Ince, Darrel C., Leslie Hatton, and John Graham-Cumming (2012). “The case for open computer programs”. In: Nature 482.7386, pp. 485–488. http://doi.org/10.1038/nature10836
 
@@ -28,53 +26,45 @@ Lecture
 
 (Break: 15 min)
 
-Discussion exercise
--------------------
+Class Debate
+------------
 
-(30+30 min)
+(30+5+5+5+15 min)
 
-* Split into three groups.
-* Each group will spend ~30 minutes preparing an argument for their prepared position. Each group will select one member to give a 1-2 minute opening statement outlining their position in addition to discussing their position in depth to select the best arguments in their favor. 
-* After re-grouping, each position will offer their opening statement before the discussion floor is opened to all participants. Participants should focus on discussing the relative strengths of their position while highlighting the relative weaknesses of the others. 
-* Discuss open science using one of the three following positions.
+* Debate for and against a statement about scientific publications.
+* Two teams. Affirmative agrees with the statement and Negative disagrees with the statement.
 
-Group 1
+Statement
+`````````
+
+A scientific publication needs to consist of text, data, source code, software environment, and reviews
+which are all openly licensed, in open formats, checked during the submission process, and publicly available without any delay after publication.
+
+Context
 ```````
 
-For (open science proponents, in favor of open science)
+* Text: The main part of the publication, the “classic” article, with narrative, figures, tables, etc.
+* Data: Recorded factual material, raw input data, resulting data.
+* Source code: Unique code including code to generate numbers, figures, and tables for the text.
+* Software environment: Software setup where to apply the source code to the input data.
+* Reviews: Parts of the review process, esp. comments from reviewers and publication versions.
+* The Open Definition: Content can be freely used, modified, and shared by anyone for any purpose.
+* Open format: File format based on an open standard and readable by open source software.
+* Data embargo: Period during which a scheduled-to-be-public data remains private.
+* FAIR:  Findability, Accessibility, Interoperability, and Reuse of digital assets, esp. data.
+* Findability (in FAIR):  (Meta)data are registered and assigned a persistent identifier.
+* Accessibility (in FAIR): Sharing protocol is open, free, and universally implementable.
+* Interoperability (in FAIR): (Meta)data use formal language and references to other datasets.
+* Reuse (in FAIR): (Meta)data are richly described with a plurality of accurate and relevant attributes.
 
-Possible questions to start with:
+Consider
+````````
 
-* Why is open science necessary for science?
-* Why is open science good?
-* What are our goals in science and how much do they overlap with open science?
-
-Group 2
-```````
-
-Against (status quo proponents, opposed to open science)
-
-Possible questions to start with:
-
-* What are the reasons not to do open science?
-* Is it even realistic?
-* Does it now or would it ever deliver on its promises?
-* Can open science be sometimes even bad?
-* Isn’t open science more trouble than it’s worth?
-* How is open science supposed to work for industry?
-
-Group 3
-```````
-
-Middle way (pragmatics, neither for or against)
-
-Possible questions to start with:
-
-* Is there something in between?
-* How to implement something to satisfy both groups above?
-* Is something like partial open science more sustainable?
-* Should we implement something transitional (for now)?
-* Does reviewer needs to see more than a reader?
+* Scientists are concerned with additional work and being scooped.
+* Research funding agencies with limited financial resources focused on innovation.
+* Citizens who want to have access to science which influences their lives.
+* Industry and entrepreneurs who want to reap benefits of tax-funded research.
+* Number of special cases including sensitive personal data and data related to national security.
 
 Hands-on exercise
 -----------------
