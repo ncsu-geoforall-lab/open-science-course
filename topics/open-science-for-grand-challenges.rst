@@ -29,13 +29,13 @@ Lecture
 Class Debate
 ------------
 
-(30+5+5+5+15 min)
+(5+25+5+5+5+15 min)
 
-* Debate for and against a statement about scientific publications.
-* Two teams. Affirmative agrees with the statement and Negative disagrees with the statement.
+* Debate for and against a resolution about scientific publications.
+* Two teams. Affirmative agrees with the resolution and Negative disagrees with the resolution.
 
-Statement
-`````````
+Resolution
+``````````
 
 A scientific publication needs to consist of text, data, source code, software environment, and reviews
 which are all openly licensed, in open formats, checked during the submission process, and publicly available without any delay after publication.
