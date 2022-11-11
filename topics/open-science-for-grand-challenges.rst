@@ -171,17 +171,3 @@ Outro
 (15 min)
 
 * `Open Science: Outro <../lectures/open-science-for-grand-challenges-outro.html>`_
-
-Assignment
-----------
-
-Blog Assignment. Reflect on the theory and practice of open geospatial
-science. In 250 words or less, please share your viewpoint on where you
-stand in today's role playing debate. Also consider sharing challenges
-that are preventing you from practicing open science if you are in
-favor of it. Your blog will be evaluated based on the following rubric:
-1) clarity (good grammar, succinct logical flow and organization), 2)
-compellingness (persuasiveness, well-grounded in evidence), critical
-thinking (evaluation of facts to form a judgment or opinion), and 3)
-creativity (originality of ideas). Please see class instructions in
-Google Drive for the latest instructions and due date.
