@@ -1,0 +1,592 @@
+<!doctype html>
+<html lang="en">
+<!-- This is a generated file. Do not edit. -->
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>Tools for open geospatial science</title>
+
+        <meta name="description" content="NCSU GIS 595-601: Tools for open geospatial science">
+        <meta name="author" content="Vaclav Petras">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<link rel="shortcut icon" href="../img/favicon.png" />
+
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/ncsu-geoforall-lab.css" id="theme">
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+        <!-- For chalkboard plugin -->
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+
+        <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+
+        <style>
+            body {
+                background-image: url("../img/header.svg");
+                background-repeat: repeat-x;
+                background-position: left bottom;
+                background-size: auto 10%;
+            }
+
+            .glow {
+                text-shadow: 0 0 20px white, 0 0 18px white, 0 0 16px white, 0 0 14px white, 0 0 12px white, 0 0 10px white, 0 0 8px white, 0 0 6px white;
+            }
+
+            .reveal .box-glow {
+                box-shadow: 0px 0px 15px 0px white, 0px 0px 10px 0px white, 0px 0px 5px 0px white;
+            }
+
+            /*
+            table {
+                margin: 10px;
+                border-collapse: separate;
+                border: none;
+            }
+
+            td {
+                display: inline-block;
+                border-radius: 5px;
+                background-color: #369;
+                color: green;
+                border: 5px solid red;
+            }*/
+
+            .reveal .row-based td {
+                border: none;
+            }
+
+            .row-based tr td:first-of-type {
+                font-weight: bold;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <div class="reveal">
+
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+<section>
+    <h2>A reproducible paper</h2>
+    <h3 style="margin-top: 0.5em">
+        Vaclav (Vashek) Petras</h3>
+    <p class="title-foot">
+        <a href="http://www.ncsu.edu/" title="North Carolina State University">NCSU</a>
+        <a href="http://geospatial.ncsu.edu/osgeorel/" title="NCSU GeoForAll Lab">GeoForAll Lab</a>
+        at the
+        <a href="http://geospatial.ncsu.edu/" title="Center for Geospatial Analytics">Center for Geospatial Analytics</a>
+        <br>
+        North Carolina State University
+    </p>
+    <p>
+        NCSU GIS 595-601: Tools for open geospatial science<br>
+        November 15, 2017
+    </p>
+</section>
+
+
+<section>
+<h2>Publishing research</h2>
+<img src="img/philosophical_transactions_vol_1_239_242.png" class="stretch box-glow">
+<p class="credit glow">
+    The Particulars. Of Those Observations of the Planet Mars,
+    Formerly Intimated to Have Been Made at London in
+    the Months of February and March A. 1665/6. (1665).
+    Philosophical Transactions (1665-1678), 1, 239-242.
+    Retrieved from <a href="http://www.jstor.org/stable/101500">JSTOR</a>
+</p>
+</section>
+
+
+<section>
+<h2>Publishing goals</h2>
+<ul>
+    <li>registration <small>so that scientists get credit</small>
+    <li>archiving <small>so that we preserve knowledge for the future</small>
+    <li>dissemination <small>so that people can use this knowledge</small>
+    <li>peer review <small>so that we know it's worth it</small>
+</ul>
+</section>
+
+
+<section>
+<h2>Open Science</h2>
+
+<img src="img/spectrum_of_reproducible_research.png" class="stretch">
+<small>[Buckheit and Donoho 1995, Peng 2011, Rodríguez-Sánchez et al. 2016, Marwick 2016]</small>
+<p class="credit">
+    Image credit: CC BY-SA Comtebenoit,
+    <a href="https://commons.wikimedia.org/wiki/File:Spectrum_of_reproducible_research.png">Wikimedia</a>
+<!--
+J. Buckheit and D. L. Donoho. Wavelets and Statistics, chapter Wavelab and reproducible research.
+Springer-Verlag, Berlin, New York, 1995.
+(paraphrased/pseudo-quote Jon Claerbout of Stanford)
+An article about computational science in a scientific publication
+is not the scholarship itself, it is merely advertising of the scholarship.
+The actual scholarship is the complete software development environment
+and the complete set of instructions which generated the figures.
+
+Peng, R. D. (2011). Reproducible research in computational science.
+Science, 334(6060), 1226-1227.
+DOI: 10.1126/science.1213847
+
+Rodríguez-Sánchez, F., Bartomeus, I., Varela, S., Pérez-Luque, A.J.,
+Ciencia reproducible: qué, por qué, cómoEcosistemas [en linea] 2016, 25
+(Mayo-Agosto) : [Fecha de consulta: 4 de abril de 2017]
+Disponible en:<http://www.redalyc.org/articulo.oa?id=54046745011>
+ISSN 1132-6344
+
+Marwick, B. (2016). Computational reproducibility in archaeological research:
+basic principles and a case study of their implementation.
+Journal of Archaeological Method and Theory, 1-27.
+DOI: 10.1007/s10816-015-9272-9
+-->
+</p>
+</section>
+
+
+<!--Software solutions for software problem-->
+
+
+<section>
+    <h2>Text</h2>
+    <p>
+        If the paper source format is LaTeX or other markup,
+        the figures, tables, or even bigger parts can be generated using
+        scripts and automatically included.
+    </p>
+    <p>
+        If the paper source format is Jupyter Notebook or other notebook-like format,
+        everything including text, figures, and code is at one place
+        included in the final document.
+    </p>
+    <img src="img/petras2017generalized_paper.png" class="stretch box-glow">
+</section>
+
+
+<section>
+<h2>Collaborative writing</h2>
+Overleaf, Authorea, ...
+<br>
+combined with Git
+<img src="img/overleaf.png" class="stretch box-glow">
+</section>
+
+
+<section>
+<h2>Scripting the process</h2>
+
+Bash and GRASS GIS
+<pre class="bash" style="font-size: x-large;"><code>r.in.lidar input=points.las output=elevation -e
+</code></pre>
+Python and GRASS GIS
+<pre class="python" style="font-size: x-large;"><code>from grass.script import run_command
+run_command("r.in.lidar", input="points.las", output="elevation", flags="e")
+</code></pre>
+R and GRASS GIS
+<pre class="python" style="font-size: x-large;"><code>library(rgrass7)
+execGRASS("r.in.lidar", input="points.las", output="elevation", flags="e")
+</code></pre>
+<!--
+We can use Python and other languages to access powerful software features in an automated way instead
+of hoping we entered the same values as last time when rerunning the analysis with a new climate dataset.
+-->
+</section>
+
+
+<section>
+<h2>Computational notebooks</h2>
+<ul>
+    <li>interactive document with text, code, and figures
+    <li>languages: Python, R, Bash, C, C++, Octave, ...
+    <li>Jupyter Notebook, R Markdown (Notebook), Emacs Org-mode, ...
+</ul>
+<img src="img/jupyter.png" class="stretch box-glow">
+<!-- Jupyter and R Markdown let us track the reasoning behind our experiments and analyses. -->
+</section>
+
+
+<section>
+<h2>Publishing code</h2>
+
+<img src="img/spatio-temporal-countour-evolution_code.png" class="stretch">
+</section>
+<!--A terrain modeling paper will serve as an example of sharing a full description
+of a published method.-->
+
+<section>
+    <h2>Published computational research</h2>
+    <p>FUTURES - urban-rural landscape patterns simulation</p>
+    <p>model implemented as a set of GRASS GIS addon modules</p>
+    <p><em>r.futures.pga, r.futures.demand, r.futures.parallelpga, ...</em></p>
+    <img src="img/futures.jpg" class="stretch">
+</section>
+
+<section>
+<h3 style="margin-top: 3ex; margin-bottom: 3ex">FUTURES: Text</h3>
+<img src="img/futures_paper.png" class="stretch">
+<!-- A landscape change model will be used to demonstrate reusable research. -->
+</section>
+
+<section>
+<h3>FUTURES: Source code</h3>
+<img src="img/futures_src.png" class="stretch">
+</section>
+
+<section>
+<h3>FUTURES: Source code history</h3>
+<img src="img/futures_log.png" class="stretch">
+</section>
+
+<section>
+<h3>FUTURES: Documentation</h3>
+<img src="img/futures_doc.png" class="stretch">
+</section>
+
+
+<section>
+<h3>FUTURES: Graphical user interface</h3>
+<img src="img/futures_gui.png" class="stretch box-glow">
+</section>
+
+
+<section>
+<h2>Integration into a larger project</h2>
+<ul>
+    <li>Preprocessing, visualization, and user interface (GUI, CLI, API)
+    <li>Integration with existing analytical tools
+    <li>Inputs, outputs, memory management and other common features
+    <li>Long-term maintenance
+    <li>Options: GRASS GIS module, R package, Python package, QGIS plugin, ...
+</ul>
+<br>
+<img src="img/grass_gis_addons_index.png" class="stretch box-glow">
+</section>
+
+
+<section>
+<h2>Environment to run the code</h2>
+<ul>
+    <li>dependencies
+    <li>environmental settings
+    <li>file structure
+    <li>Solutions: Docker, Vagrant, virtual machines ...
+</ul>
+<pre style="width: 40%; font-size: 70%;">
+FROM ubuntu:16.04
+RUN apt-get update
+RUN apt-get install -y \
+        g++ \
+        python \
+        python-numpy \
+        netcdf-bin \
+        sqlite3 \
+        ...
+WORKDIR /data
+</pre>
+</section>
+
+
+<section>
+<h2>File versions</h2>
+
+<img src="img/file_versions.png" class="stretch box-glow">
+</section>
+
+
+<section>
+<h2>Revision control</h2>
+Git (<code>git</code>), Subversion (<code>svn</code>), Mercurial (<code>hg</code>), ...
+<!--
+collaborate and keep track
+of our constantly evolving methods and R scripts.
+-->
+<br>
+<img src="img/revisions.svg" class="stretch">
+<pre class="bash" style="font-size: x-large;"><code>git commit script.py -m "replaced part of the main equation"
+</code></pre>
+</section>
+
+
+<section>
+<h2>Research publication</h2>
+<table class="row-based">
+    <tr>
+        <td>Text</td>
+        <td>
+            background, methods, results, discussion<td>
+            <small>PDF, HTML</small>
+        </td>
+    </tr>
+    <tr>
+        <td>Data</td>
+        <td>
+            methods as GRASS GIS modules<td>
+            <small>open formats, *</small>
+        </td>
+    </tr>
+    <tr>
+        <td>Reusable&nbsp;code</td>
+        <td>
+            generally and reusably implemented methods<td>
+            <small>Python, R, C</small>
+        </td>
+    </tr>
+    <tr>
+        <td>Specific&nbsp;code</td>
+        <td>
+            scripts to generate results<td>
+            <small>Bash, Python, R, *</small>
+        </td>
+    </tr>
+    <tr>
+        <td>Environment</td>
+        <td>
+            details about all dependencies and the code<td>
+            <small>Docker, Vagrant</small>
+        </td>
+    </tr>
+    <tr>
+        <td>Versions</td>
+        <td>
+            repository with current and previous versions<td>
+            <small>Git, Mercurial</small>
+        </td>
+    </tr>
+</table>
+<p>
+    * Potentially included in computational notebooks such as Jupyter Notebook
+</p>
+<img src="img/spectrum_of_reproducible_research.png" class="stretch box-glow">
+<p class="credit glow">
+    Image credit: CC BY-SA Comtebenoit,
+    <a href="https://commons.wikimedia.org/wiki/File:Spectrum_of_reproducible_research.png">Wikimedia</a>
+</p>
+</section>
+
+
+<section>
+<h2>Evaluation of the methods and tools</h2>
+<ul>
+    <li>Science:*
+        <ul>
+            <li>replicability <small>independent validation of specific findings</small>
+            <li>repeatability <small>same conditions, people, instruments, ... (test–retest reliability)</small>
+            <li>recomputability <small>same results in computational research</small>
+            <li>reproducibility <small>obtain again same results from the raw data</small>
+            <li>reusability <small>use again the same data or methods</small>
+        </ul>
+    <li>Your lab:
+        <ul>
+            <li>collaboration <small>work together with someone</small>
+            <li>transfer <small>pass research to someone else</small>
+        </ul>
+    <li>You:
+        <ul>
+            <li>revisit <small>return to project after some time</small>
+            <li>correction <small>correct a mistake in the research</small>
+            <li>extension <small>improve or build on an existing project</small>
+        </ul>
+</ul>
+<small class="glow" style="font-size: 50%;">* No agreement on some of the definitions in this section; often overlapping or swapped.</small>
+</section>
+
+
+
+<section>
+<h2>Like irreproducibility more?</h2>
+<img src="img/hong2015_page_1.png" class="left box-glow">
+<img src="img/hong2015_page_2.png" class="right box-glow">
+
+<!--
+https://en.wikiquote.org/wiki/Pierre_de_Fermat
+Cuius rei demonstrationem mirabilem sane detexi hanc marginis exiguitas non caperet.
+I have discovered a truly remarkable proof of this theorem which this margin is too small to contain.
+Note written on the margins of his copy of Claude-Gaspar Bachet's translation of the famous Arithmetica of Diophantus, this was taken as an indication of what became known as Fermat's last theorem, a correct proof for which would be found only 357 years later; as quoted in Number Theory in Science and Communication (1997) by Manfred Robert Schroeder
+-->
+</section>
+
+
+<section>
+<h2>Further Resources</h2>
+<div class="left">
+<h3>Data Carpentry</h3>
+<ul>
+    <li>Building communities teaching universal data literacy
+    <li><a href="http://datacarpentry.org">datacarpentry.org</a>
+</ul>
+<br>
+<center>
+<img src="img/logos/data_carpentry.png" style="height: 8ex;">
+</center>
+</div>
+<div class="right">
+<h3>Software Carpentry</h3>
+<ul>
+    <li>Teaching basic lab skills for research computing
+    <li><a href="http://software-carpentry.org">software-carpentry.org</a>
+</ul>
+<br>
+<center>
+<img src="img/logos/software_carpentry.png" style="height: 8ex;">
+</center>
+</div>
+</section>
+<!-- This is a generated file. Do not edit. -->
+        </div>  <!-- slides -->
+
+    </div>  <!-- reveal -->
+
+    <!--<img class="timeline" id="line" />-->
+
+    <!--
+        Home button or link to a parent page
+        If you want this to be unique for every page (slide deck),
+        then remove it from here and put it at the end of each
+        file (or series of files) creating one page
+        (the position will be little different)
+        TODO: some JS is needed to move it to the right position
+    -->
+    <div class="parent-page">
+        <!-- alternative symbol: &#x1f3e0; -->
+        <a href=".." title="Course website">
+            <img width="15px" src="img/home.svg"></a>
+    </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+
+        <script>
+
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                // Display controls in the bottom right corner
+                controls: false,
+
+                // Display a presentation progress bar
+                progress: true,
+                
+                center: true,
+                
+                // Display the page number of the current slide
+                slideNumber: false,
+
+                // Enable the slide overview mode
+                overview: true,
+
+                // Turns fragments on and off globally
+                fragments: true,
+
+                // The "normal" size of the presentation, aspect ratio will be preserved
+                // when the presentation is scaled to fit different resolutions. Can be
+                // specified using percentage units.
+                // width: 960,
+                // height: 700,
+                
+                // Factor of the display size that should remain empty around the content
+                margin: 0.05,  // increase?
+
+                // Bounds for smallest/largest possible scale to apply to content
+                minScale: 0.5,
+                maxScale: 5.0,
+
+                theme: Reveal.getQueryHash().theme,  // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'none', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Push each slide change to the browser history
+                history: true,
+                // Enable keyboard shortcuts for navigation
+                keyboard: true,
+
+                // Vertical centering of slides
+                center: true,
+
+                // Enables touch navigation on devices with touch input
+                touch: true,
+
+                // Loop the presentation
+                loop: false,
+                // Flags if the presentation is running in an embedded mode,
+                // i.e. contained within a limited portion of the screen
+                embedded: false,
+
+                // Number of milliseconds between automatically proceeding to the
+                // next slide, disabled when set to 0, this value can be overwritten
+                // by using a data-autoslide attribute on your slides
+                autoSlide: 0,
+
+                // Stop auto-sliding after user input
+                autoSlideStoppable: true,
+
+                // Enable slide navigation via mouse wheel
+                mouseWheel: false,
+
+                // Hides the address bar on mobile devices
+                hideAddressBar: true,
+
+                // Opens links in an iframe preview overlay
+                previewLinks: false,
+
+                // Transition speed
+                transitionSpeed: 'default', // default/fast/slow
+
+                // Transition style for full page slide backgrounds
+                backgroundTransition: 'none', // default/none/slide/concave/convex/zoom
+
+                // Number of slides away from the current that are visible
+                viewDistance: 3,
+
+                // Parallax background image
+                //parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+                // Parallax background size
+                //parallaxBackgroundSize: '' // CSS syntax, e.g. "2100px 900px"
+                chalkboard: { 
+        		// optionally load pre-recorded chalkboard drawing from file
+            		src: "chalkboard.json",
+            	},
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+                    /* { src: 'plugin/math/math.js', async: true }, */
+                    { src: 'plugin/chalkboard/chalkboard.js' }
+                ],
+                keyboard: {
+            	    67: function() { RevealChalkboard.toggleNotesCanvas() },	// toggle notes canvas when 'c' is pressed
+            	    66: function() { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
+            	    46: function() { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
+            	     8: function() { RevealChalkboard.reset() },	// reset chalkboard data on current slide when 'BACKSPACE' is pressed
+            	    68: function() { RevealChalkboard.download() },	// downlad recorded chalkboard drawing when 'd' is pressed
+            	},
+            });
+
+        </script>
+
+    </body>
+</html>

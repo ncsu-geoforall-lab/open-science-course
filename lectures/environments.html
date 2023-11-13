@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="en">
+<!-- This is a generated file. Do not edit. -->
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>Tools for open geospatial science</title>
+
+        <meta name="description" content="NCSU GIS 595-601: Tools for open geospatial science">
+        <meta name="author" content="Vaclav Petras">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<link rel="shortcut icon" href="../img/favicon.png" />
+
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/ncsu-geoforall-lab.css" id="theme">
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+        <!-- For chalkboard plugin -->
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+
+        <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+
+        <style>
+            body {
+                background-image: url("../img/header.svg");
+                background-repeat: repeat-x;
+                background-position: left bottom;
+                background-size: auto 10%;
+            }
+
+            .glow {
+                text-shadow: 0 0 20px white, 0 0 18px white, 0 0 16px white, 0 0 14px white, 0 0 12px white, 0 0 10px white, 0 0 8px white, 0 0 6px white;
+            }
+
+            .reveal .box-glow {
+                box-shadow: 0px 0px 15px 0px white, 0px 0px 10px 0px white, 0px 0px 5px 0px white;
+            }
+
+            /*
+            table {
+                margin: 10px;
+                border-collapse: separate;
+                border: none;
+            }
+
+            td {
+                display: inline-block;
+                border-radius: 5px;
+                background-color: #369;
+                color: green;
+                border: 5px solid red;
+            }*/
+
+            .reveal .row-based td {
+                border: none;
+            }
+
+            .row-based tr td:first-of-type {
+                font-weight: bold;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <div class="reveal">
+
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+<section>
+<h2>Reproducible computational environments</h2>
+    <h3 style="margin-top: 0.5em">
+        Vaclav (Vashek) Petras</h3>
+    <p class="title-foot">
+        <a href="http://www.ncsu.edu/" title="North Carolina State University">NCSU</a>
+        <a href="http://geospatial.ncsu.edu/osgeorel/" title="NCSU GeoForAll Lab">GeoForAll Lab</a>
+        at the
+        <a href="http://geospatial.ncsu.edu/" title="Center for Geospatial Analytics">Center for Geospatial Analytics</a>
+        <br>
+        North Carolina State University
+    </p>
+    <p>
+        NCSU GIS 595-601: Tools for open geospatial science<br>
+        November 8, 2017
+    </p>
+</section>
+
+
+<section>
+<h1>Motivation</h1>
+</section>
+
+
+<section>
+<h2>Dependencies</h2>
+<ul>
+    <li>unknown software dependencies
+        <ul>
+            <li>code does not specify its dependencies
+        </ul>
+    <li>many software dependencies
+        <ul>
+            <li>the list of dependencies is long
+        </ul>
+    <li>chain of dependencies
+        <ul>
+            <li>the specified dependencies require new set dependencies
+        </ul>
+</ul>
+</section>
+
+
+<section>
+<h2>Dependency hell</h2>
+<ul>
+    <li>software package depends on number of other software packages
+        with specific versions
+    <li>different software package depends on the same software packages
+        but requires different (incompatible) versions
+    <li>DLL hell (MS Windows)
+    <li>JAR hell (Java)
+</ul>
+</section>
+
+
+<section>
+<h2>Data</h2>
+<ul>
+    <li>data for computations
+    <li>software/system configuration
+</ul>
+</section>
+
+
+<section>
+<h2>Code rot</h2>
+<ul>
+    <li>bit rot, software rot, software erosion, software decay, software entropy
+    <li>dependencies change
+    <li>code breaks
+    <li>code gives different results in different environments
+</ul>
+</section>
+
+
+<section>
+<h2>Documentation</h2>
+<ul>
+    <li>imprecise documentation
+    <li>lack of documentation
+    <li>completeness of documentation
+    <li>how to put all things together?
+</ul>
+</section>
+
+
+<section>
+<h1>Solutions</h1>
+</section>
+
+
+<section>
+<h2>Python Virtual Environments</h2>
+<ul>
+    <li><code>python -m venv</code>
+    <li>isolated installation of Python packages
+    <li>each environment has a separate set of packages
+</ul>
+</section>
+
+
+<section>
+<h2>Virtual Machines</h2>
+<ul>
+    <li>guest operating system is running on a virtual machine
+    <li>virtual machine disk/image contains (installed) operating system,
+        libraries, and executable programs (and data)
+    <li>open source: QEMU (Quick Emulator), VirtualBox (Oracle VM VirtualBox)
+    <li>proprietary: VMware Workstation, Parallels Desktop for Mac
+</ul>
+</section>
+
+
+<section>
+<h1>Docker</h1>
+</section>
+
+
+<section>
+<h2>Docker vs Virtual Machine</h2>
+
+<div class="left">
+<p>Docker:</p>
+<ul>
+    <li>containers running on a host system (kernel)
+    <li>shares resources
+    <li>operating system and dependencies in layers
+    <li>lightweight, fast
+</ul>
+</div>
+
+<div class="right">
+<p>Virtual Machine:</p>
+<ul>
+    <li>host system runs virtual machine with guest system
+    <li>needs lot of computational resources
+    <li>heavyweight, slow
+    <li>completely isolated
+</ul>
+</div>
+
+</section>
+
+
+<section>
+<h2>Docker running non-Linux OS</h2>
+<ul>
+    <li>possible to run MS Windows, but you or people using your code
+        will likely break the license agreement sooner or later
+    <li>MS Windows (more or less) requires MS Windows host operating system
+</ul>
+</section>
+
+
+<section>
+<h2>Problems in scientific use</h2>
+<ul>
+    <li>operating system may get outdated, base image may disappear
+    <li>operating system package repository is decommissioned
+    <li>convenient advanced images may disappear
+    <li>base image gets updated
+    <li>too much focus on clouds and industry
+        <small>
+        (e.g. new versions for MS Windows require professional edition)
+        </small>
+</ul>
+<p>
+    Many problems appear only when only a Dockerfile is published.
+    Publishing image removes some of the problems, but brings some
+    disadvantages such as big binary files.
+</p>
+</section>
+
+
+<section>
+<h2>Alternatives</h2>
+<ul>
+    <li>Open Container Initiative (OCI), CoreOS rkt (Rocket), Vagrant, ...
+</ul>
+</section>
+
+
+<section>
+<h1>Using Docker</h1>
+</section>
+
+
+<section>
+<h3>Dockerfile</h3>
+<pre style="width: 40%; font-size: 90%;">
+FROM ubuntu:16.04
+RUN apt-get update
+RUN apt-get install -y \
+        g++ \
+        python \
+        python-numpy \
+        ...
+</pre>
+</section>
+
+
+<section>
+<h2>Building an image</h2>
+<ul>
+    <li>build image using a Dockerfile
+    <li>in a directory (repository) with a Dockerfile
+</ul>
+<pre style="font-size: 90%;">
+docker build -t test1 .
+</pre>
+</section>
+
+<section>
+<h2>Running a container</h2>
+<ul>
+    <li>run a container based on an image
+    <li>runs any associated or specified command
+</ul>
+<pre style="font-size: 90%;">
+docker run -t test1 /code/computation.sh
+</pre>
+</section>
+
+
+<section>
+<h2>Linking directories</h2>
+<ul>
+    <li>link local (guest) directory with a directory in a container
+    <li>useful for getting large data in and out from a container
+</ul>
+<pre style="font-size: 90%;">
+docker run -v /home/.../test1-data:/data -t test1 /code/computation.sh
+</pre>
+</section>
+
+
+<section>
+<h2>Linking ports</h2>
+<ul>
+    <li>link guest port to port in a container
+    <li>needed for web applications such as Jupyter Notebook
+</ul>
+<pre style="font-size: 90%;">
+docker run -p 8888:8888 -t test1 /code/computation.sh
+</pre>
+</section>
+
+<section>
+<h2>Setting environmental variables</h2>
+<ul>
+    <li>set system environmental variable in the container
+    <li>useful for program settings and parameters
+</ul>
+<pre style="font-size: 90%;">
+docker run -e VARIABLE_NAME=42 -t test1 /code/computation.sh
+</pre>
+</section>
+
+
+<section>
+<h2>Passing parameters to the process</h2>
+<pre style="font-size: 90%;">
+docker run -t test1 /code/computation.sh param1 param2
+</pre>
+</section>
+<!-- This is a generated file. Do not edit. -->
+        </div>  <!-- slides -->
+
+    </div>  <!-- reveal -->
+
+    <!--<img class="timeline" id="line" />-->
+
+    <!--
+        Home button or link to a parent page
+        If you want this to be unique for every page (slide deck),
+        then remove it from here and put it at the end of each
+        file (or series of files) creating one page
+        (the position will be little different)
+        TODO: some JS is needed to move it to the right position
+    -->
+    <div class="parent-page">
+        <!-- alternative symbol: &#x1f3e0; -->
+        <a href=".." title="Course website">
+            <img width="15px" src="img/home.svg"></a>
+    </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+
+        <script>
+
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                // Display controls in the bottom right corner
+                controls: false,
+
+                // Display a presentation progress bar
+                progress: true,
+                
+                center: true,
+                
+                // Display the page number of the current slide
+                slideNumber: false,
+
+                // Enable the slide overview mode
+                overview: true,
+
+                // Turns fragments on and off globally
+                fragments: true,
+
+                // The "normal" size of the presentation, aspect ratio will be preserved
+                // when the presentation is scaled to fit different resolutions. Can be
+                // specified using percentage units.
+                // width: 960,
+                // height: 700,
+                
+                // Factor of the display size that should remain empty around the content
+                margin: 0.05,  // increase?
+
+                // Bounds for smallest/largest possible scale to apply to content
+                minScale: 0.5,
+                maxScale: 5.0,
+
+                theme: Reveal.getQueryHash().theme,  // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'none', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Push each slide change to the browser history
+                history: true,
+                // Enable keyboard shortcuts for navigation
+                keyboard: true,
+
+                // Vertical centering of slides
+                center: true,
+
+                // Enables touch navigation on devices with touch input
+                touch: true,
+
+                // Loop the presentation
+                loop: false,
+                // Flags if the presentation is running in an embedded mode,
+                // i.e. contained within a limited portion of the screen
+                embedded: false,
+
+                // Number of milliseconds between automatically proceeding to the
+                // next slide, disabled when set to 0, this value can be overwritten
+                // by using a data-autoslide attribute on your slides
+                autoSlide: 0,
+
+                // Stop auto-sliding after user input
+                autoSlideStoppable: true,
+
+                // Enable slide navigation via mouse wheel
+                mouseWheel: false,
+
+                // Hides the address bar on mobile devices
+                hideAddressBar: true,
+
+                // Opens links in an iframe preview overlay
+                previewLinks: false,
+
+                // Transition speed
+                transitionSpeed: 'default', // default/fast/slow
+
+                // Transition style for full page slide backgrounds
+                backgroundTransition: 'none', // default/none/slide/concave/convex/zoom
+
+                // Number of slides away from the current that are visible
+                viewDistance: 3,
+
+                // Parallax background image
+                //parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+                // Parallax background size
+                //parallaxBackgroundSize: '' // CSS syntax, e.g. "2100px 900px"
+                chalkboard: { 
+        		// optionally load pre-recorded chalkboard drawing from file
+            		src: "chalkboard.json",
+            	},
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+                    /* { src: 'plugin/math/math.js', async: true }, */
+                    { src: 'plugin/chalkboard/chalkboard.js' }
+                ],
+                keyboard: {
+            	    67: function() { RevealChalkboard.toggleNotesCanvas() },	// toggle notes canvas when 'c' is pressed
+            	    66: function() { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
+            	    46: function() { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
+            	     8: function() { RevealChalkboard.reset() },	// reset chalkboard data on current slide when 'BACKSPACE' is pressed
+            	    68: function() { RevealChalkboard.download() },	// downlad recorded chalkboard drawing when 'd' is pressed
+            	},
+            });
+
+        </script>
+
+    </body>
+</html>
