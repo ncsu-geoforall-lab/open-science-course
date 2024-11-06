@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="124.87521mm"
+   height="124.87501mm"
+   viewBox="0 0 442.47123 442.4705"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="gear_wheel.svg"
+   inkscape:export-filename="gear_wheel.png"
+   inkscape:export-xdpi="300"
+   inkscape:export-ydpi="300">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="87.20364"
+     inkscape:cy="133.29517"
+     inkscape:document-units="px"
+     inkscape:current-layer="g4144"
+     showgrid="false"
+     inkscape:window-width="1877"
+     inkscape:window-height="1056"
+     inkscape:window-x="43"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(232.66418,-22.55553)">
+    <g
+       transform="matrix(1.25,0,0,-1.25,-246.37733,479.1132)"
+       inkscape:label="gear_wheel"
+       id="g4144">
+      <g
+         id="g4146">
+        <path
+           inkscape:connector-curvature="0"
+           id="path4148"
+           style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none"
+           d="m 158.609,365.244 c -3.523,-0.046 -8.613,-0.886 -15.89,-2.777 C 90.957,349.026 161.668,343.022 115.152,316.639 68.633,290.26 99.777,354.026 61.672,316.506 23.566,278.983 87.812,309.143 60.715,263.037 33.621,216.932 28.707,287.729 14.469,236.182 0.23,184.635 40.789,242.873 40.375,189.397 39.961,135.92 0.309,194.776 13.75,143.018 27.191,91.256 33.195,161.971 59.578,115.451 85.961,68.936 22.191,100.076 59.711,61.971 97.234,23.866 67.074,88.112 113.18,61.014 159.289,33.92 88.488,29.01 140.035,14.768 c 51.547,-14.238 -6.691,26.32 46.785,25.906 53.477,-0.41 -5.379,-40.066 46.383,-26.625 51.758,13.442 -18.957,19.445 27.563,45.828 46.519,26.383 15.375,-37.386 53.48,0.133 38.106,37.524 -26.137,7.363 0.957,53.469 27.094,46.109 32.008,-24.692 46.246,26.855 14.239,51.547 -26.316,-6.691 -25.902,46.785 0.41,53.477 40.062,-5.378 26.621,46.383 -13.445,51.758 -19.445,-18.953 -45.828,27.563 -26.379,46.519 37.387,15.375 -0.133,53.48 -37.523,38.106 -7.363,-26.136 -53.473,0.957 -46.105,27.094 24.696,32.008 -26.851,46.246 -3.223,0.891 -6.016,1.567 -8.434,2.051 -36.273,7.277 11.781,-28.34 -38.351,-27.953 -45.957,0.352 -8.953,29.688 -30.489,29.398 z m 31.829,-81.019 c 5.464,-0.141 10.917,-0.75 16.277,-1.816 12.324,-2.454 24.156,-7.36 34.601,-14.344 10.446,-6.985 19.5,-16.043 26.481,-26.496 6.976,-10.45 11.875,-22.282 14.324,-34.61 2.445,-12.324 2.445,-25.133 -0.012,-37.457 -4,-19.972 -14.554,-38.578 -29.644,-52.265 -15.09,-13.684 -34.637,-22.371 -54.906,-24.403 -14.0129,-0.901174 -19.14469,-0.445956 -28.356,1.274 -12.324,2.457 -24.156,7.359 -34.601,14.343 -10.446,6.985 -19.5,16.047 -26.481,26.497 -6.976,10.449 -11.875,22.285 -14.324,34.609 -2.445,12.324 -2.442,25.133 0.012,37.457 4.379,21.969 16.722,42.258 34.222,56.242 17.5,13.985 40.016,21.547 62.407,20.969 z"
+           sodipodi:nodetypes="ccccccscccccccsccccccccccccscccccccccccccs" />
+      </g>
+    </g>
+  </g>
+</svg>
