@@ -140,7 +140,7 @@ Examples using Binder (25 min):
 
 1. Hydrology and zonal statistics in GRASS GIS in JupyterLab
 
-   * https://mybinder.org/v2/gh/OSGeo/grass/8.2.0?urlpath=lab%2Ftree%2Fdoc%2Fnotebooks%2Fhydrology.ipynb
+   * https://mybinder.org/v2/gh/OSGeo/grass/8.4.0?urlpath=lab%2Ftree%2Fdoc%2Fnotebooks%2Fhydrology.ipynb
    * Highlights: Included dataset, two different types of plotting (GRASS-specific and general Matplotlib)
 
 1. Sudden Oak Death example for PoPS model in JupyterLab
