@@ -8,12 +8,15 @@ on:
 jobs:
   build-deploy:
 
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
 
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v5
     - name: Install dependencies
       run: sudo apt-get install -y pandoc
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.14'
     - name: Build the website
       run: |
         ./build.sh
