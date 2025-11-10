@@ -74,13 +74,13 @@ Goal: Public repository with research code linked to data and a way for everybod
 Python, Notebooks, Repositories, and Binder
 ```````````````````````````````````````````
 
-(25 min)
+(20 min)
 
 Introduction to the tools and technologies (10 min):
 
 * `Python in Binder <../lectures/python-in-binder.html>`_
 
-Examples (15 min):
+Examples (10 min):
 
 * `Simple example <https://github.com/wenzeslaus/trivial-example-for-binder>`_
 * `Geospatial example <https://github.com/wenzeslaus/trivial-geospatial-example-for-binder>`_
@@ -88,7 +88,7 @@ Examples (15 min):
 Exercise
 ````````
 
-(20 min)
+(10 min)
 
 Task:
 
@@ -129,12 +129,17 @@ Extra tasks:
   * Store the CRS in a variable and print the variable in the notebook.
   * Reuse the loaded object for data display (instead of loading it again).
 
-(Break: 15 min)
+Open Science at the Center for Geospatial Analytics
+```````````````````````````````````````````````````
+
+(10 min)
+
+* `Open Technology at the Center <https://docs.google.com/presentation/d/1UuojRa5cDgqhLBz0hzpbjJg27GCamRF38_zxBy8ugEw/edit?usp=sharing>`
 
 More Advanced Geospatial Examples
 `````````````````````````````````
 
-(55 min)
+(30 min)
 
 Examples using Binder (25 min):
 
