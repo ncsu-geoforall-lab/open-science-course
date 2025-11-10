@@ -1,0 +1,846 @@
+<!doctype html>
+<html lang="en">
+<!-- This is a generated file. Do not edit. -->
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>Tools for open geospatial science</title>
+
+        <meta name="description" content="NCSU GIS 595-601: Tools for open geospatial science">
+        <meta name="author" content="Vaclav Petras">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<link rel="shortcut icon" href="../img/favicon.png" />
+
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/ncsu-geoforall-lab.css" id="theme">
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+        <!-- For chalkboard plugin -->
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+
+        <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+
+        <style>
+            body {
+                background-image: url("../img/header.svg");
+                background-repeat: repeat-x;
+                background-position: left bottom;
+                background-size: auto 10%;
+            }
+
+            .glow {
+                text-shadow: 0 0 20px white, 0 0 18px white, 0 0 16px white, 0 0 14px white, 0 0 12px white, 0 0 10px white, 0 0 8px white, 0 0 6px white;
+            }
+
+            .reveal .box-glow {
+                box-shadow: 0px 0px 15px 0px white, 0px 0px 10px 0px white, 0px 0px 5px 0px white;
+            }
+
+            /*
+            table {
+                margin: 10px;
+                border-collapse: separate;
+                border: none;
+            }
+
+            td {
+                display: inline-block;
+                border-radius: 5px;
+                background-color: #369;
+                color: green;
+                border: 5px solid red;
+            }*/
+
+            .reveal .row-based td {
+                border: none;
+            }
+
+            .row-based tr td:first-of-type {
+                font-weight: bold;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <div class="reveal">
+
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+<section>
+    <h2>How we teach tools for open geospatial science</h2>
+    <h3 style="margin-top: 0.5em">
+        Vaclav (Vashek) Petras</h3>
+    <p class="title-foot">
+        Co-presenters: Helena Mitasova, Anna Petrasova
+        <br>
+        <a href="http://www.ncsu.edu/" title="North Carolina State University">NCSU</a>
+        <a href="http://geospatial.ncsu.edu/osgeorel/" title="NCSU GeoForAll Lab">GeoForAll Lab</a>
+        at the
+        <a href="http://geospatial.ncsu.edu/" title="Center for Geospatial Analytics">Center for Geospatial Analytics</a>
+        <br>
+        North Carolina State University
+    </p>
+    <p>
+        GeoForAll Webinar<br>
+        December 1, 2017
+    </p>
+    <p>
+        GitHub: <a href="http://github.com/wenzeslaus">wenzeslaus</a>
+        <br>
+        Twitter: <a href="http://twitter.com/vaclavpetras">vaclavpetras</a>
+    </p>
+</section>
+
+
+<section>
+<h2>Open Science Beginnings</h2>
+
+<p>
+First journal ever published:<br>
+<em>Philosophical Transactions (of the Royal Society)</em>
+</p>
+
+<img src="img/philosophical_transactions.jpg" class="stretch">
+<p class="credit glow">
+    CC BY Stefan Janusz,
+    <a href="https://en.wikipedia.org/wiki/File:Philosophical_Transactions_Volume_1_frontispiece.jpg">Wikipedia</a>
+</p>
+</section>
+
+
+<section>
+<h2>Publishing goals</h2>
+<ul>
+    <li>registration <small>so that scientists get credit</small>
+    <li>archiving <small>so that we preserve knowledge for the future</small>
+    <li>dissemination <small>so that people can use this knowledge</small>
+    <li>peer review <small>so that we know it's worth it</small>
+</ul>
+</section>
+
+
+<section>
+<h2>Scientists rely on software</h2>
+    <blockquote style="width: 100%; margin: 0.1em;">
+        <p>
+            It's impossible to conduct research without software,
+            say 7 out of 10 UK researchers
+        </p>
+        <p>
+            <!-- &mdash; Simon Hettrick -->
+            &mdash; Hettrick et al, UK Research Software Survey 2014
+        </p>
+    </blockquote>
+<!--
+<small>92% of academics use research software</small>
+https://www.software.ac.uk/blog/2016-09-12-its-impossible-conduct-research-without-software-say-7-out-10-uk-researchers
+-->
+<img src="img/grass_gis_gui_modeler.png" class="stretch box-glow">
+</section>
+
+
+<section>
+<h2>Software needs to be shared</h2>
+    <blockquote style="width: 100%; margin: 0.1em;">
+        <p>
+            Software [...] developed as part of novel methods is as important
+            for the method's implementation [...]
+            Such software [...] must be made available to readers upon publication.
+        </p>
+        <p>
+            &mdash;Nature Methods - 4, 189 (2007)
+            <br>
+            <a href="https://doi.org/10.1038/nmeth0307-189">doi:10.1038/nmeth0307-189</a>
+        </p>
+    </blockquote>
+<!--
+scientific community we have been largely unsuccessful in sharing
+our research methods and results in a reproducible way.
+
+current scientific publishing requires more than writing a paper
+new ways of sharing our research
+-->
+</section>
+
+
+<section>
+<h2>Open Science</h2>
+
+<img src="img/spectrum_of_reproducible_research.png" class="stretch">
+<small>[Buckheit and Donoho 1995, Peng 2011, Rodríguez-Sánchez et al. 2016, Marwick 2016]</small>
+<p class="credit">
+    Image credit: CC BY-SA Comtebenoit,
+    <a href="https://commons.wikimedia.org/wiki/File:Spectrum_of_reproducible_research.png">Wikimedia</a>
+<!--
+J. Buckheit and D. L. Donoho. Wavelets and Statistics, chapter Wavelab and reproducible research.
+Springer-Verlag, Berlin, New York, 1995.
+(paraphrased/pseudo-quote Jon Claerbout of Stanford)
+An article about computational science in a scientific publication
+is not the scholarship itself, it is merely advertising of the scholarship.
+The actual scholarship is the complete software development environment
+and the complete set of instructions which generated the figures.
+
+Peng, R. D. (2011). Reproducible research in computational science.
+Science, 334(6060), 1226-1227.
+DOI: 10.1126/science.1213847
+
+Rodríguez-Sánchez, F., Bartomeus, I., Varela, S., Pérez-Luque, A.J.,
+Ciencia reproducible: qué, por qué, cómo.
+Ecosistemas [en linea] 2016, 25 (Mayo-Agosto):
+[Fecha de consulta: 4 de abril de 2017]
+Disponible en:<http://www.redalyc.org/articulo.oa?id=54046745011>
+ISSN 1132-6344
+
+Marwick, B. (2017). Computational reproducibility in archaeological research:
+basic principles and a case study of their implementation.
+Journal of Archaeological Method and Theory, 1-27.
+DOI: 10.1007/s10816-015-9272-9
+-->
+</p>
+</section>
+
+
+<section>
+<h2>Tools for open geospatial science</h2>
+<p>
+    <em>Graduate-level course at NCSU Center for Geospatial Analytics</em>
+    <br>
+    <em>Special topics course; on-campus and distance education</em>
+    <br>
+    <em>First semester: Fall 2017</em>
+</p>
+<ol>
+    <li>Basic topics
+    <li>Geospatial topics
+    <li>Advanced topics
+</ol>
+<br>
+<img src="img/ncsu_jordan_hall.jpg" class="stretch box-glow">
+</section>
+
+
+<section>
+<h2>Course Syllabus: Basic Topics</h2>
+<ol start="1">
+    <li>Introduction to and motivation for open science
+    <li>Collaborative writing of scientific papers
+    <li>Advanced tools for papers and reports
+    <li>Revision control systems and wiki technologies
+    <li>How open source communities and development work
+</ol>
+<br>
+<img src="img/grass_gis_dev_vis.png" class="stretch box-glow">
+<p class="credit glow">
+    Image source:
+    <a href="https://www.youtube.com/watch?v=MR4_5GSID2A">GRASS GIS 6.4 development visualization from 1999 to 2013</a>
+</p>
+</section>
+
+
+<section>
+<h2>Paper</h2>
+PDF, HTML
+<br>
+<img src="img/fragmentation_paper_pages_8_9.png" class="stretch box-glow">
+<br>
+<p class="credit glow">
+    Image source:
+    Petras, V., Newcomb, D. J., &amp; Mitasova, H. (2017).
+    Generalized 3D fragmentation index derived from lidar point clouds.
+    <em>Open Geospatial Data, Software and Standards</em>, 2(1), 9.
+    <a href="https://doi.org/10.1186/s40965-017-0021-8">doi:10.1186/s40965-017-0021-8</a>
+</p>
+</section>
+
+
+<section>
+<h2>Collaborative scientific writing</h2>
+<p>Overleaf, Authorea</p>
+<img src="img/overleaf_figures.png" class="stretch box-glow">
+<p class="credit glow">
+    Image: Overleaf document for
+    Petras, V., Newcomb, D. J., &amp; Mitasova, H. (2017).
+    Generalized 3D fragmentation index derived from lidar point clouds.
+    <em>Open Geospatial Data, Software and Standards</em>, 2(1), 9.
+    <a href="https://doi.org/10.1186/s40965-017-0021-8">doi:10.1186/s40965-017-0021-8</a>
+</p>
+</section>
+
+
+<section>
+<h2>File versions</h2>
+
+<img src="img/file_versions.png" class="stretch box-glow">
+</section>
+
+
+<section>
+<h2>Revision control</h2>
+Git
+<!--
+collaborate and keep track
+of our constantly evolving methods and R scripts.
+-->
+<br>
+<img src="img/revisions.svg" class="stretch">
+<pre class="bash" style="font-size: x-large;"><code>git commit script.py -m "replaced part of the main equation"
+</code></pre>
+<br>
+There are GUIs as well.
+<br>
+<small>
+    Alternatives: Subversion (<code>svn</code>), Mercurial (<code>hg</code>), ...
+</small>
+</section>
+
+
+<section>
+<h2>Revision control hosting</h2>
+<ul>
+    <li>GitHub
+        <ul>
+            <li>GitHub != Git
+            <li>proprietary software
+            <li>freemium service
+        </ul>
+    <li>Self-hosted open alternatives: GitLab, Gogs, Gitea, Gitolite, Trac, ...
+    <li>Alternative services: GitLab, Bitbucket, ...
+    <li>"software forges"
+</ul>
+<img src="img/logos/octocat.png" class="stretch">
+</section>
+
+
+<section>
+<h2>Course Syllabus: Geospatial Topics</h2>
+<ol start="6">
+    <li>QGIS, a free and open source geographic system
+    <li>Introduction to command line and remote access to computational resources
+    <li>Command line and Python tools for geospatial work <small>(GDAL)</small>
+    <li>GRASS GIS as software for geospatial research
+    <li>Publishing data on web
+</ol>
+</section>
+
+
+<section>
+<h2>Geospatial workflows</h2>
+<em>as visual workflows with visual results</em>
+<br>
+<img src="img/grass_gis_gui.png" class="stretch box-glow">
+</section>
+
+<section>
+<h2>Screenshots</h2>
+<em>won't cut it</em>
+<br>
+<img src="img/r_in_lidar_1.png" width=300>
+<img src="img/r_in_lidar_2.png" width=300>
+<img src="img/r_in_lidar_3.png" width=300>
+</section>
+
+
+<section>
+<h2>Scripting the process</h2>
+
+Bash and GRASS GIS
+<pre class="bash" style="font-size: x-large;"><code>r.in.lidar input=points.las output=elevation -e
+</code></pre>
+Python and GRASS GIS
+<pre class="python" style="font-size: x-large;"><code>run_command("r.in.lidar", input="points.las", output="elevation", flags="e")
+</code></pre>
+R and GRASS GIS
+<pre class="python" style="font-size: x-large;"><code>execGRASS("r.in.lidar", input="points.las", output="elevation", flags="e")
+</code></pre>
+<small>
+    In general: Bash, Python, R, Ruby, Octave, Julia, ...
+</small>
+</section>
+
+
+<section>
+<h2>Course Syllabus: Advanced Topics</h2>
+<ol start="11">
+    <li>Combining text, code and results into one document
+    <li>Publishing code as part of an open source project
+    <li>Reproducible computational environments
+    <li>Writing and reproducing an open science paper
+</ol>
+</section>
+
+
+<section>
+<h2>Computational notebooks</h2>
+<ul>
+    <li>interactive document with text, code, and figures
+    <li>languages: Python, R, Bash, C, C++, Octave, ...
+    <li>Jupyter Notebook, R Markdown (Notebook), Emacs Org-mode, ...
+</ul>
+<img src="img/jupyter.png" class="stretch box-glow">
+<!-- Jupyter and R Markdown let us track the reasoning behind our experiments and analyses. -->
+</section>
+
+
+<section>
+<h2>Publishing Code</h2>
+
+<img src="img/spatio-temporal-countour-evolution_code.png" class="stretch">
+</section>
+<!--A terrain modeling paper will serve as an example of sharing a full description
+of a published method.-->
+
+
+<section>
+<h2>Integration into a larger project</h2>
+<ul>
+    <li>Why?
+    <ul>
+        <li>Preprocessing, visualization, and user interface (GUI, CLI, API)
+        <li>Inputs, outputs, memory management and other common features
+        <li>Integration with existing analytical tools
+        <li>Long-term maintenance
+    </ul>
+    <li>Options: R package, Python package, GRASS GIS module, QGIS plugin, ...
+    <li>Integration gradient: unofficial extension - integrated extension - code addition
+    <li>Choose the project wisely <small>[Schweik and English, 2012]</small>
+</ul>
+<br>
+<img src="img/grass_gis_gui_lidar.png" class="stretch box-glow">
+<p>
+<small style="font-size: 60%;" class="glow">
+    [Schweik and English, 2012]
+    Schweik, C. M., and English, R. C. 2012.
+    Internet Success: A Study of Open Source Software Commons.
+    <a href="http://works.bepress.com/charles_schweik/29/">works.bepress.com/charles_schweik/29</a>
+</small>
+</p>
+</section>
+
+
+<section>
+<h3>FUTURES model: An example of integration</h3>
+<ul>
+    <li>urban-rural landscape patterns simulation
+    <li>computational research
+    <li>implemented as a set of GRASS GIS addon modules
+</ul>
+<br>
+<img src="img/futures_animation_tool.gif" class="stretch">
+<br>
+<small style="font-size: 50%;" class="glow">
+    Meentemeyer, R. K., Tang, W., Dorning, M. A., Vogler, J. B., Cunniffe, N. J., &amp; Shoemaker, D. A. (2013). FUTURES: multilevel simulations of emerging urban–rural landscape structure using a stochastic patch-growing algorithm. Annals of the Association of American Geographers, 103(4), 785-807.
+    <br>
+    Petrasova, A., Petras, V., Van Berkel, D., Harmon, B. A., Mitasova, H., &amp; Meentemeyer, R. K. (2016). Open source approach to urban growth simulation. Int Arch Photogramm Remote Sens Spat Inf Sci, 41, B7.
+</small>
+</section>
+
+
+<section>
+<h3>FUTURES model: Source code</h3>
+<img src="img/futures_src_detail.png" class="stretch">
+<a href="https://trac.osgeo.org/grass/browser/grass-addons/grass7/raster/r.futures#r.futures.calib">trac.osgeo.org/grass/browser/grass-addons/grass7/raster/r.futures</a>
+</section>
+
+
+<section>
+<h3>FUTURES model: Source code history</h3>
+<img src="img/futures_log_detail.png" class="stretch">
+<a href="https://trac.osgeo.org/grass/log/grass-addons/grass7/raster/r.futures">trac.osgeo.org/grass/log/grass-addons/grass7/raster/r.futures</a>
+</section>
+
+
+<section>
+<h3>FUTURES model: Documentation</h3>
+<img src="img/futures_doc_detail.png" class="stretch">
+<a class="glow" href="https://grass.osgeo.org/grass7/manuals/addons/r.futures.html">grass.osgeo.org/grass7/manuals/addons/r.futures</a>
+</section>
+
+
+<section>
+<h3>FUTURES model: Graphical user interface</h3>
+<img src="img/futures_gui.png" class="stretch box-glow">
+</section>
+
+
+<section>
+<h2>Environment to run the code</h2>
+<ul>
+    <li>dependencies
+    <li>environmental settings
+    <li>file structure
+    <li>solutions: Docker, Vagrant, virtual machines, ...
+</ul>
+<pre style="width: 40%; font-size: 70%;">
+# Dockerfile
+FROM ubuntu:16.04
+RUN apt-get update
+RUN apt-get install -y \
+        g++ \
+        python \
+        python-numpy \
+        netcdf-bin \
+        sqlite3 \
+        ...
+WORKDIR /data
+</pre>
+
+<img src="img/logos/docker.svg" class="stretch">
+<p class="credit glow">
+<a href="https://commons.wikimedia.org/wiki/File:Docker_(container_engine)_logo.svg">Image credit: Wikimedia Commons - Docker (container engine) logo</a>
+</p>
+</section>
+
+
+<section>
+<h2>Research publication</h2>
+<table class="row-based">
+    <tr>
+        <td>Text</td>
+        <td>
+            background, methods, results, discussion<td>
+            <small>PDF, HTML, *</small>
+        </td>
+    </tr>
+    <tr>
+        <td>Data</td>
+        <td>
+            collected data and computational results<td>
+            <small>open formats, **</small>
+        </td>
+    </tr>
+    <tr>
+        <td>Reusable&nbsp;code</td>
+        <td>
+            generally and reusably implemented methods<td>
+            <small>Python, R, C</small>
+        </td>
+    </tr>
+    <tr>
+        <td>Specific&nbsp;code</td>
+        <td>
+            scripts to generate results<td>
+            <small>Bash, Python, R, **</small>
+        </td>
+    </tr>
+    <tr>
+        <td>Environment</td>
+        <td>
+            details about all dependencies and the code<td>
+            <small>Docker, Vagrant</small>
+        </td>
+    </tr>
+    <tr>
+        <td>Versions</td>
+        <td>
+            repository with current and previous versions<td>
+            <small>Git, Mercurial</small>
+        </td>
+    </tr>
+</table>
+<p>
+    <small style="font-size: 70%;">
+    * Source format being e.g. LaTeX or Markdown
+    <br>
+    ** Potentially included in computational notebooks such as Jupyter Notebook
+    </small>
+</p>
+<img src="img/petras2017generalized_paper_detail.png" class="stretch box-glow">
+<small class="glow">
+    Petras, V., Newcomb, D. J., &amp; Mitasova, H. (2017).
+    Generalized 3D fragmentation index derived from lidar point clouds.
+    <em>Open Geospatial Data, Software and Standards</em>, 2(1), 9.
+    <a href="https://doi.org/10.1186/s40965-017-0021-8">doi:10.1186/s40965-017-0021-8</a>
+</small>
+</section>
+
+
+<!--
+This talk will discuss several tools for reproducible research
+and show practical examples which will make your life and lives of your colleagues easier.
+
+Finally, a paper about vegetation structure will show how all pieces
+of the puzzle fit together.
+-->
+
+
+<section>
+<h2>Some practical skills and applications</h2>
+<ul>
+    <li>Publishing a script with the next paper
+    <li>Managing code using Git and communicating through GitHub
+    <li>Collaborating on scientific text using Overleaf
+    <li>Using Jupyter Notebook for a technical report
+    <li>Navigating through contribution procedure of an open source project
+</ul>
+</section>
+
+
+<section>
+<h2>Management of the course materials</h2>
+<ul>
+    <li>Texts: HTML and reStructuredText (plain text)
+    <li>Conversions and building: Bash, Python, Pandoc
+    <li>Revision control: Git
+    <li>Git hosting: GitHub; Web hosting: GitHub <small>(proprietary; freemium; free for publicly available projects)</small>
+    <li>Lecture slides: Reveal.js (HTML5)
+</ul>
+<p>
+<small>
+Petras, V., Petrasova, A., Harmon, B., Meentemeyer, R. K., Mitasova, M.
+Integrating Free and Open Source Solutions into Geospatial Science Education
+ISPRS Int. J. Geo-Inf. 2015, 4(2), 942-956;
+<a href="http://doi.org/10.3390/ijgi4020942">doi:10.3390/ijgi4020942</a>
+</small>
+</p>
+<img src="img/petras2015integrating.png" class="stretch box-glow">
+</section>
+
+
+<section>
+<h2>Available course material</h2>
+<ul>
+    <li>Course web site (HTML)
+    <li>Lecture slides (if applicable; in Reveal.js)
+    <li>Raw (plain text) weekly instructions in reStructuredText (on GitHub)
+    <li>Assignment for each week
+    <li>Recorded short videos from the class
+    <li>Flyer and other promotional material
+</ul>
+<a href="https://github.com/ncsu-geoforall-lab/open-science-course">github.com/ncsu-geoforall-lab/open-science-course</a>
+<p>
+<small>
+    <a href="https://github.com/ncsu-geoforall-lab/uav-lidar-analytics-course">github.com/ncsu-geoforall-lab/uav-lidar-analytics-course</a>
+    <br>
+    <a href="https://github.com/ncsu-geoforall-lab/geospatial-modeling-course">github.com/ncsu-geoforall-lab/geospatial-modeling-course</a>
+</small>
+</p>
+<img src="img/github_course_source.png" class="stretch box-glow">
+</section>
+
+
+<section>
+<h2>Resources</h2>
+<div class="left">
+<h3>Tools for open geospatial science</h3>
+<ul>
+    <li>North Carolina State University
+    <li>fall 2017, on-campus and distance
+    <li><a href="https://goo.gl/g8pFiE">goo.gl/g8pFiE</a>
+</ul>
+<br>
+<img src="../img/gear_wheel.png" style="height: 12ex;">
+<img src="img/url_g8pFiE_qrcode.png" style="height: 12ex; padding-left: 4em;">
+</div>
+<div class="right">
+<h3>NCSU GeoForAll Lab</h3>
+<ul>
+    <li>talks, courses and workshops
+    <li>research
+    <li>software development
+    <li><a href="https://geospatial.ncsu.edu/osgeorel">geospatial.ncsu.edu/osgeorel</a>
+</ul>
+<br>
+<img src="img/logos/ncstate.png" style="height: 10ex;">
+</div>
+</section>
+
+
+<section>
+<h2>Additional resources</h2>
+
+<small style="font-size: 60%" class="glow">
+General references:
+
+<ul>
+<li>
+Watson, M. (2015). When will ‘open science’ become simply ‘science’?. Genome biology, 16(1), 101. <a href="https://doi.org/10.1186/s13059-015-0669-2">doi:10.1186/s13059-015-0669-2</a>
+<li>
+Morin, A et al. “Shining light into black boxes”. In: Science 336.6078 (2012), pp. 159–160. <a href="http://doi.org/10.1126/science.1218263">doi:10.1126/science.1218263</a>
+<li>
+Ince, Darrel C., Leslie Hatton, and John Graham-Cumming. “The case for open computer programs”. In: Nature 482.7386 (2012), pp. 485–488. <a href="http://doi.org/10.1038/nature10836">doi:10.1038/nature10836</a>
+<li>
+Piwowar, Heather A., Roger S. Day, and Douglas B. Fridsma. “Sharing Detailed Research Data Is Associated with Increased Citation Rate”. In: PLOS ONE 2.3 (Mar. 2007). <a href="http://doi.org/10.1371/journal.pone.0000308">doi:10.1371/journal.pone.0000308</a>
+</ul>
+
+Specific fields or solutions:
+<ul>
+<li>
+Rocchini, Duccio and Markus Neteler. “Let the four freedoms paradigm apply to ecology”. In: Trends in Ecology and Evolution (2012). <a href="http://doi.org/10.1016/j.tree.2012.03.009">doi:10.1016/j.tree.2012.03.009</a>
+<li>
+Lees, Jonathan M. “Open and free: Software and scientific reproducibility”. In: Seismological Research Letters 83.5 (2012), pp. 751–752. <a href="http://doi.org/10.1785/0220120091">doi:10.1007/s10816-015-9272-9</a>
+<li>
+Marwick, Ben. “Computational reproducibility in archaeological research: basic principles and a case study of their implementation”. In: Journal of Archaeological Method and Theory 24.2 (2017), pp. 424–450. <a href="http://doi.org/10.1007/s10816-015-9272-9">doi:10.1007/s10816-015-9272-9</a>
+<li>
+Boettiger, C. (2015). An introduction to Docker for reproducible research. ACM SIGOPS Operating Systems Review, 49(1), 71-79. https://doi.org/10.1145/2723872.2723882 (Preprint <a href="https://arxiv.org/pdf/1410.0846">arxiv.org/pdf/1410.0846</a>)
+</ul>
+
+Texts not published as papers:
+<ul>
+<li>
+Kieran Healy. Plain Person’s Guide to Plain Text Social Science. <a href="http://plain-text.co">plain-text.co</a>
+<li>
+Eva Amsen. 2014. What is open science? F1000Research blog. <a href="https://blog.f1000.com/2014/11/11/what-is-open-science/">blog.f1000.com/2014/11/11/what-is-open-science</a>
+<li>
+The Open Definition (Formal definition of open) <a href="http://opendefinition.org/">opendefinition.org</a>
+</ul>
+</small>
+
+</section>
+<!-- This is a generated file. Do not edit. -->
+        </div>  <!-- slides -->
+
+    </div>  <!-- reveal -->
+
+    <!--<img class="timeline" id="line" />-->
+
+    <!--
+        Home button or link to a parent page
+        If you want this to be unique for every page (slide deck),
+        then remove it from here and put it at the end of each
+        file (or series of files) creating one page
+        (the position will be little different)
+        TODO: some JS is needed to move it to the right position
+    -->
+    <div class="parent-page">
+        <!-- alternative symbol: &#x1f3e0; -->
+        <a href=".." title="Course website">
+            <img width="15px" src="img/home.svg"></a>
+    </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+
+        <script>
+
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                // Display controls in the bottom right corner
+                controls: false,
+
+                // Display a presentation progress bar
+                progress: true,
+                
+                center: true,
+                
+                // Display the page number of the current slide
+                slideNumber: false,
+
+                // Enable the slide overview mode
+                overview: true,
+
+                // Turns fragments on and off globally
+                fragments: true,
+
+                // The "normal" size of the presentation, aspect ratio will be preserved
+                // when the presentation is scaled to fit different resolutions. Can be
+                // specified using percentage units.
+                // width: 960,
+                // height: 700,
+                
+                // Factor of the display size that should remain empty around the content
+                margin: 0.05,  // increase?
+
+                // Bounds for smallest/largest possible scale to apply to content
+                minScale: 0.5,
+                maxScale: 5.0,
+
+                theme: Reveal.getQueryHash().theme,  // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'none', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Push each slide change to the browser history
+                history: true,
+                // Enable keyboard shortcuts for navigation
+                keyboard: true,
+
+                // Vertical centering of slides
+                center: true,
+
+                // Enables touch navigation on devices with touch input
+                touch: true,
+
+                // Loop the presentation
+                loop: false,
+                // Flags if the presentation is running in an embedded mode,
+                // i.e. contained within a limited portion of the screen
+                embedded: false,
+
+                // Number of milliseconds between automatically proceeding to the
+                // next slide, disabled when set to 0, this value can be overwritten
+                // by using a data-autoslide attribute on your slides
+                autoSlide: 0,
+
+                // Stop auto-sliding after user input
+                autoSlideStoppable: true,
+
+                // Enable slide navigation via mouse wheel
+                mouseWheel: false,
+
+                // Hides the address bar on mobile devices
+                hideAddressBar: true,
+
+                // Opens links in an iframe preview overlay
+                previewLinks: false,
+
+                // Transition speed
+                transitionSpeed: 'default', // default/fast/slow
+
+                // Transition style for full page slide backgrounds
+                backgroundTransition: 'none', // default/none/slide/concave/convex/zoom
+
+                // Number of slides away from the current that are visible
+                viewDistance: 3,
+
+                // Parallax background image
+                //parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+                // Parallax background size
+                //parallaxBackgroundSize: '' // CSS syntax, e.g. "2100px 900px"
+                chalkboard: { 
+        		// optionally load pre-recorded chalkboard drawing from file
+            		src: "chalkboard.json",
+            	},
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+                    /* { src: 'plugin/math/math.js', async: true }, */
+                    { src: 'plugin/chalkboard/chalkboard.js' }
+                ],
+                keyboard: {
+            	    67: function() { RevealChalkboard.toggleNotesCanvas() },	// toggle notes canvas when 'c' is pressed
+            	    66: function() { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
+            	    46: function() { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
+            	     8: function() { RevealChalkboard.reset() },	// reset chalkboard data on current slide when 'BACKSPACE' is pressed
+            	    68: function() { RevealChalkboard.download() },	// downlad recorded chalkboard drawing when 'd' is pressed
+            	},
+            });
+
+        </script>
+
+    </body>
+</html>

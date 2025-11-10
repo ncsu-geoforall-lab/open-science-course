@@ -1,0 +1,646 @@
+<!doctype html>
+<html lang="en">
+<!-- This is a generated file. Do not edit. -->
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>Tools for open geospatial science</title>
+
+        <meta name="description" content="NCSU GIS 595-601: Tools for open geospatial science">
+        <meta name="author" content="Vaclav Petras">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<link rel="shortcut icon" href="../img/favicon.png" />
+
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/ncsu-geoforall-lab.css" id="theme">
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+        <!-- For chalkboard plugin -->
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+
+        <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+
+        <style>
+            body {
+                background-image: url("../img/header.svg");
+                background-repeat: repeat-x;
+                background-position: left bottom;
+                background-size: auto 10%;
+            }
+
+            .glow {
+                text-shadow: 0 0 20px white, 0 0 18px white, 0 0 16px white, 0 0 14px white, 0 0 12px white, 0 0 10px white, 0 0 8px white, 0 0 6px white;
+            }
+
+            .reveal .box-glow {
+                box-shadow: 0px 0px 15px 0px white, 0px 0px 10px 0px white, 0px 0px 5px 0px white;
+            }
+
+            /*
+            table {
+                margin: 10px;
+                border-collapse: separate;
+                border: none;
+            }
+
+            td {
+                display: inline-block;
+                border-radius: 5px;
+                background-color: #369;
+                color: green;
+                border: 5px solid red;
+            }*/
+
+            .reveal .row-based td {
+                border: none;
+            }
+
+            .row-based tr td:first-of-type {
+                font-weight: bold;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <div class="reveal">
+
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+<section>
+    <h2>How to make your research reproducible</h2>
+    <h3 style="margin-top: 0.5em">
+        Vaclav (Vashek) Petras</h3>
+    <p class="title-foot">
+        <a href="http://www.ncsu.edu/" title="North Carolina State University">NCSU</a>
+        <a href="http://geospatial.ncsu.edu/osgeorel/" title="NCSU GeoForAll Lab">GeoForAll Lab</a>
+        at the
+        <a href="http://geospatial.ncsu.edu/" title="Center for Geospatial Analytics">Center for Geospatial Analytics</a>
+        <br>
+        North Carolina State University
+    </p>
+    <p>
+        US-IALE, Baltimore<br>
+        April 9-13, 2017
+    </p>
+</section>
+
+
+<section>
+<h2>Science</h2>
+<em>Science existed before journal papers.</em>
+</section>
+
+
+<section>
+<h2>Open Science</h2>
+
+<img src="img/philosophical_transactions.jpg" class="stretch">
+<p class="credit glow">
+    CC BY Stefan Janusz,
+    <a href="https://en.wikipedia.org/wiki/File:Philosophical_Transactions_Volume_1_frontispiece.jpg">Wikipedia</a>
+</p>
+</section>
+
+
+<section>
+<h2>Open Science</h2>
+<ul>
+    <li>registration <small>so that scientists get credit</small>
+    <li>archiving <small>so that we preserve knowledge for the future</small>
+    <li>dissemination <small>so that people can use this knowledge</small>
+    <li>peer review <small>so that we know it's worth it</small>
+</ul>
+</section>
+
+
+<section>
+<h2>Open Science</h2>
+
+<img src="img/spectrum_of_reproducible_research.png" class="stretch">
+<small>[Buckheit and Donoho 1995, Peng 2011, Rodríguez-Sánchez et al. 2016, Marwick 2016]</small>
+<p class="credit">
+    Image credit: CC BY-SA Comtebenoit,
+    <a href="https://commons.wikimedia.org/wiki/File:Spectrum_of_reproducible_research.png">Wikimedia</a>
+<!--
+Peng, R. D. (2011). Reproducible research in computational science.
+Science, 334(6060), 1226-1227.
+DOI: 10.1126/science.1213847
+
+Rodríguez-Sánchez, F., Bartomeus, I., Varela, S., Pérez-Luque, A.J.,
+Ciencia reproducible: qué, por qué, cómoEcosistemas [en linea] 2016, 25
+(Mayo-Agosto) : [Fecha de consulta: 4 de abril de 2017]
+Disponible en:<http://www.redalyc.org/articulo.oa?id=54046745011>
+ISSN 1132-6344
+
+Marwick, B. (2016). Computational reproducibility in archaeological research:
+basic principles and a case study of their implementation.
+Journal of Archaeological Method and Theory, 1-27.
+DOI: 10.1007/s10816-015-9272-9
+-->
+</p>
+</section>
+
+<!--
+J. Buckheit and D. L. Donoho. Wavelets and Statistics, chapter Wavelab and reproducible research.
+Springer-Verlag, Berlin, New York, 1995.
+(paraphrased/pseudo-quote Jon Claerbout of Stanford)
+An article about computational science in a scientific publication
+is not the scholarship itself, it is merely advertising of the scholarship.
+The actual scholarship is the complete software development environment
+and the complete set of instructions which generated the figures.
+-->
+
+<section>
+<h2>Scientists rely on software</h2>
+    <blockquote style="width: 100%; margin: 0.1em;">
+        <p>
+            It's impossible to conduct research without software,
+            say 7 out of 10 UK researchers
+        </p>
+        <p>
+            <!-- &mdash; Simon Hettrick -->
+            &mdash; Hettrick et al, UK Research Software Survey 2014
+        </p>
+    </blockquote>
+<!--
+<small>92% of academics use research software</small>
+https://www.software.ac.uk/blog/2016-09-12-its-impossible-conduct-research-without-software-say-7-out-10-uk-researchers
+-->
+</section>
+
+
+<section>
+<h2>Software needs to be shared</h2>
+    <blockquote style="width: 100%; margin: 0.1em;">
+        <p>
+            Software [...] developed as part of novel methods is as important
+            for the method's implementation [...]
+            Such software [...] must be made available to readers upon publication.
+        </p>
+        <p>
+            &mdash;Nature Methods - 4, 189 (2007)
+            <br>
+            doi:10.1038/nmeth0307-189
+        </p>
+    </blockquote>
+<!--
+scientific community we have been largely unsuccessful in sharing
+our research methods and results in a reproducible way.
+
+current scientific publishing requires more than writing a paper
+new ways of sharing our research
+-->
+</section>
+
+
+<!--Software solutions for software problem-->
+
+
+<section>
+<h2>Screenshots</h2>
+<img src="img/r_in_lidar_1.png" width=300>
+<img src="img/r_in_lidar_2.png" width=300>
+<img src="img/r_in_lidar_3.png" width=300>
+<!--Czech localization of MS Excel has function names in Czech-->
+</section>
+
+<section>
+<h2>Scripting</h2>
+
+Bash
+<pre class="bash" style="font-size: x-large;"><code>r.in.lidar input=points.las output=elevation -e
+</code></pre>
+Python
+<pre class="python" style="font-size: x-large;"><code>from grass.script import run_command
+run_command("r.in.lidar", input="points.las", output="elevation", flags="e")
+</code></pre>
+R
+<pre class="python" style="font-size: x-large;"><code>library(rgrass7)
+execGRASS("r.in.lidar", input="points.las", output="elevation", flags="e")
+</code></pre>
+<!--
+We can use Python and other languages to access powerful software features in an automated way instead
+of hoping we entered the same values as last time when rerunning the analysis with a new climate dataset.
+-->
+</section>
+
+
+
+<section>
+<h2>Paper: PDF</h2>
+
+<img src="img/petras2015mapping_paper.png" class="stretch">
+</section>
+
+
+<section>
+<h2>Paper: Code</h2>
+
+<img src="img/spatio-temporal-countour-evolution_code.png" class="stretch">
+</section>
+<!--A terrain modeling paper will serve as an example of sharing a full description
+of a published method.-->
+
+
+<section>
+<h2>File versions</h2>
+
+<img src="img/file_versions.png" class="stretch box-glow">
+</section>
+
+
+<section>
+<h2>Revision control</h2>
+Git
+<!--
+collaborate and keep track
+of our constantly evolving methods and R scripts.
+-->
+<br>
+<img src="img/revisions.svg" class="stretch">
+<pre class="bash" style="font-size: x-large;"><code>git commit script.py -m "replaced part of the main equation"
+</code></pre>
+<br>
+There are GUIs as well.
+</section>
+
+
+<section>
+<h2>Collaborative writing: Overleaf</h2>
+<img src="img/overleaf.png" class="stretch box-glow">
+</section>
+
+
+<section>
+<h2>Text and code: Jupyter Notebook</h2>
+<ul>
+    <li>interactive document with text, code, and figures
+    <li>languages: Python, R, Bash, C, C++, Octave, ...
+    <li>alternatives: R Markdown (Notebook), Emacs Org-mode, ...
+</ul>
+<img src="img/jupyter.png" class="stretch box-glow">
+<!-- Jupyter and R Markdown let us track the reasoning behind our experiments and analyses. -->
+</section>
+
+
+<section>
+<h2 style="margin-top: 3ex; margin-bottom: 3ex">Publishing a model</h2>
+<img src="img/futures_paper.png" class="stretch">
+<!-- A landscape change model will be used to demonstrate reusable research. -->
+</section>
+
+<section>
+<h3>Source code</h3>
+<img src="img/futures_src.png" class="stretch">
+</section>
+
+<section>
+<h3>Source code history</h3>
+<img src="img/futures_log.png" class="stretch">
+</section>
+
+<section>
+<h3>Documentation</h3>
+<img src="img/futures_doc.png" class="stretch">
+</section>
+
+
+<section>
+<h3>Graphical user interface</h3>
+<img src="img/futures_gui.png" class="stretch box-glow">
+</section>
+
+
+<section>
+<h3>Integration into a larger project</h3>
+<em style="font-size: larger;">Do I want to create a new software project?</em>
+<ul>
+    <li>Preprocessing, visualization, and user interface (GUI, CLI, API)
+    <li>Integration with existing analytical tools
+    <li>Inputs, outputs, memory management
+</ul>
+<p>
+<img src="img/logos/grass_gis_nobg.png" width=100>
+<br>
+FUTURES model implemented as GRASS GIS modules
+<br>
+<em>r.futures.pga, r.futures.demand, r.futures.parallelpga, ...</em>
+<p>
+<small>
+Alternatives: R package, Python package, QGIS plugin, ...
+</small>
+</section>
+
+
+<section>
+<h2>Running the code</h2>
+<ul>
+    <li>dependencies
+    <li>environment
+</ul>
+</section>
+
+
+<section>
+<h2>Complete environment</h2>
+<table>
+    <tr>
+        <th></th>
+        <th>My laptop</th>
+        <th>Any computer</th>
+        <th>Docker</th>
+    </tr>
+    <tr>
+        <td>What is required to recreate the study and run the software?</td>
+        <td>nothing*</td>
+        <td>text</td>
+        <td>text file</td>
+    </tr>
+    <tr>
+        <td>How are the dependencies handled?</td>
+        <td>?</td>
+        <td>?</td>
+        <td>specified</td>
+    </tr>
+</table>
+<small>*Except that I'm not going to lend you my laptop.</small>
+<!--
+Docker and Vagrant let us wrap entire workflow into one runtime environment
+so that our species distribution model can be used without our personal laptop.
+-->
+</section>
+
+
+<section>
+<h3>Dockerfile</h3>
+<pre style="width: 40%; font-size: 90%;">
+FROM ubuntu:16.04
+RUN apt-get update
+RUN apt-get install -y \
+        g++ \
+        python \
+        python-numpy \
+        ...
+</pre>
+</section>
+
+
+<section>
+<h2>Research publication</h2>
+<table class="row-based">
+    <tr>
+        <td>Paper</td>
+        <td>
+            background, methods, results, discussion<td>
+            <small>PDF, HTML</small>
+        </td>
+    </tr>
+    <tr>
+        <td>Environment</td>
+        <td>
+            details about all dependencies and the code<td>
+            <small>Git, Docker</small>
+        </td>
+    </tr>
+    <tr>
+        <td>Specific code</td>
+        <td>
+            scripts to perform the analyses<td>
+            <small>Bash, Python</small>
+        </td>
+    </tr>
+    <tr>
+        <td>Reusable&nbsp;code</td>
+        <td>
+            methods as GRASS GIS modules<td>
+            <small>Python, C</small>
+        </td>
+    </tr>
+</table>
+<img src="img/fragmentation_paper.png" class="stretch box-glow">
+<small class="glow">
+    Petras, V., D. J. Newcomb, and H. Mitasova.
+    <em>Generalized 3D fragmentation index derived from lidar point clouds.</em>
+    In: Open Geospatial Data, Software and Standards [in print]
+</small>
+</p>
+</section>
+
+
+<!--
+This talk will discuss several tools for reproducible research
+and show practical examples which will make your life and lives of your colleagues easier.
+
+Finally, a paper about vegetation structure will show how all pieces
+of the puzzle fit together.
+-->
+
+
+<section>
+<h2>Motivation</h2>
+<ul>
+    <li>Am I doing science to publish journal papers or to advance knowledge?
+    <li>What happens when I need to rerun an analysis from last year?
+    <li>How can my collaborators run and improve the code I'm running?
+</ul>
+</section>
+
+
+<section>
+<h2>Next steps</h2>
+<ul>
+    <li>Publish R scripts with the next paper.
+    <li>Collaborate on code using Git.
+    <li>Collaborate on text using Overleaf.
+    <li>Use Jupyter Notebook for a report.
+</ul>
+</section>
+
+
+<section>
+<h2>Like irreproducibility more?</h2>
+<img src="img/top_tips_to_make_your_research_irreproducible.png" class="stretch box-glow">
+</section>
+
+
+<section>
+<h2>Resources</h2>
+<div class="left">
+<h3>Tools for open geospatial science</h3>
+<ul>
+    <li>North Carolina State University course, fall 2017
+    <li><a href="https://goo.gl/g8pFiE">goo.gl/g8pFiE</a>
+</ul>
+<br>
+<img src="../img/gear_wheel.png" style="height: 12ex;">
+<img src="img/url_g8pFiE_qrcode.png" style="height: 12ex; padding-left: 4em;">
+</div>
+<div class="right">
+<h3>Software and Data Carpentry</h3>
+<ul>
+    <li>workshop and lessons
+    <li><a href="http://software-carpentry.org">software-carpentry.org</a>
+    <li><a href="http://datacarpentry.org">datacarpentry.org</a>
+</ul>
+<br>
+<img src="img/logos/data_carpentry.png" style="height: 8ex;">
+</div>
+</section>
+<!-- This is a generated file. Do not edit. -->
+        </div>  <!-- slides -->
+
+    </div>  <!-- reveal -->
+
+    <!--<img class="timeline" id="line" />-->
+
+    <!--
+        Home button or link to a parent page
+        If you want this to be unique for every page (slide deck),
+        then remove it from here and put it at the end of each
+        file (or series of files) creating one page
+        (the position will be little different)
+        TODO: some JS is needed to move it to the right position
+    -->
+    <div class="parent-page">
+        <!-- alternative symbol: &#x1f3e0; -->
+        <a href=".." title="Course website">
+            <img width="15px" src="img/home.svg"></a>
+    </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+
+        <script>
+
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                // Display controls in the bottom right corner
+                controls: false,
+
+                // Display a presentation progress bar
+                progress: true,
+                
+                center: true,
+                
+                // Display the page number of the current slide
+                slideNumber: false,
+
+                // Enable the slide overview mode
+                overview: true,
+
+                // Turns fragments on and off globally
+                fragments: true,
+
+                // The "normal" size of the presentation, aspect ratio will be preserved
+                // when the presentation is scaled to fit different resolutions. Can be
+                // specified using percentage units.
+                // width: 960,
+                // height: 700,
+                
+                // Factor of the display size that should remain empty around the content
+                margin: 0.05,  // increase?
+
+                // Bounds for smallest/largest possible scale to apply to content
+                minScale: 0.5,
+                maxScale: 5.0,
+
+                theme: Reveal.getQueryHash().theme,  // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'none', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Push each slide change to the browser history
+                history: true,
+                // Enable keyboard shortcuts for navigation
+                keyboard: true,
+
+                // Vertical centering of slides
+                center: true,
+
+                // Enables touch navigation on devices with touch input
+                touch: true,
+
+                // Loop the presentation
+                loop: false,
+                // Flags if the presentation is running in an embedded mode,
+                // i.e. contained within a limited portion of the screen
+                embedded: false,
+
+                // Number of milliseconds between automatically proceeding to the
+                // next slide, disabled when set to 0, this value can be overwritten
+                // by using a data-autoslide attribute on your slides
+                autoSlide: 0,
+
+                // Stop auto-sliding after user input
+                autoSlideStoppable: true,
+
+                // Enable slide navigation via mouse wheel
+                mouseWheel: false,
+
+                // Hides the address bar on mobile devices
+                hideAddressBar: true,
+
+                // Opens links in an iframe preview overlay
+                previewLinks: false,
+
+                // Transition speed
+                transitionSpeed: 'default', // default/fast/slow
+
+                // Transition style for full page slide backgrounds
+                backgroundTransition: 'none', // default/none/slide/concave/convex/zoom
+
+                // Number of slides away from the current that are visible
+                viewDistance: 3,
+
+                // Parallax background image
+                //parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+                // Parallax background size
+                //parallaxBackgroundSize: '' // CSS syntax, e.g. "2100px 900px"
+                chalkboard: { 
+        		// optionally load pre-recorded chalkboard drawing from file
+            		src: "chalkboard.json",
+            	},
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+                    /* { src: 'plugin/math/math.js', async: true }, */
+                    { src: 'plugin/chalkboard/chalkboard.js' }
+                ],
+                keyboard: {
+            	    67: function() { RevealChalkboard.toggleNotesCanvas() },	// toggle notes canvas when 'c' is pressed
+            	    66: function() { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
+            	    46: function() { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
+            	     8: function() { RevealChalkboard.reset() },	// reset chalkboard data on current slide when 'BACKSPACE' is pressed
+            	    68: function() { RevealChalkboard.download() },	// downlad recorded chalkboard drawing when 'd' is pressed
+            	},
+            });
+
+        </script>
+
+    </body>
+</html>

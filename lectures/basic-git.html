@@ -1,0 +1,658 @@
+<!doctype html>
+<html lang="en">
+<!-- This is a generated file. Do not edit. -->
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>Tools for open geospatial science</title>
+
+        <meta name="description" content="NCSU GIS 595-601: Tools for open geospatial science">
+        <meta name="author" content="Vaclav Petras">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<link rel="shortcut icon" href="../img/favicon.png" />
+
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/ncsu-geoforall-lab.css" id="theme">
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+        <!-- For chalkboard plugin -->
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+
+        <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+
+        <style>
+            body {
+                background-image: url("../img/header.svg");
+                background-repeat: repeat-x;
+                background-position: left bottom;
+                background-size: auto 10%;
+            }
+
+            .glow {
+                text-shadow: 0 0 20px white, 0 0 18px white, 0 0 16px white, 0 0 14px white, 0 0 12px white, 0 0 10px white, 0 0 8px white, 0 0 6px white;
+            }
+
+            .reveal .box-glow {
+                box-shadow: 0px 0px 15px 0px white, 0px 0px 10px 0px white, 0px 0px 5px 0px white;
+            }
+
+            /*
+            table {
+                margin: 10px;
+                border-collapse: separate;
+                border: none;
+            }
+
+            td {
+                display: inline-block;
+                border-radius: 5px;
+                background-color: #369;
+                color: green;
+                border: 5px solid red;
+            }*/
+
+            .reveal .row-based td {
+                border: none;
+            }
+
+            .row-based tr td:first-of-type {
+                font-weight: bold;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <div class="reveal">
+
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+<section>
+<h2>Basic Workflows for Managing Projects with Git</h2>
+<h3 style="margin-top: 0.5em">
+    Vaclav (Vashek) Petras</h3>
+<p class="title-foot">
+    <a href="https://geospatial.ncsu.edu/geoforall/">NCSU GeoForAll Lab</a>
+    at the
+    <a href="http://geospatial.ncsu.edu/">Center for Geospatial Analytics</a>
+    <br>
+    <a href="http://www.ncsu.edu/">North Carolina State University</a>
+</p>
+<img style="width: 25%;" src="img/logos/ncstate.png">
+<p>
+    Lunch and Learn by the Geospatial Graduate Student Organization
+    <br>
+    Part of the Open Science Literacy Series by NCSU CGA
+    <br>
+    November 4, 2019
+</p>
+<p class="glow" style="font-size: 200%;">
+    <code><a href="https://bit.ly/2WHFVl8">bit.ly/2WHFVl8</a></code>
+</p>
+</section>
+
+
+<section>
+    <h3>Learning Objectives</h3>
+    <ul>
+        <li>What is Git and why to use it
+        <li>Basic Git commands for managing one-person projects
+        <li>Organizing your code, some documents, small data
+        <li>How to deal with problems
+        <li>Publish a website with your work on GitHub
+        <li>Know the difference between Git and GitHub
+    </ul>
+    <br>
+    <img src="img/logos/git.svg" class="stretch">
+</section>
+
+
+<section>
+    <h3>Warning</h3>
+    <ul>
+        <li>There will be command line in this tutorial!
+        <li>No, you don't have to use it yourself.
+        <li>Yes, you should use it yourself.
+    </ul>
+    <p style="font-size: 8em; color: #F03C2E;">!</p>
+</section>
+
+
+<section>
+    <h3>More Warnings</h3>
+    <blockquote cite="https://stackoverflow.com/questions/5760293/alternatives-to-git">
+        [particular Git feature]
+        can get you really frustrated as a newbie [...]
+        <br>
+        Still didn't find why it is needed.
+    </blockquote>
+    <ul>
+        <li>It will be frustrating at times.
+        <li>It will be confusing at times.
+        <li>It won't get any better*.
+    </ul>
+    <p><small>
+        *Hopefully because you will start using more advanced features.
+    </small></p>
+</section>
+
+
+<section>
+    <h3>The bright side</h3>
+    <ul>
+        <li>Git will not eat your dog. As long as you use:
+            <br>
+            <code>git --dont-eat-dog</code>
+        <li>Git will not eat your files. Unless you use:
+            <br>
+            <code>git reset --hard HEAD~3</code>
+            <br>
+            <code>git clean -dffx</code>
+    </ul>
+</section>
+
+
+<section>
+<h2>File versions</h2>
+<img src="img/file_versions.png" class="stretch box-glow">
+</section>
+
+
+<section>
+<h3>Source code</h3>
+<img src="img/sample_of_futures_code_on_github.png" class="stretch">
+<a class="glow" href="https://github.com/OSGeo/grass-addons/blob/master/grass7/raster/r.futures/r.futures.calib/r.futures.calib.py">github.com/OSGeo/grass-addons/blob/master/grass7/raster/r.futures/r.futures.calib/r.futures.calib.py</a>
+</section>
+
+
+<section>
+<h2>Revision control</h2>
+<ul>
+    <li>alternative names
+        <ul>
+            <li>version control (version-control systems)
+            <li>source control management (SCM tools)
+            <li>source code management
+        </ul>
+    <li>keep track
+    <li>collaborate
+    <li><small>backup? sort of (better than none)</small>
+</ul>
+<br>
+<img src="img/revisions.svg" class="stretch">
+</section>
+
+
+<section>
+<h2>Git</h2>
+<ul>
+    <li>open source (GNU GPL 2.0)
+    <li>Alternatives: Mercurial (<code>hg</code>), Fossil, Subversion (<code>svn</code>), ...
+</ul>
+<br>
+<img src="img/logos/git.svg" class="stretch">
+<small>
+
+</small>
+</section>
+
+
+<section>
+<h2>Tracking Versions</h2>
+<br>
+<img src="img/revisions.svg" class="stretch">
+<pre class="bash" style="font-size: x-large;"><code>git commit script.py -m "Remove unused variables and equations"
+</code></pre>
+</section>
+
+
+<section>
+<h3>History: Log</h3>
+<pre class="bash" style="font-size: x-large;"><code>git log script.py
+</code></pre>
+<img src="img/futures_log_detail.png" class="stretch">
+<br>
+<a href="https://trac.osgeo.org/grass/log/grass-addons/grass7/raster/r.futures">trac.osgeo.org/grass/log/grass-addons/grass7/raster/r.futures</a>
+</section>
+
+
+<section>
+<h3>Origins: Blame</h3>
+<pre class="bash" style="font-size: x-large;"><code>git blame script.py
+</code></pre>
+<img src="img/blame_of_grass_init_on_github.png" class="stretch">
+<br>
+<a class="glow" href="https://github.com/OSGeo/grass/blame/master/lib/init/grass.py">
+    github.com/OSGeo/grass/blame/master/lib/init/grass.py
+</a>
+</section>
+
+
+<section>
+<h3>Individual Changes: Diff</h3>
+<pre class="bash" style="font-size: x-large;"><code>git show 1183b8b
+git diff 6090b2c..1183b8b
+git diff
+</code></pre>
+<img src="img/git_show_commit_on_github.png" class="stretch">
+<br>
+<a class="glow" href="https://github.com/OSGeo/grass/commit/158b74b76bf80603b10d81a5ac7522c18e2f8f77">
+    github.com/OSGeo/grass/commit/158b74b76bf80603b10d81a5ac7522c18e2f8f77
+</a>
+</section>
+
+
+<section>
+    <h3>Remote Repository and Local Clone</h3>
+    <ul>
+        <li>Remote Repository<small>, e.g.,</small>
+            <ul>
+                <li>On GitHub
+                <li>On local server with Gitolite
+                <li>Directory on a network drive
+            </ul>
+        <li>Local Repository (Clone):
+            <ul>
+                <li>Directory on your computer
+                <li>Contains “normal” files
+                <li>Git stores its information in <code>.git</code> subdirectory
+            </ul>
+    </ul>
+<pre class="bash" style="font-size: x-large;"><code>git clone https://github.com/wenzeslaus/dissertation-presentation.git
+</code></pre>
+</section>
+
+
+<section>
+    <h3>Getting Local Changes to a Remote Repository</h3>
+    <ul>
+        <li>Stage, Commit, and Push Workflow
+            <ul>
+                <li>Stage: mark changes for commit
+                <li>Commit: record the given version of files
+                <li>Push: upload commits into the remote repository
+            </ul>
+    </ul>
+<pre class="bash" style="font-size: x-large;"><code>git add README.md list.txt
+git commit -m "Add file to keep my list of things"
+git push
+</code></pre>
+</section>
+
+
+<section>
+    <h3>Getting Updates from the Remote Repository</h3>
+    <ul>
+        <li>Pull: Shortcut for fetch and merge
+        <li>Fetch and merge
+            <ul>
+                <li>Fetch: get the remote changes
+                <li>Merge: combine them into
+            </ul>
+        <li>Fetch and rebase
+    </ul>
+<pre class="bash" style="font-size: x-large;"><code>git pull
+</code></pre>
+</section>
+
+
+<section>
+    <h3>Inspecting current state of the directory</h3>
+<pre class="bash" style="font-size: x-large;"><code>$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+  (use "git add &lt;file&gt;..." to update what will be committed)
+  (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
+
+    modified:   README.md
+
+Untracked files:
+  (use "git add &lt;file&gt;..." to include in what will be committed)
+
+    list.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+</code></pre>
+</section>
+
+
+<section>
+<h3>Inspecting Individual Changes</h3>
+<pre class="bash" style="font-size: x-large;"><code>git diff
+git diff script.py
+</code></pre>
+<img src="img/git_diff_in_command_line.png" class="stretch box-glow">
+</section>
+
+
+<section>
+    <h3>Finding Help</h3>
+    <p style="font-size: 6em; color: #F03C2E;"><code>git help</code></p>
+</section>
+
+
+<section>
+    <h3>Git Help in Command Line</h3>
+<pre class="bash" style="font-size: x-large;"><code>$ git help
+git help
+...
+These are common Git commands used in various situations:
+start a working area (see also: git help tutorial)
+   clone      Clone a repository into a new directory
+   init       Create an empty Git repository or reinitialize an existing one
+work on the current change (see also: git help everyday)
+   add        Add file contents to the index
+   mv         Move or rename a file, a directory, or a symlink
+...
+$ git duff
+git: 'duff' is not a git command. See 'git --help'.
+
+Did you mean this?
+    diff
+</code></pre>
+</section>
+
+
+<section>
+    <h3>Git Manual Pages</h3>
+<img src="img/git_commit_man_page.png" class="stretch box-glow" alt="Git">
+    <p>
+    <small class="glow">
+        <a href="https://www.git-scm.com/docs/git-commit">Git - git-commit Documentation</a>
+    </small>
+    </p>
+</section>
+
+
+<section>
+    <h3>Git Man Page Generator</h3>
+    <img src="img/git_man_page_generator.png" class="stretch box-glow" alt="Git">
+    <p>
+    <small class="glow">
+        <a href="https://git-man-page-generator.lokaltog.net/#a9ddd6746c62bca36ce9475bdcb4825f">Git man page generator</a>
+    </small>
+    </p>
+</section>
+
+
+<section>
+<h2>The Internet</h2>
+<ul>
+    <li>Search Internet for pages such as
+        <ul>
+            <li>Git Documentation (<a href="https://git-scm.com/doc">git-scm.com/doc</a>): Book, Videos
+            <li>GitHub Help
+            <li>Atlassian Git Tutorial (Bitbucket)
+            <li>StackOverflow
+            <li>People's blogs
+        </ul>
+    <li>Good guides and tutorials usually explain the dangers and alternatives.
+</ul>
+</section>
+
+
+<section>
+    <h3>When Everything Fails</h3>
+    <img src="img/xkcd_git_cc_by_nc.png" class="stretch box-glow" alt="Git">
+    <p>
+    <small class="glow">
+        If that doesn't fix it, git.txt contains the phone number of a
+        friend of mine who understands git. Just wait through a few
+        minutes of 'It's really pretty simple, just think of branches
+        as...' and eventually you'll learn the commands that will fix
+        everything.
+        <br>
+        <a href="https://xkcd.com/1597/">xkcd: Git</a>
+        <br>
+        xkcd comic is licensed under a Creative Commons Attribution-NonCommercial 2.5 License.
+    </small>
+    </p>
+</section>
+
+
+<section>
+<h2>Revision Control Hosting</h2>
+<ul>
+    <li>GitHub
+        <ul>
+            <li>GitHub != Git
+            <li>proprietary software
+            <li>freemium service
+        </ul>
+    <li>Alternative services: GitLab, Bitbucket, SourceForge, ...
+    <li>Self-hosted open alternatives: GitLab, Gogs, Gitea, Gitolite, Fossil, Trac, ...
+    <li>“software forges”
+    <li>Many provide more than just Git repo hosting
+        <ul>
+            <li>Issue tracking, wikis, CI/CD, website publishing, ...
+        </ul>
+</ul>
+<img src="img/logos/octocat.png" class="stretch">
+</section>
+
+
+<section>
+<h2>Complete Example and a Website</h2>
+<ul class="glow">
+    <li><a href="https://github.com/new">github.com/new</a>
+        <ul>
+            <li>Check: <em>Initialize this repository with a README</em>
+            <li>See also: <em>Add .gitignore</em> and <em>Add a license</em>
+        </ul>
+    <li>Tell GitHub to publish the repo as a website
+        <small>(it takes some time to take effect)</small>
+        <ul>
+            <li><em>Settings &gt; GitHub Pages &gt; Source: master branch</em>
+        </ul>
+    <li>Clone the repo
+        <ul>
+            <li><em>Clone or download</em>: Get the URL for cloning
+                <small>(HTTPS, later on maybe SSH)</small>
+            <li><code>git clone https://github.com/your-user-name/your-repo-name.git</code>
+        </ul>
+    <li>Add and edit files <small>(here: <code>index.html</code>)</small>
+    <li>Record new version
+        <ul>
+            <li><code>git status</code>
+            <li><code>git diff</code>
+            <li><code>git add index.html</code>
+            <li><code>git commit -m "Add index file with test content"</code>
+            <li><code>git push</code>
+        </ul>
+</ul>
+</section>
+
+
+<section>
+<h2>Explore a Real Example</h2>
+<ul>
+    <li><a href="https://gitlab.com/vpetras/v.net.tripplanner">gitlab.com/vpetras/v.net.tripplanner</a>
+    <li>Small project
+    <li>GitLab
+    <li>CI/CD is used to generate a static website
+</ul>
+<img src="img/logos/gitlab.png" class="stretch">
+</section>
+
+
+<section>
+<h2>More Tips and Tricks</h2>
+<ul>
+    <li>Stage only part of a file
+<pre class="bash" style="font-size: x-large;"><code>git add -p
+</code></pre>
+<li>Hide stages into stash
+<pre class="bash" style="font-size: x-large;"><code>git stash
+git stash apply
+</code></pre>
+    <li>Experiment in a branch <small>(one way of doing it)</small>
+<pre class="bash" style="font-size: x-large;"><code>git checkout -b simpler-equations
+git add file.txt script.R
+git commit -m "Use simpler equations"
+git merge master
+git checkout master
+git merge simpler-equations
+</code></pre>
+    <li>Change default text editor for Git
+<pre class="bash" style="font-size: x-large;"><code>git config --global core.editor micro
+</code></pre>
+</ul>
+</section>
+<!-- This is a generated file. Do not edit. -->
+        </div>  <!-- slides -->
+
+    </div>  <!-- reveal -->
+
+    <!--<img class="timeline" id="line" />-->
+
+    <!--
+        Home button or link to a parent page
+        If you want this to be unique for every page (slide deck),
+        then remove it from here and put it at the end of each
+        file (or series of files) creating one page
+        (the position will be little different)
+        TODO: some JS is needed to move it to the right position
+    -->
+    <div class="parent-page">
+        <!-- alternative symbol: &#x1f3e0; -->
+        <a href=".." title="Course website">
+            <img width="15px" src="img/home.svg"></a>
+    </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+
+        <script>
+
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                // Display controls in the bottom right corner
+                controls: false,
+
+                // Display a presentation progress bar
+                progress: true,
+                
+                center: true,
+                
+                // Display the page number of the current slide
+                slideNumber: false,
+
+                // Enable the slide overview mode
+                overview: true,
+
+                // Turns fragments on and off globally
+                fragments: true,
+
+                // The "normal" size of the presentation, aspect ratio will be preserved
+                // when the presentation is scaled to fit different resolutions. Can be
+                // specified using percentage units.
+                // width: 960,
+                // height: 700,
+                
+                // Factor of the display size that should remain empty around the content
+                margin: 0.05,  // increase?
+
+                // Bounds for smallest/largest possible scale to apply to content
+                minScale: 0.5,
+                maxScale: 5.0,
+
+                theme: Reveal.getQueryHash().theme,  // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'none', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Push each slide change to the browser history
+                history: true,
+                // Enable keyboard shortcuts for navigation
+                keyboard: true,
+
+                // Vertical centering of slides
+                center: true,
+
+                // Enables touch navigation on devices with touch input
+                touch: true,
+
+                // Loop the presentation
+                loop: false,
+                // Flags if the presentation is running in an embedded mode,
+                // i.e. contained within a limited portion of the screen
+                embedded: false,
+
+                // Number of milliseconds between automatically proceeding to the
+                // next slide, disabled when set to 0, this value can be overwritten
+                // by using a data-autoslide attribute on your slides
+                autoSlide: 0,
+
+                // Stop auto-sliding after user input
+                autoSlideStoppable: true,
+
+                // Enable slide navigation via mouse wheel
+                mouseWheel: false,
+
+                // Hides the address bar on mobile devices
+                hideAddressBar: true,
+
+                // Opens links in an iframe preview overlay
+                previewLinks: false,
+
+                // Transition speed
+                transitionSpeed: 'default', // default/fast/slow
+
+                // Transition style for full page slide backgrounds
+                backgroundTransition: 'none', // default/none/slide/concave/convex/zoom
+
+                // Number of slides away from the current that are visible
+                viewDistance: 3,
+
+                // Parallax background image
+                //parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+                // Parallax background size
+                //parallaxBackgroundSize: '' // CSS syntax, e.g. "2100px 900px"
+                chalkboard: { 
+        		// optionally load pre-recorded chalkboard drawing from file
+            		src: "chalkboard.json",
+            	},
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+                    /* { src: 'plugin/math/math.js', async: true }, */
+                    { src: 'plugin/chalkboard/chalkboard.js' }
+                ],
+                keyboard: {
+            	    67: function() { RevealChalkboard.toggleNotesCanvas() },	// toggle notes canvas when 'c' is pressed
+            	    66: function() { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
+            	    46: function() { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
+            	     8: function() { RevealChalkboard.reset() },	// reset chalkboard data on current slide when 'BACKSPACE' is pressed
+            	    68: function() { RevealChalkboard.download() },	// downlad recorded chalkboard drawing when 'd' is pressed
+            	},
+            });
+
+        </script>
+
+    </body>
+</html>

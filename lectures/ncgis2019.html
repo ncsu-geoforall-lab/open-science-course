@@ -1,0 +1,749 @@
+<!doctype html>
+<html lang="en">
+<!-- This is a generated file. Do not edit. -->
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>Tools for open geospatial science</title>
+
+        <meta name="description" content="NCSU GIS 595-601: Tools for open geospatial science">
+        <meta name="author" content="Vaclav Petras">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<link rel="shortcut icon" href="../img/favicon.png" />
+
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/ncsu-geoforall-lab.css" id="theme">
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+        <!-- For chalkboard plugin -->
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+
+        <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+
+        <style>
+            body {
+                background-image: url("../img/header.svg");
+                background-repeat: repeat-x;
+                background-position: left bottom;
+                background-size: auto 10%;
+            }
+
+            .glow {
+                text-shadow: 0 0 20px white, 0 0 18px white, 0 0 16px white, 0 0 14px white, 0 0 12px white, 0 0 10px white, 0 0 8px white, 0 0 6px white;
+            }
+
+            .reveal .box-glow {
+                box-shadow: 0px 0px 15px 0px white, 0px 0px 10px 0px white, 0px 0px 5px 0px white;
+            }
+
+            /*
+            table {
+                margin: 10px;
+                border-collapse: separate;
+                border: none;
+            }
+
+            td {
+                display: inline-block;
+                border-radius: 5px;
+                background-color: #369;
+                color: green;
+                border: 5px solid red;
+            }*/
+
+            .reveal .row-based td {
+                border: none;
+            }
+
+            .row-based tr td:first-of-type {
+                font-weight: bold;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <div class="reveal">
+
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+<section>
+<h2>Navigating the Geospatial Open Source Software Landscape</h2>
+    <h3 style="margin-top: 0.5em">
+        Vaclav (Vashek) Petras, Corey White &amp; Randal Hale</h3>
+    <p class="title-foot">
+        <a href="http://www.ncsu.edu/" title="North Carolina State University">NCSU</a>
+        <a href="http://geospatial.ncsu.edu/osgeorel/" title="NCSU GeoForAll Lab">GeoForAll Lab</a>
+        at the
+        <a href="http://geospatial.ncsu.edu/" title="Center for Geospatial Analytics">Center for Geospatial Analytics</a>,
+        <br>
+        North Carolina State University &amp; North River Geographic Systems, Inc.
+    </p>
+    <img src="img/logos/ncstate.png" alt="NCSU logo" style="height: 5em;">
+    <p>
+        NCGIS 2019 Winston-Salem<br>
+        Feb 27 - Mar 1, 2019
+    </p>
+</section>
+
+
+<section>
+<h2>Motivation</h2>
+<ul>
+    <li>vendor neutrality
+    <ul>
+        <li>proprietary software has a single vendor <small>(vendor lock-in)</small>
+        <li>open source is not influenced by vendor's current business goals
+    </ul>
+    <li>flexibility <small>(use where you want, when you want)</small>
+    <li>interoperability
+    <ul>
+        <li>open source aims to support standards
+        <li>proprietary software often uses propriety formats
+    </ul>
+    <li>cost <small>(no license fees, no license management)</small>
+    <ul>
+        <li>low total cost of ownership
+            <small>(includes cost to upgrade or migrate)</small>
+    </ul>
+    <li>support <small>(many free options available by default)</small>
+    <ul>
+        <li>money not spent on license fees can be used for support or features
+    </ul>
+    <li>influence in development <small>(direct access to developers)</small>
+</ul>
+
+<ol class="glow" style="font-size: 50%;">
+    <li><a href="http://www.computerworld.com/article/2486991/app-development-4-reasons-companies-say-yes-to-open-source.html">Computerworld: 4 reasons companies say yes to open source</a>
+    <li><a href="http://www.pcworld.com/article/209891/10_reasons_open_source_is_good_for_business.html"> PCWorld: 10 Reasons Open Source Is Good for Business</a>
+    <li>&hellip;
+</ol>
+
+<!--
+http://www.pcworld.com/article/209891/10_reasons_open_source_is_good_for_business.html
+http://www.huffingtonpost.com/vala-afshar/10-reasons-to-use-open-so_b_5766718.html
+http://www.business2community.com/tech-gadgets/5-reasons-open-source-software-good-business-01255099
+http://readwrite.com/2015/01/28/open-source-code-5-reasons-to-open-up
+http://www.computerworld.com/article/2486991/app-development-4-reasons-companies-say-yes-to-open-source.html
+-->
+
+</section>
+
+
+<section>
+<h2>Motivation</h2>
+<ul>
+    <li>In science:</h2>
+        <ul>
+            <li>Software must be available to readers [Nature Methods - 4, 189, 2007].
+            <li>Use of open source tools is part of reproducibility [Lees 2012].
+        </ul>
+</ul>
+
+</section>
+
+
+<section>
+<h2>Motivation</h2>
+
+<ul>
+<li>Users of open source are more happy when using the software. <a href="#/fn1" class="footnoteRef" id="fnref2"><sup>1</sup></a>
+</ul>
+<br>
+<img src="img/open/os_smile.png" class="stretch">
+<p class="credit glow">
+    Image credit: <a href="https://opensource.com">opensource.com</a>
+</p>
+
+<ol class="glow" style="font-size: 70%;">
+    <li>No research to support that.
+</ol>
+</section>
+
+
+<section>
+<h2>Free, Libre and Open Source</h2>
+
+<div class="left">
+<p>Similar to each other:</p>
+<ul>
+    <li>open source software
+    <li>free software
+    <li>libre software
+    <li>FS, OS(S), FOSS, FLOSS
+</ul>
+</div>
+
+<div class="right">
+<p>Very different from FLOSS:</p>
+<ul>
+    <li>proprietary software
+    <li>freeware
+    <li>shareware
+    <li>freemium (clouds and apps)
+    <li>open API (public API)
+</ul>
+</div>
+
+</section>
+
+
+<section>
+<h2>Free, Libre and Open Source</h2>
+
+<ul>
+    <li><em>open source</em> and <em>free software</em>
+        <ul>
+            <li>some argue <em>open</em> misses the point about freedom
+            <li><em>free</em> is often misunderstood as free of charge
+        </ul>
+    <li><em>FLOSS</em>
+        <ul>
+            <li>includes <em>libre</em> to address the confusion about <em>free</em>
+                <small>(<em>gratis</em> versus <em>libre</em>)</small>
+        </ul>
+    <li><em>FOSS</em> and <em>FOSS4G</em> is often used in the geospatial community
+        <ul>
+            <li><em>free</em> refers to user's freedom
+            <li><em>open source</em> refers to open development model
+            <li><em>FOSS4G</em> (free and open source software for geospatial)
+        </ul>
+</ul>
+<br>
+<img src="img/logos/open_source.png" class="stretch">
+<figcaption class="glow">Open Source Initiative logo</figcaption>
+</section>
+
+
+<!--
+<img src="img/logos/gnu_logo.svg" style="width: 25%;">
+<img src="img/logos/gpl_logo.svg" style="width: 40%;">
+<img src="img/logos/penguin.png" style="width: 20%;">
+<img src="img/logos/octocat.png" style="width: 20%;">
+-->
+
+
+<section>
+<h2>Four freedoms</h2>
+
+<ul>
+    <li>According to FSF, there are four freedoms that you should have as a <em>user</em>:
+    <ul>
+        <li>the freedom to use the software for any purpose,
+        <li>the freedom to change the software to suit your needs,
+        <li>the freedom to share the software,
+        <li>the freedom to share the changes you make.
+    </ul>
+</ul>
+<br>
+<img src="img/logos/gnu_logo.svg" class="stretch">
+<figcaption class="glow">GNU logo, a free operating system by FSF</figcaption>
+
+<!--
+<li><em>having source code</em> is not enough
+-->
+
+</section>
+
+
+<section>
+<h3>Commercial and FOSS</h3>
+
+<ul>
+<li>FOSS can be used commercially
+<li>FOSS can be commercial but not proprietary
+<li>FOSS can be used to build closed platforms
+<li>Famous FOSS examples (non-geospatial):
+<ul>
+    <li>Red Hat Enterprise Linux/CentOS
+    <li>Android/Android Open Source Project
+    <li>Chrome/Edge/Chromium, Firefox
+    <li>WordPress, Drupal
+    <li>Moodle
+    <li>Python, R
+    <li>
+        <a href="https://opensource.apple.com/">Apple</a>,
+        <a href="https://opensource.google.com/">Google</a>,
+        <a href="https://code.facebook.com/projects/">Facebook</a>,
+        <a href="https://www.linux.com/news/featured-blogs/200-libby-clark/787161-how-amazon-web-services-uses-linux-and-open-source">Amazon</a>,
+        <a href="https://netflix.github.io/">Netflix</a>,
+        <a href="https://opensource.microsoft.com/">Microsoft</a>
+</ul>
+</ul>
+<!--
+https://blogs.windows.com/windowsexperience/2018/12/06/microsoft-edge-making-the-web-better-through-more-open-source-collaboration/
+-->
+</section>
+
+
+<section>
+<h2>Types of FOSS licenses</h2>
+<ul>
+<li>copyleft licenses
+<ul>
+    <li>example: GNU GPL
+    <li>free software licenses <small>(according to four freedoms by FSF)</small>
+    <li>code cannot be combined with proprietary (and closed) code into one program
+    <li>examples: Linux, R, GRASS GIS, QGIS
+</ul>
+</ul>
+<figure>
+<img src="img/logos/gpl_logo.svg" style="width: 30%">
+</figure>
+</section>
+
+
+<section>
+<h2>Types of FOSS licenses</h2>
+<ul>
+<li>permissive licenses
+<ul>
+    <li>examples: BSD, MIT
+    <li>source code can be modified, closed and sold as proprietary
+    <li>more freedoms for the developer
+    <ul>
+        <li>can combine the source code and software more freely
+        <li>can make the new software proprietary
+    </ul>
+    <li>less freedoms for the user <small>(might not get the source code, thus freedoms)</small>
+    <li>example: GDAL used in QGIS as well as in ArcGIS
+</ul>
+<!--
+<li>specialized licenses
+<ul>
+    <li>GNU LGPL &ndash; allows mixing proprietary and free software
+    <li>GNU AGPL &ndash; more freedoms for user using software "in cloud"
+</ul>
+<li>licenses usually not used for source code
+<ul>
+    <li>CC licenses &ndash; texts, images, documentation, artwork
+    <li>public domain &ndash; often not used but some licenses are similar
+</ul>
+-->
+</ul>
+
+</section>
+
+
+<section>
+<h2>Users and FOSS licenses</h2>
+<ul>
+<li>licenses are mostly important for the developers
+<li>users don't have to worry about the license
+<ul>
+    <li>as long as they know that the software is under some known license
+    <li>lists of known licenses:
+        <ul>
+            <li><a href="http://opensource.org/licenses">Open Source Initiative list of licenses</a>
+            <li><a href="http://www.gnu.org/licenses/license-list.html">GNU (Free Software Foundation) list of licenses</a>
+            <li><a href="http://choosealicense.com">ChooseALicense.com</a></li>
+        </ul>
+</ul>
+<li>this is different from proprietary software
+<ul>
+    <li>user must read and agree to EULA or similar type of agreement
+    <li>license is used in the meaning <em>license to use</em>
+        <ul>
+            <li>use often paid or limited (or both) for proprietary software
+            <li>as opposed to FOSS licenses which cover things beyond simple usage
+        </ul>
+</ul>
+
+<p>
+
+</ul>
+</section>
+
+
+<section>
+<h2>Software</h2>
+<img src="img/open/grass-gui.png" class="stretch">
+<p class="glow"><a href="http://grass.osgeo.org/">Using GRASS GIS as an example</a></p>
+</section>
+
+
+<section>
+<h2>Source code</h2>
+<img src="img/open/source-aspect.png" class="stretch">
+<p class="glow">
+    <a href="http://trac.osgeo.org/grass/">trac.osgeo.org/grass</a>
+    <br>
+    <a href="http://trac.osgeo.org/grass/browser/grass/trunk/raster/r.slope.aspect/main.c#L790">trac.osgeo.org/grass/...r.slope.aspect...#L790</a>
+</p>
+</section>
+
+
+<section>
+<h2>Commit (Changeset)</h2>
+<img src="img/open/changeset-kriging.png" class="stretch">
+<p class="glow"><a href="http://trac.osgeo.org/grass/changeset/62446">trac.osgeo.org/grass/changeset/62446</a></p>
+</section>
+
+
+<section>
+<h2>Who can make changes?</h2>
+<div class="left">
+<p>Wikipedia:</p>
+<ul>
+<li>everybody can make changes
+</ul>
+<p>OpenStreetMap:</p>
+<ul>
+<li>everybody registered can make changes
+</ul>
+</div>
+<div class="right">
+<p>Open source projects:</p>
+<ul>
+<li>only people with granted access can make changes</p>
+<ul>
+<li>everybody can view changes
+<li>everybody can discuss changes
+<li>everybody can make changes in their local copy
+<li>everybody can make changes and submit them for approval
+</ul></li>
+</ul>
+</div>
+</section>
+
+
+<section>
+<h2>Review (and revert)</h2>
+<img src="img/open/revert-of-scripts.png" class="stretch">
+<p><a href="http://lists.osgeo.org/pipermail/grass-dev/2013-October/065900.html">[GRASS-dev] Handling of Python scripts on MS Windows (October, 2013)</a></p>
+</section>
+
+
+<section>
+<h2>Ticket (Issue): Bug report</h2>
+<img src="img/open/ticket-defect-fixed.png" class="stretch"></p>
+<p class="glow"><a href="http://trac.osgeo.org/grass/ticket/2427">trac.osgeo.org/grass/ticket/2427</a></p>
+</section>
+
+
+<section>
+<h2>Ticket: Feature request</h2>
+<img src="img/open/ticket-enhancement.png" class="stretch"></p>
+<p class="glow"><a href="http://trac.osgeo.org/grass/ticket/2368">trac.osgeo.org/grass/ticket/2368</a></p>
+</section>
+
+
+<section>
+<h2>Changes (History, Timeline)</h2>
+<img src="img/open/timeline.png" class="stretch">
+<p class="glow">
+    <a href="http://trac.osgeo.org/grass/timeline">trac.osgeo.org/grass/timeline</a>
+</p>
+</section>
+
+
+<section>
+<h2>Geospatial analysis and remote sensing</h2>
+<p><em>Which software should I choose for my work?</em></p>
+<small>
+ <table>
+    <tr>
+       <td>QGIS<br/><img src="img/logos/qgis.jpg" width="135" style="box-shadow: none; background: none;"/></td>
+       <td>GRASS GIS<br/><img src="img/logos/grass_gis_nobg.png" width="130" style="box-shadow: none; background: none;"/></td>
+       <td>gvSIG<br/><img src="img/logos/gvsig.png" width="140" style="box-shadow: none; background: none;"/></td>
+    </tr>
+    <tr>
+       <td>uDig<br/><img src="img/logos/udig.png" width="150" style="box-shadow: none; background: none;"/></td>
+       <td>SAGA<br/><img src="img/logos/saga.png" width="150" style="box-shadow: none; background: none;"/></td>
+       <td>Orfeo ToolBox<br/><img src="img/logos/otb.png" width="120" style="box-shadow: none; background: none;"/></td>
+    </tr>
+ </table>
+</small>
+</section>
+
+
+<section>
+<h2>Example Desktop Software Stack</h2>
+<dl>
+<dt>GIS</dt>
+<dd>
+QGIS, GRASS GIS
+</dd>
+<dt>statistics and scripting</dt>
+<dd>
+Python, R
+</dd>
+<dt>database, attribute/tabular data</dt>
+<dd>
+SQLite, PostgreSQL with PostGIS, LibreOffice
+</dd>
+<dt>graphics</dt>
+<dd>
+Inkscape, Gimp, ImageMagic
+</dd>
+</dl>
+<small>
+<ul>
+    <li>Portability: works on Linux, Mac, Windows
+    <li>Interoperability: programs designed to work with others
+    <li>Flexibility: standards and open formats allows to switch different components
+    <li>Scalability: can be copied to more machines at no cost
+</ul>
+</small>
+
+<!--
+View Interact Teach, Spatial Analysis Modeling, Visualize,
+Database engine: Tables, attributes, External data
+-->
+</section>
+
+
+<section>
+<h2>Development statistics</h2>
+<img src="img/open/openhub-stats.png"></p>
+<p><a href="https://www.openhub.net/p/grass_gis">Black Duck Open Hub: GRASS GIS</a></p>
+</section>
+
+
+<section>
+<h2>FOSS4G Organizations</h2>
+<dl>
+<dt><a href="http://osgeo.org/">OSGeo</a></dt>
+<dd>
+global organization, local chapters
+and related projects like <a href="http://www.geoforall.org/">GeoForAll</a>
+</dd>
+<dt><a href="http://openstreetmap.org/">OpenStreetMap</a></dt>
+<dd>
+data, applications, services
+</dd>
+</dl>
+
+<figure>
+<img src="img/logos/osgeo.png" style="width: 50%">
+<img src="img/logos/osm.svg" style="width: 30%">
+</figure>
+</section>
+
+
+<section>
+<h2>FOSS4G Organizations</h2>
+<dl>
+<dt><a href="https://locationtech.org/">LocationTech</a></dt>
+<dd>
+working group at Eclipse Foundation
+</dd>
+<dt><a href="http://foss4g.org/">FOSS4G conferences</a></dt>
+<dd>
+global and local conferences
+</dd>
+<dt>Individual projects and communities</dt>
+<dd>
+projects and communities exist on their own
+</dd>
+</dl>
+<figure>
+<img src="img/logos/nottingham_2013.png" style="width: 30%">
+<img src="img/logos/portland_2014.png" style="width: 30%">
+<img src="img/logos/seoul_2015.png" style="width: 30%">
+</figure>
+</section>
+
+
+<section>
+<h2>Support</h2>
+<ul>
+    <li>Community support
+        <ul>
+            <li>Mailing lists
+                <ul>
+                    <li>archived conversations
+                </ul>
+            <li><a href="https://gis.stackexchange.com/">Geographical Information Systems Stack Exchange</a></p>
+                <ul>
+                    <li>question and answers are ranked to increase quality
+                </ul>
+        </ul>
+    <li>Commercial support
+        <ul>
+            <li>See each project's support, contributors, or donors page
+            <li>Examples <small>(shameless plug)</small>:
+                <ul>
+                    <li><a href="https://geospatial.ncsu.edu/engage/service-center/">Center for Geospatial Analytics, NC State University</a>
+                    <li><a href="https://www.northrivergeographic.com/">North River Geographic Systems, Inc.</a>
+                </ul>
+        </ul>
+</ul>
+<br>
+<img src="img/open/mailing-list.png" class="stretch glow">
+</section>
+
+
+<section>
+    <img src="img/logos/ncstate.png" alt="NCSU logo" style="height: 5em;">
+    <p>
+        <a href="https://geospatial.ncsu.edu/geoforall/courses.html">Take a class: geospatial.ncsu.edu/geoforall</a>
+    <p>
+        <a href="https://geospatial.ncsu.edu/engage/service-center/">Work with us: geospatial.ncsu.edu/engage/service-center</a>
+    <p>
+        <a href="https://twitter.com/vaclavpetras/">Twitter: vaclavpetras</a>
+        <br>
+        <a href="https://github.com/wenzeslaus/">GitHub: wenzeslaus</a>
+        <br>
+        <a href="https://gitlab.com/vpetras/">GitLab: vpetras</a>
+    </p>
+    <p>Come to see the NCSU Center for Geospatial Analytics booth!</p>
+    <p>Talk to me at the poster session!</p>
+</section>
+<!-- This is a generated file. Do not edit. -->
+        </div>  <!-- slides -->
+
+    </div>  <!-- reveal -->
+
+    <!--<img class="timeline" id="line" />-->
+
+    <!--
+        Home button or link to a parent page
+        If you want this to be unique for every page (slide deck),
+        then remove it from here and put it at the end of each
+        file (or series of files) creating one page
+        (the position will be little different)
+        TODO: some JS is needed to move it to the right position
+    -->
+    <div class="parent-page">
+        <!-- alternative symbol: &#x1f3e0; -->
+        <a href=".." title="Course website">
+            <img width="15px" src="img/home.svg"></a>
+    </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+
+        <script>
+
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                // Display controls in the bottom right corner
+                controls: false,
+
+                // Display a presentation progress bar
+                progress: true,
+                
+                center: true,
+                
+                // Display the page number of the current slide
+                slideNumber: false,
+
+                // Enable the slide overview mode
+                overview: true,
+
+                // Turns fragments on and off globally
+                fragments: true,
+
+                // The "normal" size of the presentation, aspect ratio will be preserved
+                // when the presentation is scaled to fit different resolutions. Can be
+                // specified using percentage units.
+                // width: 960,
+                // height: 700,
+                
+                // Factor of the display size that should remain empty around the content
+                margin: 0.05,  // increase?
+
+                // Bounds for smallest/largest possible scale to apply to content
+                minScale: 0.5,
+                maxScale: 5.0,
+
+                theme: Reveal.getQueryHash().theme,  // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'none', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Push each slide change to the browser history
+                history: true,
+                // Enable keyboard shortcuts for navigation
+                keyboard: true,
+
+                // Vertical centering of slides
+                center: true,
+
+                // Enables touch navigation on devices with touch input
+                touch: true,
+
+                // Loop the presentation
+                loop: false,
+                // Flags if the presentation is running in an embedded mode,
+                // i.e. contained within a limited portion of the screen
+                embedded: false,
+
+                // Number of milliseconds between automatically proceeding to the
+                // next slide, disabled when set to 0, this value can be overwritten
+                // by using a data-autoslide attribute on your slides
+                autoSlide: 0,
+
+                // Stop auto-sliding after user input
+                autoSlideStoppable: true,
+
+                // Enable slide navigation via mouse wheel
+                mouseWheel: false,
+
+                // Hides the address bar on mobile devices
+                hideAddressBar: true,
+
+                // Opens links in an iframe preview overlay
+                previewLinks: false,
+
+                // Transition speed
+                transitionSpeed: 'default', // default/fast/slow
+
+                // Transition style for full page slide backgrounds
+                backgroundTransition: 'none', // default/none/slide/concave/convex/zoom
+
+                // Number of slides away from the current that are visible
+                viewDistance: 3,
+
+                // Parallax background image
+                //parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+                // Parallax background size
+                //parallaxBackgroundSize: '' // CSS syntax, e.g. "2100px 900px"
+                chalkboard: { 
+        		// optionally load pre-recorded chalkboard drawing from file
+            		src: "chalkboard.json",
+            	},
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+                    /* { src: 'plugin/math/math.js', async: true }, */
+                    { src: 'plugin/chalkboard/chalkboard.js' }
+                ],
+                keyboard: {
+            	    67: function() { RevealChalkboard.toggleNotesCanvas() },	// toggle notes canvas when 'c' is pressed
+            	    66: function() { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
+            	    46: function() { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
+            	     8: function() { RevealChalkboard.reset() },	// reset chalkboard data on current slide when 'BACKSPACE' is pressed
+            	    68: function() { RevealChalkboard.download() },	// downlad recorded chalkboard drawing when 'd' is pressed
+            	},
+            });
+
+        </script>
+
+    </body>
+</html>

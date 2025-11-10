@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>NCSU GIS 595-601: Tools for Open Geospatial Science</title>
+
+<link rel="shortcut icon" href="../img/favicon.png" />
+
+<link href="../layout.css" rel="stylesheet" type="text/css" media="screen">
+<link href="../style.css" rel="stylesheet" type="text/css" media="screen">
+
+</head>
+
+<body>
+
+<div id="outercontainer">
+<div id="container">
+
+<header>
+<div id="header-image">
+</div>
+
+<nav>
+<ul class="nav">
+<li><a href="../index.html">Syllabus</a></li>
+<li><a href="../index.html#schedule">Schedule</a></li>
+</ul>
+</nav>
+
+</header>
+
+<main>
+<!-- This is a generated file. Do not edit. -->
+<h1 id="open-science-for-grand-challenges">Open Science for Grand
+Challenges</h1>
+<p>This is material for a guest lecture in <em>GIS 710: Geospatial
+Analytics for Grand Challenges</em>.</p>
+<h2 id="reading">Reading</h2>
+<p>Please, read the following papers as a preparation for the lecture
+and the discussion:</p>
+<ul>
+<li>Watson, Mick (2015). “When will ‘open science’ become simply
+‘science’?“. In: Genome biology, 16(1), 101. <a
+href="https://doi.org/10.1186/s13059-015-0669-2">https://doi.org/10.1186/s13059-015-0669-2</a></li>
+</ul>
+<p>Here are two optional papers:</p>
+<ul>
+<li>Ince, Darrel C., Leslie Hatton, and John Graham-Cumming (2012). “The
+case for open computer programs”. In: Nature 482.7386, pp. 485–488. <a
+href="http://doi.org/10.1038/nature10836">http://doi.org/10.1038/nature10836</a></li>
+<li>Rocchini, Duccio and Markus Neteler (2012). “Let the four freedoms
+paradigm apply to ecology”. In: Trends in Ecology and Evolution. <a
+href="http://doi.org/10.1016/j.tree.2012.03.009">http://doi.org/10.1016/j.tree.2012.03.009</a></li>
+</ul>
+<h2 id="lecture">Lecture</h2>
+<p>(60 min)</p>
+<ul>
+<li><a href="../lectures/open-science-for-grand-challenges.html">Open
+Science</a></li>
+</ul>
+<p>(Break: 15 min)</p>
+<h2 id="class-debate">Class Debate</h2>
+<p>(5+25+5+5+5+15 min)</p>
+<ul>
+<li>Debate for and against a resolution about scientific
+publications.</li>
+<li>Two teams. Affirmative agrees with the resolution and Negative
+disagrees with the resolution.</li>
+</ul>
+<h3 id="resolution">Resolution</h3>
+<p>A scientific publication needs to consist of text, data, source code,
+software environment, and reviews which are all openly licensed, in open
+formats, checked during the submission process, and publicly available
+without any delay after publication.</p>
+<h3 id="context">Context</h3>
+<ul>
+<li>Text: The main part of the publication, the “classic” article, with
+narrative, figures, tables, etc.</li>
+<li>Data: Recorded factual material, raw input data, resulting
+data.</li>
+<li>Source code: Unique code including code to generate numbers,
+figures, and tables for the text.</li>
+<li>Software environment: Software setup where to apply the source code
+to the input data.</li>
+<li>Reviews: Parts of the review process, esp. comments from reviewers
+and publication versions.</li>
+<li>The Open Definition: Content can be freely used, modified, and
+shared by anyone for any purpose.</li>
+<li>Open format: File format based on an open standard and readable by
+open source software.</li>
+<li>Data embargo: Period during which a scheduled-to-be-public data
+remains private.</li>
+<li>FAIR: Findability, Accessibility, Interoperability, and Reuse of
+digital assets, esp. data.</li>
+<li>Findability (in FAIR): (Meta)data are registered and assigned a
+persistent identifier.</li>
+<li>Accessibility (in FAIR): Sharing protocol is open, free, and
+universally implementable.</li>
+<li>Interoperability (in FAIR): (Meta)data use formal language and
+references to other datasets.</li>
+<li>Reuse (in FAIR): (Meta)data are richly described with a plurality of
+accurate and relevant attributes.</li>
+</ul>
+<h3 id="consider">Consider</h3>
+<ul>
+<li>Scientists are concerned with additional work and being
+scooped.</li>
+<li>Research funding agencies with limited financial resources focused
+on innovation.</li>
+<li>Citizens who want to have access to science which influences their
+lives.</li>
+<li>Industry and entrepreneurs who want to reap benefits of tax-funded
+research.</li>
+<li>Number of special cases including sensitive personal data and data
+related to national security.</li>
+</ul>
+<h2 id="hands-on">Hands-on</h2>
+<p>Goal: Public repository with research code linked to data and a way
+for everybody to run it.</p>
+<h3 id="python-notebooks-repositories-and-binder">Python, Notebooks,
+Repositories, and Binder</h3>
+<p>(20 min)</p>
+<p>Introduction to the tools and technologies (10 min):</p>
+<ul>
+<li><a href="../lectures/python-in-binder.html">Python in
+Binder</a></li>
+</ul>
+<p>Examples (10 min):</p>
+<ul>
+<li><a
+href="https://github.com/wenzeslaus/trivial-example-for-binder">Simple
+example</a></li>
+<li><a
+href="https://github.com/wenzeslaus/trivial-geospatial-example-for-binder">Geospatial
+example</a></li>
+</ul>
+<h3 id="exercise">Exercise</h3>
+<p>(10 min)</p>
+<p>Task:</p>
+<ul>
+<li>Create a Git repository which opens in Binder and contains a script
+and a notebook.</li>
+</ul>
+<p>Steps:</p>
+<ul>
+<li>If you don't have it already, create an account on GitHub (<a
+href="https://github.com">https://github.com</a>).</li>
+<li>Create a new (Git) repository on GitHub.</li>
+<li>Write a trivial Python script
+<ul>
+<li><code>c = a + b</code> followed by <code>print(c)</code> or
+something similar is sufficient.</li>
+<li>You can create and edit files on GitHub using the web
+interface.</li>
+</ul></li>
+<li>Open the repository using Binder at <a
+href="https://mybinder.org">mybinder.org</a>.</li>
+<li>Create a new notebook.
+<ul>
+<li>New button in top right corner. Pick (notebook:) Python 3.</li>
+<li>Name the notebook at the top of the page (Example or Test 1 are good
+names here).</li>
+</ul></li>
+<li>Run the script from the notebook
+(<code>!python script_name.py</code>).</li>
+<li>Optionally, add some Python code to the notebook itself.</li>
+<li>Download the notebook (<em>File &gt; Download</em>).
+<ul>
+<li>You should end up with file with <code>.ipynb</code> extension.</li>
+</ul></li>
+<li>Upload the file to your repository on GitHub (<em>Add file &gt;
+Upload files</em>).</li>
+<li>Repeat as needed.
+<ul>
+<li>Typically, you would develop your code elsewhere avoiding the
+cumbersome update loop like in this workflow (and use Git locally to
+upload to GitHub).</li>
+<li>JupyterLab and Jupyter Notebook in Binder allow you to save the
+document to your web browser storage allowing you to pick up where you
+left last time.</li>
+<li>It is not advised (by Binder) to upload to GitHub from Binder (or
+enter any credentials) for security reasons (this may be different for
+other Binder instances).</li>
+</ul></li>
+<li>Include link to Binder (the Launch Binder button) to your readme
+file.
+<ul>
+<li>Optionally, specify <em>Path to a notebook file</em> on mybinder.org
+to show your notebook right away with a simplified interface. (The URL
+will be different.)</li>
+</ul></li>
+</ul>
+<p>Extra tasks:</p>
+<ul>
+<li>Write code which uses <em>rasterio</em> to display data or to get
+its CRS in the notebook.</li>
+<li>Put that code into a separate file and use it in notebook.
+<ul>
+<li>Do not run the file like the example does, but import it
+instead.</li>
+<li>Store the CRS in a variable and print the variable in the
+notebook.</li>
+<li>Reuse the loaded object for data display (instead of loading it
+again).</li>
+</ul></li>
+</ul>
+<h3 id="open-science-at-the-center-for-geospatial-analytics">Open
+Science at the Center for Geospatial Analytics</h3>
+<p>(10 min)</p>
+<ul>
+<li><span class="title-ref">Open Technology at the Center
+&lt;https://docs.google.com/presentation/d/1UuojRa5cDgqhLBz0hzpbjJg27GCamRF38_zxBy8ugEw/edit?usp=sharing&gt;</span></li>
+</ul>
+<h3 id="more-advanced-geospatial-examples">More Advanced Geospatial
+Examples</h3>
+<p>(30 min)</p>
+<p>Examples using Binder (25 min):</p>
+<ol type="1">
+<li>Hydrology and zonal statistics in GRASS GIS in JupyterLab
+<ul>
+<li><a
+href="https://mybinder.org/v2/gh/OSGeo/grass/8.4.0?urlpath=lab%2Ftree%2Fdoc%2Fnotebooks%2Fhydrology.ipynb">https://mybinder.org/v2/gh/OSGeo/grass/8.4.0?urlpath=lab%2Ftree%2Fdoc%2Fnotebooks%2Fhydrology.ipynb</a></li>
+<li>Highlights: Included dataset, two different types of plotting
+(GRASS-specific and general Matplotlib)</li>
+</ul></li>
+<li>Sudden Oak Death example for PoPS model in JupyterLab
+<ul>
+<li><a
+href="https://github.com/ncsu-landscape-dynamics/pops-intro-grass-notebook">https://github.com/ncsu-landscape-dynamics/pops-intro-grass-notebook</a></li>
+<li>Highlights: Model created by the Center for Geospatial Analytics,
+compiled GRASS GIS, Binder files in a subdirectory, JupyterLab</li>
+</ul></li>
+<li>FUTURES model in JupyterLab
+<ul>
+<li><a
+href="https://github.com/ncsu-landscape-dynamics/futures-model-intro-notebook">https://github.com/ncsu-landscape-dynamics/futures-model-intro-notebook</a></li>
+<li>Highlights: Model created by the Center for Geospatial Analytics,
+published as a GRASS GIS module, R, compiled GRASS GIS, Binder files in
+a subdirectory</li>
+</ul></li>
+<li>Species distribution modeling with R and GRASS GIS in RStudio
+<ul>
+<li><a
+href="https://github.com/LukasGab/R_grassgis/tree/link-external-data">https://github.com/LukasGab/R_grassgis/tree/link-external-data</a></li>
+<li>Highlights: RStudio in Binder</li>
+</ul></li>
+</ol>
+<p>Open Science Publication Use Case (with Docker, GRASS GIS, Code
+Ocean; 25 min):</p>
+<ol type="1">
+<li><a href="../lectures/open-science-publication.html">Open Science
+Publication (slides)</a></li>
+<li>Script and container-based solution without notebooks for running
+locally (no Binder)
+<ul>
+<li><a
+href="https://doi.org/10.1186/s40965-017-0021-8">https://doi.org/10.1186/s40965-017-0021-8</a></li>
+<li><a
+href="https://github.com/wenzeslaus/forestfrag3d">https://github.com/wenzeslaus/forestfrag3d</a></li>
+<li>Highlights: Dockerfile, scripts, no notebooks, Travis CI, reusable
+code</li>
+</ul></li>
+<li>Code Ocean
+<ul>
+<li><a
+href="https://doi.org/10.24433/CO.3986355.v2">https://doi.org/10.24433/CO.3986355.v2</a></li>
+</ul></li>
+</ol>
+<p>Bonus (5 min):</p>
+<ol type="1">
+<li>Repository with reusable code
+<ul>
+<li><a
+href="https://gitlab.com/vpetras/v.net.tripplanner">https://gitlab.com/vpetras/v.net.tripplanner</a></li>
+<li>Highlights: GitLab, static generated web page</li>
+</ul></li>
+</ol>
+<h2 id="outro">Outro</h2>
+<p>(15 min)</p>
+<ul>
+<li><a
+href="../lectures/open-science-for-grand-challenges-outro.html">Open
+Science: Outro</a></li>
+</ul>
+
+</main>
+
+<footer>
+
+<nav>
+<ul>
+    <li><a href="http://geospatial.ncsu.edu/">Center for Geospatial Analytics</a></li>
+    <!--
+        <li><a class="term-changes" href="https://moodle-courses1920.wolfware.ncsu.edu/course/view.php?id=1581">Moodle site</a></li>
+    -->
+    <li><a href="http://help.ncsu.edu/">Computing Help</a></li>
+    <!--
+        <li><a href="http://www.ncsu.edu/policies/prr-disclaimer.php">Disclaimer</a></li>
+        <li><a href="http://oit.ncsu.edu/itaccess">Accessibility</a></li>
+    -->
+    <li><a href="https://github.com/ncsu-geoforall-lab/open-science-course" title="Fork on GitHub" alt="octocat">
+        <img src="../img/github_logo.png">
+    </a></li>
+    <li title="Copyright and license (not applicable to linked materials)">
+        &copy; 2017-2022
+        <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA</a>
+        <a href="https://github.com/ncsu-geoforall-lab/open-science-course#authors">The Authors</a>
+        from the
+        <a href="http://geospatial.ncsu.edu/geoforall/">NCSU GeoForAll Lab</a>
+    </li>
+</ul>
+</nav>
+
+</footer>
+
+</div>
+</div>
+
+</body>
+</html>
